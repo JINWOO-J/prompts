@@ -1,0 +1,4 @@
+.tmp-sources/
+*.pyc
+__pycache__/
+.DS_Store

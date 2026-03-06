@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 scripts/rebuild-index.py)",
+      "Bash(kill %1)"
+    ]
+  }
+}

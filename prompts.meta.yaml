@@ -1,0 +1,2503 @@
+_meta:
+  version: '4.0'
+  generated: '2026-03-05'
+  total: 261
+  stats:
+    rca: 6
+    incident-response: 78
+    application: 25
+    infrastructure: 93
+    security: 29
+    data-ai: 12
+    shared: 17
+    techniques: 1
+  categories:
+  - rca
+  - incident-response
+  - application
+  - infrastructure
+  - security
+  - data-ai
+  - shared
+  - techniques
+  sources:
+  - VoltAgent/awesome-claude-code-subagents
+  - Scoutflo/Scoutflo-SRE-Playbooks
+  - shawnewallace/prompt-library
+  - custom (found.md)
+prompts:
+- id: rca-01_basic_rca
+  file: rca/01_basic_rca.md
+  title: '프롬프트 01: 기본 RCA (5-Whys + CoT)'
+  category: rca
+  origin: custom
+  tags:
+  - rca
+- id: rca-02_hypothesis_stepback
+  file: rca/02_hypothesis_stepback.md
+  title: '프롬프트 02: 가설 수립 + Step-back 분석'
+  category: rca
+  origin: custom
+  tags:
+  - rca
+- id: rca-03_timeline_chain
+  file: rca/03_timeline_chain.md
+  title: '프롬프트 03: 타임라인 재구성 (프롬프트 체이닝 4단계)'
+  category: rca
+  origin: custom
+  tags:
+  - rca
+- id: rca-04_advanced_tot
+  file: rca/04_advanced_tot.md
+  title: '프롬프트 04: 고급 RCA — Tree-of-Thoughts (ToT)'
+  category: rca
+  origin: custom
+  tags:
+  - rca
+- id: rca-05_security_rca
+  file: rca/05_security_rca.md
+  title: '프롬프트 05: 보안 침해 RCA (Diamond Model + MITRE ATT&CK)'
+  category: rca
+  origin: custom
+  tags:
+  - rca
+- id: rca-06_quality_review
+  file: rca/06_quality_review.md
+  title: '프롬프트 06: RCA 보고서 품질 검증 (CoVe + Self-Refinement)'
+  category: rca
+  origin: custom
+  tags:
+  - rca
+- id: inc-agent-debugger
+  file: incident-response/agent-debugger.md
+  title: Communication Protocol
+  category: incident-response
+  origin: extracted
+  tags:
+  - incident-response
+  role: debugger
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/debugger.md)'
+- id: inc-agent-devops-incident-responder
+  file: incident-response/agent-devops-incident-responder.md
+  title: Communication Protocol
+  category: incident-response
+  origin: extracted
+  tags:
+  - incident-response
+  role: devops-incident-responder
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/devops-incident-responder.md)'
+- id: inc-agent-error-detective
+  file: incident-response/agent-error-detective.md
+  title: Communication Protocol
+  category: incident-response
+  origin: extracted
+  tags:
+  - incident-response
+  role: error-detective
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/error-detective.md)'
+- id: inc-agent-incident-responder
+  file: incident-response/agent-incident-responder.md
+  title: 'Agent: Incident Responder'
+  category: incident-response
+  origin: voltagent
+  tags:
+  - incident-response
+  role: Incident Responder
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/incident-responder.md)'
+- id: inc-agent-organizer
+  file: incident-response/agent-organizer.md
+  title: Communication Protocol
+  category: incident-response
+  origin: extracted
+  tags:
+  - incident-response
+  role: agent-organizer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/09-meta-orchestration/agent-organizer.md)'
+- id: inc-agent-sre-engineer
+  file: incident-response/agent-sre-engineer.md
+  title: 'Agent: SRE Engineer'
+  category: incident-response
+  origin: voltagent
+  tags:
+  - incident-response
+  role: SRE Engineer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/sre-engineer.md)'
+- id: inc-aws-01-Compute-Cold-Start-Delays-Perform
+  file: incident-response/aws-01-Compute-Cold-Start-Delays-Performance-Lambda.md
+  title: Lambda Cold Start Delays Performance
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - lambda
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Cold-Start-Delays-Performance-Lambda.md)'
+- id: inc-aws-01-Compute-Connection-Timeout-SSH-Is
+  file: incident-response/aws-01-Compute-Connection-Timeout-SSH-Issues-EC2.md
+  title: EC2 Instance Connection Timeout (SSH Issues)
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - ec2
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Connection-Timeout-SSH-Issues-EC2.md)'
+- id: inc-aws-01-Compute-Connection-Timeout-from-L
+  file: incident-response/aws-01-Compute-Connection-Timeout-from-Lambda-RDS.md
+  title: RDS Connection Timeout from Lambda
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - rds
+  - lambda
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Connection-Timeout-from-Lambda-RDS.md)'
+- id: inc-aws-01-Compute-Exceeds-Memory-Limit-Lamb
+  file: incident-response/aws-01-Compute-Exceeds-Memory-Limit-Lambda.md
+  title: Lambda Function Exceeds Memory Limit
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - lambda
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Exceeds-Memory-Limit-Lambda.md)'
+- id: inc-aws-01-Compute-Failing-on-EC2-Instances-
+  file: incident-response/aws-01-Compute-Failing-on-EC2-Instances-CodeDeploy.md
+  title: CodeDeploy Failing on EC2 Instances
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - ec2
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Failing-on-EC2-Instances-CodeDeploy.md)'
+- id: inc-aws-01-Compute-High-CPU-Utilization-EC2
+  file: incident-response/aws-01-Compute-High-CPU-Utilization-EC2.md
+  title: EC2 Instance High CPU Utilization
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - ec2
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/High-CPU-Utilization-EC2.md)'
+- id: inc-aws-01-Compute-IAM-Role-Not-Attaching-to
+  file: incident-response/aws-01-Compute-IAM-Role-Not-Attaching-to-Service-Account-EKS.md
+  title: EKS IAM Role Not Attaching to Service Account
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - eks
+  - iam
+  - k8s-service
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/IAM-Role-Not-Attaching-to-Service-Account-EKS.md)'
+- id: inc-aws-01-Compute-Image-Pull-Failing-in-ECS
+  file: incident-response/aws-01-Compute-Image-Pull-Failing-in-ECS-Docker.md
+  title: Docker Image Pull Failing in ECS
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - ecs
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Image-Pull-Failing-in-ECS-Docker.md)'
+- id: inc-aws-01-Compute-Ingress-Controller-Not-Ro
+  file: incident-response/aws-01-Compute-Ingress-Controller-Not-Routing-Traffic-EKS.md
+  title: EKS Ingress Controller Not Routing Traffic
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - eks
+  - k8s-ingress
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Ingress-Controller-Not-Routing-Traffic-EKS.md)'
+- id: inc-aws-01-Compute-Instance-Cant-Reach-Inter
+  file: incident-response/aws-01-Compute-Instance-Cant-Reach-Internet-via-NAT-Gateway-EC2.md
+  title: EC2 Instance Can't Reach Internet via NAT Gateway
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - ec2
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Instance-Cant-Reach-Internet-via-NAT-Gateway-EC2.md)'
+- id: inc-aws-01-Compute-Instance-Not-Starting-EC2
+  file: incident-response/aws-01-Compute-Instance-Not-Starting-EC2.md
+  title: EC2 Instance Not Starting
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - ec2
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Instance-Not-Starting-EC2.md)'
+- id: inc-aws-01-Compute-Instance-Unable-to-Reach-
+  file: incident-response/aws-01-Compute-Instance-Unable-to-Reach-the-Internet-EC2.md
+  title: EC2 Instance Unable to Reach the Internet
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - ec2
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Instance-Unable-to-Reach-the-Internet-EC2.md)'
+- id: inc-aws-01-Compute-Interrupted-Unexpectedly-
+  file: incident-response/aws-01-Compute-Interrupted-Unexpectedly-Spot-Instance.md
+  title: EC2 Spot Instance Interrupted Unexpectedly
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Interrupted-Unexpectedly-Spot-Instance.md)'
+- id: inc-aws-01-Compute-Logs-Not-Appearing-in-Clo
+  file: incident-response/aws-01-Compute-Logs-Not-Appearing-in-CloudWatch-ECS.md
+  title: ECS Logs Not Appearing in CloudWatch
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - ecs
+  - cloudwatch
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Logs-Not-Appearing-in-CloudWatch-ECS.md)'
+- id: inc-aws-01-Compute-Nodes-Not-Joining-Cluster
+  file: incident-response/aws-01-Compute-Nodes-Not-Joining-Cluster-EKS.md
+  title: EKS Nodes Not Joining the Cluster
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - eks
+  - k8s-node
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Nodes-Not-Joining-Cluster-EKS.md)'
+- id: inc-aws-01-Compute-Not-Launching-New-Instanc
+  file: incident-response/aws-01-Compute-Not-Launching-New-Instances-Auto-Scaling.md
+  title: EC2 Auto Scaling Not Launching New Instances
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Not-Launching-New-Instances-Auto-Scaling.md)'
+- id: inc-aws-01-Compute-Not-Scaling-as-Expected-E
+  file: incident-response/aws-01-Compute-Not-Scaling-as-Expected-ECS.md
+  title: ECS Service Not Scaling as Expected
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - ecs
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Not-Scaling-as-Expected-ECS.md)'
+- id: inc-aws-01-Compute-Not-Triggering-from-S3-Ev
+  file: incident-response/aws-01-Compute-Not-Triggering-from-S3-Event-Lambda.md
+  title: AWS Lambda Not Triggering from S3 Event
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - lambda
+  - s3
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Not-Triggering-from-S3-Event-Lambda.md)'
+- id: inc-aws-01-Compute-Pod-Stuck-in-CrashLoopBac
+  file: incident-response/aws-01-Compute-Pod-Stuck-in-CrashLoopBackOff-EKS.md
+  title: EKS Pod Stuck in CrashLoopBackOff
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - eks
+  - k8s-pod
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Pod-Stuck-in-CrashLoopBackOff-EKS.md)'
+- id: inc-aws-01-Compute-Role-Not-Attaching-to-EC2
+  file: incident-response/aws-01-Compute-Role-Not-Attaching-to-EC2-Instance-IAM.md
+  title: IAM Role Not Attaching to EC2 Instance
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - ec2
+  - iam
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Role-Not-Attaching-to-EC2-Instance-IAM.md)'
+- id: inc-aws-01-Compute-Running-Out-of-Memory-Far
+  file: incident-response/aws-01-Compute-Running-Out-of-Memory-Fargate.md
+  title: Fargate Task Running Out of Memory
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Running-Out-of-Memory-Fargate.md)'
+- id: inc-aws-01-Compute-Spot-Instance-Pricing-Une
+  file: incident-response/aws-01-Compute-Spot-Instance-Pricing-Unexpectedly-High-Cost.md
+  title: EC2 Spot Instance Pricing Unexpectedly High
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Spot-Instance-Pricing-Unexpectedly-High-Cost.md)'
+- id: inc-aws-01-Compute-Streams-Not-Triggering-La
+  file: incident-response/aws-01-Compute-Streams-Not-Triggering-Lambda-DynamoDB.md
+  title: DynamoDB Streams Not Triggering Lambda
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - lambda
+  - dynamodb
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Streams-Not-Triggering-Lambda-DynamoDB.md)'
+- id: inc-aws-01-Compute-Stuck-in-Initializing-Sta
+  file: incident-response/aws-01-Compute-Stuck-in-Initializing-State-EC2.md
+  title: EC2 Instance Stuck in "Initializing" State
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - ec2
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Stuck-in-Initializing-State-EC2.md)'
+- id: inc-aws-01-Compute-Task-Stuck-in-Pending-Sta
+  file: incident-response/aws-01-Compute-Task-Stuck-in-Pending-State-ECS.md
+  title: ECS Task Stuck in Pending State
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - ecs
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Task-Stuck-in-Pending-State-ECS.md)'
+- id: inc-aws-01-Compute-Terminating-Instances-Une
+  file: incident-response/aws-01-Compute-Terminating-Instances-Unexpectedly-Auto-Scaling.md
+  title: AWS Auto Scaling Terminating Instances Unexpectedly
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Terminating-Instances-Unexpectedly-Auto-Scaling.md)'
+- id: inc-aws-01-Compute-Timeout-Error-Lambda
+  file: incident-response/aws-01-Compute-Timeout-Error-Lambda.md
+  title: AWS Lambda Timeout Error
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - lambda
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Timeout-Error-Lambda.md)'
+- id: inc-aws-02-Database-Automatic-Backup-Not-Wor
+  file: incident-response/aws-02-Database-Automatic-Backup-Not-Working-RDS.md
+  title: RDS Automatic Backup Not Working
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - rds
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/02-Database/Automatic-Backup-Not-Working-RDS.md)'
+- id: inc-aws-02-Database-Backup-Failing-DynamoDB
+  file: incident-response/aws-02-Database-Backup-Failing-DynamoDB.md
+  title: DynamoDB Backup Failing
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - dynamodb
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/02-Database/Backup-Failing-DynamoDB.md)'
+- id: inc-aws-02-Database-High-CPU-Utilization-RDS
+  file: incident-response/aws-02-Database-High-CPU-Utilization-RDS.md
+  title: RDS High CPU Utilization
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - rds
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/02-Database/High-CPU-Utilization-RDS.md)'
+- id: inc-aws-02-Database-Instance-Not-Connecting-
+  file: incident-response/aws-02-Database-Instance-Not-Connecting-RDS.md
+  title: RDS Instance Not Connecting
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - rds
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/02-Database/Instance-Not-Connecting-RDS.md)'
+- id: inc-aws-02-Database-Query-Performance-Slower
+  file: incident-response/aws-02-Database-Query-Performance-Slower-Than-Expected-DynamoDB.md
+  title: DynamoDB Query Performance Slower Than Expected
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - dynamodb
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/02-Database/Query-Performance-Slower-Than-Expected-DynamoDB.md)'
+- id: inc-aws-02-Database-Read-Replica-Lagging-Beh
+  file: incident-response/aws-02-Database-Read-Replica-Lagging-Behind-Primary-RDS.md
+  title: RDS Read Replica Lagging Behind Primary
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - rds
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/02-Database/Read-Replica-Lagging-Behind-Primary-RDS.md)'
+- id: inc-aws-02-Database-Storage-Full-Error-RDS
+  file: incident-response/aws-02-Database-Storage-Full-Error-RDS.md
+  title: RDS Storage Full Error
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - rds
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/02-Database/Storage-Full-Error-RDS.md)'
+- id: inc-aws-02-Database-Throttling-Errors-Dynamo
+  file: incident-response/aws-02-Database-Throttling-Errors-DynamoDB.md
+  title: DynamoDB Throttling Errors
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - dynamodb
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/02-Database/Throttling-Errors-DynamoDB.md)'
+- id: inc-aws-03-Storage-Bucket-Access-Denied-403-
+  file: incident-response/aws-03-Storage-Bucket-Access-Denied-403-Error-S3.md
+  title: S3 Bucket Access Denied (403 Error)
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - s3
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/03-Storage/Bucket-Access-Denied-403-Error-S3.md)'
+- id: inc-aws-03-Storage-Cross-Region-Replication-
+  file: incident-response/aws-03-Storage-Cross-Region-Replication-Not-Working-S3.md
+  title: S3 Cross-Region Replication Not Working
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - s3
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/03-Storage/Cross-Region-Replication-Not-Working-S3.md)'
+- id: inc-aws-03-Storage-Failing-Due-to-S3-Permiss
+  file: incident-response/aws-03-Storage-Failing-Due-to-S3-Permissions-CodePipeline.md
+  title: CodePipeline Failing Due to S3 Permissions
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - s3
+  - codepipeline
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/03-Storage/Failing-Due-to-S3-Permissions-CodePipeline.md)'
+- id: inc-aws-03-Storage-File-Upload-Extremely-Slo
+  file: incident-response/aws-03-Storage-File-Upload-Extremely-Slow-S3.md
+  title: S3 File Upload Extremely Slow
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - s3
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/03-Storage/File-Upload-Extremely-Slow-S3.md)'
+- id: inc-aws-03-Storage-Intelligent-Tiering-Not-M
+  file: incident-response/aws-03-Storage-Intelligent-Tiering-Not-Moving-Data-as-Expected-S3.md
+  title: S3 Intelligent-Tiering Not Moving Data as Expected
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - s3
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/03-Storage/Intelligent-Tiering-Not-Moving-Data-as-Expected-S3.md)'
+- id: inc-aws-03-Storage-Lifecycle-Policy-Not-Dele
+  file: incident-response/aws-03-Storage-Lifecycle-Policy-Not-Deleting-Objects-S3.md
+  title: S3 Lifecycle Policy Not Deleting Objects
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - s3
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/03-Storage/Lifecycle-Policy-Not-Deleting-Objects-S3.md)'
+- id: inc-aws-03-Storage-Public-Access-Block-Preve
+  file: incident-response/aws-03-Storage-Public-Access-Block-Preventing-Access-S3.md
+  title: S3 Public Access Block Preventing Access
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - s3
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/03-Storage/Public-Access-Block-Preventing-Access-S3.md)'
+- id: inc-aws-04-Networking-Blocking-Expected-Traf
+  file: incident-response/aws-04-Networking-Blocking-Expected-Traffic-NACL.md
+  title: NACL Blocking Expected Traffic
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Blocking-Expected-Traffic-NACL.md)'
+- id: inc-aws-04-Networking-CORS-Issues-API-Gatewa
+  file: incident-response/aws-04-Networking-CORS-Issues-API-Gateway.md
+  title: API Gateway CORS Issues
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/CORS-Issues-API-Gateway.md)'
+- id: inc-aws-04-Networking-Certificate-Not-Workin
+  file: incident-response/aws-04-Networking-Certificate-Not-Working-on-ELB.md
+  title: SSL Certificate Not Working on ELB
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - elb
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Certificate-Not-Working-on-ELB.md)'
+- id: inc-aws-04-Networking-Connection-Dropping-Fr
+  file: incident-response/aws-04-Networking-Connection-Dropping-Frequently-VPN.md
+  title: VPN Connection Dropping Frequently
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Connection-Dropping-Frequently-VPN.md)'
+- id: inc-aws-04-Networking-DNS-Resolution-Failing
+  file: incident-response/aws-04-Networking-DNS-Resolution-Failing-Route-53.md
+  title: Route 53 DNS Resolution Failing
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/DNS-Resolution-Failing-Route-53.md)'
+- id: inc-aws-04-Networking-Distribution-Deploymen
+  file: incident-response/aws-04-Networking-Distribution-Deployment-Stuck-in-Progress-CloudFront.md
+  title: CloudFront Distribution Deployment Stuck in Progress
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - cloudfront
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Distribution-Deployment-Stuck-in-Progress-CloudFront.md)'
+- id: inc-aws-04-Networking-Endpoint-Not-Working-P
+  file: incident-response/aws-04-Networking-Endpoint-Not-Working-PrivateLink.md
+  title: PrivateLink Endpoint Not Working
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Endpoint-Not-Working-PrivateLink.md)'
+- id: inc-aws-04-Networking-Latency-Based-Routing-
+  file: incident-response/aws-04-Networking-Latency-Based-Routing-Not-Working-Route-53.md
+  title: Route 53 Latency-Based Routing Not Working
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Latency-Based-Routing-Not-Working-Route-53.md)'
+- id: inc-aws-04-Networking-Latency-Higher-Than-Ex
+  file: incident-response/aws-04-Networking-Latency-Higher-Than-Expected-Direct-Connect.md
+  title: Direct Connect Latency Higher Than Expected
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Latency-Higher-Than-Expected-Direct-Connect.md)'
+- id: inc-aws-04-Networking-Not-Distributing-Traff
+  file: incident-response/aws-04-Networking-Not-Distributing-Traffic-Properly-Global-Accelerator.md
+  title: AWS Global Accelerator Not Distributing Traffic Properly
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Not-Distributing-Traffic-Properly-Global-Accelerator.md)'
+- id: inc-aws-04-Networking-Not-Routing-Traffic-EL
+  file: incident-response/aws-04-Networking-Not-Routing-Traffic-ELB.md
+  title: Elastic Load Balancer (ELB) Not Routing Traffic
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - elb
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Not-Routing-Traffic-ELB.md)'
+- id: inc-aws-04-Networking-Not-Serving-Updated-Co
+  file: incident-response/aws-04-Networking-Not-Serving-Updated-Content-CloudFront.md
+  title: CloudFront Not Serving Updated Content
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - cloudfront
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Not-Serving-Updated-Content-CloudFront.md)'
+- id: inc-aws-04-Networking-Peering-Not-Working-VP
+  file: incident-response/aws-04-Networking-Peering-Not-Working-VPC.md
+  title: VPC Peering Not Working
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - vpc
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Peering-Not-Working-VPC.md)'
+- id: inc-aws-04-Networking-Returning-500-Internal
+  file: incident-response/aws-04-Networking-Returning-500-Internal-Server-Error-API-Gateway.md
+  title: API Gateway Returning 500 Internal Server Error
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Returning-500-Internal-Server-Error-API-Gateway.md)'
+- id: inc-aws-04-Networking-Route-Not-Matching-Req
+  file: incident-response/aws-04-Networking-Route-Not-Matching-Requests-API-Gateway.md
+  title: API Gateway Route Not Matching Requests
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Route-Not-Matching-Requests-API-Gateway.md)'
+- id: inc-aws-04-Networking-Target-Group-Showing-U
+  file: incident-response/aws-04-Networking-Target-Group-Showing-Unhealthy-Instances-ELB.md
+  title: Target Group in ELB Showing Unhealthy Instances
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - elb
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Target-Group-Showing-Unhealthy-Instances-ELB.md)'
+- id: inc-aws-04-Networking-Throttling-Requests-AP
+  file: incident-response/aws-04-Networking-Throttling-Requests-API-Gateway.md
+  title: API Gateway Throttling Requests
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Throttling-Requests-API-Gateway.md)'
+- id: inc-aws-06-Monitoring-Alarm-Not-Triggering-a
+  file: incident-response/aws-06-Monitoring-Alarm-Not-Triggering-as-Expected-CloudWatch.md
+  title: CloudWatch Alarm Not Triggering as Expected
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - cloudwatch
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/06-Monitoring/Alarm-Not-Triggering-as-Expected-CloudWatch.md)'
+- id: inc-aws-06-Monitoring-Events-Not-Showing-in-
+  file: incident-response/aws-06-Monitoring-Events-Not-Showing-in-Logs-CloudTrail.md
+  title: CloudTrail Events Not Showing in Logs
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/06-Monitoring/Events-Not-Showing-in-Logs-CloudTrail.md)'
+- id: inc-aws-06-Monitoring-Logs-Not-Appearing-Clo
+  file: incident-response/aws-06-Monitoring-Logs-Not-Appearing-CloudWatch.md
+  title: CloudWatch Logs Not Appearing
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - cloudwatch
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/06-Monitoring/Logs-Not-Appearing-CloudWatch.md)'
+- id: inc-aws-06-Monitoring-Logs-Not-Capturing-Eve
+  file: incident-response/aws-06-Monitoring-Logs-Not-Capturing-Events-CloudTrail.md
+  title: AWS CloudTrail Logs Not Capturing Events
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/06-Monitoring/Logs-Not-Capturing-Events-CloudTrail.md)'
+- id: inc-aws-06-Monitoring-Metrics-Missing-Data-P
+  file: incident-response/aws-06-Monitoring-Metrics-Missing-Data-Points-CloudWatch.md
+  title: CloudWatch Metrics Missing Data Points
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  - cloudwatch
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/06-Monitoring/Metrics-Missing-Data-Points-CloudWatch.md)'
+- id: inc-aws-06-Monitoring-Not-Recording-Changes-
+  file: incident-response/aws-06-Monitoring-Not-Recording-Changes-Config.md
+  title: AWS Config Not Recording Changes
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/06-Monitoring/Not-Recording-Changes-Config.md)'
+- id: inc-aws-06-Monitoring-Not-Recording-Resource
+  file: incident-response/aws-06-Monitoring-Not-Recording-Resource-Changes-Config.md
+  title: AWS Config Not Recording Resource Changes
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/06-Monitoring/Not-Recording-Resource-Changes-Config.md)'
+- id: inc-aws-06-Monitoring-Traces-Missing-in-Appl
+  file: incident-response/aws-06-Monitoring-Traces-Missing-in-Application-Logs-X-Ray.md
+  title: X-Ray Traces Missing in Application Logs
+  category: incident-response
+  origin: scoutflo
+  tags:
+  - incident-response
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/06-Monitoring/Traces-Missing-in-Application-Logs-X-Ray.md)'
+- id: inc-error-coordinator
+  file: incident-response/error-coordinator.md
+  title: Communication Protocol
+  category: incident-response
+  origin: extracted
+  tags:
+  - incident-response
+  role: error-coordinator
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/09-meta-orchestration/error-coordinator.md)'
+- id: inc-it-ops-orchestrator
+  file: incident-response/it-ops-orchestrator.md
+  title: Core Responsibilities
+  category: incident-response
+  origin: extracted
+  tags:
+  - incident-response
+  role: it-ops-orchestrator
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/09-meta-orchestration/it-ops-orchestrator.md)'
+- id: inc-multi-agent-coordinator
+  file: incident-response/multi-agent-coordinator.md
+  title: Communication Protocol
+  category: incident-response
+  origin: extracted
+  tags:
+  - incident-response
+  role: multi-agent-coordinator
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/09-meta-orchestration/multi-agent-coordinator.md)'
+- id: inc-task-distributor
+  file: incident-response/task-distributor.md
+  title: Communication Protocol
+  category: incident-response
+  origin: extracted
+  tags:
+  - incident-response
+  role: task-distributor
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/09-meta-orchestration/task-distributor.md)'
+- id: inc-workflow-orchestrator
+  file: incident-response/workflow-orchestrator.md
+  title: Communication Protocol
+  category: incident-response
+  origin: extracted
+  tags:
+  - incident-response
+  role: workflow-orchestrator
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/09-meta-orchestration/workflow-orchestrator.md)'
+- id: app-sentry-APICallFailed-Error-application
+  file: application/sentry-APICallFailed-Error-application.md
+  title: APICallFailed-Error-application
+  category: application
+  origin: scoutflo
+  tags:
+  - application
+  - sentry
+  role: SRE / Application Error Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/APICallFailed-Error-application.md)'
+- id: app-sentry-AttributeError-MissingAttribute-E
+  file: application/sentry-AttributeError-MissingAttribute-Error-application.md
+  title: AttributeError-MissingAttribute-Error-application
+  category: application
+  origin: scoutflo
+  tags:
+  - application
+  - sentry
+  role: SRE / Application Error Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/AttributeError-MissingAttribute-Error-application.md)'
+- id: app-sentry-ConnectionError-ConnectionRefused
+  file: application/sentry-ConnectionError-ConnectionRefused-Database-Error-application.md
+  title: ConnectionError-ConnectionRefused-Database-Error-application
+  category: application
+  origin: scoutflo
+  tags:
+  - application
+  - sentry
+  role: SRE / Application Error Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ConnectionError-ConnectionRefused-Database-Error-application.md)'
+- id: app-sentry-ConnectionError-ConnectionRefused
+  file: application/sentry-ConnectionError-ConnectionRefused-Redis-Error-application.md
+  title: ConnectionError-ConnectionRefused-Redis-Error-application
+  category: application
+  origin: scoutflo
+  tags:
+  - application
+  - sentry
+  - redis
+  role: SRE / Application Error Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ConnectionError-ConnectionRefused-Redis-Error-application.md)'
+- id: app-sentry-ConnectionError-ConnectionTimeout
+  file: application/sentry-ConnectionError-ConnectionTimeout-Database-Error-application.md
+  title: ConnectionError-ConnectionTimeout-Database-Error-application
+  category: application
+  origin: scoutflo
+  tags:
+  - application
+  - sentry
+  role: SRE / Application Error Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/02-Performance/ConnectionError-ConnectionTimeout-Database-Error-application.md)'
+- id: app-sentry-ConnectionError-ConnectionTimeout
+  file: application/sentry-ConnectionError-ConnectionTimeout-Redis-Error-application.md
+  title: ConnectionError-ConnectionTimeout-Redis-Error-application
+  category: application
+  origin: scoutflo
+  tags:
+  - application
+  - sentry
+  - redis
+  role: SRE / Application Error Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/02-Performance/ConnectionError-ConnectionTimeout-Redis-Error-application.md)'
+- id: app-sentry-ConsumerError-ConnectionError-Kaf
+  file: application/sentry-ConsumerError-ConnectionError-Kafka-Error-application.md
+  title: ConsumerError-ConnectionError-Kafka-Error-application
+  category: application
+  origin: scoutflo
+  tags:
+  - application
+  - sentry
+  - kafka
+  role: SRE / Application Error Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ConsumerError-ConnectionError-Kafka-Error-application.md)'
+- id: app-sentry-ConsumerError-PartitionError-Kafk
+  file: application/sentry-ConsumerError-PartitionError-Kafka-Error-application.md
+  title: ConsumerError-PartitionError-Kafka-Error-application
+  category: application
+  origin: scoutflo
+  tags:
+  - application
+  - sentry
+  - kafka
+  role: SRE / Application Error Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ConsumerError-PartitionError-Kafka-Error-application.md)'
+- id: app-sentry-ConsumerError-TopicNotFound-Kafka
+  file: application/sentry-ConsumerError-TopicNotFound-Kafka-Error-application.md
+  title: ConsumerError-TopicNotFound-Kafka-Error-application
+  category: application
+  origin: scoutflo
+  tags:
+  - application
+  - sentry
+  - kafka
+  role: SRE / Application Error Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ConsumerError-TopicNotFound-Kafka-Error-application.md)'
+- id: app-sentry-DatabaseConnectionError-Connectio
+  file: application/sentry-DatabaseConnectionError-ConnectionRefused-Database-Error-application.md
+  title: DatabaseConnectionError-ConnectionRefused-Database-Error-application
+  category: application
+  origin: scoutflo
+  tags:
+  - application
+  - sentry
+  role: SRE / Application Error Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/DatabaseConnectionError-ConnectionRefused-Database-Error-application.md)'
+- id: app-sentry-DatabaseConnectionError-Connectio
+  file: application/sentry-DatabaseConnectionError-ConnectionTimeout-Database-Error-application.md
+  title: DatabaseConnectionError-ConnectionTimeout-Database-Error-application
+  category: application
+  origin: scoutflo
+  tags:
+  - application
+  - sentry
+  role: SRE / Application Error Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/02-Performance/DatabaseConnectionError-ConnectionTimeout-Database-Error-application.md)'
+- id: app-sentry-ImportError-ModuleNotFound-Error-
+  file: application/sentry-ImportError-ModuleNotFound-Error-application.md
+  title: ImportError-ModuleNotFound-Error-application
+  category: application
+  origin: scoutflo
+  tags:
+  - application
+  - sentry
+  role: SRE / Application Error Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ImportError-ModuleNotFound-Error-application.md)'
+- id: app-sentry-IndexError-IndexOutOfRange-Error-
+  file: application/sentry-IndexError-IndexOutOfRange-Error-application.md
+  title: IndexError-IndexOutOfRange-Error-application
+  category: application
+  origin: scoutflo
+  tags:
+  - application
+  - sentry
+  role: SRE / Application Error Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/IndexError-IndexOutOfRange-Error-application.md)'
+- id: app-sentry-KeyError-MissingKey-Error-applica
+  file: application/sentry-KeyError-MissingKey-Error-application.md
+  title: KeyError-MissingKey-Error-application
+  category: application
+  origin: scoutflo
+  tags:
+  - application
+  - sentry
+  role: SRE / Application Error Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/KeyError-MissingKey-Error-application.md)'
+- id: app-sentry-MemoryError-Error-application
+  file: application/sentry-MemoryError-Error-application.md
+  title: MemoryError-Error-application
+  category: application
+  origin: scoutflo
+  tags:
+  - application
+  - sentry
+  role: SRE / Application Error Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/MemoryError-Error-application.md)'
+- id: app-sentry-ProgrammingError-ColumnMissing-Da
+  file: application/sentry-ProgrammingError-ColumnMissing-Database-Error-application.md
+  title: ProgrammingError-ColumnMissing-Database-Error-application
+  category: application
+  origin: scoutflo
+  tags:
+  - application
+  - sentry
+  role: SRE / Application Error Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ProgrammingError-ColumnMissing-Database-Error-application.md)'
+- id: app-sentry-ProgrammingError-ConstraintViolat
+  file: application/sentry-ProgrammingError-ConstraintViolation-Database-Error-application.md
+  title: ProgrammingError-ConstraintViolation-Database-Error-application
+  category: application
+  origin: scoutflo
+  tags:
+  - application
+  - sentry
+  role: SRE / Application Error Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ProgrammingError-ConstraintViolation-Database-Error-application.md)'
+- id: app-sentry-ProgrammingError-RelationMissing-
+  file: application/sentry-ProgrammingError-RelationMissing-Database-Error-application.md
+  title: ProgrammingError-RelationMissing-Database-Error-application
+  category: application
+  origin: scoutflo
+  tags:
+  - application
+  - sentry
+  role: SRE / Application Error Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ProgrammingError-RelationMissing-Database-Error-application.md)'
+- id: app-sentry-ProgrammingError-SyntaxError-Data
+  file: application/sentry-ProgrammingError-SyntaxError-Database-Error-application.md
+  title: ProgrammingError-SyntaxError-Database-Error-application
+  category: application
+  origin: scoutflo
+  tags:
+  - application
+  - sentry
+  role: SRE / Application Error Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ProgrammingError-SyntaxError-Database-Error-application.md)'
+- id: app-sentry-TimeoutError-ConnectionTimeout-AP
+  file: application/sentry-TimeoutError-ConnectionTimeout-API-Error-application.md
+  title: TimeoutError-ConnectionTimeout-API-Error-application
+  category: application
+  origin: scoutflo
+  tags:
+  - application
+  - sentry
+  role: SRE / Application Error Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/02-Performance/TimeoutError-ConnectionTimeout-API-Error-application.md)'
+- id: app-sentry-TimeoutError-QueryTimeout-Databas
+  file: application/sentry-TimeoutError-QueryTimeout-Database-Error-application.md
+  title: TimeoutError-QueryTimeout-Database-Error-application
+  category: application
+  origin: scoutflo
+  tags:
+  - application
+  - sentry
+  role: SRE / Application Error Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/02-Performance/TimeoutError-QueryTimeout-Database-Error-application.md)'
+- id: app-sentry-TimeoutError-RequestTimeout-API-E
+  file: application/sentry-TimeoutError-RequestTimeout-API-Error-application.md
+  title: TimeoutError-RequestTimeout-API-Error-application
+  category: application
+  origin: scoutflo
+  tags:
+  - application
+  - sentry
+  role: SRE / Application Error Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/02-Performance/TimeoutError-RequestTimeout-API-Error-application.md)'
+- id: app-sentry-UnhandledException-Error-applicat
+  file: application/sentry-UnhandledException-Error-application.md
+  title: UnhandledException-Error-application
+  category: application
+  origin: scoutflo
+  tags:
+  - application
+  - sentry
+  role: SRE / Application Error Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/UnhandledException-Error-application.md)'
+- id: app-sentry-ValidationError-DataValidation-Er
+  file: application/sentry-ValidationError-DataValidation-Error-application.md
+  title: ValidationError-DataValidation-Error-application
+  category: application
+  origin: scoutflo
+  tags:
+  - application
+  - sentry
+  role: SRE / Application Error Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ValidationError-DataValidation-Error-application.md)'
+- id: app-sentry-ValueError-InvalidValue-Error-app
+  file: application/sentry-ValueError-InvalidValue-Error-application.md
+  title: ValueError-InvalidValue-Error-application
+  category: application
+  origin: scoutflo
+  tags:
+  - application
+  - sentry
+  role: SRE / Application Error Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ValueError-InvalidValue-Error-application.md)'
+- id: inf-agent-azure-infra-engineer
+  file: infrastructure/agent-azure-infra-engineer.md
+  title: Core Capabilities
+  category: infrastructure
+  origin: extracted
+  tags:
+  - infrastructure
+  role: azure-infra-engineer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/azure-infra-engineer.md)'
+- id: inf-agent-chaos-engineer
+  file: infrastructure/agent-chaos-engineer.md
+  title: Communication Protocol
+  category: infrastructure
+  origin: extracted
+  tags:
+  - infrastructure
+  role: chaos-engineer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/chaos-engineer.md)'
+- id: inf-agent-cloud-architect
+  file: infrastructure/agent-cloud-architect.md
+  title: Communication Protocol
+  category: infrastructure
+  origin: extracted
+  tags:
+  - infrastructure
+  role: cloud-architect
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/cloud-architect.md)'
+- id: inf-agent-database-administrator
+  file: infrastructure/agent-database-administrator.md
+  title: Communication Protocol
+  category: infrastructure
+  origin: extracted
+  tags:
+  - infrastructure
+  role: database-administrator
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/database-administrator.md)'
+- id: inf-agent-deployment-engineer
+  file: infrastructure/agent-deployment-engineer.md
+  title: Communication Protocol
+  category: infrastructure
+  origin: extracted
+  tags:
+  - infrastructure
+  role: deployment-engineer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/deployment-engineer.md)'
+- id: inf-agent-devops-engineer
+  file: infrastructure/agent-devops-engineer.md
+  title: Communication Protocol
+  category: infrastructure
+  origin: extracted
+  tags:
+  - infrastructure
+  role: devops-engineer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/devops-engineer.md)'
+- id: inf-agent-docker-expert
+  file: infrastructure/agent-docker-expert.md
+  title: Communication Protocol
+  category: infrastructure
+  origin: extracted
+  tags:
+  - infrastructure
+  role: docker-expert
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/docker-expert.md)'
+- id: inf-agent-kubernetes
+  file: infrastructure/agent-kubernetes.md
+  title: 'Agent: Kubernetes Specialist'
+  category: infrastructure
+  origin: voltagent
+  tags:
+  - infrastructure
+  role: Kubernetes Specialist
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/kubernetes-specialist.md)'
+- id: inf-agent-network-engineer
+  file: infrastructure/agent-network-engineer.md
+  title: Communication Protocol
+  category: infrastructure
+  origin: extracted
+  tags:
+  - infrastructure
+  role: network-engineer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/network-engineer.md)'
+- id: inf-agent-performance-engineer
+  file: infrastructure/agent-performance-engineer.md
+  title: Communication Protocol
+  category: infrastructure
+  origin: extracted
+  tags:
+  - infrastructure
+  role: performance-engineer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/performance-engineer.md)'
+- id: inf-agent-platform-engineer
+  file: infrastructure/agent-platform-engineer.md
+  title: Communication Protocol
+  category: infrastructure
+  origin: extracted
+  tags:
+  - infrastructure
+  role: platform-engineer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/platform-engineer.md)'
+- id: inf-agent-terraform-engineer
+  file: infrastructure/agent-terraform-engineer.md
+  title: Communication Protocol
+  category: infrastructure
+  origin: extracted
+  tags:
+  - infrastructure
+  role: terraform-engineer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/terraform-engineer.md)'
+- id: inf-agent-terragrunt-expert
+  file: infrastructure/agent-terragrunt-expert.md
+  title: Communication Protocol
+  category: infrastructure
+  origin: extracted
+  tags:
+  - infrastructure
+  role: terragrunt-expert
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/terragrunt-expert.md)'
+- id: inf-aws-07-CI-CD-Deployment-Failing-App-Runn
+  file: infrastructure/aws-07-CI-CD-Deployment-Failing-App-Runner.md
+  title: AWS App Runner Deployment Failing
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Deployment-Failing-App-Runner.md)'
+- id: inf-aws-07-CI-CD-Drift-Detection-Not-Detecti
+  file: infrastructure/aws-07-CI-CD-Drift-Detection-Not-Detecting-Changes-CloudFormation.md
+  title: CloudFormation Drift Detection Not Detecting Changes
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - cloudformation
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Drift-Detection-Not-Detecting-Changes-CloudFormation.md)'
+- id: inf-aws-07-CI-CD-Execution-Stuck-in-Running-
+  file: infrastructure/aws-07-CI-CD-Execution-Stuck-in-Running-State-Step-Functions.md
+  title: AWS Step Functions Execution Stuck in Running State
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Execution-Stuck-in-Running-State-Step-Functions.md)'
+- id: inf-aws-07-CI-CD-Failing-Due-to-Dependency-E
+  file: infrastructure/aws-07-CI-CD-Failing-Due-to-Dependency-Errors-CodeBuild.md
+  title: CodeBuild Failing Due to Dependency Errors
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Failing-Due-to-Dependency-Errors-CodeBuild.md)'
+- id: inf-aws-07-CI-CD-Job-Failing-Randomly-Glue
+  file: infrastructure/aws-07-CI-CD-Job-Failing-Randomly-Glue.md
+  title: AWS Glue Job Failing Randomly
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Job-Failing-Randomly-Glue.md)'
+- id: inf-aws-07-CI-CD-Jobs-Not-Starting-Batch
+  file: infrastructure/aws-07-CI-CD-Jobs-Not-Starting-Batch.md
+  title: AWS Batch Jobs Not Starting
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Jobs-Not-Starting-Batch.md)'
+- id: inf-aws-07-CI-CD-Repository-Not-Allowing-Pus
+  file: infrastructure/aws-07-CI-CD-Repository-Not-Allowing-Push-CodeCommit.md
+  title: CodeCommit Repository Not Allowing Push
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Repository-Not-Allowing-Push-CodeCommit.md)'
+- id: inf-aws-07-CI-CD-Stack-Failing-to-Create-Clo
+  file: infrastructure/aws-07-CI-CD-Stack-Failing-to-Create-CloudFormation.md
+  title: CloudFormation Stack Failing to Create
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - cloudformation
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Stack-Failing-to-Create-CloudFormation.md)'
+- id: inf-aws-07-CI-CD-Stuck-in-Progress-CodePipel
+  file: infrastructure/aws-07-CI-CD-Stuck-in-Progress-CodePipeline.md
+  title: AWS CodePipeline Stuck in Progress
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - codepipeline
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Stuck-in-Progress-CodePipeline.md)'
+- id: inf-build-engineer
+  file: infrastructure/build-engineer.md
+  title: Communication Protocol
+  category: infrastructure
+  origin: extracted
+  tags:
+  - infrastructure
+  role: build-engineer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/06-developer-experience/build-engineer.md)'
+- id: inf-claude-code-commands-review-iac
+  file: infrastructure/claude-code-commands-review-iac.md
+  title: Review Infrastructure as Code
+  category: infrastructure
+  origin: shawnewallace
+  tags:
+  - infrastructure
+  role: DevOps / Infrastructure Engineer
+  source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/scenarios/devops-infrastructure/claude-code/commands/review-iac.md)'
+- id: inf-claude-code-commands-scaffold-pipeline
+  file: infrastructure/claude-code-commands-scaffold-pipeline.md
+  title: Scaffold Pipeline
+  category: infrastructure
+  origin: shawnewallace
+  tags:
+  - infrastructure
+  role: DevOps / Infrastructure Engineer
+  source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/scenarios/devops-infrastructure/claude-code/commands/scaffold-pipeline.md)'
+- id: inf-dependency-manager
+  file: infrastructure/dependency-manager.md
+  title: Communication Protocol
+  category: infrastructure
+  origin: extracted
+  tags:
+  - infrastructure
+  role: dependency-manager
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/06-developer-experience/dependency-manager.md)'
+- id: inf-dx-optimizer
+  file: infrastructure/dx-optimizer.md
+  title: Communication Protocol
+  category: infrastructure
+  origin: extracted
+  tags:
+  - infrastructure
+  role: dx-optimizer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/06-developer-experience/dx-optimizer.md)'
+- id: inf-git-workflow-manager
+  file: infrastructure/git-workflow-manager.md
+  title: Communication Protocol
+  category: infrastructure
+  origin: extracted
+  tags:
+  - infrastructure
+  role: git-workflow-manager
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/06-developer-experience/git-workflow-manager.md)'
+- id: inf-github-copilot-instructions-ci-cd.instru
+  file: infrastructure/github-copilot-instructions-ci-cd.instructions.md
+  title: CI/CD Pipelines
+  category: infrastructure
+  origin: shawnewallace
+  tags:
+  - infrastructure
+  role: DevOps / Infrastructure Engineer
+  source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/scenarios/devops-infrastructure/github-copilot/instructions/ci-cd.instructions.md)'
+- id: inf-github-copilot-instructions-security.ins
+  file: infrastructure/github-copilot-instructions-security.instructions.md
+  title: Security
+  category: infrastructure
+  origin: shawnewallace
+  tags:
+  - infrastructure
+  role: DevOps / Infrastructure Engineer
+  source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/scenarios/devops-infrastructure/github-copilot/instructions/security.instructions.md)'
+- id: inf-github-copilot-instructions-terraform.in
+  file: infrastructure/github-copilot-instructions-terraform.instructions.md
+  title: Terraform
+  category: infrastructure
+  origin: shawnewallace
+  tags:
+  - infrastructure
+  role: DevOps / Infrastructure Engineer
+  source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/scenarios/devops-infrastructure/github-copilot/instructions/terraform.instructions.md)'
+- id: inf-github-copilot-instructions
+  file: infrastructure/github-copilot-instructions.md
+  title: Copilot Instructions — DevOps & Infrastructure
+  category: infrastructure
+  origin: shawnewallace
+  tags:
+  - infrastructure
+  role: DevOps / Infrastructure Engineer
+  source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/scenarios/devops-infrastructure/github-copilot/instructions.md)'
+- id: inf-k8s-05-Networking-CoreDNSDown-dns
+  file: infrastructure/k8s-05-Networking-CoreDNSDown-dns.md
+  title: CoreDNSDown
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/CoreDNSDown-dns.md)'
+- id: inf-k8s-05-Networking-CoreDNSLatencyHigh-dns
+  file: infrastructure/k8s-05-Networking-CoreDNSLatencyHigh-dns.md
+  title: CoreDNSLatencyHigh
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/CoreDNSLatencyHigh-dns.md)'
+- id: inf-k8s-05-Networking-CoreDNSPodsCrashLoopin
+  file: infrastructure/k8s-05-Networking-CoreDNSPodsCrashLooping-dns.md
+  title: CoreDNSPodsCrashLooping-dns
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-pod
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/CoreDNSPodsCrashLooping-dns.md)'
+- id: inf-k8s-05-Networking-DNSResolutionIntermitt
+  file: infrastructure/k8s-05-Networking-DNSResolutionIntermittent-dns.md
+  title: DNSResolutionIntermittent-dns
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/DNSResolutionIntermittent-dns.md)'
+- id: inf-k8s-05-Networking-ErrorConnectionRefused
+  file: infrastructure/k8s-05-Networking-ErrorConnectionRefusedWhenAccessingService-service.md
+  title: ErrorConnectionRefusedWhenAccessingService-service
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-service
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/ErrorConnectionRefusedWhenAccessingService-service.md)'
+- id: inf-k8s-05-Networking-IngressCertificateExpi
+  file: infrastructure/k8s-05-Networking-IngressCertificateExpiring-ingress.md
+  title: IngressCertificateExpiring
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-ingress
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/IngressCertificateExpiring-ingress.md)'
+- id: inf-k8s-05-Networking-IngressControllerPodsC
+  file: infrastructure/k8s-05-Networking-IngressControllerPodsCrashLooping-ingress.md
+  title: IngressControllerPodsCrashLooping-ingress
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-pod
+  - k8s-ingress
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/IngressControllerPodsCrashLooping-ingress.md)'
+- id: inf-k8s-05-Networking-IngressNotWorking-ingr
+  file: infrastructure/k8s-05-Networking-IngressNotWorking-ingress.md
+  title: IngressNotWorking-ingress
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-ingress
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/IngressNotWorking-ingress.md)'
+- id: inf-k8s-05-Networking-IngressRedirectLoop-in
+  file: infrastructure/k8s-05-Networking-IngressRedirectLoop-ingress.md
+  title: IngressRedirectLoop-ingress
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-ingress
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/IngressRedirectLoop-ingress.md)'
+- id: inf-k8s-05-Networking-IngressReturning502Bad
+  file: infrastructure/k8s-05-Networking-IngressReturning502BadGateway-ingress.md
+  title: IngressReturning502BadGateway-ingress
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-ingress
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/IngressReturning502BadGateway-ingress.md)'
+- id: inf-k8s-05-Networking-IngressSSLTLSConfigura
+  file: infrastructure/k8s-05-Networking-IngressSSLTLSConfigurationFails-ingress.md
+  title: IngressSSLTLSConfigurationFails-ingress
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-ingress
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/IngressSSLTLSConfigurationFails-ingress.md)'
+- id: inf-k8s-05-Networking-IngressShows404-ingres
+  file: infrastructure/k8s-05-Networking-IngressShows404-ingress.md
+  title: IngressShows404-ingress
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-ingress
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/IngressShows404-ingress.md)'
+- id: inf-k8s-05-Networking-Kube-proxyFailing-netw
+  file: infrastructure/k8s-05-Networking-Kube-proxyFailing-network.md
+  title: Kube-proxyFailing-network
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/Kube-proxyFailing-network.md)'
+- id: inf-k8s-05-Networking-KubeProxyDown-network
+  file: infrastructure/k8s-05-Networking-KubeProxyDown-network.md
+  title: KubeProxyDown
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/KubeProxyDown-network.md)'
+- id: inf-k8s-05-Networking-NetworkPolicyBlockingT
+  file: infrastructure/k8s-05-Networking-NetworkPolicyBlockingTraffic-network.md
+  title: NetworkPolicyBlockingTraffic-network
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/NetworkPolicyBlockingTraffic-network.md)'
+- id: inf-k8s-05-Networking-NginxIngress4xxErrorsH
+  file: infrastructure/k8s-05-Networking-NginxIngress4xxErrorsHigh-ingress.md
+  title: NginxIngress4xxErrorsHigh
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-ingress
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/NginxIngress4xxErrorsHigh-ingress.md)'
+- id: inf-k8s-05-Networking-NginxIngress5xxErrorsH
+  file: infrastructure/k8s-05-Networking-NginxIngress5xxErrorsHigh-ingress.md
+  title: NginxIngress5xxErrorsHigh
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-ingress
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/NginxIngress5xxErrorsHigh-ingress.md)'
+- id: inf-k8s-05-Networking-NginxIngressConfigRelo
+  file: infrastructure/k8s-05-Networking-NginxIngressConfigReloadFailed-ingress.md
+  title: NginxIngressConfigReloadFailed
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-ingress
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/NginxIngressConfigReloadFailed-ingress.md)'
+- id: inf-k8s-05-Networking-NginxIngressDown-ingre
+  file: infrastructure/k8s-05-Networking-NginxIngressDown-ingress.md
+  title: NginxIngressDown
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-ingress
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/NginxIngressDown-ingress.md)'
+- id: inf-k8s-05-Networking-NginxIngressHighLatenc
+  file: infrastructure/k8s-05-Networking-NginxIngressHighLatency-ingress.md
+  title: NginxIngressHighLatency
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-ingress
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/NginxIngressHighLatency-ingress.md)'
+- id: inf-k8s-05-Networking-NodesUnreachable-netwo
+  file: infrastructure/k8s-05-Networking-NodesUnreachable-network.md
+  title: NodesUnreachable-network
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-node
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/NodesUnreachable-network.md)'
+- id: inf-k8s-05-Networking-ServiceExternal-IPPend
+  file: infrastructure/k8s-05-Networking-ServiceExternal-IPPending-service.md
+  title: ServiceExternal-IPPending-service
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-service
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/ServiceExternal-IPPending-service.md)'
+- id: inf-k8s-05-Networking-ServiceNodePortNotAcce
+  file: infrastructure/k8s-05-Networking-ServiceNodePortNotAccessible-service.md
+  title: ServiceNodePortNotAccessible-service
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-node
+  - k8s-service
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/ServiceNodePortNotAccessible-service.md)'
+- id: inf-k8s-05-Networking-ServiceNotAccessible-s
+  file: infrastructure/k8s-05-Networking-ServiceNotAccessible-service.md
+  title: ServiceNotAccessible-service
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-service
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/ServiceNotAccessible-service.md)'
+- id: inf-k8s-05-Networking-ServiceNotForwardingTr
+  file: infrastructure/k8s-05-Networking-ServiceNotForwardingTraffic-service.md
+  title: ServiceNotForwardingTraffic-service
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-service
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/ServiceNotForwardingTraffic-service.md)'
+- id: inf-k8s-05-Networking-ServiceNotResolvingDNS
+  file: infrastructure/k8s-05-Networking-ServiceNotResolvingDNS-dns.md
+  title: ServiceNotResolvingDNS-dns
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-service
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/ServiceNotResolvingDNS-dns.md)'
+- id: inf-k8s-05-Networking-ServicesIntermittently
+  file: infrastructure/k8s-05-Networking-ServicesIntermittentlyUnreachable-service.md
+  title: ServicesIntermittentlyUnreachable-service
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-service
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/ServicesIntermittentlyUnreachable-service.md)'
+- id: inf-k8s-06-Storage-FailedAttachVolume-storag
+  file: infrastructure/k8s-06-Storage-FailedAttachVolume-storage.md
+  title: FailedAttachVolume-storage
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/06-Storage/FailedAttachVolume-storage.md)'
+- id: inf-k8s-06-Storage-KubePersistentVolumeError
+  file: infrastructure/k8s-06-Storage-KubePersistentVolumeErrors-storage.md
+  title: KubePersistentVolumeErrors
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/06-Storage/KubePersistentVolumeErrors-storage.md)'
+- id: inf-k8s-06-Storage-KubePersistentVolumeFilli
+  file: infrastructure/k8s-06-Storage-KubePersistentVolumeFillingUp-storage.md
+  title: KubePersistentVolumeFillingUp
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/06-Storage/KubePersistentVolumeFillingUp-storage.md)'
+- id: inf-k8s-06-Storage-PVCPendingDueToStorageCla
+  file: infrastructure/k8s-06-Storage-PVCPendingDueToStorageClassIssues-storage.md
+  title: PVCPendingDueToStorageClassIssues-storage
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-pvc
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/06-Storage/PVCPendingDueToStorageClassIssues-storage.md)'
+- id: inf-k8s-06-Storage-PVCinLostState-storage
+  file: infrastructure/k8s-06-Storage-PVCinLostState-storage.md
+  title: PVCinLostState-storage
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-pvc
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/06-Storage/PVCinLostState-storage.md)'
+- id: inf-k8s-06-Storage-PersistentVolumeNotResizi
+  file: infrastructure/k8s-06-Storage-PersistentVolumeNotResizing-storage.md
+  title: PersistentVolumeNotResizing-storage
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/06-Storage/PersistentVolumeNotResizing-storage.md)'
+- id: inf-k8s-06-Storage-PersistentVolumeStuckinRe
+  file: infrastructure/k8s-06-Storage-PersistentVolumeStuckinReleasedState-storage.md
+  title: PersistentVolumeStuckinReleasedState-storage
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/06-Storage/PersistentVolumeStuckinReleasedState-storage.md)'
+- id: inf-k8s-06-Storage-PodCannotAccessPersistent
+  file: infrastructure/k8s-06-Storage-PodCannotAccessPersistentVolume-storage.md
+  title: PodCannotAccessPersistentVolume-storage
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-pod
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/06-Storage/PodCannotAccessPersistentVolume-storage.md)'
+- id: inf-k8s-06-Storage-VolumeMountPermissionsDen
+  file: infrastructure/k8s-06-Storage-VolumeMountPermissionsDenied-storage.md
+  title: VolumeMountPermissionsDenied-storage
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/06-Storage/VolumeMountPermissionsDenied-storage.md)'
+- id: inf-k8s-08-Configuration-ConfigMapNotFound-c
+  file: infrastructure/k8s-08-Configuration-ConfigMapNotFound-configmap.md
+  title: ConfigMapNotFound-configmap
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/08-Configuration/ConfigMapNotFound-configmap.md)'
+- id: inf-k8s-08-Configuration-ConfigMapTooLarge-c
+  file: infrastructure/k8s-08-Configuration-ConfigMapTooLarge-configmap.md
+  title: ConfigMapTooLarge-configmap
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/08-Configuration/ConfigMapTooLarge-configmap.md)'
+- id: inf-k8s-08-Configuration-PodCannotAccessConf
+  file: infrastructure/k8s-08-Configuration-PodCannotAccessConfigMap-configmap.md
+  title: PodCannotAccessConfigMap-configmap
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-pod
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/08-Configuration/PodCannotAccessConfigMap-configmap.md)'
+- id: inf-k8s-08-Configuration-PodCannotAccessSecr
+  file: infrastructure/k8s-08-Configuration-PodCannotAccessSecret-secret.md
+  title: PodCannotAccessSecret-secret
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-pod
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/08-Configuration/PodCannotAccessSecret-secret.md)'
+- id: inf-k8s-08-Configuration-PodsCannotPullSecre
+  file: infrastructure/k8s-08-Configuration-PodsCannotPullSecrets-secret.md
+  title: PodsCannotPullSecrets-secret
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-pod
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/08-Configuration/PodsCannotPullSecrets-secret.md)'
+- id: inf-k8s-08-Configuration-SecretsNotAccessibl
+  file: infrastructure/k8s-08-Configuration-SecretsNotAccessible-secret.md
+  title: SecretsNotAccessible-secret
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/08-Configuration/SecretsNotAccessible-secret.md)'
+- id: inf-k8s-09-Resource-Management-HighCPUUsage-
+  file: infrastructure/k8s-09-Resource-Management-HighCPUUsage-compute.md
+  title: HighCPUUsage-compute
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/09-Resource-Management/HighCPUUsage-compute.md)'
+- id: inf-k8s-09-Resource-Management-KubeCPUOverco
+  file: infrastructure/k8s-09-Resource-Management-KubeCPUOvercommit-compute.md
+  title: KubeCPUOvercommit
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/09-Resource-Management/KubeCPUOvercommit-compute.md)'
+- id: inf-k8s-09-Resource-Management-KubeCPUQuotaO
+  file: infrastructure/k8s-09-Resource-Management-KubeCPUQuotaOvercommit-namespace.md
+  title: KubeCPUQuotaOvercommit
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-namespace
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/09-Resource-Management/KubeCPUQuotaOvercommit-namespace.md)'
+- id: inf-k8s-09-Resource-Management-KubeMemoryOve
+  file: infrastructure/k8s-09-Resource-Management-KubeMemoryOvercommit-compute.md
+  title: KubeMemoryOvercommit
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/09-Resource-Management/KubeMemoryOvercommit-compute.md)'
+- id: inf-k8s-09-Resource-Management-KubeMemoryQuo
+  file: infrastructure/k8s-09-Resource-Management-KubeMemoryQuotaOvercommit-namespace.md
+  title: KubeMemoryQuotaOvercommit
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-namespace
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/09-Resource-Management/KubeMemoryQuotaOvercommit-namespace.md)'
+- id: inf-k8s-09-Resource-Management-KubeQuotaAlmo
+  file: infrastructure/k8s-09-Resource-Management-KubeQuotaAlmostFull-namespace.md
+  title: KubeQuotaAlmostFull
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-namespace
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/09-Resource-Management/KubeQuotaAlmostFull-namespace.md)'
+- id: inf-k8s-09-Resource-Management-KubeQuotaExce
+  file: infrastructure/k8s-09-Resource-Management-KubeQuotaExceeded-namespace.md
+  title: KubeQuotaExceeded
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-namespace
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/09-Resource-Management/KubeQuotaExceeded-namespace.md)'
+- id: inf-k8s-09-Resource-Management-KubeQuotaFull
+  file: infrastructure/k8s-09-Resource-Management-KubeQuotaFullyUsed-namespace.md
+  title: KubeQuotaFullyUsed
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-namespace
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/09-Resource-Management/KubeQuotaFullyUsed-namespace.md)'
+- id: inf-k8s-10-Monitoring-Autoscaling-Autoscaler
+  file: infrastructure/k8s-10-Monitoring-Autoscaling-AutoscalerNotAddingNodes-autoscaler.md
+  title: AutoscalerNotAddingNodes-autoscaler
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-node
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/10-Monitoring-Autoscaling/AutoscalerNotAddingNodes-autoscaler.md)'
+- id: inf-k8s-10-Monitoring-Autoscaling-Autoscaler
+  file: infrastructure/k8s-10-Monitoring-Autoscaling-AutoscalerScalingTooSlowly-autoscaler.md
+  title: AutoscalerScalingTooSlowly-autoscaler
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/10-Monitoring-Autoscaling/AutoscalerScalingTooSlowly-autoscaler.md)'
+- id: inf-k8s-10-Monitoring-Autoscaling-MetricsSer
+  file: infrastructure/k8s-10-Monitoring-Autoscaling-MetricsServerShowsNoData-monitoring.md
+  title: MetricsServerShowsNoData-monitoring
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/10-Monitoring-Autoscaling/MetricsServerShowsNoData-monitoring.md)'
+- id: inf-k8s-11-Installation-Setup-HelmReleaseStu
+  file: infrastructure/k8s-11-Installation-Setup-HelmReleaseStuckInPending-install.md
+  title: HelmReleaseStuckInPending-install
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-helm
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/11-Installation-Setup/HelmReleaseStuckInPending-install.md)'
+- id: inf-k8s-12-Namespaces-CannotDeleteNamespace-
+  file: infrastructure/k8s-12-Namespaces-CannotDeleteNamespace-namespace.md
+  title: CannotDeleteNamespace-namespace
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-namespace
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/12-Namespaces/CannotDeleteNamespace-namespace.md)'
+- id: inf-k8s-12-Namespaces-NamespaceDeletionStuck
+  file: infrastructure/k8s-12-Namespaces-NamespaceDeletionStuck-namespace.md
+  title: NamespaceDeletionStuck-namespace
+  category: infrastructure
+  origin: scoutflo
+  tags:
+  - infrastructure
+  - k8s-namespace
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/12-Namespaces/NamespaceDeletionStuck-namespace.md)'
+- id: inf-legacy-modernizer
+  file: infrastructure/legacy-modernizer.md
+  title: Communication Protocol
+  category: infrastructure
+  origin: extracted
+  tags:
+  - infrastructure
+  role: legacy-modernizer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/06-developer-experience/legacy-modernizer.md)'
+- id: inf-m365-admin
+  file: infrastructure/m365-admin.md
+  title: Core Capabilities
+  category: infrastructure
+  origin: extracted
+  tags:
+  - infrastructure
+  role: m365-admin
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/07-specialized-domains/m365-admin.md)'
+- id: inf-performance-monitor
+  file: infrastructure/performance-monitor.md
+  title: Communication Protocol
+  category: infrastructure
+  origin: extracted
+  tags:
+  - infrastructure
+  role: performance-monitor
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/09-meta-orchestration/performance-monitor.md)'
+- id: inf-refactoring-specialist
+  file: infrastructure/refactoring-specialist.md
+  title: Communication Protocol
+  category: infrastructure
+  origin: extracted
+  tags:
+  - infrastructure
+  role: refactoring-specialist
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/06-developer-experience/refactoring-specialist.md)'
+- id: inf-tooling-engineer
+  file: infrastructure/tooling-engineer.md
+  title: Communication Protocol
+  category: infrastructure
+  origin: extracted
+  tags:
+  - infrastructure
+  role: tooling-engineer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/06-developer-experience/tooling-engineer.md)'
+- id: sec-agent-ad-security-reviewer
+  file: security/agent-ad-security-reviewer.md
+  title: Core Capabilities
+  category: security
+  origin: extracted
+  tags:
+  - security
+  role: ad-security-reviewer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/ad-security-reviewer.md)'
+- id: sec-agent-compliance-auditor
+  file: security/agent-compliance-auditor.md
+  title: Communication Protocol
+  category: security
+  origin: extracted
+  tags:
+  - security
+  role: compliance-auditor
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/compliance-auditor.md)'
+- id: sec-agent-penetration-tester
+  file: security/agent-penetration-tester.md
+  title: Communication Protocol
+  category: security
+  origin: extracted
+  tags:
+  - security
+  role: penetration-tester
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/penetration-tester.md)'
+- id: sec-agent-powershell-security-hardening
+  file: security/agent-powershell-security-hardening.md
+  title: Core Capabilities
+  category: security
+  origin: extracted
+  tags:
+  - security
+  role: powershell-security-hardening
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/powershell-security-hardening.md)'
+- id: sec-agent-security-auditor
+  file: security/agent-security-auditor.md
+  title: Communication Protocol
+  category: security
+  origin: extracted
+  tags:
+  - security
+  role: security-auditor
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/security-auditor.md)'
+- id: sec-agent-security-engineer
+  file: security/agent-security-engineer.md
+  title: 'Agent: Security Engineer (SIRT)'
+  category: security
+  origin: voltagent
+  tags:
+  - security
+  role: Security Engineer (SIRT)
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/security-engineer.md)'
+- id: sec-aws-05-Security-Access-Key-Leaked-Warnin
+  file: security/aws-05-Security-Access-Key-Leaked-Warning-IAM.md
+  title: AWS Access Key Leaked Warning
+  category: security
+  origin: scoutflo
+  tags:
+  - security
+  - iam
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Access-Key-Leaked-Warning-IAM.md)'
+- id: sec-aws-05-Security-Authentication-Failing-f
+  file: security/aws-05-Security-Authentication-Failing-for-IAM-User-MFA.md
+  title: MFA Authentication Failing for IAM User
+  category: security
+  origin: scoutflo
+  tags:
+  - security
+  - iam
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Authentication-Failing-for-IAM-User-MFA.md)'
+- id: sec-aws-05-Security-Blocking-Legitimate-Traf
+  file: security/aws-05-Security-Blocking-Legitimate-Traffic-WAF.md
+  title: AWS WAF Blocking Legitimate Traffic
+  category: security
+  origin: scoutflo
+  tags:
+  - security
+  - waf
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Blocking-Legitimate-Traffic-WAF.md)'
+- id: sec-aws-05-Security-Certificate-Not-Issuing-
+  file: security/aws-05-Security-Certificate-Not-Issuing-ACM.md
+  title: AWS Certificate Manager (ACM) Certificate Not Issuing
+  category: security
+  origin: scoutflo
+  tags:
+  - security
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Certificate-Not-Issuing-ACM.md)'
+- id: sec-aws-05-Security-Key-Policy-Preventing-De
+  file: security/aws-05-Security-Key-Policy-Preventing-Decryption-KMS.md
+  title: AWS KMS Key Policy Preventing Decryption
+  category: security
+  origin: scoutflo
+  tags:
+  - security
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Key-Policy-Preventing-Decryption-KMS.md)'
+- id: sec-aws-05-Security-Not-Aggregating-Findings
+  file: security/aws-05-Security-Not-Aggregating-Findings-Security-Hub.md
+  title: AWS Security Hub Not Aggregating Findings
+  category: security
+  origin: scoutflo
+  tags:
+  - security
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Not-Aggregating-Findings-Security-Hub.md)'
+- id: sec-aws-05-Security-Not-Detecting-Security-T
+  file: security/aws-05-Security-Not-Detecting-Security-Threats-GuardDuty.md
+  title: GuardDuty Not Detecting Security Threats
+  category: security
+  origin: scoutflo
+  tags:
+  - security
+  - guardduty
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Not-Detecting-Security-Threats-GuardDuty.md)'
+- id: sec-aws-05-Security-Not-Detecting-Threats-Gu
+  file: security/aws-05-Security-Not-Detecting-Threats-GuardDuty.md
+  title: AWS GuardDuty Not Detecting Threats
+  category: security
+  origin: scoutflo
+  tags:
+  - security
+  - guardduty
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Not-Detecting-Threats-GuardDuty.md)'
+- id: sec-aws-05-Security-Not-Mitigating-DDoS-Atta
+  file: security/aws-05-Security-Not-Mitigating-DDoS-Attacks-Shield.md
+  title: AWS Shield Not Mitigating DDoS Attacks
+  category: security
+  origin: scoutflo
+  tags:
+  - security
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Not-Mitigating-DDoS-Attacks-Shield.md)'
+- id: sec-aws-05-Security-Not-Rotating-Credentials
+  file: security/aws-05-Security-Not-Rotating-Credentials-Secrets-Manager.md
+  title: AWS Secrets Manager Not Rotating Credentials
+  category: security
+  origin: scoutflo
+  tags:
+  - security
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Not-Rotating-Credentials-Secrets-Manager.md)'
+- id: sec-aws-05-Security-Policy-Not-Granting-Expe
+  file: security/aws-05-Security-Policy-Not-Granting-Expected-Access-IAM.md
+  title: IAM Policy Not Granting Expected Access
+  category: security
+  origin: scoutflo
+  tags:
+  - security
+  - iam
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Policy-Not-Granting-Expected-Access-IAM.md)'
+- id: sec-aws-05-Security-Rules-Causing-False-Posi
+  file: security/aws-05-Security-Rules-Causing-False-Positives-WAF.md
+  title: AWS WAF Rules Causing False Positives
+  category: security
+  origin: scoutflo
+  tags:
+  - security
+  - waf
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Rules-Causing-False-Positives-WAF.md)'
+- id: sec-aws-05-Security-Rules-Not-Applying-Corre
+  file: security/aws-05-Security-Rules-Not-Applying-Correctly-Security-Group.md
+  title: Security Group Rules Not Applying Correctly
+  category: security
+  origin: scoutflo
+  tags:
+  - security
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Rules-Not-Applying-Correctly-Security-Group.md)'
+- id: sec-aws-05-Security-SCP-Preventing-Service-A
+  file: security/aws-05-Security-SCP-Preventing-Service-Access-Organizations.md
+  title: AWS Organizations SCP Preventing Service Access
+  category: security
+  origin: scoutflo
+  tags:
+  - security
+  - k8s-service
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/SCP-Preventing-Service-Access-Organizations.md)'
+- id: sec-aws-05-Security-Token-Expired-Error-STS
+  file: security/aws-05-Security-Token-Expired-Error-STS.md
+  title: AWS STS Token Expired Error
+  category: security
+  origin: scoutflo
+  tags:
+  - security
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Token-Expired-Error-STS.md)'
+- id: sec-aws-05-Security-User-Pool-Login-Issues-C
+  file: security/aws-05-Security-User-Pool-Login-Issues-Cognito.md
+  title: AWS Cognito User Pool Login Issues
+  category: security
+  origin: scoutflo
+  tags:
+  - security
+  role: SRE / AWS Incident Response
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/User-Pool-Login-Issues-Cognito.md)'
+- id: sec-k8s-07-RBAC-ClusterRoleBindingMissingPer
+  file: security/k8s-07-RBAC-ClusterRoleBindingMissingPermissions-rbac.md
+  title: ClusterRoleBindingMissingPermissions-rbac
+  category: security
+  origin: scoutflo
+  tags:
+  - security
+  - k8s-rbac
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/07-RBAC/ClusterRoleBindingMissingPermissions-rbac.md)'
+- id: sec-k8s-07-RBAC-ErrorForbiddenwhenRunningkub
+  file: security/k8s-07-RBAC-ErrorForbiddenwhenRunningkubectlCommands-rbac.md
+  title: ErrorForbiddenwhenRunningkubectlCommands-rbac
+  category: security
+  origin: scoutflo
+  tags:
+  - security
+  - k8s-rbac
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/07-RBAC/ErrorForbiddenwhenRunningkubectlCommands-rbac.md)'
+- id: sec-k8s-07-RBAC-ErrorUnauthorizedwhenAccessi
+  file: security/k8s-07-RBAC-ErrorUnauthorizedwhenAccessingAPIServer-rbac.md
+  title: ErrorUnauthorizedwhenAccessingAPIServer-rbac
+  category: security
+  origin: scoutflo
+  tags:
+  - security
+  - k8s-rbac
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/07-RBAC/ErrorUnauthorizedwhenAccessingAPIServer-rbac.md)'
+- id: sec-k8s-07-RBAC-RBACPermissionDeniedError-rb
+  file: security/k8s-07-RBAC-RBACPermissionDeniedError-rbac.md
+  title: RBACPermissionDeniedError-rbac
+  category: security
+  origin: scoutflo
+  tags:
+  - security
+  - k8s-rbac
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/07-RBAC/RBACPermissionDeniedError-rbac.md)'
+- id: sec-k8s-07-RBAC-ServiceAccountNotFound-rbac
+  file: security/k8s-07-RBAC-ServiceAccountNotFound-rbac.md
+  title: ServiceAccountNotFound-rbac
+  category: security
+  origin: scoutflo
+  tags:
+  - security
+  - k8s-service
+  - k8s-rbac
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/07-RBAC/ServiceAccountNotFound-rbac.md)'
+- id: sec-k8s-07-RBAC-UnauthorizedErrorWhenAccessi
+  file: security/k8s-07-RBAC-UnauthorizedErrorWhenAccessingKubernetesAPI-rbac.md
+  title: UnauthorizedErrorWhenAccessingKubernetesAPI-rbac
+  category: security
+  origin: scoutflo
+  tags:
+  - security
+  - k8s-rbac
+  role: Kubernetes SRE
+  source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/07-RBAC/UnauthorizedErrorWhenAccessingKubernetesAPI-rbac.md)'
+- id: sec-risk-manager
+  file: security/risk-manager.md
+  title: Communication Protocol
+  category: security
+  origin: extracted
+  tags:
+  - security
+  role: risk-manager
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/07-specialized-domains/risk-manager.md)'
+- id: dat-ai-engineer
+  file: data-ai/ai-engineer.md
+  title: Communication Protocol
+  category: data-ai
+  origin: extracted
+  tags:
+  - data-ai
+  role: ai-engineer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/ai-engineer.md)'
+- id: dat-data-analyst
+  file: data-ai/data-analyst.md
+  title: Communication Protocol
+  category: data-ai
+  origin: extracted
+  tags:
+  - data-ai
+  role: data-analyst
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/data-analyst.md)'
+- id: dat-data-engineer
+  file: data-ai/data-engineer.md
+  title: Communication Protocol
+  category: data-ai
+  origin: extracted
+  tags:
+  - data-ai
+  role: data-engineer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/data-engineer.md)'
+- id: dat-data-scientist
+  file: data-ai/data-scientist.md
+  title: Communication Protocol
+  category: data-ai
+  origin: extracted
+  tags:
+  - data-ai
+  role: data-scientist
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/data-scientist.md)'
+- id: dat-database-optimizer
+  file: data-ai/database-optimizer.md
+  title: Communication Protocol
+  category: data-ai
+  origin: extracted
+  tags:
+  - data-ai
+  role: database-optimizer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/database-optimizer.md)'
+- id: dat-llm-architect
+  file: data-ai/llm-architect.md
+  title: Communication Protocol
+  category: data-ai
+  origin: extracted
+  tags:
+  - data-ai
+  role: llm-architect
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/llm-architect.md)'
+- id: dat-machine-learning-engineer
+  file: data-ai/machine-learning-engineer.md
+  title: Communication Protocol
+  category: data-ai
+  origin: extracted
+  tags:
+  - data-ai
+  role: machine-learning-engineer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/machine-learning-engineer.md)'
+- id: dat-ml-engineer
+  file: data-ai/ml-engineer.md
+  title: Communication Protocol
+  category: data-ai
+  origin: extracted
+  tags:
+  - data-ai
+  role: ml-engineer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/ml-engineer.md)'
+- id: dat-mlops-engineer
+  file: data-ai/mlops-engineer.md
+  title: Communication Protocol
+  category: data-ai
+  origin: extracted
+  tags:
+  - data-ai
+  role: mlops-engineer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/mlops-engineer.md)'
+- id: dat-nlp-engineer
+  file: data-ai/nlp-engineer.md
+  title: Communication Protocol
+  category: data-ai
+  origin: extracted
+  tags:
+  - data-ai
+  role: nlp-engineer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/nlp-engineer.md)'
+- id: dat-postgres-pro
+  file: data-ai/postgres-pro.md
+  title: Communication Protocol
+  category: data-ai
+  origin: extracted
+  tags:
+  - data-ai
+  role: postgres-pro
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/postgres-pro.md)'
+- id: dat-prompt-engineer
+  file: data-ai/prompt-engineer.md
+  title: Communication Protocol
+  category: data-ai
+  origin: extracted
+  tags:
+  - data-ai
+  role: prompt-engineer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/prompt-engineer.md)'
+- id: sha-agent-installer
+  file: shared/agent-installer.md
+  title: Your Capabilities
+  category: shared
+  origin: extracted
+  tags:
+  - shared
+  role: agent-installer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/09-meta-orchestration/agent-installer.md)'
+- id: sha-api-architect.agent
+  file: shared/api-architect.agent.md
+  title: API Architect mode instructions
+  category: shared
+  origin: shawnewallace
+  tags:
+  - shared
+  role: AI Agent / Shared
+  source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/shared/agents/api-architect.agent.md)'
+- id: sha-api-designer
+  file: shared/api-designer.md
+  title: Communication Protocol
+  category: shared
+  origin: extracted
+  tags:
+  - shared
+  role: api-designer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/01-core-development/api-designer.md)'
+- id: sha-api-documenter
+  file: shared/api-documenter.md
+  title: Communication Protocol
+  category: shared
+  origin: extracted
+  tags:
+  - shared
+  role: api-documenter
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/07-specialized-domains/api-documenter.md)'
+- id: sha-architect.agent
+  file: shared/architect.agent.md
+  title: Description
+  category: shared
+  origin: shawnewallace
+  tags:
+  - shared
+  role: AI Agent / Shared
+  source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/shared/agents/architect.agent.md)'
+- id: sha-backend-developer
+  file: shared/backend-developer.md
+  title: Communication Protocol
+  category: shared
+  origin: extracted
+  tags:
+  - shared
+  role: backend-developer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/01-core-development/backend-developer.md)'
+- id: sha-check.agent
+  file: shared/check.agent.md
+  title: Check - Code Review Agent
+  category: shared
+  origin: shawnewallace
+  tags:
+  - shared
+  role: AI Agent / Shared
+  source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/shared/agents/check.agent.md)'
+- id: sha-context-manager
+  file: shared/context-manager.md
+  title: Communication Protocol
+  category: shared
+  origin: extracted
+  tags:
+  - shared
+  role: context-manager
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/09-meta-orchestration/context-manager.md)'
+- id: sha-documentation-engineer
+  file: shared/documentation-engineer.md
+  title: Communication Protocol
+  category: shared
+  origin: extracted
+  tags:
+  - shared
+  role: documentation-engineer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/06-developer-experience/documentation-engineer.md)'
+- id: sha-fullstack-developer
+  file: shared/fullstack-developer.md
+  title: Communication Protocol
+  category: shared
+  origin: extracted
+  tags:
+  - shared
+  role: fullstack-developer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/01-core-development/fullstack-developer.md)'
+- id: sha-graphql-architect
+  file: shared/graphql-architect.md
+  title: Communication Protocol
+  category: shared
+  origin: extracted
+  tags:
+  - shared
+  role: graphql-architect
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/01-core-development/graphql-architect.md)'
+- id: sha-guardrails
+  file: shared/guardrails.md
+  title: 'Shared: 공통 가드레일 (Guardrails)'
+  category: shared
+  origin: custom
+  tags:
+  - shared
+- id: sha-knowledge-synthesizer
+  file: shared/knowledge-synthesizer.md
+  title: Communication Protocol
+  category: shared
+  origin: extracted
+  tags:
+  - shared
+  role: knowledge-synthesizer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/09-meta-orchestration/knowledge-synthesizer.md)'
+- id: sha-microservices-architect
+  file: shared/microservices-architect.md
+  title: Communication Protocol
+  category: shared
+  origin: extracted
+  tags:
+  - shared
+  - k8s-service
+  role: microservices-architect
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/01-core-development/microservices-architect.md)'
+- id: sha-plan.agent
+  file: shared/plan.agent.md
+  title: Plan Mode - Strategic Planning & Architecture Assistant
+  category: shared
+  origin: shawnewallace
+  tags:
+  - shared
+  role: AI Agent / Shared
+  source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/shared/agents/plan.agent.md)'
+- id: sha-role-definitions
+  file: shared/role-definitions.md
+  title: 'Shared: 공통 역할 정의 (Role Definitions)'
+  category: shared
+  origin: custom
+  tags:
+  - shared
+- id: sha-websocket-engineer
+  file: shared/websocket-engineer.md
+  title: Communication Protocol
+  category: shared
+  origin: extracted
+  tags:
+  - shared
+  role: websocket-engineer
+  source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/01-core-development/websocket-engineer.md)'
+- id: tec-rca_techniques
+  file: techniques/rca_techniques.md
+  title: RCA 특화 프롬프트 기법 정리
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
