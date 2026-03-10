@@ -7,6 +7,7 @@ role: Incident Responder
 필수 입력: 인시던트 유형, 발생 시각, 영향 시스템, 초기 관찰 증상
 예상 출력: 심각도 분류, 즉시 대응 액션, 증거 보존 지시, 커뮤니케이션 계획
 tags:
+- agent
 - incident
 - incident-response
 - responder

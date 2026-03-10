@@ -5,6 +5,7 @@ role: debugger
 origin: extracted
 extract_date: 2026-03-05
 tags:
+- agent
 - database
 - debugger
 - incident-response

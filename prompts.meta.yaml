@@ -1,6 +1,6 @@
 _meta:
   version: '4.0'
-  generated: '2026-03-10'
+  generated: '2026-03-11'
   total: 480
   stats:
     rca: 6
@@ -94,6 +94,7 @@ prompts:
   category: incident-response
   origin: extracted
   tags:
+  - agent
   - database
   - debugger
   - incident-response
@@ -106,6 +107,7 @@ prompts:
   category: incident-response
   origin: extracted
   tags:
+  - agent
   - alerting
   - database
   - devops
@@ -124,6 +126,7 @@ prompts:
   category: incident-response
   origin: extracted
   tags:
+  - agent
   - detective
   - incident-response
   - k8s-service
@@ -138,6 +141,7 @@ prompts:
   category: incident-response
   origin: voltagent
   tags:
+  - agent
   - incident
   - incident-response
   - responder
@@ -150,6 +154,7 @@ prompts:
   category: incident-response
   origin: extracted
   tags:
+  - agent
   - backup
   - capacity
   - cost
@@ -166,6 +171,7 @@ prompts:
   category: incident-response
   origin: voltagent
   tags:
+  - agent
   - engineer
   - incident-response
   - observability
@@ -1877,6 +1883,7 @@ prompts:
   category: infrastructure
   origin: extracted
   tags:
+  - agent
   - azure
   - compliance
   - cost
@@ -1901,6 +1908,7 @@ prompts:
   category: infrastructure
   origin: extracted
   tags:
+  - agent
   - chaos
   - database
   - dns
@@ -1917,6 +1925,7 @@ prompts:
   category: infrastructure
   origin: extracted
   tags:
+  - agent
   - architect
   - backup
   - cloud
@@ -1937,6 +1946,7 @@ prompts:
   category: infrastructure
   origin: extracted
   tags:
+  - agent
   - administrator
   - alerting
   - backup
@@ -1959,6 +1969,7 @@ prompts:
   category: infrastructure
   origin: extracted
   tags:
+  - agent
   - compliance
   - cost
   - deployment
@@ -1977,6 +1988,7 @@ prompts:
   category: infrastructure
   origin: extracted
   tags:
+  - agent
   - cloudformation
   - compliance
   - devops
@@ -2002,6 +2014,7 @@ prompts:
   category: infrastructure
   origin: extracted
   tags:
+  - agent
   - compliance
   - docker
   - expert
@@ -2019,6 +2032,7 @@ prompts:
   category: infrastructure
   origin: voltagent
   tags:
+  - agent
   - infrastructure
   - k8s-daemonset
   - k8s-deployment
@@ -2036,6 +2050,7 @@ prompts:
   category: infrastructure
   origin: extracted
   tags:
+  - agent
   - compliance
   - dns
   - engineer
@@ -2056,6 +2071,7 @@ prompts:
   category: infrastructure
   origin: extracted
   tags:
+  - agent
   - database
   - engineer
   - infrastructure
@@ -2072,6 +2088,7 @@ prompts:
   category: infrastructure
   origin: extracted
   tags:
+  - agent
   - compliance
   - cost
   - database
@@ -2094,6 +2111,7 @@ prompts:
   category: infrastructure
   origin: extracted
   tags:
+  - agent
   - compliance
   - cost
   - engineer
@@ -2115,6 +2133,7 @@ prompts:
   category: infrastructure
   origin: extracted
   tags:
+  - agent
   - expert
   - infrastructure
   - k8s-deployment
@@ -6744,6 +6763,7 @@ prompts:
   category: security
   origin: extracted
   tags:
+  - agent
   - compliance
   - k8s-service
   - reviewer
@@ -6757,6 +6777,7 @@ prompts:
   category: security
   origin: extracted
   tags:
+  - agent
   - auditor
   - compliance
   - monitoring
@@ -6770,6 +6791,7 @@ prompts:
   category: security
   origin: extracted
   tags:
+  - agent
   - backup
   - compliance
   - dns
@@ -6787,6 +6809,7 @@ prompts:
   category: security
   origin: extracted
   tags:
+  - agent
   - compliance
   - hardening
   - k8s-secret
@@ -6805,6 +6828,7 @@ prompts:
   category: security
   origin: extracted
   tags:
+  - agent
   - auditor
   - backup
   - compliance
@@ -6820,6 +6844,7 @@ prompts:
   category: security
   origin: voltagent
   tags:
+  - agent
   - engineer
   - iam
   - security
@@ -8062,6 +8087,7 @@ prompts:
   category: coding
   origin: custom
   tags:
+  - agent
   - coding
   - ai-agent
   - behavior

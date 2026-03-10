@@ -5,6 +5,7 @@ role: deployment-engineer
 origin: extracted
 extract_date: 2026-03-05
 tags:
+- agent
 - compliance
 - cost
 - deployment

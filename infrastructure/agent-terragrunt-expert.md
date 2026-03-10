@@ -5,6 +5,7 @@ role: terragrunt-expert
 origin: extracted
 extract_date: 2026-03-05
 tags:
+- agent
 - expert
 - infrastructure
 - k8s-deployment

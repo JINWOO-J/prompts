@@ -7,6 +7,7 @@ role: Security Engineer (SIRT)
 필수 입력: 보안 알림/IOC, 영향 시스템, 환경 정보
 예상 출력: 위협 분류, 즉시 봉쇄 조치, 포렌식 포인트, 보안 강화 권고
 tags:
+- agent
 - engineer
 - iam
 - security

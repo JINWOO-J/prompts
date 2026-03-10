@@ -5,6 +5,7 @@ role: ad-security-reviewer
 origin: extracted
 extract_date: 2026-03-05
 tags:
+- agent
 - compliance
 - k8s-service
 - reviewer

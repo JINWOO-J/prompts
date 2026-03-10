@@ -5,6 +5,7 @@ role: devops-incident-responder
 origin: extracted
 extract_date: 2026-03-05
 tags:
+- agent
 - alerting
 - database
 - devops

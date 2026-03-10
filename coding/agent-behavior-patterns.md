@@ -1,6 +1,7 @@
 ---
 category: coding
 tags:
+- agent
 - coding
 - ai-agent
 - behavior
