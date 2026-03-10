@@ -3,6 +3,9 @@
 (function () {
   'use strict';
 
+  // --- Constants ---
+  const CATEGORIES = ['rca', 'incident-response', 'application', 'infrastructure', 'security', 'data-ai', 'shared', 'techniques'];
+
   // --- State ---
   let allPrompts = [];
   let meta = {};
@@ -11,6 +14,7 @@
   let filteredPrompts = [];
   let focusIndex = -1;
   let activeTags = [];
+  let isEditMode = false;
 
   // --- DOM refs ---
   const $ = (sel) => document.querySelector(sel);
@@ -28,6 +32,88 @@
   const tagSelect = $('#tag-select');
   const tagChips = $('#tag-chips');
   const matchCount = $('#match-count');
+  const newPromptBtn = $('#new-prompt-btn');
+  const editBtn = $('#edit-btn');
+  const deleteBtn = $('#delete-btn');
+  const historyBtn = $('#history-btn');
+  const editPanel = $('#edit-panel');
+  const editForm = $('#edit-form');
+  const editCancelBtn = $('#edit-cancel-btn');
+  const editTitle = $('#edit-title');
+  const editCategory = $('#edit-category');
+  const editTags = $('#edit-tags');
+  const editRole = $('#edit-role');
+  const editContent = $('#edit-content');
+  const editChangeSummary = $('#edit-change-summary');
+  const editPanelTitle = $('#edit-panel-title');
+  const toastContainer = $('#toast-container');
+  const versionPanel = $('#version-panel');
+  const versionList = $('#version-list');
+  const versionCloseBtn = $('#version-close-btn');
+
+  // --- Toast Notifications ---
+  function showToast(message, type = 'success') {
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    toast.textContent = message;
+    toastContainer.appendChild(toast);
+    requestAnimationFrame(() => toast.classList.add('show'));
+    setTimeout(() => {
+      toast.classList.remove('show');
+      setTimeout(() => toast.remove(), 300);
+    }, 3000);
+  }
+
+  // --- API Helpers ---
+  async function apiGet(path) {
+    const res = await fetch(path);
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({ detail: res.statusText }));
+      throw new Error(err.detail || res.statusText);
+    }
+    return res.json();
+  }
+
+  async function apiPost(path, body) {
+      const res = await fetch(path, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({ detail: res.statusText }));
+        const error = new Error(typeof err.detail === 'string' ? err.detail : res.statusText);
+        error.status = res.status;
+        error.body = err;
+        throw error;
+      }
+      return res.json();
+    }
+
+  async function apiPut(path, body) {
+      const res = await fetch(path, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({ detail: res.statusText }));
+        const error = new Error(typeof err.detail === 'string' ? err.detail : res.statusText);
+        error.status = res.status;
+        error.body = err;
+        throw error;
+      }
+      return res.json();
+    }
+
+  async function apiDelete(path) {
+    const res = await fetch(path, { method: 'DELETE' });
+    if (!res.ok && res.status !== 204) {
+      const err = await res.json().catch(() => ({ detail: res.statusText }));
+      throw new Error(err.detail || res.statusText);
+    }
+    return true;
+  }
 
   // --- Init ---
   async function init() {
@@ -43,12 +129,32 @@
     });
 
     try {
-      const res = await fetch('data.json');
-      const data = await res.json();
-      meta = data._meta;
-      allPrompts = data.prompts;
+      // Try API first, fallback to data.json
+      try {
+        const data = await apiGet('/api/prompts?page_size=10000');
+        allPrompts = data.prompts.map((p) => ({
+          ...p,
+          content: '', // list endpoint doesn't include content
+        }));
+        // Construct meta from API response
+        const stats = {};
+        for (const cat of CATEGORIES) {
+          stats[cat] = allPrompts.filter((p) => p.category === cat).length;
+        }
+        meta = {
+          total: data.total,
+          categories: CATEGORIES,
+          stats,
+        };
+      } catch {
+        // Fallback to data.json
+        const res = await fetch('data.json');
+        const data = await res.json();
+        meta = data._meta;
+        allPrompts = data.prompts;
+      }
     } catch (e) {
-      viewerContent.innerHTML = '<p style="color:#dc2626;">Failed to load data.json. Run <code>python3 scripts/rebuild-index.py</code> first.</p>';
+      viewerContent.innerHTML = '<p style="color:#dc2626;">Failed to load prompts. Ensure the API server is running or run <code>python3 scripts/rebuild-index.py</code> for data.json.</p>';
       return;
     }
 
@@ -236,7 +342,7 @@
   }
 
   // --- Select Prompt ---
-  function selectPrompt(id, closeSidebar) {
+  async function selectPrompt(id, closeSidebar) {
     const prompt = allPrompts.find((p) => p.id === id);
     if (!prompt) return;
 
@@ -248,6 +354,21 @@
     promptList.querySelectorAll('.prompt-item').forEach((el) => {
       el.classList.toggle('active', el.dataset.id === id);
     });
+
+    // Fetch full content if not loaded yet
+    if (!prompt.content) {
+      try {
+        const full = await apiGet(`/api/prompts/${encodeURIComponent(id)}`);
+        prompt.content = full.content;
+      } catch {
+        // If API fails, show what we have
+      }
+    }
+
+    // Show action buttons
+    editBtn.style.display = '';
+    deleteBtn.style.display = '';
+    historyBtn.style.display = '';
 
     // Render viewer
     viewerTitle.textContent = prompt.title;
@@ -342,7 +463,11 @@
 
     // Escape
     if (e.key === 'Escape') {
-      if (document.activeElement === searchInput && searchInput.value) {
+      if (editPanel && editPanel.classList.contains('open')) {
+        closeEditPanel();
+      } else if (versionPanel && versionPanel.classList.contains('open')) {
+        if (window.PromptVersions) window.PromptVersions.close();
+      } else if (document.activeElement === searchInput && searchInput.value) {
         searchInput.value = '';
         applyFilter();
       } else if (window.innerWidth <= 768 && sidebar.classList.contains('open')) {
@@ -422,6 +547,193 @@
   const style = document.createElement('style');
   style.textContent = '.prompt-item.focused { background: var(--bg-hover); outline: 1px solid var(--accent); }';
   document.head.appendChild(style);
+
+  // --- Edit Panel ---
+  function openEditPanel(mode, prompt) {
+    isEditMode = true;
+    editPanelTitle.textContent = mode === 'create' ? '새 프롬프트' : '프롬프트 편집';
+    editTitle.value = prompt ? prompt.title : '';
+    editCategory.value = prompt ? prompt.category : CATEGORIES[0];
+    editTags.value = prompt ? prompt.tags.join(', ') : '';
+    editRole.value = prompt ? (prompt.role || '') : '';
+    editContent.value = prompt ? prompt.content : '';
+    editChangeSummary.value = '';
+    // Show/hide change summary (only for edit mode)
+    editChangeSummary.closest('.form-group').style.display = mode === 'edit' ? '' : 'none';
+    editPanel.dataset.mode = mode;
+    editPanel.dataset.promptId = prompt ? prompt.id : '';
+    editPanel.classList.add('open');
+    // CodeMirror 에디터 초기화
+    if (window.PromptEditor) {
+      var container = document.getElementById('editor-container');
+      if (container) {
+        window.PromptEditor.init(container);
+        window.PromptEditor.setContent(prompt ? prompt.content : '');
+      }
+    }
+  }
+
+  function closeEditPanel() {
+    isEditMode = false;
+    if (window.PromptEditor) window.PromptEditor.destroy();
+    editPanel.classList.remove('open');
+  }
+
+  // --- Form Field Error Handling ---
+  function clearFormErrors() {
+    editPanel.querySelectorAll('.form-error').forEach((el) => el.remove());
+    editPanel.querySelectorAll('.form-input-error').forEach((el) => el.classList.remove('form-input-error'));
+  }
+
+  function showFieldErrors(detail) {
+    if (!Array.isArray(detail)) return false;
+    const fieldMap = { title: 'edit-title', content: 'edit-content', category: 'edit-category', tags: 'edit-tags', role: 'edit-role' };
+    let shown = false;
+    for (const err of detail) {
+      // loc is like ["body", "title"] — grab the last element as the field name
+      const fieldName = Array.isArray(err.loc) ? err.loc[err.loc.length - 1] : null;
+      const inputId = fieldMap[fieldName];
+      const input = inputId ? document.getElementById(inputId) : null;
+      if (input) {
+        input.classList.add('form-input-error');
+        const msg = document.createElement('span');
+        msg.className = 'form-error';
+        msg.textContent = err.msg;
+        input.parentNode.appendChild(msg);
+        shown = true;
+      }
+    }
+    return shown;
+  }
+
+  if (newPromptBtn) {
+    newPromptBtn.addEventListener('click', () => openEditPanel('create', null));
+  }
+
+  if (editBtn) {
+    editBtn.addEventListener('click', () => {
+      const prompt = allPrompts.find((p) => p.id === activePromptId);
+      if (prompt) openEditPanel('edit', prompt);
+    });
+  }
+
+  if (editCancelBtn) {
+    editCancelBtn.addEventListener('click', closeEditPanel);
+  }
+  const editCancelBtnFooter = $('#edit-cancel-btn-footer');
+  if (editCancelBtnFooter) {
+    editCancelBtnFooter.addEventListener('click', closeEditPanel);
+  }
+
+  if (editForm) {
+    editForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      clearFormErrors();
+      const mode = editPanel.dataset.mode;
+      const tags = editTags.value.split(',').map((t) => t.trim()).filter(Boolean);
+      const body = {
+        title: editTitle.value.trim(),
+        category: editCategory.value,
+        content: window.PromptEditor ? window.PromptEditor.getContent() : editContent.value,
+        tags,
+        role: editRole.value.trim(),
+      };
+
+      try {
+        if (mode === 'create') {
+          const created = await apiPost('/api/prompts', body);
+          allPrompts.unshift({ ...created, content: created.content });
+          // Update meta counts
+          meta.total = allPrompts.length;
+          if (meta.stats[created.category] !== undefined) meta.stats[created.category]++;
+          renderCategories();
+          renderTagFilter();
+          applyFilter();
+          selectPrompt(created.id, false);
+          showToast('프롬프트가 생성되었습니다.');
+        } else {
+          const promptId = editPanel.dataset.promptId;
+          body.change_summary = editChangeSummary.value.trim();
+          const updated = await apiPut(`/api/prompts/${encodeURIComponent(promptId)}`, body);
+          const idx = allPrompts.findIndex((p) => p.id === promptId);
+          if (idx >= 0) {
+            allPrompts[idx] = { ...allPrompts[idx], ...updated };
+          }
+          renderTagFilter();
+          applyFilter();
+          selectPrompt(promptId, false);
+          showToast('프롬프트가 수정되었습니다.');
+        }
+        closeEditPanel();
+      } catch (err) {
+        if (err.status === 422 && err.body && showFieldErrors(err.body.detail)) {
+          showToast('입력값을 확인해주세요.', 'error');
+        } else {
+          showToast(err.message || '저장에 실패했습니다.', 'error');
+        }
+      }
+    });
+  }
+
+  // --- Delete ---
+  if (deleteBtn) {
+    deleteBtn.addEventListener('click', async () => {
+      if (!activePromptId) return;
+      const prompt = allPrompts.find((p) => p.id === activePromptId);
+      if (!prompt) return;
+      if (!confirm(`"${prompt.title}" 프롬프트를 삭제하시겠습니까?`)) return;
+
+      try {
+        await apiDelete(`/api/prompts/${encodeURIComponent(activePromptId)}`);
+        const cat = prompt.category;
+        allPrompts = allPrompts.filter((p) => p.id !== activePromptId);
+        meta.total = allPrompts.length;
+        if (meta.stats[cat] !== undefined) meta.stats[cat]--;
+        activePromptId = null;
+        renderCategories();
+        renderTagFilter();
+        applyFilter();
+        viewerTitle.textContent = 'Select a prompt';
+        viewerTags.innerHTML = '';
+        viewerContent.innerHTML = '<div class="welcome-message"><h2>Welcome to Prompt Library</h2><p>Select a prompt from the sidebar to view its content.</p></div>';
+        editBtn.style.display = 'none';
+        deleteBtn.style.display = 'none';
+        historyBtn.style.display = 'none';
+        showToast('프롬프트가 삭제되었습니다.');
+      } catch (err) {
+        showToast(err.message || '삭제에 실패했습니다.', 'error');
+      }
+    });
+  }
+
+  // --- Version History Panel (delegated to versions.js) ---
+  if (historyBtn) {
+    historyBtn.addEventListener('click', () => {
+      if (!activePromptId || !window.PromptVersions) return;
+      window.PromptVersions.loadVersions(activePromptId);
+    });
+  }
+
+  if (versionCloseBtn) {
+    versionCloseBtn.addEventListener('click', () => {
+      if (window.PromptVersions) window.PromptVersions.close();
+    });
+  }
+
+  // --- Expose helpers for versions.js ---
+  function updatePromptInList(promptId, data) {
+    const idx = allPrompts.findIndex((p) => p.id === promptId);
+    if (idx >= 0) allPrompts[idx] = { ...allPrompts[idx], ...data };
+  }
+
+  window._appHelpers = {
+    apiGet,
+    apiPost,
+    showToast,
+    escapeHtml,
+    selectPrompt,
+    updatePromptInList,
+  };
 
   // --- Start ---
   init();
