@@ -5,6 +5,7 @@ role: database-administrator
 origin: extracted
 extract_date: 2026-03-05
 tags:
+- agent
 - administrator
 - alerting
 - backup

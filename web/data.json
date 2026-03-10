@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "4.0",
-    "generated": "2026-03-10",
+    "generated": "2026-03-11",
     "total": 480,
     "stats": {
       "rca": 6,
@@ -124,6 +124,7 @@
       "category": "incident-response",
       "origin": "extracted",
       "tags": [
+        "agent",
         "database",
         "debugger",
         "incident-response",
@@ -140,6 +141,7 @@
       "category": "incident-response",
       "origin": "extracted",
       "tags": [
+        "agent",
         "alerting",
         "database",
         "devops",
@@ -162,6 +164,7 @@
       "category": "incident-response",
       "origin": "extracted",
       "tags": [
+        "agent",
         "detective",
         "incident-response",
         "k8s-service",
@@ -180,6 +183,7 @@
       "category": "incident-response",
       "origin": "voltagent",
       "tags": [
+        "agent",
         "incident",
         "incident-response",
         "responder",
@@ -196,6 +200,7 @@
       "category": "incident-response",
       "origin": "extracted",
       "tags": [
+        "agent",
         "backup",
         "capacity",
         "cost",
@@ -216,6 +221,7 @@
       "category": "incident-response",
       "origin": "voltagent",
       "tags": [
+        "agent",
         "engineer",
         "incident-response",
         "observability"
@@ -2299,6 +2305,7 @@
       "category": "infrastructure",
       "origin": "extracted",
       "tags": [
+        "agent",
         "azure",
         "compliance",
         "cost",
@@ -2327,6 +2334,7 @@
       "category": "infrastructure",
       "origin": "extracted",
       "tags": [
+        "agent",
         "chaos",
         "database",
         "dns",
@@ -2347,6 +2355,7 @@
       "category": "infrastructure",
       "origin": "extracted",
       "tags": [
+        "agent",
         "architect",
         "backup",
         "cloud",
@@ -2371,6 +2380,7 @@
       "category": "infrastructure",
       "origin": "extracted",
       "tags": [
+        "agent",
         "administrator",
         "alerting",
         "backup",
@@ -2397,6 +2407,7 @@
       "category": "infrastructure",
       "origin": "extracted",
       "tags": [
+        "agent",
         "compliance",
         "cost",
         "deployment",
@@ -2419,6 +2430,7 @@
       "category": "infrastructure",
       "origin": "extracted",
       "tags": [
+        "agent",
         "cloudformation",
         "compliance",
         "devops",
@@ -2448,6 +2460,7 @@
       "category": "infrastructure",
       "origin": "extracted",
       "tags": [
+        "agent",
         "compliance",
         "docker",
         "expert",
@@ -2469,6 +2482,7 @@
       "category": "infrastructure",
       "origin": "voltagent",
       "tags": [
+        "agent",
         "infrastructure",
         "k8s-daemonset",
         "k8s-deployment",
@@ -2490,6 +2504,7 @@
       "category": "infrastructure",
       "origin": "extracted",
       "tags": [
+        "agent",
         "compliance",
         "dns",
         "engineer",
@@ -2514,6 +2529,7 @@
       "category": "infrastructure",
       "origin": "extracted",
       "tags": [
+        "agent",
         "database",
         "engineer",
         "infrastructure",
@@ -2534,6 +2550,7 @@
       "category": "infrastructure",
       "origin": "extracted",
       "tags": [
+        "agent",
         "compliance",
         "cost",
         "database",
@@ -2560,6 +2577,7 @@
       "category": "infrastructure",
       "origin": "extracted",
       "tags": [
+        "agent",
         "compliance",
         "cost",
         "engineer",
@@ -2585,6 +2603,7 @@
       "category": "infrastructure",
       "origin": "extracted",
       "tags": [
+        "agent",
         "expert",
         "infrastructure",
         "k8s-deployment",
@@ -8222,6 +8241,7 @@
       "category": "security",
       "origin": "extracted",
       "tags": [
+        "agent",
         "compliance",
         "k8s-service",
         "reviewer",
@@ -8239,6 +8259,7 @@
       "category": "security",
       "origin": "extracted",
       "tags": [
+        "agent",
         "auditor",
         "compliance",
         "monitoring",
@@ -8256,6 +8277,7 @@
       "category": "security",
       "origin": "extracted",
       "tags": [
+        "agent",
         "backup",
         "compliance",
         "dns",
@@ -8277,6 +8299,7 @@
       "category": "security",
       "origin": "extracted",
       "tags": [
+        "agent",
         "compliance",
         "hardening",
         "k8s-secret",
@@ -8299,6 +8322,7 @@
       "category": "security",
       "origin": "extracted",
       "tags": [
+        "agent",
         "auditor",
         "backup",
         "compliance",
@@ -8318,6 +8342,7 @@
       "category": "security",
       "origin": "voltagent",
       "tags": [
+        "agent",
         "engineer",
         "iam",
         "security"
@@ -9908,6 +9933,7 @@
       "category": "coding",
       "origin": "custom",
       "tags": [
+        "agent",
         "coding",
         "ai-agent",
         "behavior",

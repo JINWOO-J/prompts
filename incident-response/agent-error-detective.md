@@ -5,6 +5,7 @@ role: error-detective
 origin: extracted
 extract_date: 2026-03-05
 tags:
+- agent
 - detective
 - incident-response
 - k8s-service

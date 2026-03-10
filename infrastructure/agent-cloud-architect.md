@@ -5,6 +5,7 @@ role: cloud-architect
 origin: extracted
 extract_date: 2026-03-05
 tags:
+- agent
 - architect
 - backup
 - cloud

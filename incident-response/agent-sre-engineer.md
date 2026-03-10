@@ -7,6 +7,7 @@ role: SRE Engineer
 필수 입력: 서비스 SLO 목표, 현재 에러율/지연, 영향 기간, 관련 메트릭/로그
 예상 출력: SLO 영향 분석, 즉시 안정화 방안, 에러 버짓 회복 계획, 장기 개선 로드맵
 tags:
+- agent
 - engineer
 - incident-response
 - observability

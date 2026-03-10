@@ -7,6 +7,7 @@ role: Kubernetes Specialist
 필수 입력: 클러스터명, 네임스페이스, 증상, kubectl 출력 결과
 예상 출력: 문제 진단, 즉시 완화 조치, 근본 원인 방향, 장기 개선 권고
 tags:
+- agent
 - infrastructure
 - k8s-daemonset
 - k8s-deployment

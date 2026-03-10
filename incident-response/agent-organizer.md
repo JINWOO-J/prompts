@@ -5,6 +5,7 @@ role: agent-organizer
 origin: extracted
 extract_date: 2026-03-05
 tags:
+- agent
 - backup
 - capacity
 - cost

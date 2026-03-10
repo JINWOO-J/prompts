@@ -5,6 +5,7 @@ role: compliance-auditor
 origin: extracted
 extract_date: 2026-03-05
 tags:
+- agent
 - auditor
 - compliance
 - monitoring

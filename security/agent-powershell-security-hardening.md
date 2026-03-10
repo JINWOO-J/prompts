@@ -5,6 +5,7 @@ role: powershell-security-hardening
 origin: extracted
 extract_date: 2026-03-05
 tags:
+- agent
 - compliance
 - hardening
 - k8s-secret

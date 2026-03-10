@@ -256,7 +256,7 @@
   function showTagDropdown(query) {
     const allTags = getAllTags();
     const q = query.toLowerCase();
-    const filtered = allTags.filter((t) => t.toLowerCase().includes(q) && !activeTags.includes(t));
+    const filtered = allTags.filter((t) => t.toLowerCase().includes(q) && !activeTags.some((at) => at.toLowerCase() === t.toLowerCase()));
 
     if (!filtered.length) {
       tagDropdown.innerHTML = q ? '<div class="tag-dropdown-empty">일치하는 태그 없음</div>' : '';
@@ -279,7 +279,7 @@
   }
 
   function addTag(tag) {
-    if (tag && !activeTags.includes(tag)) {
+    if (tag && !activeTags.some((at) => at.toLowerCase() === tag.toLowerCase())) {
       activeTags.push(tag);
       renderTagChips();
       focusIndex = -1;
@@ -350,7 +350,7 @@
     const tag = e.target.closest('.viewer-tag');
     if (!tag) return;
     const value = tag.dataset.tag;
-    if (value && !activeTags.includes(value)) {
+    if (value && !activeTags.some((at) => at.toLowerCase() === value.toLowerCase())) {
       activeTags.push(value);
       renderTagChips();
       applyFilter();
@@ -372,7 +372,7 @@
 
     filteredPrompts = allPrompts.filter((p) => {
       if (activeCategory !== 'all' && p.category !== activeCategory) return false;
-      if (activeTags.length > 0 && !activeTags.every((t) => p.tags.includes(t))) return false;
+      if (activeTags.length > 0 && !activeTags.every((at) => p.tags.some((pt) => pt.toLowerCase() === at.toLowerCase()))) return false;
       if (!query) return true;
       return (
         p.title.toLowerCase().includes(query) ||

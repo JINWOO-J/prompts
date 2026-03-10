@@ -5,6 +5,7 @@ role: security-auditor
 origin: extracted
 extract_date: 2026-03-05
 tags:
+- agent
 - auditor
 - backup
 - compliance
