@@ -38,6 +38,7 @@
   const historyBtn = $('#history-btn');
   const editPanel = $('#edit-panel');
   const editForm = $('#edit-form');
+  const placeholderForm = $('#placeholder-form');
   const editCancelBtn = $('#edit-cancel-btn');
   const editTitle = $('#edit-title');
   const editCategory = $('#edit-category');
@@ -343,6 +344,95 @@
     });
   }
 
+  // --- Placeholder Detection & Dynamic Form ---
+  // 코드블록 내부의 [...]는 제외하고, 체크박스/출처 참조도 제외
+  const PH_SKIP = /^\s*$|^[Xx ]$|^STEP\s*\d|^Step\s*\d|^Scoutflo|^VoltAgent|^shawnewallace/;
+
+  function extractPlaceholders(content) {
+    // 코드블록(``` ... ```) 및 인라인 코드 제거
+    const noCode = content.replace(/```[\s\S]*?```/g, '').replace(/`[^`]+`/g, '');
+    // 마크다운 링크 [text](url) 제거
+    const noLinks = noCode.replace(/\[([^\]]+)\]\([^)]+\)/g, '');
+    const matches = noLinks.match(/\[([^\[\]]{2,80})\]/g) || [];
+    const seen = new Set();
+    const result = [];
+    for (const m of matches) {
+      const inner = m.slice(1, -1);
+      if (PH_SKIP.test(inner)) continue;
+      if (!seen.has(inner)) {
+        seen.add(inner);
+        result.push(inner);
+      }
+    }
+    return result;
+  }
+
+  let currentPlaceholderValues = {};
+
+  function renderPlaceholderForm(placeholders) {
+    if (!placeholders.length) {
+      placeholderForm.style.display = 'none';
+      placeholderForm.innerHTML = '';
+      return;
+    }
+    currentPlaceholderValues = {};
+    placeholderForm.style.display = '';
+    placeholderForm.innerHTML =
+      '<div class="ph-form-header"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> 변수 입력 <span class="ph-count">' + placeholders.length + '개</span></div>' +
+      '<div class="ph-fields">' +
+      placeholders.map((ph, i) =>
+        '<div class="ph-field">' +
+          '<label for="ph-input-' + i + '">' + escapeHtml(ph) + '</label>' +
+          (ph.length > 40
+            ? '<textarea id="ph-input-' + i + '" data-ph="' + escapeHtml(ph) + '" placeholder="값을 입력하세요" rows="2"></textarea>'
+            : '<input id="ph-input-' + i + '" data-ph="' + escapeHtml(ph) + '" placeholder="값을 입력하세요" />') +
+        '</div>'
+      ).join('') +
+      '</div>';
+
+    placeholderForm.addEventListener('input', (e) => {
+      const ph = e.target.dataset.ph;
+      if (!ph) return;
+      currentPlaceholderValues[ph] = e.target.value;
+      rerenderContent();
+    });
+  }
+
+  function applyPlaceholders(content) {
+    let result = content;
+    for (const [ph, val] of Object.entries(currentPlaceholderValues)) {
+      if (!val) continue;
+      // 전역 치환 — 대괄호 포함하여 값으로 교체
+      const escaped = ph.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      result = result.replace(new RegExp('\\[' + escaped + '\\]', 'g'), val);
+    }
+    return result;
+  }
+
+  function rerenderContent() {
+    const prompt = allPrompts.find((p) => p.id === activePromptId);
+    if (!prompt || !prompt.content) return;
+    const replaced = applyPlaceholders(prompt.content);
+    viewerContent.innerHTML = marked.parse(replaced);
+    // 코드 하이라이트 + 복사 버튼 재적용
+    viewerContent.querySelectorAll('pre').forEach((pre) => {
+      const code = pre.querySelector('code');
+      if (code) hljs.highlightElement(code);
+      const btn = document.createElement('button');
+      btn.className = 'code-copy-btn';
+      btn.textContent = 'Copy';
+      btn.addEventListener('click', async () => {
+        const text = pre.querySelector('code')?.textContent || pre.textContent;
+        try { await navigator.clipboard.writeText(text); } catch { /* fallback omitted for brevity */ }
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1500);
+      });
+      pre.style.position = 'relative';
+      pre.appendChild(btn);
+    });
+  }
+
   // --- Select Prompt ---
   async function selectPrompt(id, closeSidebar) {
     const prompt = allPrompts.find((p) => p.id === id);
@@ -378,6 +468,10 @@
       .map((t) => `<span class="viewer-tag" data-tag="${escapeHtml(t)}">${escapeHtml(t)}</span>`)
       .join('');
     viewerContent.innerHTML = marked.parse(prompt.content);
+
+    // 플레이스홀더 감지 및 폼 생성
+    const placeholders = extractPlaceholders(prompt.content);
+    renderPlaceholderForm(placeholders);
 
     // Re-highlight code blocks + add copy buttons
     viewerContent.querySelectorAll('pre').forEach((pre) => {
@@ -422,7 +516,8 @@
     if (!prompt) return;
 
     try {
-      await navigator.clipboard.writeText(prompt.content);
+      const text = applyPlaceholders(prompt.content);
+      await navigator.clipboard.writeText(text);
       copyBtn.classList.add('copied');
       copyBtn.querySelector('span').textContent = 'Copied!';
       setTimeout(() => {
@@ -432,7 +527,7 @@
     } catch {
       // Fallback
       const ta = document.createElement('textarea');
-      ta.value = prompt.content;
+      ta.value = applyPlaceholders(prompt.content);
       ta.style.position = 'fixed';
       ta.style.opacity = '0';
       document.body.appendChild(ta);
