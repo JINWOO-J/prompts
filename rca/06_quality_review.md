@@ -10,7 +10,7 @@ tags:
 - security
 ---
 
-# 프롬프트 06: RCA 보고서 품질 검증 (CoVe + Self-Refinement)
+# RCA 보고서 품질 검증 (CoVe + Self-Refinement)
 
 ## 사용 방법
 `01_basic_rca.md` ~ `05_security_rca.md` 중 하나를 실행하여 초안을 얻은 뒤,  

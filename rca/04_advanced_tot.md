@@ -10,7 +10,7 @@ tags:
 - advanced-analysis
 ---
 
-# 프롬프트 04: 고급 RCA — Tree-of-Thoughts (ToT)
+# 고급 RCA — Tree-of-Thoughts (ToT)
 
 ## 사용 방법
 원인 후보가 여러 개이고 각 선택지의 영향이 복잡하게 얽혀있을 때 사용.  
