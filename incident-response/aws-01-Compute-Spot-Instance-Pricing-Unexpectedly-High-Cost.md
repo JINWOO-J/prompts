@@ -1,9 +1,23 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Spot-Instance-Pricing-Unexpectedly-High-Cost.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Spot-Instance-Pricing-Unexpectedly-High-Cost.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- capacity
+- cloudwatch
+- compute
+- cost
+- ec2
+- high
+- incident-response
+- instance
+- k8s-service
+- pricing
+- spot
+- sts
+- unexpectedly
 ---
 
 # EC2 Spot Instance Pricing Unexpectedly High

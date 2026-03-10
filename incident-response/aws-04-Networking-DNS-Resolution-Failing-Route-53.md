@@ -1,9 +1,22 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/DNS-Resolution-Failing-Route-53.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/DNS-Resolution-Failing-Route-53.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- cloudfront
+- dns
+- failing
+- incident-response
+- k8s-service
+- networking
+- performance
+- rds
+- resolution
+- route
+- route53
+- sts
 ---
 
 # Route 53 DNS Resolution Failing

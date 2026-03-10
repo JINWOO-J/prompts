@@ -1,9 +1,26 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Target-Group-Showing-Unhealthy-Instances-ELB.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Target-Group-Showing-Unhealthy-Instances-ELB.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- alb
+- capacity
+- cloudwatch
+- elb
+- group
+- incident-response
+- instances
+- k8s-service
+- networking
+- performance
+- scaling
+- security
+- showing
+- sts
+- target
+- unhealthy
 ---
 
 # Target Group in ELB Showing Unhealthy Instances

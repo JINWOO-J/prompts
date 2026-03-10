@@ -1,9 +1,24 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Task-Stuck-in-Pending-State-ECS.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Task-Stuck-in-Pending-State-ECS.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- capacity
+- compute
+- ec2
+- ecs
+- fargate
+- iam
+- incident-response
+- k8s-deployment
+- k8s-service
+- pending
+- performance
+- state
+- stuck
+- task
 ---
 
 # ECS Task Stuck in Pending State

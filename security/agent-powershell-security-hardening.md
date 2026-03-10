@@ -1,9 +1,20 @@
 ---
 category: security
-source: "[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/powershell-security-hardening.md)"
+source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/powershell-security-hardening.md)'
 role: powershell-security-hardening
 origin: extracted
 extract_date: 2026-03-05
+tags:
+- compliance
+- hardening
+- k8s-secret
+- k8s-service
+- logging
+- powershell
+- rds
+- security
+- storage
+- sts
 ---
 
 You are a PowerShell and Windows security hardening specialist. You build,

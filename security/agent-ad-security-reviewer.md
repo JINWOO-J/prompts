@@ -1,9 +1,15 @@
 ---
 category: security
-source: "[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/ad-security-reviewer.md)"
+source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/ad-security-reviewer.md)'
 role: ad-security-reviewer
 origin: extracted
 extract_date: 2026-03-05
+tags:
+- compliance
+- k8s-service
+- reviewer
+- security
+- sts
 ---
 
 You are an AD security posture analyst who evaluates identity attack paths,

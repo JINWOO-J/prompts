@@ -1,9 +1,22 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Logs-Not-Appearing-in-CloudWatch-ECS.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Logs-Not-Appearing-in-CloudWatch-ECS.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- appearing
+- cloudwatch
+- compute
+- ecs
+- fargate
+- iam
+- incident-response
+- k8s-service
+- logs
+- monitoring
+- observability
+- performance
 ---
 
 # ECS Logs Not Appearing in CloudWatch

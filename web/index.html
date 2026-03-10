@@ -35,9 +35,22 @@
         </div>
       </div>
 
+      <div class="tag-filter" id="tag-filter">
+        <select id="tag-select" class="tag-select">
+          <option value="">Filter by tag...</option>
+        </select>
+        <div class="tag-chips" id="tag-chips"></div>
+      </div>
+
+      <div class="origin-filter" id="origin-filter">
+        <div class="origin-filter-label">Origin</div>
+        <div class="origin-buttons" id="origin-buttons"></div>
+      </div>
+
       <nav class="categories" id="categories"></nav>
 
       <div class="prompt-list-wrapper">
+        <div class="match-count" id="match-count"></div>
         <ul class="prompt-list" id="prompt-list"></ul>
         <div class="empty-state" id="empty-state" hidden>
           <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.4">

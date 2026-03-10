@@ -1,9 +1,20 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Route-Not-Matching-Requests-API-Gateway.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Route-Not-Matching-Requests-API-Gateway.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- cloudwatch
+- gateway
+- incident-response
+- k8s-service
+- matching
+- networking
+- performance
+- requests
+- route
+- sts
 ---
 
 # API Gateway Route Not Matching Requests

@@ -1,9 +1,21 @@
 ---
 category: infrastructure
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Repository-Not-Allowing-Push-CodeCommit.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Repository-Not-Allowing-Push-CodeCommit.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- allowing
+- ci-cd
+- cloudwatch
+- codecommit
+- iam
+- infrastructure
+- k8s-service
+- performance
+- push
+- repository
+- sts
 ---
 
 # CodeCommit Repository Not Allowing Push

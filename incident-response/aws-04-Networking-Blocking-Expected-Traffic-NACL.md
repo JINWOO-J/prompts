@@ -1,9 +1,22 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Blocking-Expected-Traffic-NACL.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Blocking-Expected-Traffic-NACL.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- blocking
+- cloudwatch
+- expected
+- incident-response
+- k8s-service
+- nacl
+- networking
+- performance
+- security
+- sts
+- traffic
+- vpc
 ---
 
 # NACL Blocking Expected Traffic

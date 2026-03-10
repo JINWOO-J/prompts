@@ -1,9 +1,21 @@
 ---
 category: infrastructure
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Deployment-Failing-App-Runner.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Deployment-Failing-App-Runner.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- ci-cd
+- cloudwatch
+- deployment
+- failing
+- iam
+- infrastructure
+- k8s-deployment
+- k8s-service
+- performance
+- runner
+- sts
 ---
 
 # AWS App Runner Deployment Failing

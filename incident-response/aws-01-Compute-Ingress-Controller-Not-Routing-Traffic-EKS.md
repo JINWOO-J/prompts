@@ -1,9 +1,26 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Ingress-Controller-Not-Routing-Traffic-EKS.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Ingress-Controller-Not-Routing-Traffic-EKS.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- cloudwatch
+- compute
+- controller
+- eks
+- incident-response
+- ingress
+- k8s-deployment
+- k8s-ingress
+- k8s-pod
+- k8s-service
+- kubernetes
+- networking
+- performance
+- routing
+- sts
+- traffic
 ---
 
 # EKS Ingress Controller Not Routing Traffic

@@ -1,9 +1,23 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Latency-Higher-Than-Expected-Direct-Connect.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Latency-Higher-Than-Expected-Direct-Connect.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- backup
+- cloudwatch
+- connect
+- direct
+- expected
+- higher
+- incident-response
+- k8s-service
+- latency
+- networking
+- performance
+- sts
+- than
 ---
 
 # Direct Connect Latency Higher Than Expected

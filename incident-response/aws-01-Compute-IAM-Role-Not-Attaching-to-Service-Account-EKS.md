@@ -1,9 +1,26 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/IAM-Role-Not-Attaching-to-Service-Account-EKS.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/IAM-Role-Not-Attaching-to-Service-Account-EKS.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- account
+- attaching
+- cloudwatch
+- compute
+- eks
+- iam
+- incident-response
+- k8s-namespace
+- k8s-pod
+- k8s-service
+- kubernetes
+- performance
+- role
+- security
+- service
+- sts
 ---
 
 # EKS IAM Role Not Attaching to Service Account

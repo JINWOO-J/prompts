@@ -1,9 +1,21 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Not-Serving-Updated-Content-CloudFront.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Not-Serving-Updated-Content-CloudFront.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- cloudfront
+- cloudwatch
+- content
+- incident-response
+- k8s-service
+- networking
+- performance
+- s3
+- serving
+- sts
+- updated
 ---
 
 # CloudFront Not Serving Updated Content

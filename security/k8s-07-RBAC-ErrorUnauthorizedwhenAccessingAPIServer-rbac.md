@@ -1,9 +1,18 @@
 ---
 category: security
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/07-RBAC/ErrorUnauthorizedwhenAccessingAPIServer-rbac.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/07-RBAC/ErrorUnauthorizedwhenAccessingAPIServer-rbac.md)'
 role: Kubernetes SRE
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- errorunauthorizedwhenaccessingapiserver
+- k8s-rbac
+- k8s-service
+- kubernetes
+- performance
+- rbac
+- security
+- sts
 ---
 
 ---

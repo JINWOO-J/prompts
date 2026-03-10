@@ -1,11 +1,21 @@
 ---
 category: infrastructure
-source: "[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/kubernetes-specialist.md)"
+source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/kubernetes-specialist.md)'
 role: Kubernetes Specialist
 난이도: 고급
 적합 상황: K8s 클러스터 장애, Pod 비정상 종료, 리소스 고갈, 네트워크 이슈, 성능 저하
 필수 입력: 클러스터명, 네임스페이스, 증상, kubectl 출력 결과
 예상 출력: 문제 진단, 즉시 완화 조치, 근본 원인 방향, 장기 개선 권고
+tags:
+- infrastructure
+- k8s-daemonset
+- k8s-deployment
+- k8s-namespace
+- k8s-node
+- k8s-pod
+- k8s-service
+- k8s-statefulset
+- kubernetes
 ---
 
 # Agent: Kubernetes Specialist

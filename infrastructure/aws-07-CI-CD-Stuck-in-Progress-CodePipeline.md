@@ -1,9 +1,22 @@
 ---
 category: infrastructure
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Stuck-in-Progress-CodePipeline.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Stuck-in-Progress-CodePipeline.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- ci-cd
+- cloudwatch
+- codepipeline
+- iam
+- infrastructure
+- k8s-deployment
+- k8s-service
+- performance
+- pipeline
+- progress
+- sts
+- stuck
 ---
 
 # AWS CodePipeline Stuck in Progress

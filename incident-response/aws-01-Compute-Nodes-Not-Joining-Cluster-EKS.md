@@ -1,9 +1,28 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Nodes-Not-Joining-Cluster-EKS.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Nodes-Not-Joining-Cluster-EKS.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- capacity
+- cloudwatch
+- cluster
+- compute
+- ec2
+- eks
+- iam
+- incident-response
+- joining
+- k8s-node
+- k8s-pod
+- k8s-service
+- kubernetes
+- nodes
+- performance
+- scaling
+- security
+- sts
 ---
 
 # EKS Nodes Not Joining the Cluster

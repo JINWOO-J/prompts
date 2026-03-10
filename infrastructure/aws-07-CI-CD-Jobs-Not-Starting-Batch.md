@@ -1,9 +1,24 @@
 ---
 category: infrastructure
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Jobs-Not-Starting-Batch.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Jobs-Not-Starting-Batch.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- batch
+- capacity
+- ci-cd
+- cloudwatch
+- compute
+- ecs
+- iam
+- infrastructure
+- jobs
+- k8s-service
+- performance
+- pipeline
+- starting
+- sts
 ---
 
 # AWS Batch Jobs Not Starting

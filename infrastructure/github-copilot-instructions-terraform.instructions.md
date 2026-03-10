@@ -1,9 +1,22 @@
 ---
 category: infrastructure
-source: "[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/scenarios/devops-infrastructure/github-copilot/instructions/terraform.instructions.md)"
+source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/scenarios/devops-infrastructure/github-copilot/instructions/terraform.instructions.md)'
 role: DevOps / Infrastructure Engineer
 origin: shawnewallace
 extract_date: 2026-03-05
+tags:
+- compute
+- copilot
+- database
+- dynamodb
+- github
+- infrastructure
+- k8s-deployment
+- k8s-secret
+- networking
+- s3
+- terraform
+- terraform.instructions
 ---
 
 ---

@@ -1,9 +1,24 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Not-Launching-New-Instances-Auto-Scaling.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Not-Launching-New-Instances-Auto-Scaling.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- auto
+- autoscal
+- capacity
+- compute
+- ec2
+- iam
+- incident-response
+- instances
+- k8s-service
+- launching
+- performance
+- scaling
+- sg
+- sts
 ---
 
 # EC2 Auto Scaling Not Launching New Instances

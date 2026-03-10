@@ -1,9 +1,24 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/06-Monitoring/Events-Not-Showing-in-Logs-CloudTrail.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/06-Monitoring/Events-Not-Showing-in-Logs-CloudTrail.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- cloudtrail
+- cloudwatch
+- compliance
+- events
+- iam
+- incident-response
+- k8s-service
+- logging
+- logs
+- monitoring
+- s3
+- security
+- showing
+- sts
 ---
 
 # CloudTrail Events Not Showing in Logs

@@ -1,9 +1,22 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Stuck-in-Initializing-State-EC2.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Stuck-in-Initializing-State-EC2.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- cloudwatch
+- compute
+- ec2
+- incident-response
+- initializing
+- k8s-deployment
+- k8s-service
+- rds
+- scaling
+- state
+- sts
+- stuck
 ---
 
 # EC2 Instance Stuck in "Initializing" State

@@ -1,9 +1,23 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Not-Triggering-from-S3-Event-Lambda.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Not-Triggering-from-S3-Event-Lambda.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- cloudwatch
+- compute
+- event
+- from
+- incident-response
+- k8s-service
+- kms
+- lambda
+- performance
+- pipeline
+- rds
+- s3
+- triggering
 ---
 
 # AWS Lambda Not Triggering from S3 Event

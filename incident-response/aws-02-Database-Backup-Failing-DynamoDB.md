@@ -1,9 +1,19 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/02-Database/Backup-Failing-DynamoDB.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/02-Database/Backup-Failing-DynamoDB.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- backup
+- cloudwatch
+- compliance
+- database
+- dynamodb
+- failing
+- incident-response
+- k8s-service
+- sts
 ---
 
 # DynamoDB Backup Failing

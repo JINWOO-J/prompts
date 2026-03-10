@@ -1,9 +1,27 @@
 ---
 category: infrastructure
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/10-Monitoring-Autoscaling/AutoscalerNotAddingNodes-autoscaler.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/10-Monitoring-Autoscaling/AutoscalerNotAddingNodes-autoscaler.md)'
 role: Kubernetes SRE
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- autoscal
+- autoscaler
+- autoscalernotaddingnodes
+- autoscaling
+- capacity
+- infrastructure
+- k8s-configmap
+- k8s-deployment
+- k8s-namespace
+- k8s-node
+- k8s-pod
+- k8s-rbac
+- k8s-service
+- kubernetes
+- monitoring
+- scaling
+- sts
 ---
 
 ---

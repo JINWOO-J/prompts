@@ -1,9 +1,25 @@
 ---
 category: infrastructure
-source: "[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/scenarios/devops-infrastructure/github-copilot/instructions/security.instructions.md)"
+source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/scenarios/devops-infrastructure/github-copilot/instructions/security.instructions.md)'
 role: DevOps / Infrastructure Engineer
 origin: shawnewallace
 extract_date: 2026-03-05
+tags:
+- copilot
+- docker
+- github
+- iam
+- infrastructure
+- k8s-ingress
+- k8s-secret
+- k8s-service
+- kubernetes
+- logging
+- pipeline
+- rds
+- security
+- security.instructions
+- terraform
 ---
 
 ---

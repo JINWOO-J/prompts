@@ -1,9 +1,15 @@
 ---
 category: shared
-source: "[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/shared/agents/check.agent.md)"
+source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/shared/agents/check.agent.md)'
 role: AI Agent / Shared
 origin: shawnewallace
 extract_date: 2026-03-05
+scope: general-dev
+tags:
+- check.agent
+- rds
+- shared
+- sts
 ---
 
 ---

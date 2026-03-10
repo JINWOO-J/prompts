@@ -1,9 +1,21 @@
 ---
 category: infrastructure
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/08-Configuration/SecretsNotAccessible-secret.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/08-Configuration/SecretsNotAccessible-secret.md)'
 role: Kubernetes SRE
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- configuration
+- infrastructure
+- k8s-namespace
+- k8s-pod
+- k8s-rbac
+- k8s-secret
+- k8s-service
+- kubernetes
+- secret
+- secretsnotaccessible
+- sts
 ---
 
 ---

@@ -1,9 +1,22 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Pod-Stuck-in-CrashLoopBackOff-EKS.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Pod-Stuck-in-CrashLoopBackOff-EKS.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- cloudwatch
+- compute
+- crashloopbackoff
+- eks
+- incident-response
+- k8s-deployment
+- k8s-node
+- k8s-pod
+- k8s-service
+- performance
+- sts
+- stuck
 ---
 
 # EKS Pod Stuck in CrashLoopBackOff

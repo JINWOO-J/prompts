@@ -1,9 +1,22 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/02-Database/Storage-Full-Error-RDS.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/02-Database/Storage-Full-Error-RDS.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- backup
+- capacity
+- cloudwatch
+- database
+- full
+- incident-response
+- k8s-service
+- performance
+- rds
+- scaling
+- storage
+- sts
 ---
 
 # RDS Storage Full Error

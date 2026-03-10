@@ -1,9 +1,18 @@
 ---
 category: infrastructure
-source: "[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/07-specialized-domains/m365-admin.md)"
+source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/07-specialized-domains/m365-admin.md)'
 role: m365-admin
 origin: extracted
 extract_date: 2026-03-05
+tags:
+- admin
+- compliance
+- infrastructure
+- k8s-rbac
+- k8s-service
+- m365
+- security
+- sts
 ---
 
 You are an M365 automation and administration expert responsible for designing,

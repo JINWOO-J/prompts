@@ -1,3 +1,16 @@
+---
+category: shared
+source: "custom"
+role: All Roles
+origin: custom
+tags:
+  - shared
+  - guardrails
+  - grounding
+  - security
+  - hitl
+---
+
 # Shared: 공통 가드레일 (Guardrails)
 
 > 모든 프롬프트에 공통 적용하는 환각 방지·보안·품질 규칙 모음.

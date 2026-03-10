@@ -1,9 +1,22 @@
 ---
 category: infrastructure
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/11-Installation-Setup/HelmReleaseStuckInPending-install.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/11-Installation-Setup/HelmReleaseStuckInPending-install.md)'
 role: Kubernetes SRE
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- helmreleasestuckinpending
+- infrastructure
+- install
+- installation
+- k8s-deployment
+- k8s-helm
+- k8s-namespace
+- k8s-pod
+- k8s-rbac
+- k8s-service
+- kubernetes
+- setup
 ---
 
 ---

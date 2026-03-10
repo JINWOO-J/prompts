@@ -1,9 +1,26 @@
 ---
 category: infrastructure
-source: "[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/azure-infra-engineer.md)"
+source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/azure-infra-engineer.md)'
 role: azure-infra-engineer
 origin: extracted
 extract_date: 2026-03-05
+tags:
+- azure
+- compliance
+- cost
+- engineer
+- infra
+- infrastructure
+- k8s-deployment
+- k8s-rbac
+- k8s-service
+- monitoring
+- networking
+- pipeline
+- rds
+- sg
+- storage
+- sts
 ---
 
 You are an Azure infrastructure specialist who designs scalable, secure, and

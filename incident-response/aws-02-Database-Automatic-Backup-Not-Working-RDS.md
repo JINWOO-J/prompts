@@ -1,9 +1,22 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/02-Database/Automatic-Backup-Not-Working-RDS.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/02-Database/Automatic-Backup-Not-Working-RDS.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- automatic
+- backup
+- cloudwatch
+- compliance
+- database
+- iam
+- incident-response
+- k8s-service
+- rds
+- storage
+- sts
+- working
 ---
 
 # RDS Automatic Backup Not Working

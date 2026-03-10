@@ -52,26 +52,159 @@ def guess_origin(fname: str, fm: dict) -> str:
     return "custom"
 
 
-def guess_tags(fname: str, category: str) -> list:
+def guess_tags(fname: str, category: str, fm: dict) -> list:
+    """frontmatter tags 우선, 없으면 파일명에서 추론"""
+    if fm.get("tags") and isinstance(fm["tags"], list):
+        tags = list(fm["tags"])
+        if category not in tags:
+            tags.insert(0, category)
+        return list(dict.fromkeys(tags))
+
     tags = [category]
+    lower = fname.lower()
+
     # AWS 서비스
     for svc in ["ec2", "rds", "lambda", "eks", "ecs", "s3", "alb", "elb",
                 "cloudwatch", "route53", "iam", "guardduty", "waf", "dynamodb",
-                "cloudfront", "vpc", "sg", "codepipeline", "cloudformation"]:
-        if svc in fname.lower():
+                "cloudfront", "vpc", "sg", "codepipeline", "cloudformation",
+                "fargate", "kms", "cognito", "shield", "sts", "acm"]:
+        if svc in lower:
             tags.append(svc)
-    # K8s
-    for k in ["pod", "node", "ingress", "service", "rbac", "pvc", "namespace", "helm"]:
-        if k in fname.lower():
+
+    # K8s 리소스
+    for k in ["pod", "node", "ingress", "service", "rbac", "pvc", "namespace",
+              "helm", "configmap", "secret", "deployment", "daemonset", "statefulset"]:
+        if k in lower:
             tags.append(f"k8s-{k}")
-    # Sentry
-    if "sentry" in fname.lower() or "kafka" in fname.lower():
+
+    # 인프라 도구/영역
+    for tool in ["kubernetes", "docker", "terraform", "terragrunt", "dns",
+                 "storage", "networking", "monitoring", "database", "compute",
+                 "autoscal", "cicd", "ci-cd", "pipeline"]:
+        if tool in lower:
+            tags.append(tool)
+
+    # 앱 레이어
+    if "sentry" in lower:
         tags.append("sentry")
-    if "kafka" in fname.lower():
+    if "kafka" in lower:
         tags.append("kafka")
-    if "redis" in fname.lower():
+    if "redis" in lower:
         tags.append("redis")
-    return list(dict.fromkeys(tags))  # 순서 유지 중복 제거
+
+    return list(dict.fromkeys(tags))
+
+
+def suggest_tags(fname: str, category: str, content: str) -> list:
+    """파일명, 카테고리, 본문 키워드 기반으로 태그 제안"""
+    tags = set()
+    lower = fname.lower()
+    body_lower = content.lower()
+
+    # 카테고리 자체
+    tags.add(category)
+
+    # AWS 서비스
+    for svc in ["ec2", "rds", "lambda", "eks", "ecs", "s3", "alb", "elb",
+                "cloudwatch", "route53", "iam", "guardduty", "waf", "dynamodb",
+                "cloudfront", "vpc", "sg", "codepipeline", "cloudformation",
+                "fargate", "kms", "cognito", "shield", "sts", "acm"]:
+        if svc in lower or svc in body_lower[:2000]:
+            tags.add(svc)
+
+    # K8s 리소스
+    for k in ["pod", "node", "ingress", "service", "rbac", "pvc", "namespace",
+              "helm", "configmap", "secret", "deployment", "daemonset", "statefulset"]:
+        if k in lower or k in body_lower[:2000]:
+            tags.add(f"k8s-{k}")
+
+    # 인프라 도구/영역
+    for tool in ["kubernetes", "docker", "terraform", "terragrunt", "dns",
+                 "storage", "networking", "monitoring", "database", "compute",
+                 "autoscal", "cicd", "ci-cd", "pipeline", "security", "compliance",
+                 "backup", "disaster-recovery", "cost", "observability", "performance",
+                 "capacity", "scaling", "alerting", "logging"]:
+        if tool in lower or tool in body_lower[:2000]:
+            tags.add(tool)
+
+    # 앱 레이어
+    for app in ["sentry", "kafka", "redis", "nginx", "postgres", "mysql", "mongodb"]:
+        if app in lower or app in body_lower[:2000]:
+            tags.add(app)
+
+    # 파일명 키워드 (하이픈 분리)
+    parts = fname.replace(".md", "").split("-")
+    for p in parts:
+        if len(p) >= 4 and p not in ("proactive", "playbook", "agent", "prompt"):
+            tags.add(p)
+
+    return sorted(tags)
+
+
+def audit_tags():
+    """태그가 부족한 파일을 감사하고 리포트 출력"""
+    low_tag_files = []   # 태그 ≤1
+    warn_tag_files = []  # 태그 ≤2 (경고)
+
+    for cat in CATEGORIES:
+        cat_dir = ROOT / cat
+        if not cat_dir.exists():
+            continue
+        for f in sorted(cat_dir.glob("*.md")):
+            content = f.read_text(encoding="utf-8")
+            fm = extract_frontmatter(content)
+            tags = guess_tags(f.name, cat, fm)
+            tag_count = len(tags)
+            rel_path = f"{cat}/{f.name}"
+
+            if tag_count <= 2:
+                body = strip_frontmatter(content)
+                suggested = suggest_tags(f.name, cat, body)
+                # 기존 태그 제외
+                new_suggestions = [t for t in suggested if t not in tags]
+
+                entry = {
+                    "path": rel_path,
+                    "tag_count": tag_count,
+                    "current_tags": tags,
+                    "suggested_tags": new_suggestions,
+                }
+
+                if tag_count <= 1:
+                    low_tag_files.append(entry)
+                if tag_count <= 2:
+                    warn_tag_files.append(entry)
+
+    # --- 리포트 출력 ---
+    print("=" * 70)
+    print("📋 태그 감사 리포트 (--audit-tags)")
+    print("=" * 70)
+
+    if low_tag_files:
+        print(f"\n🔴 태그 1개 이하 파일: {len(low_tag_files)}개")
+        print("-" * 70)
+        for e in low_tag_files:
+            print(f"  [{e['tag_count']}개] {e['path']}")
+            print(f"         현재: {', '.join(e['current_tags']) or '(없음)'}")
+            if e["suggested_tags"]:
+                print(f"         제안: {', '.join(e['suggested_tags'])}")
+    else:
+        print("\n✅ 태그 1개 이하 파일 없음")
+
+    # 경고: 태그 2개 이하 (1개 이하 제외한 나머지)
+    warn_only = [e for e in warn_tag_files if e["tag_count"] == 2]
+    if warn_only:
+        print(f"\n⚠️  태그 2개 이하 파일 (경고): {len(warn_only)}개")
+        print("-" * 70)
+        for e in warn_only:
+            print(f"  [{e['tag_count']}개] {e['path']}")
+            print(f"         현재: {', '.join(e['current_tags'])}")
+            if e["suggested_tags"]:
+                print(f"         제안: {', '.join(e['suggested_tags'])}")
+
+    print(f"\n{'=' * 70}")
+    print(f"📊 요약: 태그 ≤1 = {len(low_tag_files)}개, 태그 ≤2 경고 = {len(warn_tag_files)}개")
+    print("=" * 70)
 
 
 def build_index():
@@ -101,7 +234,7 @@ def build_index():
                 "title": title[:80],
                 "category": cat,
                 "origin": guess_origin(f.name, fm),
-                "tags": guess_tags(f.name, cat),
+                "tags": guess_tags(f.name, cat, fm),
                 "content": body,
             }
             # frontmatter 보완
@@ -151,4 +284,13 @@ def build_index():
 
 
 if __name__ == "__main__":
-    build_index()
+    import argparse
+    parser = argparse.ArgumentParser(description="프롬프트 라이브러리 인덱스 관리")
+    parser.add_argument("--audit-tags", action="store_true",
+                        help="태그 1개 이하 파일 목록 출력 (제안 태그 포함)")
+    args = parser.parse_args()
+
+    if args.audit_tags:
+        audit_tags()
+    else:
+        build_index()

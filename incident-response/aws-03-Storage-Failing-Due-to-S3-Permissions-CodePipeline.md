@@ -1,9 +1,25 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/03-Storage/Failing-Due-to-S3-Permissions-CodePipeline.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/03-Storage/Failing-Due-to-S3-Permissions-CodePipeline.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- cloudformation
+- cloudwatch
+- codepipeline
+- failing
+- iam
+- incident-response
+- k8s-deployment
+- k8s-service
+- kms
+- performance
+- permissions
+- pipeline
+- s3
+- storage
+- sts
 ---
 
 # CodePipeline Failing Due to S3 Permissions

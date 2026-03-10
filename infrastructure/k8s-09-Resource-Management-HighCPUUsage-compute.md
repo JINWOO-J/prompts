@@ -1,9 +1,20 @@
 ---
 category: infrastructure
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/09-Resource-Management/HighCPUUsage-compute.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/09-Resource-Management/HighCPUUsage-compute.md)'
 role: Kubernetes SRE
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- compute
+- highcpuusage
+- infrastructure
+- k8s-namespace
+- k8s-node
+- k8s-pod
+- kubernetes
+- management
+- performance
+- resource
 ---
 
 ---

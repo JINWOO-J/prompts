@@ -1,9 +1,23 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/03-Storage/Intelligent-Tiering-Not-Moving-Data-as-Expected-S3.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/03-Storage/Intelligent-Tiering-Not-Moving-Data-as-Expected-S3.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- cloudwatch
+- cost
+- data
+- expected
+- incident-response
+- intelligent
+- k8s-service
+- monitoring
+- moving
+- s3
+- storage
+- sts
+- tiering
 ---
 
 # S3 Intelligent-Tiering Not Moving Data as Expected

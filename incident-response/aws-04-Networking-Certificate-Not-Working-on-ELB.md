@@ -1,9 +1,20 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Certificate-Not-Working-on-ELB.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Certificate-Not-Working-on-ELB.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- acm
+- certificate
+- elb
+- incident-response
+- k8s-service
+- networking
+- performance
+- security
+- sts
+- working
 ---
 
 # SSL Certificate Not Working on ELB

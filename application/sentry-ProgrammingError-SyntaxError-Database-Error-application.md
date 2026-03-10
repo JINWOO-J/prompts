@@ -1,9 +1,17 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ProgrammingError-SyntaxError-Database-Error-application.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ProgrammingError-SyntaxError-Database-Error-application.md)'
 role: SRE / Application Error Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- application
+- database
+- postgres
+- programmingerror
+- sentry
+- sts
+- syntaxerror
 ---
 
 # ProgrammingError-SyntaxError-Database-Error-application

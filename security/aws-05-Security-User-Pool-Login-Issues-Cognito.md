@@ -1,9 +1,20 @@
 ---
 category: security
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/User-Pool-Login-Issues-Cognito.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/User-Pool-Login-Issues-Cognito.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- cloudwatch
+- cognito
+- issues
+- k8s-service
+- login
+- performance
+- pool
+- security
+- sts
+- user
 ---
 
 # AWS Cognito User Pool Login Issues

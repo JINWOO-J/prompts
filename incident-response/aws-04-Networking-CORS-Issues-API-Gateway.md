@@ -1,9 +1,20 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/CORS-Issues-API-Gateway.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/CORS-Issues-API-Gateway.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- cloudwatch
+- cors
+- gateway
+- incident-response
+- issues
+- k8s-deployment
+- k8s-service
+- networking
+- performance
+- sts
 ---
 
 # API Gateway CORS Issues

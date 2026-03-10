@@ -1,4 +1,9 @@
-# RCA 특화 프롬프트 기법 정리
+---
+tags:
+- iam
+- rca_techniques
+- techniques
+---# RCA 특화 프롬프트 기법 정리
 
 > `found.md` 기반으로 RCA(근본 원인 분석)에 직접 활용 가능한 기법을 선별·정리한 문서.
 

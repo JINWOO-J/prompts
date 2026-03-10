@@ -10,6 +10,8 @@
   let activePromptId = null;
   let filteredPrompts = [];
   let focusIndex = -1;
+  let activeTags = [];
+  let activeOrigins = [];
 
   // --- DOM refs ---
   const $ = (sel) => document.querySelector(sel);
@@ -24,6 +26,10 @@
   const sidebar = $('#sidebar');
   const sidebarOverlay = $('#sidebar-overlay');
   const sidebarToggle = $('.sidebar-toggle');
+  const tagSelect = $('#tag-select');
+  const tagChips = $('#tag-chips');
+  const originButtons = $('#origin-buttons');
+  const matchCount = $('#match-count');
 
   // --- Init ---
   async function init() {
@@ -49,6 +55,8 @@
     }
 
     renderCategories();
+    renderTagFilter();
+    renderOriginFilter();
     restoreState();
     applyFilter();
 
@@ -91,6 +99,80 @@
     });
   }
 
+  // --- Tag Filter ---
+  function getAllTags() {
+    const tagSet = new Set();
+    allPrompts.forEach((p) => p.tags.forEach((t) => tagSet.add(t)));
+    return [...tagSet].sort();
+  }
+
+  function renderTagFilter() {
+    const allTags = getAllTags();
+    tagSelect.innerHTML = '<option value="">Filter by tag...</option>' +
+      allTags.map((t) => `<option value="${escapeHtml(t)}">${escapeHtml(t)}</option>`).join('');
+    renderTagChips();
+  }
+
+  function renderTagChips() {
+    tagChips.innerHTML = activeTags
+      .map((t) => `<span class="tag-chip" data-tag="${escapeHtml(t)}">${escapeHtml(t)} <button aria-label="Remove tag">&times;</button></span>`)
+      .join('');
+  }
+
+  tagSelect.addEventListener('change', () => {
+    const tag = tagSelect.value;
+    if (tag && !activeTags.includes(tag)) {
+      activeTags.push(tag);
+      renderTagChips();
+      focusIndex = -1;
+      applyFilter();
+    }
+    tagSelect.value = '';
+  });
+
+  tagChips.addEventListener('click', (e) => {
+    const chip = e.target.closest('.tag-chip');
+    if (!chip) return;
+    activeTags = activeTags.filter((t) => t !== chip.dataset.tag);
+    renderTagChips();
+    focusIndex = -1;
+    applyFilter();
+  });
+
+  viewerTags.addEventListener('click', (e) => {
+    const tag = e.target.closest('.viewer-tag');
+    if (!tag) return;
+    const value = tag.dataset.tag;
+    if (value && !activeTags.includes(value)) {
+      activeTags.push(value);
+      renderTagChips();
+      applyFilter();
+    }
+  });
+
+  // --- Origin Filter ---
+  const ORIGINS = ['custom', 'scoutflo', 'voltagent', 'shawnewallace', 'extracted'];
+
+  function renderOriginFilter() {
+    originButtons.innerHTML = ORIGINS
+      .map((o) => `<button class="origin-toggle ${o}${activeOrigins.includes(o) ? ' active' : ''}" data-origin="${o}">${o}</button>`)
+      .join('');
+  }
+
+  originButtons.addEventListener('click', (e) => {
+    const btn = e.target.closest('.origin-toggle');
+    if (!btn) return;
+    const origin = btn.dataset.origin;
+    if (activeOrigins.includes(origin)) {
+      activeOrigins = activeOrigins.filter((o) => o !== origin);
+    } else {
+      activeOrigins.push(origin);
+    }
+    renderOriginFilter();
+    focusIndex = -1;
+    applyFilter();
+  });
+
   // --- Filter & Search ---
   let debounceTimer;
   searchInput.addEventListener('input', () => {
@@ -106,6 +188,8 @@
 
     filteredPrompts = allPrompts.filter((p) => {
       if (activeCategory !== 'all' && p.category !== activeCategory) return false;
+      if (activeTags.length > 0 && !activeTags.every((t) => p.tags.includes(t))) return false;
+      if (activeOrigins.length > 0 && !activeOrigins.includes(p.origin)) return false;
       if (!query) return true;
       return (
         p.title.toLowerCase().includes(query) ||
@@ -118,6 +202,12 @@
   }
 
   function renderPromptList(query) {
+    const total = allPrompts.length;
+    const matched = filteredPrompts.length;
+    matchCount.textContent = matched === total
+      ? `${total} prompts`
+      : `${matched} / ${total} prompts`;
+
     if (filteredPrompts.length === 0) {
       promptList.innerHTML = '';
       emptyState.hidden = false;
@@ -164,7 +254,7 @@
     // Render viewer
     viewerTitle.textContent = prompt.title;
     viewerTags.innerHTML = prompt.tags
-      .map((t) => `<span class="viewer-tag">${escapeHtml(t)}</span>`)
+      .map((t) => `<span class="viewer-tag" data-tag="${escapeHtml(t)}">${escapeHtml(t)}</span>`)
       .join('');
     viewerContent.innerHTML = marked.parse(prompt.content);
 

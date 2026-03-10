@@ -1,9 +1,19 @@
 ---
 category: security
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/SCP-Preventing-Service-Access-Organizations.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/SCP-Preventing-Service-Access-Organizations.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- access
+- cloudwatch
+- k8s-service
+- organizations
+- performance
+- preventing
+- security
+- service
+- sts
 ---
 
 # AWS Organizations SCP Preventing Service Access

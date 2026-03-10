@@ -1,9 +1,20 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/06-Monitoring/Not-Recording-Changes-Config.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/06-Monitoring/Not-Recording-Changes-Config.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- changes
+- cloudwatch
+- compliance
+- config
+- iam
+- incident-response
+- k8s-service
+- monitoring
+- recording
+- sts
 ---
 
 # AWS Config Not Recording Changes

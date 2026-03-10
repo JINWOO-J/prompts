@@ -1,9 +1,23 @@
 ---
 category: security
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Not-Detecting-Threats-GuardDuty.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Not-Detecting-Threats-GuardDuty.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- cloudwatch
+- compliance
+- detecting
+- dns
+- guardduty
+- iam
+- k8s-service
+- monitoring
+- performance
+- security
+- sts
+- threats
+- vpc
 ---
 
 # AWS GuardDuty Not Detecting Threats

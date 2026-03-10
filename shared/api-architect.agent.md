@@ -1,9 +1,15 @@
 ---
 category: shared
-source: "[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/shared/agents/api-architect.agent.md)"
+source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/shared/agents/api-architect.agent.md)'
 role: AI Agent / Shared
 origin: shawnewallace
 extract_date: 2026-03-05
+scope: general-dev
+tags:
+- architect.agent
+- k8s-service
+- shared
+- sts
 ---
 
 ---

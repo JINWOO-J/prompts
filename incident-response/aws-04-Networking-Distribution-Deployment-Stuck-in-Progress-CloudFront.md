@@ -1,9 +1,22 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Distribution-Deployment-Stuck-in-Progress-CloudFront.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Distribution-Deployment-Stuck-in-Progress-CloudFront.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- cloudfront
+- cloudwatch
+- deployment
+- distribution
+- incident-response
+- k8s-deployment
+- k8s-service
+- networking
+- performance
+- progress
+- sts
+- stuck
 ---
 
 # CloudFront Distribution Deployment Stuck in Progress
