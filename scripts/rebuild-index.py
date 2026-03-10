@@ -207,6 +207,41 @@ def audit_tags():
     print("=" * 70)
 
 
+def _title_from_filename(stem: str) -> str:
+    """파일명에서 의미 있는 제목 생성.
+    agent-debugger        → Agent: Debugger
+    agent-sre-engineer    → Agent: SRE Engineer
+    k8s-01-Control-Plane-Timeout → K8s Control Plane Timeout
+    aws-01-Compute-High-CPU-Utilization-EC2 → Compute: High CPU Utilization (EC2)
+    """
+    # agent-* 패턴
+    if stem.startswith("agent-"):
+        role = stem[6:].replace("-", " ").title()
+        return f"Agent: {role}"
+
+    # aws-NN-Section-Name 패턴
+    m = re.match(r"aws-\d+-([A-Za-z]+)-(.+)", stem)
+    if m:
+        section = m.group(1)
+        rest = m.group(2).replace("-", " ")
+        return f"{section}: {rest}"
+
+    # k8s-NN-Section-Name 패턴
+    m = re.match(r"k8s-\d+-([A-Za-z-]+)-(.+)", stem)
+    if m:
+        section = m.group(1).replace("-", " ")
+        rest = m.group(2).replace("-", " ")
+        return f"K8s {section}: {rest}"
+
+    # sentry-ErrorType-Name 패턴
+    if stem.startswith("sentry-"):
+        rest = stem[7:].replace("-", " ")
+        return f"Sentry: {rest}"
+
+    # 기본 fallback
+    return stem.replace("-", " ").replace("_", " ").title()
+
+
 def build_index():
     entries = []
     stats = {}
@@ -222,11 +257,12 @@ def build_index():
             content = f.read_text(encoding="utf-8")
             fm = extract_frontmatter(content)
 
-            # 제목 추출 (첫 번째 H1 또는 H2)
-            title_m = re.search(r'^#{1,2}\s+(.+)$', content, re.MULTILINE)
-            title = title_m.group(1).strip() if title_m else f.stem.replace("-", " ").title()
-
             body = strip_frontmatter(content)
+
+            # 제목 추출: 본문(frontmatter 제거 후)에서 첫 H1만 탐색
+            # H1이 없으면 파일명에서 의미 있는 제목 생성
+            title_m = re.search(r'^#\s+(.+)$', body, re.MULTILINE)
+            title = title_m.group(1).strip() if title_m else _title_from_filename(f.stem)
 
             entry = {
                 "id": f"{cat[:3]}-{f.stem[:40]}",

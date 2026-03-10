@@ -28,7 +28,7 @@ _meta:
 prompts:
 - id: rca-01_basic_rca
   file: rca/01_basic_rca.md
-  title: '프롬프트 01: 기본 RCA (5-Whys + CoT)'
+  title: 기본 RCA (5-Whys + CoT)
   category: rca
   origin: custom
   tags:
@@ -39,7 +39,7 @@ prompts:
   - rca
 - id: rca-02_hypothesis_stepback
   file: rca/02_hypothesis_stepback.md
-  title: '프롬프트 02: 가설 수립 + Step-back 분석'
+  title: 가설 수립 + Step-back 분석
   category: rca
   origin: custom
   tags:
@@ -50,7 +50,7 @@ prompts:
   - redis
 - id: rca-03_timeline_chain
   file: rca/03_timeline_chain.md
-  title: '프롬프트 03: 타임라인 재구성 (프롬프트 체이닝 4단계)'
+  title: 타임라인 재구성 (프롬프트 체이닝 4단계)
   category: rca
   origin: custom
   tags:
@@ -59,7 +59,7 @@ prompts:
   - redis
 - id: rca-04_advanced_tot
   file: rca/04_advanced_tot.md
-  title: '프롬프트 04: 고급 RCA — Tree-of-Thoughts (ToT)'
+  title: 고급 RCA — Tree-of-Thoughts (ToT)
   category: rca
   origin: custom
   tags:
@@ -68,7 +68,7 @@ prompts:
   - advanced-analysis
 - id: rca-05_security_rca
   file: rca/05_security_rca.md
-  title: '프롬프트 05: 보안 침해 RCA (Diamond Model + MITRE ATT&CK)'
+  title: 보안 침해 RCA (Diamond Model + MITRE ATT&CK)
   category: rca
   origin: custom
   tags:
@@ -79,7 +79,7 @@ prompts:
   - vpc
 - id: rca-06_quality_review
   file: rca/06_quality_review.md
-  title: '프롬프트 06: RCA 보고서 품질 검증 (CoVe + Self-Refinement)'
+  title: RCA 보고서 품질 검증 (CoVe + Self-Refinement)
   category: rca
   origin: custom
   tags:
@@ -88,7 +88,7 @@ prompts:
   - security
 - id: inc-agent-debugger
   file: incident-response/agent-debugger.md
-  title: Communication Protocol
+  title: 'Agent: Debugger'
   category: incident-response
   origin: extracted
   tags:
@@ -100,7 +100,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/debugger.md)'
 - id: inc-agent-devops-incident-responder
   file: incident-response/agent-devops-incident-responder.md
-  title: Communication Protocol
+  title: 'Agent: Devops Incident Responder'
   category: incident-response
   origin: extracted
   tags:
@@ -118,7 +118,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/devops-incident-responder.md)'
 - id: inc-agent-error-detective
   file: incident-response/agent-error-detective.md
-  title: Communication Protocol
+  title: 'Agent: Error Detective'
   category: incident-response
   origin: extracted
   tags:
@@ -144,7 +144,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/incident-responder.md)'
 - id: inc-agent-organizer
   file: incident-response/agent-organizer.md
-  title: Communication Protocol
+  title: 'Agent: Organizer'
   category: incident-response
   origin: extracted
   tags:
@@ -1871,7 +1871,7 @@ prompts:
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ValueError-InvalidValue-Error-application.md)'
 - id: inf-agent-azure-infra-engineer
   file: infrastructure/agent-azure-infra-engineer.md
-  title: Core Capabilities
+  title: 'Agent: Azure Infra Engineer'
   category: infrastructure
   origin: extracted
   tags:
@@ -1895,7 +1895,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/azure-infra-engineer.md)'
 - id: inf-agent-chaos-engineer
   file: infrastructure/agent-chaos-engineer.md
-  title: Communication Protocol
+  title: 'Agent: Chaos Engineer'
   category: infrastructure
   origin: extracted
   tags:
@@ -1911,7 +1911,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/chaos-engineer.md)'
 - id: inf-agent-cloud-architect
   file: infrastructure/agent-cloud-architect.md
-  title: Communication Protocol
+  title: 'Agent: Cloud Architect'
   category: infrastructure
   origin: extracted
   tags:
@@ -1931,7 +1931,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/cloud-architect.md)'
 - id: inf-agent-database-administrator
   file: infrastructure/agent-database-administrator.md
-  title: Communication Protocol
+  title: 'Agent: Database Administrator'
   category: infrastructure
   origin: extracted
   tags:
@@ -1953,7 +1953,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/database-administrator.md)'
 - id: inf-agent-deployment-engineer
   file: infrastructure/agent-deployment-engineer.md
-  title: Communication Protocol
+  title: 'Agent: Deployment Engineer'
   category: infrastructure
   origin: extracted
   tags:
@@ -1971,7 +1971,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/deployment-engineer.md)'
 - id: inf-agent-devops-engineer
   file: infrastructure/agent-devops-engineer.md
-  title: Communication Protocol
+  title: 'Agent: Devops Engineer'
   category: infrastructure
   origin: extracted
   tags:
@@ -1996,7 +1996,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/devops-engineer.md)'
 - id: inf-agent-docker-expert
   file: infrastructure/agent-docker-expert.md
-  title: Communication Protocol
+  title: 'Agent: Docker Expert'
   category: infrastructure
   origin: extracted
   tags:
@@ -2030,7 +2030,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/kubernetes-specialist.md)'
 - id: inf-agent-network-engineer
   file: infrastructure/agent-network-engineer.md
-  title: Communication Protocol
+  title: 'Agent: Network Engineer'
   category: infrastructure
   origin: extracted
   tags:
@@ -2050,7 +2050,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/network-engineer.md)'
 - id: inf-agent-performance-engineer
   file: infrastructure/agent-performance-engineer.md
-  title: Communication Protocol
+  title: 'Agent: Performance Engineer'
   category: infrastructure
   origin: extracted
   tags:
@@ -2066,7 +2066,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/performance-engineer.md)'
 - id: inf-agent-platform-engineer
   file: infrastructure/agent-platform-engineer.md
-  title: Communication Protocol
+  title: 'Agent: Platform Engineer'
   category: infrastructure
   origin: extracted
   tags:
@@ -2088,7 +2088,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/platform-engineer.md)'
 - id: inf-agent-terraform-engineer
   file: infrastructure/agent-terraform-engineer.md
-  title: Communication Protocol
+  title: 'Agent: Terraform Engineer'
   category: infrastructure
   origin: extracted
   tags:
@@ -2109,7 +2109,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/terraform-engineer.md)'
 - id: inf-agent-terragrunt-expert
   file: infrastructure/agent-terragrunt-expert.md
-  title: Communication Protocol
+  title: 'Agent: Terragrunt Expert'
   category: infrastructure
   origin: extracted
   tags:
@@ -2301,7 +2301,7 @@ prompts:
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Stuck-in-Progress-CodePipeline.md)'
 - id: inf-build-engineer
   file: infrastructure/build-engineer.md
-  title: Communication Protocol
+  title: Build Engineer
   category: infrastructure
   origin: extracted
   tags:
@@ -2358,7 +2358,7 @@ prompts:
   source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/scenarios/devops-infrastructure/claude-code/commands/scaffold-pipeline.md)'
 - id: inf-dependency-manager
   file: infrastructure/dependency-manager.md
-  title: Communication Protocol
+  title: Dependency Manager
   category: infrastructure
   origin: extracted
   tags:
@@ -2372,7 +2372,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/06-developer-experience/dependency-manager.md)'
 - id: inf-dx-optimizer
   file: infrastructure/dx-optimizer.md
-  title: Communication Protocol
+  title: Dx Optimizer
   category: infrastructure
   origin: extracted
   tags:
@@ -2383,7 +2383,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/06-developer-experience/dx-optimizer.md)'
 - id: inf-git-workflow-manager
   file: infrastructure/git-workflow-manager.md
-  title: Communication Protocol
+  title: Git Workflow Manager
   category: infrastructure
   origin: extracted
   tags:
@@ -6639,7 +6639,7 @@ prompts:
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/02-Security-Compliance/Vulnerability-Scanning-K8s.md)'
 - id: inf-legacy-modernizer
   file: infrastructure/legacy-modernizer.md
-  title: Communication Protocol
+  title: Legacy Modernizer
   category: infrastructure
   origin: extracted
   tags:
@@ -6657,7 +6657,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/06-developer-experience/legacy-modernizer.md)'
 - id: inf-m365-admin
   file: infrastructure/m365-admin.md
-  title: Core Capabilities
+  title: M365 Admin
   category: infrastructure
   origin: extracted
   tags:
@@ -6673,7 +6673,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/07-specialized-domains/m365-admin.md)'
 - id: inf-microservices-architect
   file: infrastructure/microservices-architect.md
-  title: Communication Protocol
+  title: Microservices Architect
   category: infrastructure
   origin: extracted
   tags:
@@ -6694,7 +6694,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/01-core-development/microservices-architect.md)'
 - id: inf-performance-monitor
   file: infrastructure/performance-monitor.md
-  title: Communication Protocol
+  title: Performance Monitor
   category: infrastructure
   origin: extracted
   tags:
@@ -6711,7 +6711,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/09-meta-orchestration/performance-monitor.md)'
 - id: inf-refactoring-specialist
   file: infrastructure/refactoring-specialist.md
-  title: Communication Protocol
+  title: Refactoring Specialist
   category: infrastructure
   origin: extracted
   tags:
@@ -6724,7 +6724,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/06-developer-experience/refactoring-specialist.md)'
 - id: inf-tooling-engineer
   file: infrastructure/tooling-engineer.md
-  title: Communication Protocol
+  title: Tooling Engineer
   category: infrastructure
   origin: extracted
   tags:
@@ -6738,7 +6738,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/06-developer-experience/tooling-engineer.md)'
 - id: sec-agent-ad-security-reviewer
   file: security/agent-ad-security-reviewer.md
-  title: Core Capabilities
+  title: 'Agent: Ad Security Reviewer'
   category: security
   origin: extracted
   tags:
@@ -6751,7 +6751,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/ad-security-reviewer.md)'
 - id: sec-agent-compliance-auditor
   file: security/agent-compliance-auditor.md
-  title: Communication Protocol
+  title: 'Agent: Compliance Auditor'
   category: security
   origin: extracted
   tags:
@@ -6764,7 +6764,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/compliance-auditor.md)'
 - id: sec-agent-penetration-tester
   file: security/agent-penetration-tester.md
-  title: Communication Protocol
+  title: 'Agent: Penetration Tester'
   category: security
   origin: extracted
   tags:
@@ -6781,7 +6781,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/penetration-tester.md)'
 - id: sec-agent-powershell-security-hardening
   file: security/agent-powershell-security-hardening.md
-  title: Core Capabilities
+  title: 'Agent: Powershell Security Hardening'
   category: security
   origin: extracted
   tags:
@@ -6799,7 +6799,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/powershell-security-hardening.md)'
 - id: sec-agent-security-auditor
   file: security/agent-security-auditor.md
-  title: Communication Protocol
+  title: 'Agent: Security Auditor'
   category: security
   origin: extracted
   tags:
@@ -7225,7 +7225,7 @@ prompts:
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/07-RBAC/UnauthorizedErrorWhenAccessingKubernetesAPI-rbac.md)'
 - id: sec-risk-manager
   file: security/risk-manager.md
-  title: Communication Protocol
+  title: Risk Manager
   category: security
   origin: extracted
   tags:
@@ -7239,7 +7239,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/07-specialized-domains/risk-manager.md)'
 - id: dat-ai-engineer
   file: data-ai/ai-engineer.md
-  title: Communication Protocol
+  title: Ai Engineer
   category: data-ai
   origin: extracted
   tags:
@@ -7254,7 +7254,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/ai-engineer.md)'
 - id: dat-data-analyst
   file: data-ai/data-analyst.md
-  title: Communication Protocol
+  title: Data Analyst
   category: data-ai
   origin: extracted
   tags:
@@ -7268,7 +7268,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/data-analyst.md)'
 - id: dat-data-engineer
   file: data-ai/data-engineer.md
-  title: Communication Protocol
+  title: Data Engineer
   category: data-ai
   origin: extracted
   tags:
@@ -7286,7 +7286,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/data-engineer.md)'
 - id: dat-data-scientist
   file: data-ai/data-scientist.md
-  title: Communication Protocol
+  title: Data Scientist
   category: data-ai
   origin: extracted
   tags:
@@ -7299,7 +7299,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/data-scientist.md)'
 - id: dat-database-optimizer
   file: data-ai/database-optimizer.md
-  title: Communication Protocol
+  title: Database Optimizer
   category: data-ai
   origin: extracted
   tags:
@@ -7317,7 +7317,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/database-optimizer.md)'
 - id: dat-llm-architect
   file: data-ai/llm-architect.md
-  title: Communication Protocol
+  title: Llm Architect
   category: data-ai
   origin: extracted
   tags:
@@ -7332,7 +7332,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/llm-architect.md)'
 - id: dat-ml-pipeline-engineer
   file: data-ai/ml-pipeline-engineer.md
-  title: Communication Protocol
+  title: Ml Pipeline Engineer
   category: data-ai
   origin: extracted
   tags:
@@ -7346,7 +7346,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/ml-engineer.md)'
 - id: dat-ml-serving-engineer
   file: data-ai/ml-serving-engineer.md
-  title: Communication Protocol
+  title: Ml Serving Engineer
   category: data-ai
   origin: extracted
   tags:
@@ -7364,7 +7364,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/machine-learning-engineer.md)'
 - id: dat-mlops-engineer
   file: data-ai/mlops-engineer.md
-  title: Communication Protocol
+  title: Mlops Engineer
   category: data-ai
   origin: extracted
   tags:
@@ -7390,7 +7390,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/mlops-engineer.md)'
 - id: dat-nlp-engineer
   file: data-ai/nlp-engineer.md
-  title: Communication Protocol
+  title: Nlp Engineer
   category: data-ai
   origin: extracted
   tags:
@@ -7403,7 +7403,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/nlp-engineer.md)'
 - id: dat-postgres-pro
   file: data-ai/postgres-pro.md
-  title: Communication Protocol
+  title: Postgres Pro
   category: data-ai
   origin: extracted
   tags:
@@ -7419,7 +7419,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/postgres-pro.md)'
 - id: dat-prompt-engineer
   file: data-ai/prompt-engineer.md
-  title: Communication Protocol
+  title: Prompt Engineer
   category: data-ai
   origin: extracted
   tags:
@@ -7432,7 +7432,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/prompt-engineer.md)'
 - id: sha-agent-installer
   file: shared/agent-installer.md
-  title: Your Capabilities
+  title: 'Agent: Installer'
   category: shared
   origin: extracted
   tags:
@@ -7455,7 +7455,7 @@ prompts:
   source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/shared/agents/api-architect.agent.md)'
 - id: sha-api-designer
   file: shared/api-designer.md
-  title: Communication Protocol
+  title: Api Designer
   category: shared
   origin: extracted
   tags:
@@ -7468,7 +7468,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/01-core-development/api-designer.md)'
 - id: sha-api-documenter
   file: shared/api-documenter.md
-  title: Communication Protocol
+  title: Api Documenter
   category: shared
   origin: extracted
   tags:
@@ -7481,7 +7481,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/07-specialized-domains/api-documenter.md)'
 - id: sha-architect.agent
   file: shared/architect.agent.md
-  title: Description
+  title: Architect.Agent
   category: shared
   origin: shawnewallace
   tags:
@@ -7492,7 +7492,7 @@ prompts:
   source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/shared/agents/architect.agent.md)'
 - id: sha-backend-developer
   file: shared/backend-developer.md
-  title: Communication Protocol
+  title: Backend Developer
   category: shared
   origin: extracted
   tags:
@@ -7525,7 +7525,7 @@ prompts:
   source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/shared/agents/check.agent.md)'
 - id: sha-context-manager
   file: shared/context-manager.md
-  title: Communication Protocol
+  title: Context Manager
   category: shared
   origin: extracted
   tags:
@@ -7540,7 +7540,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/09-meta-orchestration/context-manager.md)'
 - id: sha-documentation-engineer
   file: shared/documentation-engineer.md
-  title: Communication Protocol
+  title: Documentation Engineer
   category: shared
   origin: extracted
   tags:
@@ -7552,7 +7552,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/06-developer-experience/documentation-engineer.md)'
 - id: sha-error-coordinator
   file: shared/error-coordinator.md
-  title: Communication Protocol
+  title: Error Coordinator
   category: shared
   origin: extracted
   tags:
@@ -7566,7 +7566,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/09-meta-orchestration/error-coordinator.md)'
 - id: sha-fullstack-developer
   file: shared/fullstack-developer.md
-  title: Communication Protocol
+  title: Fullstack Developer
   category: shared
   origin: extracted
   tags:
@@ -7584,7 +7584,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/01-core-development/fullstack-developer.md)'
 - id: sha-graphql-architect
   file: shared/graphql-architect.md
-  title: Communication Protocol
+  title: Graphql Architect
   category: shared
   origin: extracted
   tags:
@@ -7612,7 +7612,7 @@ prompts:
   source: custom
 - id: sha-it-ops-orchestrator
   file: shared/it-ops-orchestrator.md
-  title: Core Responsibilities
+  title: It Ops Orchestrator
   category: shared
   origin: extracted
   tags:
@@ -7628,7 +7628,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/09-meta-orchestration/it-ops-orchestrator.md)'
 - id: sha-knowledge-synthesizer
   file: shared/knowledge-synthesizer.md
-  title: Communication Protocol
+  title: Knowledge Synthesizer
   category: shared
   origin: extracted
   tags:
@@ -7642,7 +7642,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/09-meta-orchestration/knowledge-synthesizer.md)'
 - id: sha-multi-agent-coordinator
   file: shared/multi-agent-coordinator.md
-  title: Communication Protocol
+  title: Multi Agent Coordinator
   category: shared
   origin: extracted
   tags:
@@ -7684,7 +7684,7 @@ prompts:
   source: custom
 - id: sha-task-distributor
   file: shared/task-distributor.md
-  title: Communication Protocol
+  title: Task Distributor
   category: shared
   origin: extracted
   tags:
@@ -7700,7 +7700,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/09-meta-orchestration/task-distributor.md)'
 - id: sha-websocket-engineer
   file: shared/websocket-engineer.md
-  title: Communication Protocol
+  title: Websocket Engineer
   category: shared
   origin: extracted
   tags:
@@ -7716,7 +7716,7 @@ prompts:
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/01-core-development/websocket-engineer.md)'
 - id: sha-workflow-orchestrator
   file: shared/workflow-orchestrator.md
-  title: Communication Protocol
+  title: Workflow Orchestrator
   category: shared
   origin: extracted
   tags:
@@ -7938,7 +7938,7 @@ prompts:
   - workflow
 - id: tec-rca_techniques
   file: techniques/rca_techniques.md
-  title: 📌 RCA 프로세스 단계별 기법 선택 가이드
+  title: RCA 특화 프롬프트 기법 정리
   category: techniques
   origin: custom
   tags:

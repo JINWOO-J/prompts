@@ -12,7 +12,7 @@ tags:
 - vpc
 ---
 
-# 프롬프트 05: 보안 침해 RCA (Diamond Model + MITRE ATT&CK)
+# 보안 침해 RCA (Diamond Model + MITRE ATT&CK)
 
 ## 사용 방법
 보안 인시던트(침해 의심, 이상 행위, APT 탐지) 상황에서 활용.  
