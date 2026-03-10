@@ -1,9 +1,20 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Not-Distributing-Traffic-Properly-Global-Accelerator.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Not-Distributing-Traffic-Properly-Global-Accelerator.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- accelerator
+- distributing
+- global
+- incident-response
+- k8s-service
+- networking
+- performance
+- properly
+- sts
+- traffic
 ---
 
 # AWS Global Accelerator Not Distributing Traffic Properly

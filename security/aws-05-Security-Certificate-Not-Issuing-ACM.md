@@ -1,9 +1,21 @@
 ---
 category: security
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Certificate-Not-Issuing-ACM.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Certificate-Not-Issuing-ACM.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- acm
+- certificate
+- cloudfront
+- cloudwatch
+- dns
+- issuing
+- k8s-service
+- performance
+- rds
+- security
+- sts
 ---
 
 # AWS Certificate Manager (ACM) Certificate Not Issuing

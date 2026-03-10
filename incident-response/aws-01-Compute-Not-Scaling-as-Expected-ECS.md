@@ -1,9 +1,22 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Not-Scaling-as-Expected-ECS.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Not-Scaling-as-Expected-ECS.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- capacity
+- cloudwatch
+- compute
+- ec2
+- ecs
+- expected
+- fargate
+- incident-response
+- k8s-deployment
+- k8s-service
+- performance
+- scaling
 ---
 
 # ECS Service Not Scaling as Expected

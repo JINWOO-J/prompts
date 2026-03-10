@@ -1,9 +1,21 @@
 ---
 category: security
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/07-RBAC/ServiceAccountNotFound-rbac.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/07-RBAC/ServiceAccountNotFound-rbac.md)'
 role: Kubernetes SRE
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- k8s-deployment
+- k8s-namespace
+- k8s-pod
+- k8s-rbac
+- k8s-secret
+- k8s-service
+- kubernetes
+- rbac
+- security
+- serviceaccountnotfound
+- sts
 ---
 
 ---

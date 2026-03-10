@@ -1,9 +1,25 @@
 ---
 category: infrastructure
-source: "[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/scenarios/devops-infrastructure/claude-code/commands/review-iac.md)"
+source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/scenarios/devops-infrastructure/claude-code/commands/review-iac.md)'
 role: DevOps / Infrastructure Engineer
 origin: shawnewallace
 extract_date: 2026-03-05
+tags:
+- claude
+- code
+- commands
+- database
+- iam
+- infrastructure
+- k8s-deployment
+- k8s-ingress
+- k8s-secret
+- pipeline
+- rds
+- review
+- security
+- storage
+- terraform
 ---
 
 # Review Infrastructure as Code

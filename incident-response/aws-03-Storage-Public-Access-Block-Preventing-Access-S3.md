@@ -1,9 +1,23 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/03-Storage/Public-Access-Block-Preventing-Access-S3.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/03-Storage/Public-Access-Block-Preventing-Access-S3.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- access
+- block
+- cloudfront
+- cloudwatch
+- iam
+- incident-response
+- k8s-service
+- performance
+- preventing
+- public
+- s3
+- storage
+- sts
 ---
 
 # S3 Public Access Block Preventing Access

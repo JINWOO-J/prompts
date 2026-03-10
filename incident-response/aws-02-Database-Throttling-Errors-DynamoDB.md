@@ -1,9 +1,21 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/02-Database/Throttling-Errors-DynamoDB.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/02-Database/Throttling-Errors-DynamoDB.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- capacity
+- cloudwatch
+- database
+- dynamodb
+- errors
+- incident-response
+- k8s-service
+- lambda
+- performance
+- sts
+- throttling
 ---
 
 # DynamoDB Throttling Errors

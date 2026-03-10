@@ -1,9 +1,17 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ProgrammingError-ConstraintViolation-Database-Error-application.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ProgrammingError-ConstraintViolation-Database-Error-application.md)'
 role: SRE / Application Error Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- application
+- constraintviolation
+- database
+- postgres
+- programmingerror
+- sentry
+- sts
 ---
 
 # ProgrammingError-ConstraintViolation-Database-Error-application

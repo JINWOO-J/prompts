@@ -1,9 +1,21 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Cold-Start-Delays-Performance-Lambda.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Cold-Start-Delays-Performance-Lambda.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- cloudwatch
+- cold
+- compute
+- delays
+- incident-response
+- k8s-service
+- lambda
+- performance
+- start
+- sts
+- vpc
 ---
 
 # Lambda Cold Start Delays Performance

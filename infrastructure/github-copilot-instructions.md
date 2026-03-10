@@ -1,9 +1,19 @@
 ---
 category: infrastructure
-source: "[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/scenarios/devops-infrastructure/github-copilot/instructions.md)"
+source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/scenarios/devops-infrastructure/github-copilot/instructions.md)'
 role: DevOps / Infrastructure Engineer
 origin: shawnewallace
 extract_date: 2026-03-05
+tags:
+- ci-cd
+- copilot
+- github
+- iam
+- infrastructure
+- k8s-secret
+- pipeline
+- security
+- terraform
 ---
 
 # Copilot Instructions — DevOps & Infrastructure

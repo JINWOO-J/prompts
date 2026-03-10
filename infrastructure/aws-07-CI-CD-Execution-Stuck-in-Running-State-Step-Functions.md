@@ -1,9 +1,23 @@
 ---
 category: infrastructure
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Execution-Stuck-in-Running-State-Step-Functions.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Execution-Stuck-in-Running-State-Step-Functions.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- ci-cd
+- execution
+- functions
+- infrastructure
+- k8s-service
+- lambda
+- monitoring
+- performance
+- running
+- state
+- step
+- sts
+- stuck
 ---
 
 # AWS Step Functions Execution Stuck in Running State

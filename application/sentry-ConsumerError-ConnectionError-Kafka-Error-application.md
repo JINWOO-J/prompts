@@ -1,9 +1,18 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ConsumerError-ConnectionError-Kafka-Error-application.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ConsumerError-ConnectionError-Kafka-Error-application.md)'
 role: SRE / Application Error Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- application
+- connectionerror
+- consumererror
+- k8s-service
+- kafka
+- pipeline
+- sentry
+- sts
 ---
 
 # ConsumerError-ConnectionError-Kafka-Error-application

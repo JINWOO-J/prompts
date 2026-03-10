@@ -1,9 +1,21 @@
 ---
 category: infrastructure
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/IngressRedirectLoop-ingress.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/IngressRedirectLoop-ingress.md)'
 role: Kubernetes SRE
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- infrastructure
+- ingress
+- ingressredirectloop
+- k8s-ingress
+- k8s-namespace
+- k8s-service
+- kubernetes
+- networking
+- nginx
+- performance
+- sts
 ---
 
 ---

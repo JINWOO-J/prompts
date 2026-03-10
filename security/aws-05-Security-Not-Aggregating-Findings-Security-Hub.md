@@ -1,9 +1,20 @@
 ---
 category: security
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Not-Aggregating-Findings-Security-Hub.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Not-Aggregating-Findings-Security-Hub.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- aggregating
+- cloudwatch
+- compliance
+- findings
+- iam
+- k8s-service
+- monitoring
+- rds
+- security
+- sts
 ---
 
 # AWS Security Hub Not Aggregating Findings

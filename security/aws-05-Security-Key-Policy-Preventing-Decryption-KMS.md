@@ -1,9 +1,22 @@
 ---
 category: security
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Key-Policy-Preventing-Decryption-KMS.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Key-Policy-Preventing-Decryption-KMS.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- cloudwatch
+- decryption
+- iam
+- k8s-service
+- kms
+- performance
+- policy
+- preventing
+- rds
+- s3
+- security
+- sts
 ---
 
 # AWS KMS Key Policy Preventing Decryption

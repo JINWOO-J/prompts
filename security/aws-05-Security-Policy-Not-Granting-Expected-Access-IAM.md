@@ -1,9 +1,19 @@
 ---
 category: security
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Policy-Not-Granting-Expected-Access-IAM.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Policy-Not-Granting-Expected-Access-IAM.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- access
+- cloudwatch
+- expected
+- granting
+- iam
+- k8s-service
+- performance
+- policy
+- security
 ---
 
 # IAM Policy Not Granting Expected Access

@@ -1,9 +1,24 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Instance-Not-Starting-EC2.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Instance-Not-Starting-EC2.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- capacity
+- compute
+- ec2
+- iam
+- incident-response
+- instance
+- k8s-deployment
+- k8s-pod
+- k8s-service
+- performance
+- scaling
+- security
+- starting
+- sts
 ---
 
 # EC2 Instance Not Starting

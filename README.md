@@ -2,7 +2,7 @@
 
 > **목적**: 인프라/보안 운영팀의 RCA(근본 원인 분석), 장애 대응, 트러블슈팅을 AI 에이전트로 자동화하기 위한 프롬프트 모음  
 > **관리 원칙**: PromptOps — 프롬프트를 코드처럼 Git으로 버전 관리  
-> **전체 인덱스**: [prompts.meta.yaml](./prompts.meta.yaml) — 261개 프롬프트 자동 색인
+> **전체 인덱스**: [prompts.meta.yaml](./prompts.meta.yaml) — 431개 프롬프트 자동 색인
 
 ---
 
@@ -17,12 +17,12 @@ prompts/
 │   └── rebuild-index.py   # 인덱스 재생성 스크립트
 │
 ├── rca/                   # 🔬 근본 원인 분석 방법론 (6개 — 자체 제작)
-├── incident-response/     # 🚨 인시던트 대응 에이전트 + AWS 장애 플레이북 (78개)
+├── incident-response/     # 🚨 인시던트 대응 에이전트 + AWS 장애 플레이북 (73개)
 ├── application/           # 🐛 앱 레이어 에러 추적 / Sentry 플레이북 (25개)
-├── infrastructure/        # 🏗️ K8s + CI/CD + 인프라 트러블슈팅 (93개)
+├── infrastructure/        # 🏗️ K8s + CI/CD + 인프라 트러블슈팅 (264개)
 ├── security/              # 🔐 보안 침해 / IAM / WAF / RBAC (29개)
 ├── data-ai/               # 📊 Data Engineering / MLOps / DB 최적화 (12개)
-├── shared/                # 🔧 공통 페르소나 / 가드레일 / 범용 에이전트 (17개)
+├── shared/                # 🔧 공통 페르소나 / 가드레일 / 범용 에이전트 (21개)
 └── techniques/            # 📚 프롬프트 기법 참고 문서 (1개)
 ```
 
@@ -55,7 +55,7 @@ prompts/
 
 ---
 
-### 🚨 인시던트 대응 (`incident-response/`) — 78개
+### 🚨 인시던트 대응 (`incident-response/`) — 73개
 
 AWS 장애 + 인시던트 대응 에이전트. 파일명 패턴으로 빠르게 찾기:
 
@@ -86,7 +86,7 @@ Sentry 기반 에러 타입별 플레이북:
 
 ---
 
-### 🏗️ 인프라 트러블슈팅 (`infrastructure/`) — 93개
+### 🏗️ 인프라 트러블슈팅 (`infrastructure/`) — 264개
 
 | 패턴 | 내용 |
 |------|------|
@@ -94,9 +94,10 @@ Sentry 기반 에러 타입별 플레이북:
 | `agent-docker-expert.md` | 컨테이너 빌드/런타임 |
 | `agent-terraform-engineer.md` | IaC 관리 |
 | `agent-deployment-engineer.md` | CI/CD 배포 |
-| `k8s-01-Pods-*.md` | Pod 장애 (CrashLoop, OOMKilled 등) |
-| `k8s-02-Deployments-*.md` | Deployment 장애 |
-| `k8s-04-Nodes-*.md` | Node NotReady 등 |
+| `k8s-01-Control-Plane-*.md` | Control Plane 장애 (24개) |
+| `k8s-02-Nodes-*.md` | Node 장애 (24개) |
+| `k8s-03-Pods-*.md` | Pod 장애 (41개) |
+| `k8s-04-Workloads-*.md` | Deployment, DaemonSet, Job, HPA (25개) |
 | `k8s-05-Networking-*.md` | Ingress, DNS, Service 장애 (24개) |
 | `k8s-06-Storage-*.md` | PVC, 볼륨 마운트 |
 | `k8s-08-Configuration-*.md` | ConfigMap, Secret |
@@ -104,6 +105,14 @@ Sentry 기반 에러 타입별 플레이북:
 | `aws-07-CI-CD-*.md` | CodePipeline, CloudFormation (9개) |
 | `claude-code-commands-*.md` | IaC 리뷰, 파이프라인 스캐폴딩 (shawnewallace) |
 | `github-copilot-instructions-*.md` | Terraform/CI-CD/Security 코딩 가이드 |
+| `microservices-architect.md` | 마이크로서비스 아키텍처 설계 에이전트 |
+| `k8s-13-Proactive-Capacity-Performance-*.md` | 용량/성능 사전 예방 체크 (7개) |
+| `k8s-13-Proactive-Security-Compliance-*.md` | 보안/컴플라이언스 사전 점검 (10개) |
+| `k8s-13-Proactive-Backup-DR-*.md` | 백업/재해복구 사전 검증 (7개) |
+| `k8s-13-Proactive-Cost-Optimization-*.md` | 비용 최적화 사전 분석 (8개) |
+| `k8s-13-Proactive-Observability-*.md` | 관측성 커버리지 점검 (7개) |
+| `k8s-13-Proactive-Data-Integrity-*.md` | 데이터 무결성 사전 검증 (5개) |
+| `k8s-13-Proactive-Operational-Readiness-*.md` | 운영 준비도 사전 점검 (12개) |
 
 ---
 
@@ -125,7 +134,7 @@ MLOps, 데이터 엔지니어링, DB 최적화 에이전트.
 
 ---
 
-### 🔧 공통 (`shared/`) — 17개
+### 🔧 공통 (`shared/`) — 21개
 
 | 파일 | 설명 |
 |------|------|
@@ -133,8 +142,11 @@ MLOps, 데이터 엔지니어링, DB 최적화 에이전트.
 | `guardrails.md` | 환각 방지, 보안 격리, HITL 규칙 |
 | `architect.agent.md` | 아키텍처 계획 에이전트 |
 | `plan.agent.md` | 작업 계획 에이전트 |
-| `it-ops-orchestrator.md` | IT Ops 오케스트레이터 에이전트 |
-| `multi-agent-coordinator.md` | 멀티 에이전트 조정 |
+| `error-coordinator.md` | 에러 조정 에이전트 |
+| `it-ops-orchestrator.md` | IT 운영 오케스트레이터 |
+| `multi-agent-coordinator.md` | 멀티 에이전트 조정자 |
+| `task-distributor.md` | 작업 분배 에이전트 |
+| `workflow-orchestrator.md` | 워크플로우 오케스트레이터 |
 
 ---
 

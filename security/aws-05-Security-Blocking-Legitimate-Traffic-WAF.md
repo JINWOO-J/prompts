@@ -1,9 +1,20 @@
 ---
 category: security
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Blocking-Legitimate-Traffic-WAF.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Blocking-Legitimate-Traffic-WAF.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- blocking
+- cloudfront
+- cloudwatch
+- k8s-service
+- legitimate
+- performance
+- security
+- sts
+- traffic
+- waf
 ---
 
 # AWS WAF Blocking Legitimate Traffic

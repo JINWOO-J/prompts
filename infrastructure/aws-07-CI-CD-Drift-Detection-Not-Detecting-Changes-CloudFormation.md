@@ -1,9 +1,22 @@
 ---
 category: infrastructure
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Drift-Detection-Not-Detecting-Changes-CloudFormation.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Drift-Detection-Not-Detecting-Changes-CloudFormation.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- changes
+- ci-cd
+- cloudformation
+- cloudwatch
+- compliance
+- detecting
+- detection
+- drift
+- iam
+- infrastructure
+- k8s-service
+- sts
 ---
 
 # CloudFormation Drift Detection Not Detecting Changes

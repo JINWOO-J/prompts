@@ -1,9 +1,19 @@
 ---
 category: security
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Not-Mitigating-DDoS-Attacks-Shield.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Not-Mitigating-DDoS-Attacks-Shield.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- attacks
+- cloudwatch
+- ddos
+- k8s-service
+- mitigating
+- performance
+- security
+- shield
+- sts
 ---
 
 # AWS Shield Not Mitigating DDoS Attacks

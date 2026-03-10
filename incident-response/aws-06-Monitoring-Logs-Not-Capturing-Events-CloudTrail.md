@@ -1,9 +1,26 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/06-Monitoring/Logs-Not-Capturing-Events-CloudTrail.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/06-Monitoring/Logs-Not-Capturing-Events-CloudTrail.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- capturing
+- cloudtrail
+- cloudwatch
+- compliance
+- events
+- iam
+- incident-response
+- k8s-service
+- kms
+- logging
+- logs
+- monitoring
+- performance
+- s3
+- security
+- sts
 ---
 
 # AWS CloudTrail Logs Not Capturing Events

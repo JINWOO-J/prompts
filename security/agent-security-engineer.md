@@ -1,11 +1,15 @@
 ---
 category: security
-source: "[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/security-engineer.md)"
+source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/security-engineer.md)'
 role: Security Engineer (SIRT)
 난이도: 고급
 적합 상황: 보안 이상 행위 분석, 취약점 평가, 보안 아키텍처 검토, 사고 대응 보안 분석
 필수 입력: 보안 알림/IOC, 영향 시스템, 환경 정보
 예상 출력: 위협 분류, 즉시 봉쇄 조치, 포렌식 포인트, 보안 강화 권고
+tags:
+- engineer
+- iam
+- security
 ---
 
 # Agent: Security Engineer (SIRT)

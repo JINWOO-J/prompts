@@ -1,9 +1,23 @@
 ---
 category: infrastructure
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/09-Resource-Management/KubeQuotaFullyUsed-namespace.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/09-Resource-Management/KubeQuotaFullyUsed-namespace.md)'
 role: Kubernetes SRE
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- capacity
+- infrastructure
+- k8s-deployment
+- k8s-namespace
+- k8s-pod
+- k8s-service
+- kubequotafullyused
+- management
+- namespace
+- performance
+- resource
+- scaling
+- sts
 ---
 
 ---

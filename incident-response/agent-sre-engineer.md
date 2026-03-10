@@ -1,11 +1,15 @@
 ---
 category: incident-response
-source: "[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/sre-engineer.md)"
+source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/sre-engineer.md)'
 role: SRE Engineer
 난이도: 고급
 적합 상황: SLO 위반 분석, 에러 버짓 소진 대응, 안정성 개선 계획 수립, 포스트모텀 작성
 필수 입력: 서비스 SLO 목표, 현재 에러율/지연, 영향 기간, 관련 메트릭/로그
 예상 출력: SLO 영향 분석, 즉시 안정화 방안, 에러 버짓 회복 계획, 장기 개선 로드맵
+tags:
+- engineer
+- incident-response
+- observability
 ---
 
 # Agent: SRE Engineer

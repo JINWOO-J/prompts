@@ -1,9 +1,22 @@
 ---
 category: infrastructure
-source: "[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/scenarios/devops-infrastructure/claude-code/commands/scaffold-pipeline.md)"
+source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/scenarios/devops-infrastructure/claude-code/commands/scaffold-pipeline.md)'
 role: DevOps / Infrastructure Engineer
 origin: shawnewallace
 extract_date: 2026-03-05
+tags:
+- ci-cd
+- claude
+- code
+- commands
+- infrastructure
+- k8s-deployment
+- k8s-node
+- k8s-secret
+- pipeline
+- scaffold
+- security
+- terraform
 ---
 
 # Scaffold Pipeline

@@ -4,6 +4,10 @@
 적합 상황: 대외 공유 RCA 보고서, Post-mortem 문서 최종 검토, 규정 준수 감사 보고서
 필수 입력: 완성된 RCA 초안 (01~05 프롬프트 중 하나의 출력 결과)
 예상 출력: 검증 질문 목록 → 초안 비판 → 수정된 최종 RCA 보고서
+tags:
+- 06_quality_review
+- rca
+- security
 ---
 
 # 프롬프트 06: RCA 보고서 품질 검증 (CoVe + Self-Refinement)

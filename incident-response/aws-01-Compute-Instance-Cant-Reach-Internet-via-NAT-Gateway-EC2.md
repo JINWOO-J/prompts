@@ -1,9 +1,24 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Instance-Cant-Reach-Internet-via-NAT-Gateway-EC2.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Instance-Cant-Reach-Internet-via-NAT-Gateway-EC2.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- cant
+- compute
+- ec2
+- gateway
+- incident-response
+- instance
+- internet
+- k8s-service
+- networking
+- performance
+- reach
+- security
+- sts
+- vpc
 ---
 
 # EC2 Instance Can't Reach Internet via NAT Gateway

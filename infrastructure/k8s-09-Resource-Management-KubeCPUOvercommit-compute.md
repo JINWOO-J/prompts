@@ -1,9 +1,24 @@
 ---
 category: infrastructure
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/09-Resource-Management/KubeCPUOvercommit-compute.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/09-Resource-Management/KubeCPUOvercommit-compute.md)'
 role: Kubernetes SRE
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- autoscal
+- capacity
+- compute
+- infrastructure
+- k8s-deployment
+- k8s-namespace
+- k8s-node
+- k8s-pod
+- kubecpuovercommit
+- management
+- performance
+- resource
+- scaling
+- sts
 ---
 
 ---

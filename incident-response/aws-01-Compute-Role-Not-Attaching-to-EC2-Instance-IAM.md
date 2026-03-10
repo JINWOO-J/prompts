@@ -1,9 +1,24 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Role-Not-Attaching-to-EC2-Instance-IAM.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Role-Not-Attaching-to-EC2-Instance-IAM.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- attaching
+- compute
+- dynamodb
+- ec2
+- iam
+- incident-response
+- instance
+- k8s-pod
+- k8s-service
+- performance
+- role
+- s3
+- security
+- sts
 ---
 
 # IAM Role Not Attaching to EC2 Instance

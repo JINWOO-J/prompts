@@ -1,9 +1,22 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Interrupted-Unexpectedly-Spot-Instance.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Interrupted-Unexpectedly-Spot-Instance.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- capacity
+- cloudwatch
+- compute
+- ec2
+- incident-response
+- instance
+- interrupted
+- k8s-pod
+- k8s-service
+- spot
+- sts
+- unexpectedly
 ---
 
 # EC2 Spot Instance Interrupted Unexpectedly

@@ -1,9 +1,20 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/06-Monitoring/Alarm-Not-Triggering-as-Expected-CloudWatch.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/06-Monitoring/Alarm-Not-Triggering-as-Expected-CloudWatch.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- alarm
+- alerting
+- cloudwatch
+- expected
+- incident-response
+- k8s-service
+- monitoring
+- performance
+- sts
+- triggering
 ---
 
 # CloudWatch Alarm Not Triggering as Expected

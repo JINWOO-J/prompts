@@ -1,3 +1,19 @@
+---
+category: shared
+source: "custom"
+role: All Roles
+origin: custom
+tags:
+  - shared
+  - persona
+  - sre
+  - incident-response
+  - security
+  - kubernetes
+  - terraform
+  - devops
+---
+
 # Shared: 공통 역할 정의 (Role Definitions)
 
 > 인프라/보안 운영 프롬프트 전반에서 공통으로 참조하는 페르소나 정의 모음.

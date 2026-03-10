@@ -1,9 +1,15 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/02-Performance/TimeoutError-RequestTimeout-API-Error-application.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/02-Performance/TimeoutError-RequestTimeout-API-Error-application.md)'
 role: SRE / Application Error Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- application
+- k8s-service
+- requesttimeout
+- sentry
+- timeouterror
 ---
 
 # TimeoutError-RequestTimeout-API-Error-application

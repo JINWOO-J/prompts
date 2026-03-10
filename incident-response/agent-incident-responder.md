@@ -1,11 +1,16 @@
 ---
 category: incident-response
-source: "[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/incident-responder.md)"
+source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/incident-responder.md)'
 role: Incident Responder
 난이도: 고급
 적합 상황: 활성 보안 침해, 서비스 장애, 운영 인시던트 초기 대응 및 조정
 필수 입력: 인시던트 유형, 발생 시각, 영향 시스템, 초기 관찰 증상
 예상 출력: 심각도 분류, 즉시 대응 액션, 증거 보존 지시, 커뮤니케이션 계획
+tags:
+- incident
+- incident-response
+- responder
+- security
 ---
 
 # Agent: Incident Responder

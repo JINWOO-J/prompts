@@ -1,9 +1,21 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/03-Storage/File-Upload-Extremely-Slow-S3.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/03-Storage/File-Upload-Extremely-Slow-S3.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- cloudwatch
+- extremely
+- file
+- incident-response
+- k8s-service
+- performance
+- s3
+- slow
+- storage
+- sts
+- upload
 ---
 
 # S3 File Upload Extremely Slow

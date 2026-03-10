@@ -4,6 +4,12 @@
 적합 상황: 보안 침해, 이상 행위 탐지, APT 의심, 내부 위협 RCA
 필수 입력: IOC (IP/도메인/해시/사용자), 원시 로그 (SIEM/EDR/방화벽), 피해 시스템 목록
 예상 출력: Diamond Model 4축 분석 + MITRE ATT&CK 전술/기법 매핑 + 공격 경로 재구성 + 봉쇄/복구 권고안
+tags:
+- 05_security_rca
+- iam
+- rca
+- security
+- vpc
 ---
 
 # 프롬프트 05: 보안 침해 RCA (Diamond Model + MITRE ATT&CK)

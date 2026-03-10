@@ -1,9 +1,19 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/06-Monitoring/Traces-Missing-in-Application-Logs-X-Ray.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/06-Monitoring/Traces-Missing-in-Application-Logs-X-Ray.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- cloudwatch
+- iam
+- incident-response
+- k8s-service
+- logs
+- missing
+- monitoring
+- observability
+- traces
 ---
 
 # X-Ray Traces Missing in Application Logs

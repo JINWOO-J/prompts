@@ -1,9 +1,22 @@
 ---
 category: infrastructure
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Failing-Due-to-Dependency-Errors-CodeBuild.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Failing-Due-to-Dependency-Errors-CodeBuild.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- ci-cd
+- cloudwatch
+- codebuild
+- dependency
+- errors
+- failing
+- infrastructure
+- k8s-deployment
+- k8s-service
+- performance
+- pipeline
+- sts
 ---
 
 # CodeBuild Failing Due to Dependency Errors

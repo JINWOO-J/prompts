@@ -4,6 +4,11 @@ source: "[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-
 role: AI Agent / Shared
 origin: shawnewallace
 extract_date: 2026-03-05
+scope: general-dev
+tags:
+- shared
+- architecture
+- technical-planning
 ---
 
 ---

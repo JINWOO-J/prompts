@@ -1,9 +1,24 @@
 ---
 category: incident-response
-source: "[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Instance-Unable-to-Reach-the-Internet-EC2.md)"
+source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Instance-Unable-to-Reach-the-Internet-EC2.md)'
 role: SRE / AWS Incident Response
 origin: scoutflo
 extract_date: 2026-03-05
+tags:
+- compute
+- dns
+- ec2
+- incident-response
+- instance
+- internet
+- k8s-pod
+- k8s-service
+- networking
+- performance
+- reach
+- security
+- unable
+- vpc
 ---
 
 # EC2 Instance Unable to Reach the Internet
