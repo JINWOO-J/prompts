@@ -1,7 +1,7 @@
 _meta:
   version: '4.0'
   generated: '2026-03-10'
-  total: 461
+  total: 481
   stats:
     rca: 6
     incident-response: 73
@@ -11,6 +11,7 @@ _meta:
     data-ai: 12
     shared: 21
     techniques: 31
+    coding: 20
   categories:
   - rca
   - incident-response
@@ -20,6 +21,7 @@ _meta:
   - data-ai
   - shared
   - techniques
+  - coding
   sources:
   - VoltAgent/awesome-claude-code-subagents
   - Scoutflo/Scoutflo-SRE-Playbooks
@@ -8065,3 +8067,243 @@ prompts:
   - reasoning
   - branching
   - exploration
+- id: cod-agent-behavior-patterns
+  file: coding/agent-behavior-patterns.md
+  title: Agent Behavior Patterns — 실제로 에이전트 행동을 바꾸는 패턴
+  category: coding
+  origin: custom
+  tags:
+  - coding
+  - ai-agent
+  - behavior
+  - agents-md
+  - patterns
+  role: Developer
+- id: cod-agentic-manifests
+  file: coding/agentic-manifests.md
+  title: Agentic Coding Manifests — 에이전트 매니페스트 표준
+  category: coding
+  origin: custom
+  tags:
+  - coding
+  - manifest
+  - agents-md
+  - claude-md
+  - convention
+  role: Developer
+- id: cod-claude-md-guide
+  file: coding/claude-md-guide.md
+  title: CLAUDE.md / AGENTS.md 작성 가이드
+  category: coding
+  origin: custom
+  tags:
+  - coding
+  - claude-md
+  - agents-md
+  - context-engineering
+  - ai-agent
+  role: Developer
+- id: cod-code-review-agent
+  file: coding/code-review-agent.md
+  title: Code Review Agent — AI 코드 리뷰 에이전트 설계
+  category: coding
+  origin: custom
+  tags:
+  - coding
+  - code-review
+  - ai-agent
+  - quality
+  - security
+  role: Senior Developer
+- id: cod-cognitive-readability
+  file: coding/cognitive-readability.md
+  title: Cognitive Readability First — 인지 가독성 우선 코딩
+  category: coding
+  origin: custom
+  tags:
+  - coding
+  - readability
+  - cognitive-load
+  - clean-code
+  - ai-agent
+  role: Developer
+- id: cod-context-engineering
+  file: coding/context-engineering.md
+  title: Context Engineering — AI 코딩 에이전트 컨텍스트 엔지니어링
+  category: coding
+  origin: custom
+  tags:
+  - coding
+  - context-engineering
+  - ai-agent
+  - prompt-engineering
+  - llm
+  role: Developer
+- id: cod-four-file-memory
+  file: coding/four-file-memory.md
+  title: 4-File Working Memory — AI 에이전트 워킹 메모리 시스템
+  category: coding
+  origin: custom
+  tags:
+  - coding
+  - working-memory
+  - ai-agent
+  - session-management
+  - claude-code
+  role: Developer
+- id: cod-hooks-automation
+  file: coding/hooks-automation.md
+  title: Hooks & Automation — AI 에이전트 훅과 자동화 패턴
+  category: coding
+  origin: custom
+  tags:
+  - coding
+  - hooks
+  - automation
+  - ai-agent
+  - ci-cd
+  role: Developer
+- id: cod-inevitable-code
+  file: coding/inevitable-code.md
+  title: Inevitable Code — 필연적 코드 철학
+  category: coding
+  origin: custom
+  tags:
+  - coding
+  - typescript
+  - design
+  - simplicity
+  - ai-agent
+  role: Developer
+- id: cod-karpathy-rules
+  file: coding/karpathy-rules.md
+  title: Karpathy Rules — AI 코딩 에이전트 4원칙
+  category: coding
+  origin: custom
+  tags:
+  - coding
+  - ai-agent
+  - rules
+  - claude-md
+  - best-practices
+  role: Developer
+- id: cod-mcp-integration
+  file: coding/mcp-integration.md
+  title: MCP Integration — Model Context Protocol 통합 패턴
+  category: coding
+  origin: custom
+  tags:
+  - coding
+  - mcp
+  - model-context-protocol
+  - ai-agent
+  - tools
+  role: Developer
+- id: cod-monorepo-agent-rules
+  file: coding/monorepo-agent-rules.md
+  title: Monorepo Agent Rules — 모노레포 AI 에이전트 규칙
+  category: coding
+  origin: custom
+  tags:
+  - coding
+  - monorepo
+  - ai-agent
+  - architecture
+  - turborepo
+  role: Developer
+- id: cod-progressive-disclosure
+  file: coding/progressive-disclosure.md
+  title: Progressive Disclosure — CLAUDE.md 점진적 공개 패턴
+  category: coding
+  origin: custom
+  tags:
+  - coding
+  - progressive-disclosure
+  - claude-md
+  - architecture
+  - ai-agent
+  role: Developer
+- id: cod-ralph-loop
+  file: coding/ralph-loop.md
+  title: Ralph Loop — AI 에이전트 자율 반복 실행 패턴
+  category: coding
+  origin: custom
+  tags:
+  - coding
+  - ralph-loop
+  - autonomous
+  - ai-agent
+  - testing
+  role: Developer
+- id: cod-riper-5-methodology
+  file: coding/riper-5-methodology.md
+  title: RIPER-5 — AI 에이전트 개발 방법론
+  category: coding
+  origin: custom
+  tags:
+  - coding
+  - riper-5
+  - methodology
+  - ai-agent
+  - workflow
+  role: Developer
+- id: cod-security-first-agent
+  file: coding/security-first-agent.md
+  title: Security-First Agent Rules — 보안 우선 AI 에이전트 규칙
+  category: coding
+  origin: custom
+  tags:
+  - coding
+  - security
+  - ai-agent
+  - defi
+  - rules
+  role: Security Engineer
+- id: cod-self-learning-agents
+  file: coding/self-learning-agents.md
+  title: Self-Learning Agents — 자기 학습 AI 에이전트 패턴
+  category: coding
+  origin: custom
+  tags:
+  - coding
+  - self-learning
+  - ai-agent
+  - memory
+  - patterns
+  role: Developer
+- id: cod-spec-driven-development
+  file: coding/spec-driven-development.md
+  title: Spec-Driven Development — AI 에이전트 스펙 기반 개발
+  category: coding
+  origin: custom
+  tags:
+  - coding
+  - spec-driven
+  - tdd
+  - ai-agent
+  - methodology
+  role: Developer
+- id: cod-sub-agent-architecture
+  file: coding/sub-agent-architecture.md
+  title: Sub-Agent Architecture — AI 코딩 서브에이전트 설계
+  category: coding
+  origin: custom
+  tags:
+  - coding
+  - sub-agent
+  - ai-agent
+  - architecture
+  - claude-code
+  role: Developer
+- id: cod-vibe-coding-playbook
+  file: coding/vibe-coding-playbook.md
+  title: Vibe Coding Playbook — 바이브 코딩 실전 가이드
+  category: coding
+  origin: custom
+  tags:
+  - coding
+  - vibe-coding
+  - ai-agent
+  - methodology
+  - karpathy
+  role: Developer

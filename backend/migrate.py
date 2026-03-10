@@ -20,7 +20,7 @@ logger = logging.getLogger(__name__)
 
 CATEGORIES = [
     "rca", "incident-response", "application", "infrastructure",
-    "security", "data-ai", "shared", "techniques",
+    "security", "data-ai", "shared", "techniques", "coding",
 ]
 
 ROOT = Path(__file__).parent.parent

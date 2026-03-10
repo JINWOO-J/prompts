@@ -8,7 +8,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 
-from backend.database import init_db
+from backend.database import init_db, DB_PATH
+from backend.migrate import migrate_all
 from backend.routers.prompts import router as prompts_router
 from backend.routers.versions import router as versions_router
 from backend.routers.export import router as export_router
@@ -19,6 +20,12 @@ WEB_DIR = Path(__file__).parent.parent / "web"
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     await init_db()
+    # DB가 비어있으면 .md 파일에서 자동 마이그레이션
+    import aiosqlite
+    async with aiosqlite.connect(DB_PATH) as db:
+        row = await db.execute_fetchall("SELECT COUNT(*) FROM prompts")
+        if row[0][0] == 0:
+            await migrate_all()
     yield
 
 

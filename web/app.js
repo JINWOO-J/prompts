@@ -4,7 +4,7 @@
   'use strict';
 
   // --- Constants ---
-  const CATEGORIES = ['rca', 'incident-response', 'application', 'infrastructure', 'security', 'data-ai', 'shared', 'techniques'];
+  const CATEGORIES = ['rca', 'incident-response', 'application', 'infrastructure', 'security', 'data-ai', 'shared', 'techniques', 'coding'];
 
   // --- State ---
   let allPrompts = [];
@@ -189,6 +189,7 @@
     'data-ai':           _i('<path d="M9.5 2A2.5 2.5 0 0112 4.5v15a2.5 2.5 0 01-4.96.44A2.5 2.5 0 012 17.5v-.5a2.5 2.5 0 015 0V7.5A2.5 2.5 0 019.5 5h5A2.5 2.5 0 0117 7.5v9a2.5 2.5 0 004.96.44A2.5 2.5 0 0022 14.5V12a2.5 2.5 0 00-5 0v4.5a2.5 2.5 0 01-2.5 2.5h-5A2.5 2.5 0 017 16.5v-9A2.5 2.5 0 019.5 5"/>'),
     shared:              _i('<path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/>'),
     techniques:          _i('<line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0018 8 6 6 0 006 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 018.91 14"/>'),
+    coding:              _i('<polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/>'),
   };
 
   const CATEGORY_LABELS = {
@@ -201,6 +202,7 @@
     'data-ai': '데이터/AI',
     shared: '공용',
     techniques: '기법',
+    coding: '코딩',
   };
 
   function renderCategories() {
