@@ -40,9 +40,10 @@
       </div>
 
       <div class="tag-filter" id="tag-filter">
-        <select id="tag-select" class="tag-select">
-          <option value="">Filter by tag...</option>
-        </select>
+        <div class="tag-autocomplete-wrapper">
+          <input type="text" id="tag-input" class="tag-input" placeholder="태그 검색..." autocomplete="off">
+          <div class="tag-dropdown" id="tag-dropdown"></div>
+        </div>
         <div class="tag-chips" id="tag-chips"></div>
       </div>
 
