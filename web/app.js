@@ -259,14 +259,14 @@
     const filtered = allTags.filter((t) => t.toLowerCase().includes(q) && !activeTags.some((at) => at.toLowerCase() === t.toLowerCase()));
 
     if (!filtered.length) {
-      tagDropdown.innerHTML = q ? '<div class="tag-dropdown-empty">일치하는 태그 없음</div>' : '';
+      tagDropdown.innerHTML = '<div class="tag-dropdown-empty">일치하는 태그 없음</div>';
       tagDropdown.classList.toggle('open', !!q);
       tagHighlightIdx = -1;
       return;
     }
 
     tagHighlightIdx = -1;
-    tagDropdown.innerHTML = filtered.slice(0, 20)
+    tagDropdown.innerHTML = filtered.slice(0, 30)
       .map((t, i) => `<div class="tag-dropdown-item" data-tag="${escapeHtml(t)}" data-index="${i}">${escapeHtml(t)}</div>`)
       .join('');
     tagDropdown.classList.add('open');
@@ -290,17 +290,11 @@
   }
 
   tagInput.addEventListener('input', () => {
-    const q = tagInput.value.trim();
-    if (q) {
-      showTagDropdown(q);
-    } else {
-      closeTagDropdown();
-    }
+    showTagDropdown(tagInput.value.trim());
   });
 
   tagInput.addEventListener('focus', () => {
-    const q = tagInput.value.trim();
-    if (q) showTagDropdown(q);
+    showTagDropdown(tagInput.value.trim());
   });
 
   tagInput.addEventListener('keydown', (e) => {
