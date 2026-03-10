@@ -12,7 +12,7 @@ from pathlib import Path
 from datetime import date
 
 ROOT = Path(__file__).parent.parent
-CATEGORIES = ["rca", "incident-response", "application", "infrastructure", "security", "data-ai", "shared", "techniques"]
+CATEGORIES = ["rca", "incident-response", "application", "infrastructure", "security", "data-ai", "shared", "techniques", "coding"]
 
 
 def extract_frontmatter(content: str) -> dict:

@@ -61,11 +61,54 @@
             '<span class="version-date">' + new Date(v.created_at).toLocaleString('ko-KR') + '</span>' +
           '</div>' +
           (v.change_summary ? '<div class="version-summary">' + escapeHtml(v.change_summary) + '</div>' : '') +
-          '<button class="version-restore-btn" data-version="' + v.version_number + '">이 버전으로 복원</button>' +
+          '<button class="version-diff-btn" data-version="' + v.version_number + '">Diff</button>' +
+          '<button class="version-restore-btn" data-version="' + v.version_number + '">복원</button>' +
         '</div>';
       }).join('');
     } catch (err) {
       versionList.innerHTML = '<p class="version-empty">버전을 불러올 수 없습니다.</p>';
+    }
+  }
+
+  /**
+   * Show diff between a version and the current prompt content
+   */
+  async function showDiff(promptId, versionNumber) {
+    try {
+      var version = await apiGet('/api/prompts/' + encodeURIComponent(promptId) + '/versions/' + versionNumber);
+      var current = await apiGet('/api/prompts/' + encodeURIComponent(promptId));
+      viewingHistorical = true;
+      currentPromptId = promptId;
+
+      var diff = Diff.diffLines(version.content, current.content);
+      var diffHtml = '<div class="diff-container">';
+      diff.forEach(function (part) {
+        var cls = part.added ? 'diff-added' : part.removed ? 'diff-removed' : 'diff-unchanged';
+        diffHtml += '<div class="' + cls + '">' + escapeHtml(part.value) + '</div>';
+      });
+      diffHtml += '</div>';
+
+      var bannerHtml = '<div class="version-preview-banner">' +
+        '<span>v' + version.version_number + ' → 현재 버전 Diff</span>' +
+        '<button class="version-back-btn" id="version-back-btn">돌아가기</button>' +
+      '</div>';
+
+      viewerContent.innerHTML = bannerHtml + diffHtml;
+
+      // Highlight active version
+      versionList.querySelectorAll('.version-item').forEach(function (el) {
+        el.classList.toggle('version-item-active', el.dataset.version === String(versionNumber));
+      });
+
+      var backBtn = document.getElementById('version-back-btn');
+      if (backBtn) {
+        backBtn.addEventListener('click', function () {
+          viewingHistorical = false;
+          window._appHelpers.selectPrompt(currentPromptId, false);
+        });
+      }
+    } catch (err) {
+      showToast('Diff를 불러올 수 없습니다.', 'error');
     }
   }
 
@@ -145,6 +188,14 @@
 
   // --- Event delegation on version list ---
   versionList.addEventListener('click', function (e) {
+    // Diff button click
+    var diffBtn = e.target.closest('.version-diff-btn');
+    if (diffBtn && currentPromptId) {
+      e.stopPropagation();
+      showDiff(currentPromptId, parseInt(diffBtn.dataset.version, 10));
+      return;
+    }
+
     // Restore button click
     var restoreBtn = e.target.closest('.version-restore-btn');
     if (restoreBtn && currentPromptId) {

@@ -124,7 +124,7 @@ TOOLS = [
             "type": "object",
             "properties": {
                 "query": {"type": "string", "description": "검색 키워드 (제목, ID, 태그에서 매칭)"},
-                "category": {"type": "string", "description": "카테고리 필터 (rca, incident-response, infrastructure, security, application, data-ai, shared, techniques)"},
+                "category": {"type": "string", "description": "카테고리 필터 (rca, incident-response, infrastructure, security, application, data-ai, shared, techniques, coding)"},
                 "tag": {"type": "string", "description": "태그 필터 (예: kubernetes, lambda, rds)"},
                 "limit": {"type": "integer", "description": "최대 결과 수 (기본 10)", "default": 10},
             },

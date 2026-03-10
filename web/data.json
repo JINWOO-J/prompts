@@ -2,7 +2,7 @@
   "_meta": {
     "version": "4.0",
     "generated": "2026-03-10",
-    "total": 461,
+    "total": 481,
     "stats": {
       "rca": 6,
       "incident-response": 73,
@@ -11,7 +11,8 @@
       "security": 29,
       "data-ai": 12,
       "shared": 21,
-      "techniques": 31
+      "techniques": 31,
+      "coding": 20
     },
     "categories": [
       "rca",
@@ -21,7 +22,8 @@
       "security",
       "data-ai",
       "shared",
-      "techniques"
+      "techniques",
+      "coding"
     ],
     "sources": [
       "VoltAgent/awesome-claude-code-subagents",
@@ -9913,6 +9915,326 @@
         "exploration"
       ],
       "content": "# Tree-of-Thoughts (ToT) — 분기 탐색 추론\n\n## 개념\n\n하나의 추론 경로가 아닌 여러 가지 사고 분기를 동시에 탐색하고,\n각 분기를 평가하여 가장 유망한 경로를 선택하는 기법.\nYao et al. (2023) 논문에서 제안. CoT가 단일 경로라면 ToT는 트리 구조로 확장한 것이다.\nBFS(너비 우선) 또는 DFS(깊이 우선) 전략으로 탐색할 수 있다.\n\n## 핵심 원리\n\n- 탐색 공간 확장: CoT의 단일 경로 한계를 극복하여 여러 가능성을 동시에 고려\n- 자기 평가(Self-evaluation): 각 분기의 유망성을 LLM 스스로 평가하여 가지치기(pruning)\n- 백트래킹: 막다른 경로에서 되돌아와 다른 경로를 탐색할 수 있음\n- Game of 24, 창의적 글쓰기 등에서 CoT 대비 큰 성능 향상 (74% vs 4%)\n\n## 프롬프트 템플릿\n\n```\n다음 문제에 대해 Tree-of-Thoughts 방식으로 분석하세요.\n\n**문제:** [문제 설명]\n\n**1단계 — 가능한 접근법 도출 (분기 생성):**\n- 접근법 A: [설명]\n- 접근법 B: [설명]\n- 접근법 C: [설명]\n\n**2단계 — 각 접근법 평가 (가지치기):**\n| 접근법 | 실현 가능성 (1-5) | 효과 (1-5) | 리스크 (1-5) | 종합 |\n|--------|------------------|-----------|-------------|------|\n| A | | | | |\n| B | | | | |\n| C | | | | |\n\n**3단계 — 최적 경로 선택 및 심화:**\n선택: [접근법 X]\n이유: [평가 근거]\n\n**4단계 — 선택한 경로 내 하위 분기:**\n- 세부 방안 X-1: [...]\n- 세부 방안 X-2: [...]\n→ 최종 선택: [X-N] 이유: [...]\n```\n\n## 실전 예시\n\n**시나리오: 레거시 모놀리스 → 마이크로서비스 마이그레이션 전략**\n\n접근법 A: Big Bang 전환 → 평가: 리스크 5, 효과 4 → 탈락\n접근법 B: Strangler Fig 패턴 → 평가: 리스크 2, 효과 4 → 유망\n접근법 C: 신규 기능만 MSA → 평가: 리스크 1, 효과 2 → 보수적\n\n→ B 선택 후 하위 분기:\nB-1: API Gateway 기반 라우팅 → 구현 복잡도 중\nB-2: 이벤트 기반 분리 → 데이터 일관성 이슈\n→ B-1 선택 (점진적 전환에 적합)\n\n## 변형 및 조합\n\n- **ToT + Self-Consistency**: 각 분기에서 다수결 적용\n- **ToT + SWOT**: 각 분기를 SWOT으로 평가\n- **ToT + Devil's Advocate**: 유망한 분기에 반론 제기\n- **ToT + Decomposition**: 각 분기를 하위 문제로 분해\n\n## 주의사항\n\n- 단순한 문제에는 과도한 오버헤드 — CoT로 충분한 경우가 많음\n- 분기가 너무 많으면 평가 자체가 부정확해질 수 있음 (3-5개가 적정)\n- LLM의 자기 평가가 항상 정확하지 않음 — 외부 검증 필요\n- 토큰 소비가 CoT의 3-5배 이상\n\n## 적합한 상황\n\n전략적 의사결정, 아키텍처 설계, 복잡한 트레이드오프 분석, 창의적 문제 해결, 마이그레이션 계획\n\n## 참고 자료\n\n- Yao et al. (2023) \"Tree of Thoughts: Deliberate Problem Solving with Large Language Models\"\n- Long (2023) \"Large Language Model Guided Tree-of-Thought\" \n"
+    },
+    {
+      "id": "cod-agent-behavior-patterns",
+      "file": "coding/agent-behavior-patterns.md",
+      "title": "Agent Behavior Patterns — 실제로 에이전트 행동을 바꾸는 패턴",
+      "category": "coding",
+      "origin": "custom",
+      "tags": [
+        "coding",
+        "ai-agent",
+        "behavior",
+        "agents-md",
+        "patterns"
+      ],
+      "content": "# Agent Behavior Patterns — 실제로 에이전트 행동을 바꾸는 패턴\n\n## 개요\n\nAGENTS.md/CLAUDE.md에서 실제로 AI 에이전트의 행동을 변화시키는 패턴과\n효과가 없는 패턴을 구분하는 실증적 가이드.\n\n> 참고: [blakecrosley.com — What Actually Changes Agent Behavior](https://blakecrosley.com/blog/agents-md-patterns),\n> [dair.ai — Does AGENTS.md Actually Help?](https://academy.dair.ai/blog/agents-md-evaluation)\n\n## 효과적인 패턴\n\n### 1. 구체적 명령어\n```markdown\n# ✅ 효과적\n테스트: `pnpm vitest --run`\n린트: `pnpm eslint . --fix`\n\n# ❌ 비효과적\n테스트와 린트를 실행하세요.\n```\n\n### 2. 명시적 금지\n```markdown\n# ✅ 효과적\n- sed 사용 금지. sd를 사용하라.\n- python -c 사용 금지. 임시 파일에 작성 후 실행.\n- 기존 테스트 삭제 금지.\n\n# ❌ 비효과적\n- 좋은 코드를 작성하세요.\n- 베스트 프랙티스를 따르세요.\n```\n\n### 3. 예시 코드\n```markdown\n# ✅ 효과적\n에러 처리 패턴:\n\\`\\`\\`typescript\ntry {\n  const result = await operation();\n  return { ok: true, data: result };\n} catch (e) {\n  logger.error('operation failed', { error: e });\n  return { ok: false, error: e.message };\n}\n\\`\\`\\`\n\n# ❌ 비효과적\n에러를 적절히 처리하세요.\n```\n\n### 4. 디렉토리 구조 명시\n```markdown\n# ✅ 효과적\nsrc/\n  routes/     — API 라우트 핸들러\n  services/   — 비즈니스 로직\n  models/     — 데이터 모델\n  utils/      — 유틸리티 함수\n```\n\n## 효과 없는 패턴\n\n- 일반적인 코딩 조언 (\"클린 코드를 작성하세요\")\n- 코드 스타일 규칙 (linter에 위임)\n- 너무 긴 설명 (500줄 이상)\n- 모호한 지시 (\"적절히 처리하세요\")\n\n## DAIR.AI 연구 결과\n\n- AGENTS.md가 있을 때 에이전트 성능이 향상되는 경우가 있지만\n- 효과는 **구체성**에 비례\n- 일반적 조언은 거의 효과 없음\n- 명령어, 금지사항, 예시 코드가 가장 효과적\n",
+      "role": "Developer"
+    },
+    {
+      "id": "cod-agentic-manifests",
+      "file": "coding/agentic-manifests.md",
+      "title": "Agentic Coding Manifests — 에이전트 매니페스트 표준",
+      "category": "coding",
+      "origin": "custom",
+      "tags": [
+        "coding",
+        "manifest",
+        "agents-md",
+        "claude-md",
+        "convention"
+      ],
+      "content": "# Agentic Coding Manifests — 에이전트 매니페스트 표준\n\n## 개요\n\nAI 코딩 에이전트에게 프로젝트 컨텍스트, 정체성, 운영 규칙을 제공하는\n설정 파일(CLAUDE.md, AGENTS.md 등)의 표준과 패턴.\n2026년 1월 기준 GitHub에서 60,000개 이상의 오픈소스 프로젝트가 이 형식을 사용한다.\n\n> 참고: [arxiv.org — On the Use of Agentic Coding Manifests](https://arxiv.org/html/2509.14744v1),\n> [emergentmind.com — Agentic Coding Manifests](https://www.emergentmind.com/topics/agentic-coding-manifests)\n\n## 매니페스트 유형\n\n| 파일명 | 도구 | 범위 |\n|--------|------|------|\n| CLAUDE.md | Claude Code | Claude 전용 |\n| AGENTS.md | 범용 | Cursor, Copilot, Codex 등 |\n| .cursorrules | Cursor | Cursor 전용 |\n| copilot-instructions.md | GitHub Copilot | Copilot 전용 |\n| GEMINI.md | Gemini | Gemini 전용 |\n\n## AGENTS.md — 범용 표준\n\nLinux Foundation 산하 Agentic AI Foundation이 관리.\n모든 AI 코딩 도구에서 작동하는 범용 형식.\n\n### 필수 섹션\n\n```markdown\n# AGENTS.md\n\n## Project Overview\n[프로젝트 설명]\n\n## Commands\n- build: `npm run build`\n- test: `npm test`\n- lint: `npm run lint`\n\n## Architecture\n[디렉토리 구조 및 모듈 관계]\n\n## Conventions\n[코딩 규칙]\n\n## Constraints\n[금지 사항]\n```\n\n## 연구 결과 (arxiv)\n\n- 매니페스트는 얕은 계층 구조와 명시적 섹션 분할을 가짐\n- 빠른 컨텍스트 획득과 재현 가능한 워크플로우 실행을 지원\n- 구체적 명령어와 금지사항이 가장 효과적\n- 일반적 조언은 효과가 제한적\n",
+      "role": "Developer"
+    },
+    {
+      "id": "cod-claude-md-guide",
+      "file": "coding/claude-md-guide.md",
+      "title": "CLAUDE.md / AGENTS.md 작성 가이드",
+      "category": "coding",
+      "origin": "custom",
+      "tags": [
+        "coding",
+        "claude-md",
+        "agents-md",
+        "context-engineering",
+        "ai-agent"
+      ],
+      "content": "# CLAUDE.md / AGENTS.md 작성 가이드\n\n## 개요\n\nAI 코딩 에이전트에게 프로젝트 컨텍스트를 전달하는 CLAUDE.md(또는 AGENTS.md) 파일 작성법.\n매 세션마다 반복 설명 없이 에이전트가 프로젝트를 이해하도록 하는 핵심 설정 파일이다.\n\n> 참고: [humanlayer.dev/blog/writing-a-good-claude-md](https://www.humanlayer.dev/blog/writing-a-good-claude-md),\n> [josix/awesome-claude-md](https://github.com/josix/awesome-claude-md)\n\n## 핵심 원칙\n\n### 1. 컨텍스트 윈도우는 공유 자원\nCLAUDE.md는 시스템 프롬프트, 대화 이력, 기타 컨텍스트와 경쟁한다.\n간결하고 핵심적인 정보만 포함하라.\n\n### 2. 포함해야 할 것\n- **빌드/테스트 명령어**: `npm run test`, `make lint` 등 정확한 명령어\n- **아키텍처 개요**: 디렉토리 구조, 주요 모듈 관계\n- **코딩 규칙**: 네이밍, 에러 처리, 로깅 패턴\n- **금지 사항**: \"sed 사용 금지\", \"기존 테스트 삭제 금지\" 등\n- **의존성 정보**: 패키지 매니저, 런타임 버전\n\n### 3. 포함하지 말 것\n- 코드 스타일/포매팅 규칙 (linter/formatter에 위임)\n- 너무 긴 설명 (500줄 이상은 효과 감소)\n- 자주 변하는 정보 (별도 파일로 분리)\n\n## 구조 템플릿\n\n```markdown\n# CLAUDE.md\n\n## 프로젝트 개요\n[한 문단으로 프로젝트 설명]\n\n## 빌드 & 테스트\n- 설치: `pnpm install`\n- 테스트: `pnpm test`\n- 린트: `pnpm lint`\n\n## 아키텍처\n- `src/` — 메인 소스\n- `tests/` — 테스트\n- `docs/` — 문서\n\n## 코딩 규칙\n- [규칙 1]\n- [규칙 2]\n\n## 금지 사항\n- [금지 1]\n- [금지 2]\n```\n\n## 5계층 설정 시스템\n\n| 계층 | 파일 | 용도 |\n|------|------|------|\n| 1 | CLAUDE.md | 프로젝트 컨텍스트 (매 세션 로드) |\n| 2 | .claude/settings.json | 도구 권한, 허용 명령어 |\n| 3 | .claude/hooks/ | 이벤트 기반 자동화 |\n| 4 | .claude/agents/ | 서브에이전트 정의 |\n| 5 | .claude/memory/ | 자동 메모리 |\n\n## Progressive Disclosure 패턴\n\n큰 프로젝트에서는 계층적으로 CLAUDE.md를 배치:\n- 루트 `CLAUDE.md` — 전체 프로젝트 규칙\n- `packages/api/CLAUDE.md` — API 패키지 규칙\n- `packages/web/CLAUDE.md` — 웹 패키지 규칙\n\n에이전트가 특정 디렉토리에서 작업할 때 해당 레벨의 규칙이 추가 로드된다.\n",
+      "role": "Developer"
+    },
+    {
+      "id": "cod-code-review-agent",
+      "file": "coding/code-review-agent.md",
+      "title": "Code Review Agent — AI 코드 리뷰 에이전트 설계",
+      "category": "coding",
+      "origin": "custom",
+      "tags": [
+        "coding",
+        "code-review",
+        "ai-agent",
+        "quality",
+        "security"
+      ],
+      "content": "# Code Review Agent — AI 코드 리뷰 에이전트 설계\n\n## 개요\n\n15년 이상 경험의 시니어 개발자 관점에서 코드를 분석하는 AI 코드 리뷰 에이전트 설계.\n보안 취약점, 성능 병목, 아키텍처 결정을 종합적으로 검토한다.\n\n> 참고: [hesreallyhim/awesome-claude-code-agents — senior-code-reviewer](https://github.com/hesreallyhim/awesome-claude-code-agents)\n\n## 리뷰 관점 5가지\n\n### 1. 보안 (Critical)\n- 입력 유효성 검사 누락\n- 인증/인가 우회 가능성\n- 민감 정보 노출\n- 인젝션 취약점\n\n### 2. 성능 (High)\n- N+1 쿼리 문제\n- 불필요한 메모리 할당\n- 블로킹 I/O\n- 캐싱 기회 누락\n\n### 3. 아키텍처 (High)\n- 단일 책임 원칙 위반\n- 순환 의존성\n- 레이어 경계 침범\n- 과도한 결합\n\n### 4. 유지보수성 (Medium)\n- 매직 넘버/스트링\n- 중복 코드\n- 불명확한 네이밍\n- 누락된 에러 처리\n\n### 5. 테스트 (Medium)\n- 테스트 커버리지 부족\n- 엣지 케이스 누락\n- 깨지기 쉬운 테스트\n- 테스트 격리 부족\n\n## 리뷰 출력 형식\n\n```markdown\n## 🔴 Critical\n- [파일:줄] [설명] — [수정 제안]\n\n## 🟡 Warning\n- [파일:줄] [설명] — [수정 제안]\n\n## 🟢 Suggestion\n- [파일:줄] [설명] — [수정 제안]\n\n## ✅ Good Practices\n- [칭찬할 점]\n```\n",
+      "role": "Senior Developer"
+    },
+    {
+      "id": "cod-cognitive-readability",
+      "file": "coding/cognitive-readability.md",
+      "title": "Cognitive Readability First — 인지 가독성 우선 코딩",
+      "category": "coding",
+      "origin": "custom",
+      "tags": [
+        "coding",
+        "readability",
+        "cognitive-load",
+        "clean-code",
+        "ai-agent"
+      ],
+      "content": "# Cognitive Readability First — 인지 가독성 우선 코딩\n\n## 개요\n\n규칙 준수가 아닌 **인간의 이해**를 최적화하는 코딩 원칙.\n함수/블록에서 동시에 추적해야 하는 개념 수를 3~4개 이하로 유지하고,\n단계별 분석(System 2)이 아닌 패턴 인식(System 1)으로 읽히는 코드를 지향한다.\n\n## 핵심 원칙\n\n- 함수/블록의 동시 추적 개념을 **약 3~4개 이하**로 유지 (데이터/상태, 규칙, 분기 축, 부수효과)\n- **패턴 인식(System 1)**으로 읽히는 코드 선호, 단계별 분석(System 2) 아님\n- 이름과 구조가 **다음 동작을 예측 가능**하게 만들어야 함\n- 문제 자체의 복잡성은 수용 가능. **표현으로 인한 복잡성은 불가**\n\n## 실천 규칙 10가지\n\n### 1. 활성 컨텍스트 최소화\n- 흐름이 한눈에 명확하지 않을 때 분리\n- 독립적으로 테스트/재사용 가능할 때 분리\n- 매우 작은(≈3줄) 단순 로직은 인라인 유지\n- \"4개 컨텍스트 초과\"라고 기계적으로 분리하지 마라\n\n### 2. 점프 비용 경계\n- 이해에 함수/파일 간 2회 이상 점프가 필요하면 분리를 재고\n- 호출 지점에서 동작을 예측할 수 없으면 재고\n- **컨텍스트 감소가 탐색 비용을 초과할 때만** 분리\n\n### 3. 관용적 패턴 선호\n- 언어, 프레임워크, 팀 규칙을 따르라\n- 영리한 트릭, 이중 부정, 불필요한 추상화 회피\n\n### 4. 선형 흐름 유지\n- 가드 절과 조기 반환 선호\n- 메인 로직은 위에서 아래로 읽혀야 함\n\n### 5. 이름 = 동작\n- 이름은 코드가 실제로 하는 것과 일치해야 함\n- 부수효과(DB, 네트워크, 이벤트, 캐시 등)가 이름이나 구조에서 보여야 함\n\n### 6. 시각적 구조\n- 관련 로직을 빈 줄로 그룹화\n- 유사한 책임을 유사한 형태로 유지\n\n### 7. 지역성\n- 핵심 흐름이 단일 파일, 가능하면 단일 화면에서 읽혀야 함\n- 헬퍼를 사용처 가까이에 배치\n\n### 8. 대칭성\n- 쌍을 이루는 연산(parse/serialize, encode/decode, CRUD 등)의 이름, 시그니처, 에러 처리를 대칭적으로 유지\n\n### 9. 숨겨진 정책 금지\n- 전역 변수, 환경 플래그, 싱글톤 뒤에 결정 로직을 숨기지 마라\n- 매개변수나 명시적 정책 객체를 통해 정책을 노출\n\n### 10. 예외를 구조적으로 만들어라\n- 중요한 예외 규칙은 타입, 결과 객체, 전용 함수로 표현 — 주석만으로는 부족\n\n## 하지 말 것\n\n- 기계적으로 함수 분리\n- 작은 일회용 헬퍼 추출\n- 기존 팀 규칙 위반\n- 메트릭 감소만을 위한 리팩터링\n",
+      "role": "Developer"
+    },
+    {
+      "id": "cod-context-engineering",
+      "file": "coding/context-engineering.md",
+      "title": "Context Engineering — AI 코딩 에이전트 컨텍스트 엔지니어링",
+      "category": "coding",
+      "origin": "custom",
+      "tags": [
+        "coding",
+        "context-engineering",
+        "ai-agent",
+        "prompt-engineering",
+        "llm"
+      ],
+      "content": "# Context Engineering — AI 코딩 에이전트 컨텍스트 엔지니어링\n\n## 개요\n\n2025년 Andrej Karpathy가 \"vibe coding\"을 제안한 이후, 업계는 \"AI 제안을 그냥 수락\"에서\n**컨텍스트 엔지니어링**이라는 체계적 접근으로 전환했다.\nAI 코딩 에이전트에게 올바른 컨텍스트를 제공하여 출력 품질을 극대화하는 기법이다.\n\n> 참고: [pixelmojo.io — Context Engineering for AI Coding Agents](https://www.pixelmojo.io/blogs/context-engineering-ai-coding-agents-beyond-claude-md)\n\n## 핵심 개념\n\n### 컨텍스트 = 에이전트의 전부\n모델은 현재 토큰 스트림에 있는 것만 안다.\nCLAUDE.md는 보통 매 세션에 자동 주입되는 유일한 파일이다.\n\n### 컨텍스트의 4가지 레이어\n\n| 레이어 | 설명 | 예시 |\n|--------|------|------|\n| 시스템 | 에이전트 기본 동작 | 시스템 프롬프트 |\n| 프로젝트 | 코드베이스 규칙 | CLAUDE.md, AGENTS.md |\n| 세션 | 현재 대화 | 대화 이력, 파일 읽기 |\n| 작업 | 현재 태스크 | 사용자 프롬프트 |\n\n### 효과적인 컨텍스트 전략\n\n1. **구체적 명령어 > 일반적 조언**: \"pnpm test\" > \"테스트를 실행하세요\"\n2. **예시 > 설명**: 코드 예시가 규칙 설명보다 효과적\n3. **금지 > 권장**: \"sed 사용 금지\"가 \"sd를 사용하세요\"보다 강력\n4. **구조 > 산문**: 표, 목록, 코드 블록이 긴 문장보다 효과적\n\n## 실전 패턴\n\n### 4-파일 워킹 메모리 시스템\n```\nPRD.md          — 제품 요구사항\nCLAUDE.md       — 프로젝트 규칙\nplanning.md     — 아키텍처 결정\ntasks.md        — 작업 추적\n```\n\n### @import 패턴\nCLAUDE.md에서 다른 파일을 참조:\n```markdown\nSee @docs/architecture.md for system design\nSee @docs/api-spec.yaml for API contracts\n```\n\n### 토큰 예산 관리\n- CLAUDE.md는 200~500줄이 최적\n- 자주 변하는 정보는 별도 파일로 분리\n- 서브디렉토리별 CLAUDE.md로 점진적 공개\n",
+      "role": "Developer"
+    },
+    {
+      "id": "cod-four-file-memory",
+      "file": "coding/four-file-memory.md",
+      "title": "4-File Working Memory — AI 에이전트 워킹 메모리 시스템",
+      "category": "coding",
+      "origin": "custom",
+      "tags": [
+        "coding",
+        "working-memory",
+        "ai-agent",
+        "session-management",
+        "claude-code"
+      ],
+      "content": "# 4-File Working Memory — AI 에이전트 워킹 메모리 시스템\n\n## 개요\n\nAI 코딩 에이전트의 세션 간 기억 상실 문제를 해결하는 4파일 프레임워크.\nPRD, CLAUDE.md, planning.md, tasks.md 4개 파일로 프로젝트 컨텍스트를 영속화한다.\n\n> 참고: [implicator.ai — Four-File System for Claude Code](https://www.implicator.ai/this-simple-four-file-system-gives-claude-code-a-working-memory/)\n\n## 문제\n\nAI 코딩 에이전트는 세션 간 기억이 없다:\n- 매 세션마다 프로젝트 아키텍처를 다시 설명\n- 이미 존재하는 파일을 다시 생성\n- 완료된 작업을 반복, 새 작업은 누락\n- 일관성 없는 결정\n\n## 4파일 구조\n\n### 1. PRD.md — 제품 요구사항\n```markdown\n# Product Requirements Document\n## 목표\n[프로젝트의 핵심 목표]\n## 기능 목록\n- [기능 1]: [설명]\n- [기능 2]: [설명]\n## 기술 스택\n- Backend: [기술]\n- Frontend: [기술]\n```\n\n### 2. CLAUDE.md — 프로젝트 규칙\n```markdown\n# Project Rules\n## 빌드 명령어\n## 코딩 규칙\n## 금지 사항\n```\n\n### 3. planning.md — 아키텍처 결정\n```markdown\n# Architecture Decisions\n## 결정 1: [제목]\n- 선택: [선택한 옵션]\n- 이유: [근거]\n- 대안: [고려한 대안]\n```\n\n### 4. tasks.md — 작업 추적\n```markdown\n# Tasks\n## 완료\n- [x] [작업 1]\n## 진행 중\n- [ ] [작업 2]\n## 대기\n- [ ] [작업 3]\n```\n\n## 세션 시작 프롬프트\n\n```\n이 프로젝트의 PRD.md, CLAUDE.md, planning.md, tasks.md를 읽고\n현재 상태를 파악한 후, 다음 작업을 진행해줘.\n```\n\n## 효과\n\n- 프로젝트 관리 시간 70% 감소\n- 컨텍스트 전환 비용 최소화\n- 일관된 아키텍처 결정\n- 작업 중복/누락 방지\n",
+      "role": "Developer"
+    },
+    {
+      "id": "cod-hooks-automation",
+      "file": "coding/hooks-automation.md",
+      "title": "Hooks & Automation — AI 에이전트 훅과 자동화 패턴",
+      "category": "coding",
+      "origin": "custom",
+      "tags": [
+        "coding",
+        "hooks",
+        "automation",
+        "ai-agent",
+        "ci-cd"
+      ],
+      "content": "# Hooks & Automation — AI 에이전트 훅과 자동화 패턴\n\n## 개요\n\nAI 코딩 에이전트의 동작을 이벤트 기반으로 자동화하는 훅(Hook) 시스템.\n파일 변경, 도구 실행, 태스크 완료 등의 이벤트에 반응하여 자동으로 작업을 수행한다.\n\n## 훅 유형\n\n| 이벤트 | 트리거 시점 | 용도 |\n|--------|------------|------|\n| fileEdited | 파일 저장 시 | 린트, 포맷, 테스트 |\n| fileCreated | 파일 생성 시 | 보일러플레이트 검증 |\n| preToolUse | 도구 실행 전 | 권한 체크, 검증 |\n| postToolUse | 도구 실행 후 | 결과 검증, 로깅 |\n| promptSubmit | 프롬프트 전송 시 | 컨텍스트 주입 |\n| postTaskExecution | 태스크 완료 후 | 테스트 실행 |\n\n## 실전 패턴\n\n### 1. 저장 시 린트\n```json\n{\n  \"name\": \"Lint on Save\",\n  \"version\": \"1.0.0\",\n  \"when\": {\n    \"type\": \"fileEdited\",\n    \"patterns\": [\"*.ts\", \"*.tsx\"]\n  },\n  \"then\": {\n    \"type\": \"runCommand\",\n    \"command\": \"npm run lint\"\n  }\n}\n```\n\n### 2. 쓰기 작업 검증\n```json\n{\n  \"name\": \"Review Write Operations\",\n  \"version\": \"1.0.0\",\n  \"when\": {\n    \"type\": \"preToolUse\",\n    \"toolTypes\": [\"write\"]\n  },\n  \"then\": {\n    \"type\": \"askAgent\",\n    \"prompt\": \"이 쓰기 작업이 코딩 표준을 따르는지 확인하라\"\n  }\n}\n```\n\n### 3. 태스크 후 테스트\n```json\n{\n  \"name\": \"Test After Task\",\n  \"version\": \"1.0.0\",\n  \"when\": {\n    \"type\": \"postTaskExecution\"\n  },\n  \"then\": {\n    \"type\": \"runCommand\",\n    \"command\": \"npm test\"\n  }\n}\n```\n\n## 설계 원칙\n\n- 훅은 빠르게 실행되어야 함 (60초 타임아웃 기본)\n- preToolUse 훅이 접근을 거부하면 도구 실행 금지\n- 순환 의존성 주의 (훅 A → 도구 X → 훅 A)\n- 훅은 보조적 — 핵심 로직을 훅에 넣지 마라\n",
+      "role": "Developer"
+    },
+    {
+      "id": "cod-inevitable-code",
+      "file": "coding/inevitable-code.md",
+      "title": "Inevitable Code — 필연적 코드 철학",
+      "category": "coding",
+      "origin": "custom",
+      "tags": [
+        "coding",
+        "typescript",
+        "design",
+        "simplicity",
+        "ai-agent"
+      ],
+      "content": "# Inevitable Code — 필연적 코드 철학\n\n## 개요\n\nGiselle AI 팀의 ts-coder 에이전트가 따르는 코딩 철학.\n\"모든 설계 선택이 유일하게 합리적인 옵션처럼 느껴지는 코드\"를 작성하는 원칙이다.\n개발자가 코드를 만났을 때 \"당연히 이렇게 되어야지. 다른 방법이 있겠어?\"라고 느끼게 만드는 것이 목표.\n\n> 출처: [giselles-ai/giselle ts-coder agent](https://github.com/giselles-ai/giselle/blob/main/.claude/agents/ts-coder.md)\n\n## 핵심 원리: 표면적 단순함, 내부적 정교함\n\n단순한 인터페이스가 정교한 구현을 숨길 수 있다.\n외부 인지 부하를 제거하기 위해 내부 복잡성을 기꺼이 수용한다.\n\n```typescript\n// 필연적: 직접적이고 명백함\nconst user = await getUser(id);\nif (!user) return null;\n\n// 과도한 설계: 불필요한 추상화 레이어\nconst userService = createUserService(dependencies);\nconst result = await userService.getUser(id);\nif (!result.success) handleError(result.error);\n```\n\n## 설계 원칙\n\n### 1. 결정 지점 최소화\n사용자에게 강제하는 모든 API 선택은 인지 부하를 만든다.\nJavaScript의 자연스러운 패턴을 활용하여 결정을 줄여라.\n\n### 2. 목적 뒤에 복잡성 숨기기\n내부 복잡성은 수용 가능하다 — 다른 곳의 복잡성을 제거할 때.\n복잡성을 한 곳에 집중시켜 다른 곳을 단순하게 만들어라.\n\n### 3. 회상이 아닌 인식을 위한 설계\n기존 멘탈 모델을 활용하는 패턴과 이름을 선택하라.\n임의의 규칙을 암기하지 않고도 코드가 무엇을 하는지 인식할 수 있어야 한다.\n\n### 4. 클래스보다 함수, 상속보다 합성\n클래스는 상태 관리, 생명주기, 상속 계층을 통해 우발적 복잡성을 도입한다.\n함수는 자연스럽게 합성된다.\n\n### 5. 에러를 감지 가능하게가 아니라 불가능하게 만들어라\nTypeScript의 타입 시스템을 사용하여 명백한 실수를 방지하되, 의식(ceremony)을 만들지 마라.\n\n## 안티패턴 제거 목록\n\n- **과도한 추상화**: 단순한 함수로 충분할 때 복잡한 패턴 생성\n- **설정 폭발**: 좋은 기본값으로 결정할 수 있는 것을 사용자에게 떠넘기기\n- **타입 의식**: 단순한 타입으로 충분히 소통할 때 복잡한 타입 사용\n- **조기 일반화**: 필요한 것을 알기 전에 추상화 구축\n- **서비스 레이어**: 실제 문제를 해결하지 않는 간접 참조 추가\n\n## 리트머스 테스트\n\n코드를 내보내기 전에 자문:\n1. 이것이 가능한 한 단순한가?\n2. 자연스럽게 느껴지는가?\n3. 실제 문제를 해결하고 있는가?\n4. 깨졌을 때 무슨 일이 일어나는가?\n",
+      "role": "Developer"
+    },
+    {
+      "id": "cod-karpathy-rules",
+      "file": "coding/karpathy-rules.md",
+      "title": "Karpathy Rules — AI 코딩 에이전트 4원칙",
+      "category": "coding",
+      "origin": "custom",
+      "tags": [
+        "coding",
+        "ai-agent",
+        "rules",
+        "claude-md",
+        "best-practices"
+      ],
+      "content": "# Karpathy Rules — AI 코딩 에이전트 4원칙\n\n## 개요\n\nAndrej Karpathy가 제안한 AI 코딩 에이전트(Claude Code 등)의 행동 가이드라인.\nLLM이 코딩할 때 흔히 저지르는 실수를 줄이기 위한 4가지 핵심 원칙이다.\n신중함을 속도보다 우선시하는 방향으로 설계되었다.\n\n> 출처: [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills/blob/main/CLAUDE.md)\n\n## 4가지 원칙\n\n### 1. Think Before Coding — 코딩 전에 생각하라\n\n**가정하지 마라. 혼란을 숨기지 마라. 트레이드오프를 드러내라.**\n\n- 가정을 명시적으로 진술하라. 불확실하면 물어라\n- 여러 해석이 가능하면 제시하라 — 조용히 하나를 고르지 마라\n- 더 단순한 접근이 있으면 말하라. 필요하면 반박하라\n- 불명확하면 멈춰라. 무엇이 혼란스러운지 이름 붙여라\n\n### 2. Simplicity First — 단순함 우선\n\n**문제를 해결하는 최소한의 코드. 추측성 코드 금지.**\n\n- 요청받지 않은 기능 추가 금지\n- 한 번만 쓰이는 코드에 추상화 금지\n- 요청되지 않은 \"유연성\"이나 \"설정 가능성\" 금지\n- 불가능한 시나리오에 대한 에러 핸들링 금지\n- 200줄로 쓴 것이 50줄로 가능하면 다시 써라\n\n> 자문: \"시니어 엔지니어가 이걸 보고 과도하게 복잡하다고 할까?\" 그렇다면 단순화하라.\n\n### 3. Surgical Changes — 외과적 변경\n\n**건드려야 할 것만 건드려라. 자기가 만든 쓰레기만 치워라.**\n\n기존 코드 편집 시:\n- 인접 코드, 주석, 포매팅을 \"개선\"하지 마라\n- 고장나지 않은 것을 리팩터링하지 마라\n- 기존 스타일에 맞춰라, 다르게 하고 싶더라도\n- 관련 없는 데드 코드를 발견하면 언급만 하라 — 삭제하지 마라\n\n자기 변경이 고아(orphan)를 만들면:\n- 자기 변경으로 미사용된 import/변수/함수는 제거하라\n- 기존에 있던 데드 코드는 요청 없이 제거하지 마라\n\n> 테스트: 변경된 모든 줄이 사용자 요청에 직접 연결되어야 한다.\n\n### 4. Goal-Driven Execution — 목표 기반 실행\n\n**성공 기준을 정의하라. 검증될 때까지 반복하라.**\n\n작업을 검증 가능한 목표로 변환:\n- \"유효성 검사 추가\" → \"잘못된 입력에 대한 테스트 작성, 통과시키기\"\n- \"버그 수정\" → \"재현 테스트 작성, 통과시키기\"\n- \"X 리팩터링\" → \"전후로 테스트 통과 확인\"\n\n다단계 작업은 간단한 계획을 진술:\n```\n1. [단계] → 검증: [확인사항]\n2. [단계] → 검증: [확인사항]\n3. [단계] → 검증: [확인사항]\n```\n\n## 적용 확인\n\n이 가이드라인이 작동하고 있다면:\n- diff에 불필요한 변경이 줄어든다\n- 과도한 복잡성으로 인한 재작성이 줄어든다\n- 명확화 질문이 실수 후가 아닌 구현 전에 나온다\n",
+      "role": "Developer"
+    },
+    {
+      "id": "cod-mcp-integration",
+      "file": "coding/mcp-integration.md",
+      "title": "MCP Integration — Model Context Protocol 통합 패턴",
+      "category": "coding",
+      "origin": "custom",
+      "tags": [
+        "coding",
+        "mcp",
+        "model-context-protocol",
+        "ai-agent",
+        "tools"
+      ],
+      "content": "# MCP Integration — Model Context Protocol 통합 패턴\n\n## 개요\n\nModel Context Protocol(MCP)을 활용하여 AI 코딩 에이전트의 능력을 확장하는 패턴.\n외부 도구, 데이터베이스, API를 에이전트에 연결하여 실시간 정보 접근과 작업 자동화를 가능하게 한다.\n\n> 참고: [blog.saurav.io — AI Coding Stack](https://blog.saurav.io/ai-coding-stack-explained/)\n\n## MCP란?\n\nAI 모델이 외부 도구와 데이터 소스에 접근하기 위한 표준 프로토콜.\n에이전트가 파일 시스템, 데이터베이스, API 등과 상호작용할 수 있게 한다.\n\n## 설정 구조\n\n```json\n{\n  \"mcpServers\": {\n    \"server-name\": {\n      \"command\": \"uvx\",\n      \"args\": [\"package-name@latest\"],\n      \"env\": { \"KEY\": \"value\" },\n      \"disabled\": false,\n      \"autoApprove\": [\"tool-name\"]\n    }\n  }\n}\n```\n\n## 활용 패턴\n\n### 1. 문서 검색\n```json\n{\n  \"aws-docs\": {\n    \"command\": \"uvx\",\n    \"args\": [\"awslabs.aws-documentation-mcp-server@latest\"]\n  }\n}\n```\n\n### 2. 데이터베이스 접근\n```json\n{\n  \"postgres\": {\n    \"command\": \"uvx\",\n    \"args\": [\"mcp-server-postgres\", \"--connection-string\", \"...\"]\n  }\n}\n```\n\n### 3. 메모리 시스템\n```json\n{\n  \"memory\": {\n    \"command\": \"uvx\",\n    \"args\": [\"mem-mesh-mcp-server@latest\"]\n  }\n}\n```\n\n## 보안 고려사항\n\n- autoApprove는 신뢰할 수 있는 도구에만 사용\n- 데이터베이스 접근은 읽기 전용 권한 권장\n- 민감한 환경 변수는 별도 관리\n- MCP 서버의 네트워크 접근 범위 제한\n",
+      "role": "Developer"
+    },
+    {
+      "id": "cod-monorepo-agent-rules",
+      "file": "coding/monorepo-agent-rules.md",
+      "title": "Monorepo Agent Rules — 모노레포 AI 에이전트 규칙",
+      "category": "coding",
+      "origin": "custom",
+      "tags": [
+        "coding",
+        "monorepo",
+        "ai-agent",
+        "architecture",
+        "turborepo"
+      ],
+      "content": "# Monorepo Agent Rules — 모노레포 AI 에이전트 규칙\n\n## 개요\n\n모노레포 환경에서 AI 코딩 에이전트가 효과적으로 작업하기 위한 규칙.\nCloudflare Workers SDK 등 대규모 모노레포 프로젝트의 패턴에서 추출.\n\n> 참고: [josix/awesome-claude-md — Cloudflare Workers SDK](https://github.com/josix/awesome-claude-md/blob/main/scenarios/developer-tooling/cloudflare_workers-sdk/README.md)\n\n## 핵심 규칙\n\n### 1. 패키지 경계 존중\n- 다른 패키지의 내부 구현에 직접 접근 금지\n- 공개 API를 통해서만 패키지 간 소통\n- 순환 의존성 생성 금지\n\n### 2. 변경 범위 제한\n- 한 번에 하나의 패키지만 변경 (가능한 경우)\n- 크로스 패키지 변경 시 영향 범위 명시\n- 공유 패키지 변경 시 모든 소비자 테스트 실행\n\n### 3. 빌드 시스템 이해\n```markdown\n## Build Commands\n- 전체 빌드: `turbo build`\n- 단일 패키지: `turbo build --filter=@scope/package`\n- 테스트: `turbo test --filter=@scope/package`\n- 의존성 그래프: `turbo graph`\n```\n\n### 4. Progressive Disclosure\n```\nroot/\n  CLAUDE.md              ← 전체 프로젝트 규칙\n  packages/\n    api/CLAUDE.md        ← API 패키지 규칙\n    web/CLAUDE.md        ← 웹 패키지 규칙\n    shared/CLAUDE.md     ← 공유 패키지 규칙\n```\n\n### 5. 변경 로그\n- 사용자 영향이 있는 변경은 changeset 생성\n- 내부 변경은 changeset 불필요\n- 버전 범프는 자동화 도구에 위임\n\n## 모노레포 CLAUDE.md 템플릿\n\n```markdown\n# CLAUDE.md\n\n## Monorepo Structure\n- `packages/api` — REST API 서버\n- `packages/web` — 프론트엔드 앱\n- `packages/shared` — 공유 유틸리티\n\n## Rules\n- 패키지 간 직접 import 금지 (공개 API만 사용)\n- 변경 시 해당 패키지의 테스트만 실행\n- 공유 패키지 변경 시 전체 테스트 실행\n```\n",
+      "role": "Developer"
+    },
+    {
+      "id": "cod-progressive-disclosure",
+      "file": "coding/progressive-disclosure.md",
+      "title": "Progressive Disclosure — CLAUDE.md 점진적 공개 패턴",
+      "category": "coding",
+      "origin": "custom",
+      "tags": [
+        "coding",
+        "progressive-disclosure",
+        "claude-md",
+        "architecture",
+        "ai-agent"
+      ],
+      "content": "# Progressive Disclosure — CLAUDE.md 점진적 공개 패턴\n\n## 개요\n\n대규모 프로젝트에서 AI 에이전트에게 컨텍스트를 계층적으로 제공하는 패턴.\n에이전트가 작업하는 디렉토리에 따라 관련 규칙만 로드하여 컨텍스트 윈도우를 효율적으로 사용한다.\n\n> 참고: [greeto.me — CLAUDE.md Progressive Disclosure](https://greeto.me/blog/claude-md-progressive-disclosure-for-fast-teams),\n> [potapov.dev — The Definitive Guide to CLAUDE.md](https://potapov.dev/blog/claude-md-guide)\n\n## 계층 구조\n\n```\nproject/\n  CLAUDE.md                    ← L0: 전체 프로젝트 규칙\n  packages/\n    api/\n      CLAUDE.md                ← L1: API 패키지 규칙\n      src/\n        auth/\n          CLAUDE.md            ← L2: 인증 모듈 규칙\n    web/\n      CLAUDE.md                ← L1: 웹 패키지 규칙\n```\n\n## 각 레벨의 역할\n\n### L0 — 프로젝트 루트\n- 빌드/테스트 명령어\n- 전체 아키텍처 개요\n- 공통 코딩 규칙\n- 금지 사항\n\n### L1 — 패키지/모듈\n- 패키지별 빌드 명령어\n- 패키지 내부 아키텍처\n- 패키지별 의존성 규칙\n\n### L2 — 기능/도메인\n- 도메인 특화 규칙\n- 보안 요구사항\n- 특수한 테스트 패턴\n\n## 규칙 배치 원칙\n\n| 규칙 유형 | 배치 레벨 | 예시 |\n|-----------|----------|------|\n| 빌드 명령어 | L0 | `pnpm test` |\n| 패키지 매니저 | L0 | \"pnpm만 사용\" |\n| API 규칙 | L1 | \"REST 규칙 준수\" |\n| 인증 규칙 | L2 | \"JWT 검증 필수\" |\n\n## 토큰 예산 가이드\n\n- L0: 100~200줄 (매 세션 로드)\n- L1: 50~100줄 (해당 패키지 작업 시)\n- L2: 20~50줄 (해당 모듈 작업 시)\n- 총합이 500줄을 넘지 않도록 관리\n",
+      "role": "Developer"
+    },
+    {
+      "id": "cod-ralph-loop",
+      "file": "coding/ralph-loop.md",
+      "title": "Ralph Loop — AI 에이전트 자율 반복 실행 패턴",
+      "category": "coding",
+      "origin": "custom",
+      "tags": [
+        "coding",
+        "ralph-loop",
+        "autonomous",
+        "ai-agent",
+        "testing"
+      ],
+      "content": "# Ralph Loop — AI 에이전트 자율 반복 실행 패턴\n\n## 개요\n\nGeoffrey Huntley가 만든 \"Ralph Wiggum 기법\". AI 코딩 에이전트를 스펙에 대해\n자율적으로 반복 실행하여 기대 결과가 충족될 때까지 돌리는 방법론.\n2026년 초 AI 코딩 커뮤니티에서 가장 많이 논의된 개발 방법론이다.\n\n> 참고: [learndevrel.com — The Ralph Loop](https://learndevrel.com/blog/ralph-loop-ai-coding)\n\n## 핵심 개념\n\n```bash\nwhile ! tests_pass; do\n  ai_agent fix_failing_tests\ndone\n```\n\n스펙(테스트)을 먼저 작성하고, AI 에이전트가 모든 테스트를 통과할 때까지\n자율적으로 코드를 수정하게 한다.\n\n## 워크플로우\n\n### 1. 스펙 정의\n- 기대 동작을 테스트로 작성\n- 엣지 케이스 포함\n- 성능 기준 포함 (필요시)\n\n### 2. 에이전트 실행\n- 에이전트에게 테스트 통과를 목표로 지시\n- 실패 시 자동으로 수정 시도\n- 성공할 때까지 반복\n\n### 3. 검증\n- 모든 테스트 통과 확인\n- 코드 리뷰 (사람)\n- 의도하지 않은 부수효과 확인\n\n## 전제 조건\n\n- 명확하고 포괄적인 테스트 스위트\n- 에이전트의 파일 시스템 접근 권한\n- 테스트 실행 명령어가 CLAUDE.md에 명시\n- 적절한 타임아웃 설정\n\n## 주의사항\n\n- 테스트가 불완전하면 \"테스트만 통과하는\" 나쁜 코드가 생길 수 있음\n- 무한 루프 방지를 위한 최대 반복 횟수 설정 필요\n- 보안 관련 코드에는 부적합 — 수동 리뷰 필수\n",
+      "role": "Developer"
+    },
+    {
+      "id": "cod-riper-5-methodology",
+      "file": "coding/riper-5-methodology.md",
+      "title": "RIPER-5 — AI 에이전트 개발 방법론",
+      "category": "coding",
+      "origin": "custom",
+      "tags": [
+        "coding",
+        "riper-5",
+        "methodology",
+        "ai-agent",
+        "workflow"
+      ],
+      "content": "# RIPER-5 — AI 에이전트 개발 방법론\n\n## 개요\n\nGoMall 프로젝트에서 사용된 AI 에이전트 개발 방법론.\nResearch → Implement → Plan → Execute → Review 5단계 사이클로\nAI 에이전트의 작업을 구조화한다.\n\n> 출처: [josix/awesome-claude-md — GoMall](https://github.com/josix/awesome-claude-md/blob/main/scenarios/developer-tooling/li0on3_GoMall/README.md)\n\n## 5단계 사이클\n\n### R — Research (조사)\n- 기존 코드베이스 분석\n- 관련 파일과 의존성 파악\n- 기존 패턴과 규칙 이해\n- **출력**: 현재 상태 요약\n\n### I — Implement (구현 계획)\n- 변경 사항의 영향 범위 분석\n- 가능한 접근 방식 비교\n- 트레이드오프 명시\n- **출력**: 구현 방향 제안\n\n### P — Plan (계획)\n- 구체적인 단계별 실행 계획\n- 각 단계의 검증 방법 정의\n- 의존성 순서 결정\n- **출력**: 번호가 매겨진 실행 계획\n\n### E — Execute (실행)\n- 계획에 따라 코드 변경\n- 각 단계 후 검증\n- 문제 발생 시 계획 수정\n- **출력**: 변경된 코드\n\n### R — Review (검토)\n- 변경 사항 전체 검토\n- 테스트 실행 및 확인\n- 의도하지 않은 부수효과 확인\n- **출력**: 검토 결과 및 개선 제안\n\n## 적용 방법\n\n에이전트에게 현재 단계를 명시적으로 지시:\n```\n현재 RIPER 단계: Research\n[프로젝트]의 인증 모듈을 분석하고 현재 상태를 요약해줘.\n```\n\n## 장점\n\n- 에이전트가 \"바로 코딩\"하는 것을 방지\n- 각 단계에서 사용자 확인 가능\n- 변경의 영향 범위를 사전에 파악\n- 체계적인 검증 프로세스\n",
+      "role": "Developer"
+    },
+    {
+      "id": "cod-security-first-agent",
+      "file": "coding/security-first-agent.md",
+      "title": "Security-First Agent Rules — 보안 우선 AI 에이전트 규칙",
+      "category": "coding",
+      "origin": "custom",
+      "tags": [
+        "coding",
+        "security",
+        "ai-agent",
+        "defi",
+        "rules"
+      ],
+      "content": "# Security-First Agent Rules — 보안 우선 AI 에이전트 규칙\n\n## 개요\n\n보안이 최우선인 프로젝트(DeFi, 금융, 인프라 등)에서 AI 코딩 에이전트가 따라야 할 규칙.\nCitadel Protocol 등 보안 크리티컬 프로젝트의 CLAUDE.md 패턴에서 추출.\n\n> 참고: [josix/awesome-claude-md — Citadel Protocol](https://github.com/josix/awesome-claude-md/blob/main/scenarios/complex-projects/Citadel-Protocol_contracts/analysis.md)\n\n## 핵심 규칙\n\n### 1. 보안 검토 필수\n- 모든 외부 입력에 대한 유효성 검사\n- SQL 인젝션, XSS, CSRF 등 OWASP Top 10 체크\n- 인증/인가 로직 변경 시 반드시 수동 리뷰\n\n### 2. 비밀 정보 관리\n- 하드코딩된 시크릿 절대 금지\n- 환경 변수 또는 시크릿 매니저 사용\n- 로그에 민감 정보 출력 금지\n- 코드 예시에서 PII는 플레이스홀더 사용\n\n### 3. 의존성 보안\n- 새 의존성 추가 시 보안 감사 필요\n- 알려진 취약점이 있는 버전 사용 금지\n- 최소 권한 원칙 적용\n\n### 4. 에러 처리\n- 내부 에러 상세를 외부에 노출 금지\n- 스택 트레이스를 사용자에게 보여주지 않음\n- 에러 로깅은 내부 시스템에만\n\n### 5. 코드 변경 제한\n- 보안 관련 파일 변경 시 명시적 승인 필요\n- 인증 미들웨어, 권한 체크 로직은 자동 변경 금지\n- 암호화 관련 코드는 검증된 라이브러리만 사용\n\n## CLAUDE.md 보안 섹션 템플릿\n\n```markdown\n## Security Rules\n- NEVER hardcode secrets, API keys, or credentials\n- NEVER log sensitive data (PII, tokens, passwords)\n- ALWAYS validate external input before processing\n- ALWAYS use parameterized queries for database access\n- NEVER modify auth middleware without explicit approval\n- NEVER disable security headers or CORS restrictions\n```\n\n## 보안 체크리스트\n\n- [ ] 입력 유효성 검사\n- [ ] 출력 인코딩\n- [ ] 인증/인가 확인\n- [ ] 세션 관리\n- [ ] 에러 처리 (정보 누출 방지)\n- [ ] 로깅 (민감 정보 제외)\n- [ ] 의존성 취약점 스캔\n",
+      "role": "Security Engineer"
+    },
+    {
+      "id": "cod-self-learning-agents",
+      "file": "coding/self-learning-agents.md",
+      "title": "Self-Learning Agents — 자기 학습 AI 에이전트 패턴",
+      "category": "coding",
+      "origin": "custom",
+      "tags": [
+        "coding",
+        "self-learning",
+        "ai-agent",
+        "memory",
+        "patterns"
+      ],
+      "content": "# Self-Learning Agents — 자기 학습 AI 에이전트 패턴\n\n## 개요\n\nAI 코딩 에이전트가 실행 이력을 추적하고 패턴을 인식하여\n시간이 지남에 따라 개선되는 자기 학습 시스템 설계.\n\n> 참고: [Equilateral Agents Open Core](https://github.com/Equilateral-AI/equilateral-agents-open-core)\n\n## 핵심 구성요소\n\n### 1. 에이전트 메모리\n- 최근 100회 실행 이력 추적\n- 성공/실패 패턴 기록\n- 자주 사용되는 명령어 학습\n\n### 2. 패턴 인식\n- 반복되는 에러 패턴 감지\n- 효과적인 해결 방법 기억\n- 프로젝트별 관용구 학습\n\n### 3. 워크플로우 최적화\n- 자주 수행하는 작업 순서 최적화\n- 불필요한 단계 제거\n- 병렬 실행 가능한 작업 식별\n\n## 메모리 시스템 설계\n\n```\nmemory/\n  decisions.md     — 아키텍처 결정 기록\n  patterns.md      — 발견된 코드 패턴\n  errors.md        — 해결된 에러와 해결법\n  preferences.md   — 사용자 선호도\n```\n\n## 학습 사이클\n\n```\n1. 작업 수행\n2. 결과 평가 (성공/실패)\n3. 패턴 추출\n4. 메모리에 저장\n5. 다음 작업에 적용\n```\n\n## 실전 적용\n\n### 에러 학습\n```markdown\n## Error: ModuleNotFoundError\n- 원인: 가상환경 미활성화\n- 해결: `source .venv/bin/activate` 후 재실행\n- 빈도: 3회 (최근 7일)\n```\n\n### 선호도 학습\n```markdown\n## User Preferences\n- 테스트 프레임워크: pytest (vitest 아님)\n- 패키지 매니저: pnpm (npm 아님)\n- 에러 처리: Result 패턴 (try-catch 아님)\n```\n",
+      "role": "Developer"
+    },
+    {
+      "id": "cod-spec-driven-development",
+      "file": "coding/spec-driven-development.md",
+      "title": "Spec-Driven Development — AI 에이전트 스펙 기반 개발",
+      "category": "coding",
+      "origin": "custom",
+      "tags": [
+        "coding",
+        "spec-driven",
+        "tdd",
+        "ai-agent",
+        "methodology"
+      ],
+      "content": "# Spec-Driven Development — AI 에이전트 스펙 기반 개발\n\n## 개요\n\nAI 에이전트가 \"지시를 권장사항으로 취급\"하는 경향을 기술적으로 강제하는 방법론.\n스펙 문서를 먼저 작성하고, 에이전트가 스펙에 따라 TDD 사이클로 구현하도록 한다.\n\n> 참고: [smartscope.blog — Enforcing Spec-Driven on AI Agents](http://smartscope.blog/en/ai-development/enforcing-spec-driven-development-claude-copilot-2025/)\n\n## 워크플로우\n\n```\n1. 스펙 작성 (requirements.md)\n2. 설계 문서 작성 (design.md)\n3. 태스크 분해 (tasks.md)\n4. 각 태스크마다:\n   a. 테스트 먼저 작성\n   b. 테스트 실패 확인\n   c. 최소 구현 코드 작성\n   d. 테스트 통과 확인\n   e. 태스크 완료 마킹\n```\n\n## 핵심 원칙\n\n### 1. 구현 전에 스펙\n- 코드를 쓰기 전에 무엇을 만들지 명확히 정의\n- 요구사항 → 설계 → 태스크 순서를 강제\n\n### 2. 한 번에 하나의 작은 변경\n- 작은 테스트, 작은 구현\n- 리팩터링은 모든 테스트 통과 후에만\n\n### 3. 검증 가능한 완료 기준\n- 각 태스크에 명확한 성공 기준\n- 자동화된 테스트로 검증\n\n### 4. 에이전트 행동 강제\n- 스펙 파일을 에이전트 컨텍스트에 항상 포함\n- \"스펙에 없는 기능 추가 금지\" 규칙 명시\n\n## 스펙 파일 구조\n\n### requirements.md\n```markdown\n## Requirement 1: [기능명]\n### User Stories\n- As a [역할], I want [기능] so that [이유]\n### Acceptance Criteria\n- [ ] [검증 가능한 기준 1]\n- [ ] [검증 가능한 기준 2]\n```\n\n### tasks.md\n```markdown\n## Task 1: [태스크명]\n- [ ] 1.1 [서브태스크] (Req 1.1)\n- [ ] 1.2 [서브태스크] (Req 1.2)\n```\n",
+      "role": "Developer"
+    },
+    {
+      "id": "cod-sub-agent-architecture",
+      "file": "coding/sub-agent-architecture.md",
+      "title": "Sub-Agent Architecture — AI 코딩 서브에이전트 설계",
+      "category": "coding",
+      "origin": "custom",
+      "tags": [
+        "coding",
+        "sub-agent",
+        "ai-agent",
+        "architecture",
+        "claude-code"
+      ],
+      "content": "# Sub-Agent Architecture — AI 코딩 서브에이전트 설계\n\n## 개요\n\nAI 코딩 에이전트를 역할별로 분리하여 전문화된 서브에이전트로 구성하는 아키텍처.\n각 서브에이전트는 고유한 시스템 프롬프트, 도구 접근 권한, 전문 영역을 가진다.\n\n> 참고: [hesreallyhim/awesome-claude-code-agents](https://github.com/hesreallyhim/awesome-claude-code-agents),\n> [blog.saurav.io — AI Coding Stack](https://blog.saurav.io/ai-coding-stack-explained/)\n\n## 서브에이전트 유형\n\n### 역할 기반 분류\n\n| 에이전트 | 역할 | 전문 영역 |\n|----------|------|-----------|\n| ts-coder | TypeScript 개발 | 타입 안전성, 함수형 패턴 |\n| react-coder | React 개발 | 컴포넌트, 훅, 상태 관리 |\n| backend-architect | 백엔드 설계 | API, DB, 스케일링 |\n| code-reviewer | 코드 리뷰 | 보안, 성능, 아키텍처 |\n| ui-engineer | UI 개발 | 접근성, 반응형, 컴포넌트 |\n\n### 에이전트 파일 구조\n\n```markdown\n---\nname: ts-coder\ndescription: TypeScript 코드 작성 및 리팩터링\nmodel: opus\ncolor: green\n---\n\n[에이전트 시스템 프롬프트]\n```\n\n## 설계 원칙\n\n### 1. 단일 책임\n각 에이전트는 하나의 명확한 역할만 수행.\n\"풀스택 에이전트\"보다 전문화된 에이전트가 효과적.\n\n### 2. 명확한 인터페이스\n에이전트 간 소통은 명확한 입출력으로 정의.\n메인 에이전트가 서브에이전트에게 구체적 태스크를 위임.\n\n### 3. 컨텍스트 격리\n각 에이전트는 자신의 역할에 필요한 컨텍스트만 로드.\n불필요한 정보로 컨텍스트 윈도우를 낭비하지 않음.\n\n## 오케스트레이션 패턴\n\n```\n메인 에이전트 (오케스트레이터)\n  ├── context-gatherer → 코드베이스 분석\n  ├── ts-coder → TypeScript 구현\n  ├── code-reviewer → 코드 리뷰\n  └── test-writer → 테스트 작성\n```\n",
+      "role": "Developer"
+    },
+    {
+      "id": "cod-vibe-coding-playbook",
+      "file": "coding/vibe-coding-playbook.md",
+      "title": "Vibe Coding Playbook — 바이브 코딩 실전 가이드",
+      "category": "coding",
+      "origin": "custom",
+      "tags": [
+        "coding",
+        "vibe-coding",
+        "ai-agent",
+        "methodology",
+        "karpathy"
+      ],
+      "content": "# Vibe Coding Playbook — 바이브 코딩 실전 가이드\n\n## 개요\n\n2025년 2월 Andrej Karpathy가 제안한 \"vibe coding\" 개념의 실전 가이드.\nAI에게 결과물을 맡기되, 프롬프트·테스트·가드레일로 품질을 확보하는 방법론이다.\n\n> 참고: [royfactory.net — Vibe Coding Playbook](https://royfactory.net/posts/ai/202512/vibe-coding-playbook/)\n\n## 바이브 코딩이란?\n\n\"바이브에 몸을 맡기고, 지수적 성장을 받아들이고, 코드가 작동하는지조차 잊어버리는\" 접근.\n하지만 실제 프로덕션에서는 가드레일이 필수다.\n\n## 실전 원칙\n\n### 1. 프롬프트가 곧 설계\n- 명확하고 구체적인 프롬프트 = 좋은 설계 문서\n- 모호한 프롬프트 → 모호한 코드\n\n### 2. 테스트가 곧 스펙\n- AI가 생성한 코드의 정확성은 테스트로만 검증 가능\n- 테스트 먼저 작성하고 AI에게 구현을 맡겨라\n\n### 3. 가드레일 설정\n- CLAUDE.md/AGENTS.md로 행동 규칙 정의\n- 린터, 포매터, 타입 체커로 자동 검증\n- CI/CD 파이프라인으로 배포 전 검증\n\n### 4. 점진적 복잡성\n- 작은 것부터 시작하여 점진적으로 확장\n- 한 번에 큰 변경보다 여러 번의 작은 변경\n\n### 5. 컨텍스트 관리\n- 세션이 길어지면 컨텍스트 품질이 저하됨\n- 주기적으로 새 세션 시작\n- 중요한 결정은 파일로 기록\n\n## 워크플로우\n\n```\n1. 의도 명확화 (프롬프트 작성)\n2. 테스트 작성 (성공 기준 정의)\n3. AI에게 구현 위임\n4. 테스트 실행 (자동 검증)\n5. 코드 리뷰 (수동 검증)\n6. 반복\n```\n\n## 주의사항\n\n- AI 출력을 무조건 신뢰하지 마라\n- 보안 관련 코드는 반드시 수동 리뷰\n- 복잡한 비즈니스 로직은 단계별로 검증\n- 성능 크리티컬 코드는 벤치마크 필수\n",
+      "role": "Developer"
     }
   ]
 }
