@@ -1,7 +1,7 @@
 _meta:
   version: '4.0'
   generated: '2026-03-10'
-  total: 431
+  total: 461
   stats:
     rca: 6
     incident-response: 73
@@ -10,7 +10,7 @@ _meta:
     security: 29
     data-ai: 12
     shared: 21
-    techniques: 1
+    techniques: 31
   categories:
   - rca
   - incident-response
@@ -7729,6 +7729,213 @@ prompts:
   - workflow
   role: workflow-orchestrator
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/09-meta-orchestration/workflow-orchestrator.md)'
+- id: tec-analogical-reasoning
+  file: techniques/analogical-reasoning.md
+  title: Analogical Reasoning — 유추 추론
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - analogy
+  - metaphor
+  - transfer
+  - cross-domain
+- id: tec-chain-of-thought
+  file: techniques/chain-of-thought.md
+  title: Chain-of-Thought (CoT) — 단계별 추론
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - cot
+  - reasoning
+  - step-by-step
+- id: tec-chain-of-verification
+  file: techniques/chain-of-verification.md
+  title: Chain-of-Verification (CoVe) — 자기 검증 체인
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - cove
+  - verification
+  - hallucination
+  - fact-check
+- id: tec-contrastive-prompting
+  file: techniques/contrastive-prompting.md
+  title: Contrastive Prompting — 대조 분석 기법
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - contrastive
+  - comparison
+  - contrast
+  - differentiation
+- id: tec-decomposition
+  file: techniques/decomposition.md
+  title: Decomposition — 문제 분해 기법
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - decomposition
+  - divide-conquer
+  - breakdown
+  - modular
+- id: tec-devils-advocate
+  file: techniques/devils-advocate.md
+  title: Devil's Advocate — 반론 제기 기법
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - devils-advocate
+  - counter-argument
+  - critical-thinking
+- id: tec-few-shot-prompting
+  file: techniques/few-shot-prompting.md
+  title: Few-Shot Prompting — 예시 기반 학습
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - few-shot
+  - examples
+  - in-context-learning
+- id: tec-feynman-technique
+  file: techniques/feynman-technique.md
+  title: Feynman Technique — 파인만 학습법
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - feynman
+  - simplification
+  - teaching
+  - understanding
+- id: tec-first-principles
+  file: techniques/first-principles.md
+  title: First Principles Thinking — 제1원리 사고 (머스크 사고)
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - first-principles
+  - elon-musk
+  - decomposition
+  - fundamental
+- id: tec-fishbone-analysis
+  file: techniques/fishbone-analysis.md
+  title: Fishbone (Ishikawa) — 원인-결과 다이어그램
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - fishbone
+  - ishikawa
+  - cause-effect
+  - rca
+- id: tec-five-whys
+  file: techniques/five-whys.md
+  title: 5 Whys — 다섯 번의 왜
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - five-whys
+  - root-cause
+  - rca
+  - toyota
+- id: tec-hypothesis-driven
+  file: techniques/hypothesis-driven.md
+  title: Hypothesis-Driven Analysis — 가설 기반 분석
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - hypothesis
+  - scientific-method
+  - testing
+  - validation
+- id: tec-inversion-thinking
+  file: techniques/inversion-thinking.md
+  title: Inversion Thinking — 역발상 사고
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - inversion
+  - reverse
+  - charlie-munger
+  - premortem
+  - failure-avoidance
+- id: tec-lateral-thinking
+  file: techniques/lateral-thinking.md
+  title: Lateral Thinking — 수평적 사고
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - lateral
+  - de-bono
+  - creative
+  - unconventional
+- id: tec-mece-framework
+  file: techniques/mece-framework.md
+  title: MECE Framework — 상호배제·전체포괄 분류
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - mece
+  - framework
+  - classification
+  - mckinsey
+- id: tec-meta-prompting
+  file: techniques/meta-prompting.md
+  title: Meta-Prompting — 프롬프트를 만드는 프롬프트
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - meta
+  - prompt-generation
+  - self-improving
+- id: tec-ooda-loop
+  file: techniques/ooda-loop.md
+  title: OODA Loop — 관찰·판단·결정·행동 루프
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - ooda
+  - decision-loop
+  - military
+  - agile
+  - incident-response
+- id: tec-premortem
+  file: techniques/premortem.md
+  title: Pre-mortem Analysis — 사전 부검 분석
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - premortem
+  - risk
+  - failure-analysis
+  - gary-klein
+- id: tec-prompt-chaining
+  file: techniques/prompt-chaining.md
+  title: Prompt Chaining — 프롬프트 연쇄
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - chaining
+  - pipeline
+  - sequential
+  - workflow
 - id: tec-rca_techniques
   file: techniques/rca_techniques.md
   title: 📌 RCA 프로세스 단계별 기법 선택 가이드
@@ -7738,3 +7945,123 @@ prompts:
   - iam
   - rca_techniques
   - techniques
+- id: tec-react-pattern
+  file: techniques/react-pattern.md
+  title: ReAct — Reasoning + Acting 패턴
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - react
+  - reasoning
+  - acting
+  - agent
+  - tool-use
+- id: tec-red-team-blue-team
+  file: techniques/red-team-blue-team.md
+  title: Red Team / Blue Team — 공격·방어 관점 분석
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - red-team
+  - blue-team
+  - security
+  - adversarial
+- id: tec-role-prompting
+  file: techniques/role-prompting.md
+  title: Role Prompting — 역할 부여 기법
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - role
+  - persona
+  - expert
+  - character
+- id: tec-rubber-duck-debugging
+  file: techniques/rubber-duck-debugging.md
+  title: Rubber Duck Debugging — 러버덕 디버깅
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - rubber-duck
+  - debugging
+  - explanation
+  - verbalization
+- id: tec-self-consistency
+  file: techniques/self-consistency.md
+  title: Self-Consistency — 다중 경로 다수결
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - self-consistency
+  - voting
+  - ensemble
+- id: tec-self-refinement
+  file: techniques/self-refinement.md
+  title: Self-Refinement — 반복 자기 개선
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - self-refinement
+  - iteration
+  - improvement
+  - feedback
+- id: tec-six-thinking-hats
+  file: techniques/six-thinking-hats.md
+  title: Six Thinking Hats — 6색 모자 사고법
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - six-hats
+  - de-bono
+  - perspectives
+  - parallel-thinking
+- id: tec-socratic-method
+  file: techniques/socratic-method.md
+  title: Socratic Method — 소크라틱 질문법
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - socratic
+  - questioning
+  - critical-thinking
+  - dialogue
+- id: tec-step-back-prompting
+  file: techniques/step-back-prompting.md
+  title: Step-Back Prompting — 추상화 후 구체화
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - step-back
+  - abstraction
+  - reasoning
+- id: tec-swot-analysis
+  file: techniques/swot-analysis.md
+  title: SWOT Analysis — 강점·약점·기회·위협 분석
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - swot
+  - strategy
+  - analysis
+  - planning
+- id: tec-tree-of-thoughts
+  file: techniques/tree-of-thoughts.md
+  title: Tree-of-Thoughts (ToT) — 분기 탐색 추론
+  category: techniques
+  origin: custom
+  tags:
+  - techniques
+  - tot
+  - reasoning
+  - branching
+  - exploration

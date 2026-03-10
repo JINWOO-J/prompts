@@ -11,7 +11,6 @@
   let filteredPrompts = [];
   let focusIndex = -1;
   let activeTags = [];
-  let activeOrigins = [];
 
   // --- DOM refs ---
   const $ = (sel) => document.querySelector(sel);
@@ -28,7 +27,6 @@
   const sidebarToggle = $('.sidebar-toggle');
   const tagSelect = $('#tag-select');
   const tagChips = $('#tag-chips');
-  const originButtons = $('#origin-buttons');
   const matchCount = $('#match-count');
 
   // --- Init ---
@@ -56,7 +54,6 @@
 
     renderCategories();
     renderTagFilter();
-    renderOriginFilter();
     restoreState();
     applyFilter();
 
@@ -74,16 +71,42 @@
   }
 
   // --- Categories ---
+  // Lucide-style SVG icons (14x14, stroke-width 2)
+  const _i = (d) => `<svg class="cat-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+  const CAT_ICONS = {
+    all:                 _i('<line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>'),
+    rca:                 _i('<circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>'),
+    'incident-response': _i('<path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>'),
+    application:         _i('<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>'),
+    infrastructure:      _i('<rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>'),
+    security:            _i('<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>'),
+    'data-ai':           _i('<path d="M9.5 2A2.5 2.5 0 0112 4.5v15a2.5 2.5 0 01-4.96.44A2.5 2.5 0 012 17.5v-.5a2.5 2.5 0 015 0V7.5A2.5 2.5 0 019.5 5h5A2.5 2.5 0 0117 7.5v9a2.5 2.5 0 004.96.44A2.5 2.5 0 0022 14.5V12a2.5 2.5 0 00-5 0v4.5a2.5 2.5 0 01-2.5 2.5h-5A2.5 2.5 0 017 16.5v-9A2.5 2.5 0 019.5 5"/>'),
+    shared:              _i('<path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/>'),
+    techniques:          _i('<line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0018 8 6 6 0 006 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 018.91 14"/>'),
+  };
+
+  const CATEGORY_LABELS = {
+    all: '전체',
+    rca: 'RCA',
+    'incident-response': '인시던트',
+    application: '애플리케이션',
+    infrastructure: '인프라',
+    security: '보안',
+    'data-ai': '데이터/AI',
+    shared: '공용',
+    techniques: '기법',
+  };
+
   function renderCategories() {
-    const cats = [{ key: 'all', label: 'All', count: meta.total }];
+    const cats = [{ key: 'all', label: CATEGORY_LABELS.all, count: meta.total }];
     for (const cat of meta.categories) {
-      cats.push({ key: cat, label: cat, count: meta.stats[cat] || 0 });
+      cats.push({ key: cat, label: CATEGORY_LABELS[cat] || cat, count: meta.stats[cat] || 0 });
     }
 
     categoriesEl.innerHTML = cats
       .map(
         (c) =>
-          `<button class="category-btn${c.key === activeCategory ? ' active' : ''}" data-cat="${c.key}">${c.label}<span class="category-count">${c.count}</span></button>`
+          `<button class="category-btn${c.key === activeCategory ? ' active' : ''}" data-cat="${c.key}">${CAT_ICONS[c.key] || ''}${c.label}<span class="category-count">${c.count}</span></button>`
       )
       .join('');
 
@@ -150,29 +173,6 @@
     }
   });
 
-  // --- Origin Filter ---
-  const ORIGINS = ['custom', 'scoutflo', 'voltagent', 'shawnewallace', 'extracted'];
-
-  function renderOriginFilter() {
-    originButtons.innerHTML = ORIGINS
-      .map((o) => `<button class="origin-toggle ${o}${activeOrigins.includes(o) ? ' active' : ''}" data-origin="${o}">${o}</button>`)
-      .join('');
-  }
-
-  originButtons.addEventListener('click', (e) => {
-    const btn = e.target.closest('.origin-toggle');
-    if (!btn) return;
-    const origin = btn.dataset.origin;
-    if (activeOrigins.includes(origin)) {
-      activeOrigins = activeOrigins.filter((o) => o !== origin);
-    } else {
-      activeOrigins.push(origin);
-    }
-    renderOriginFilter();
-    focusIndex = -1;
-    applyFilter();
-  });
-
   // --- Filter & Search ---
   let debounceTimer;
   searchInput.addEventListener('input', () => {
@@ -189,7 +189,6 @@
     filteredPrompts = allPrompts.filter((p) => {
       if (activeCategory !== 'all' && p.category !== activeCategory) return false;
       if (activeTags.length > 0 && !activeTags.every((t) => p.tags.includes(t))) return false;
-      if (activeOrigins.length > 0 && !activeOrigins.includes(p.origin)) return false;
       if (!query) return true;
       return (
         p.title.toLowerCase().includes(query) ||
@@ -223,8 +222,7 @@
         return `<li class="prompt-item${isActive ? ' active' : ''}${isFocused ? ' focused' : ''}" data-id="${p.id}" data-index="${i}">
           <div class="prompt-item-title">${title}</div>
           <div class="prompt-item-meta">
-            <span class="origin-badge ${p.origin}">${p.origin}</span>
-            <span>${p.category}</span>
+            <span class="category-badge ${p.category}">${CATEGORY_LABELS[p.category] || p.category}</span>
           </div>
         </li>`;
       })
@@ -258,9 +256,34 @@
       .join('');
     viewerContent.innerHTML = marked.parse(prompt.content);
 
-    // Re-highlight code blocks
-    viewerContent.querySelectorAll('pre code').forEach((block) => {
-      hljs.highlightElement(block);
+    // Re-highlight code blocks + add copy buttons
+    viewerContent.querySelectorAll('pre').forEach((pre) => {
+      const code = pre.querySelector('code');
+      if (code) hljs.highlightElement(code);
+
+      const btn = document.createElement('button');
+      btn.className = 'code-copy-btn';
+      btn.textContent = 'Copy';
+      btn.addEventListener('click', async () => {
+        const text = pre.querySelector('code')?.textContent || pre.textContent;
+        try {
+          await navigator.clipboard.writeText(text);
+        } catch {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          ta.style.cssText = 'position:fixed;opacity:0';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+        }
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1500);
+      });
+
+      pre.style.position = 'relative';
+      pre.appendChild(btn);
     });
 
     // Mobile: close sidebar

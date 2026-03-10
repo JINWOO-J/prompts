@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "prompt-library": {
+      "command": "python3",
+      "args": ["scripts/prompt-mcp-server.py"],
+      "disabled": false,
+      "autoApprove": ["search_prompts", "get_prompt"]
+    }
+  }
+}
