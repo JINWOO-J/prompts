@@ -26,6 +26,7 @@
   const viewerTags = $('#viewer-tags');
   const viewerContent = $('#viewer-content');
   const copyBtn = $('#copy-btn');
+  const copyMdBtn = $('#copy-md-btn');
   const sidebar = $('#sidebar');
   const sidebarOverlay = $('#sidebar-overlay');
   const sidebarToggle = $('.sidebar-toggle');
@@ -349,11 +350,13 @@
   const PH_SKIP = /^\s*$|^[Xx ]$|^STEP\s*\d|^Step\s*\d|^Scoutflo|^VoltAgent|^shawnewallace/;
 
   function extractPlaceholders(content) {
-    // 코드블록(``` ... ```) 및 인라인 코드 제거
-    const noCode = content.replace(/```[\s\S]*?```/g, '').replace(/`[^`]+`/g, '');
+    // 인라인 코드만 제거 (코드블록 안의 플레이스홀더는 유지 — RCA 프롬프트 등에서 필요)
+    let text = content.replace(/`[^`\n]+`/g, '');
     // 마크다운 링크 [text](url) 제거
-    const noLinks = noCode.replace(/\[([^\]]+)\]\([^)]+\)/g, '');
-    const matches = noLinks.match(/\[([^\[\]]{2,80})\]/g) || [];
+    text = text.replace(/\[([^\]]+)\]\([^)]+\)/g, '');
+    // <OutputFormat> 블록 제거 — LLM 출력 형식 안의 [설명]은 플레이스홀더가 아님
+    text = text.replace(/<OutputFormat>[\s\S]*?<\/OutputFormat>/gi, '');
+    const matches = text.match(/\[([^\[\]]{2,80})\]/g) || [];
     const seen = new Set();
     const result = [];
     for (const m of matches) {
@@ -537,6 +540,45 @@
       copyBtn.querySelector('span').textContent = 'Copied!';
       setTimeout(() => { copyBtn.querySelector('span').textContent = 'Copy'; }, 2000);
     }
+  });
+
+  // --- Copy as .md ---
+  copyMdBtn.addEventListener('click', async () => {
+    if (!activePromptId) return;
+    const prompt = allPrompts.find((p) => p.id === activePromptId);
+    if (!prompt) return;
+
+    // Build frontmatter YAML
+    const fm = ['---'];
+    fm.push(`category: ${prompt.category}`);
+    if (prompt.tags && prompt.tags.length) {
+      fm.push('tags:');
+      prompt.tags.forEach((t) => fm.push(`- ${t}`));
+    }
+    if (prompt.role) fm.push(`role: ${prompt.role}`);
+    if (prompt.origin) fm.push(`origin: ${prompt.origin}`);
+    fm.push('---');
+
+    const content = applyPlaceholders(prompt.content);
+    const md = fm.join('\n') + '\n' + content;
+
+    try {
+      await navigator.clipboard.writeText(md);
+    } catch {
+      const ta = document.createElement('textarea');
+      ta.value = md;
+      ta.style.cssText = 'position:fixed;opacity:0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+    copyMdBtn.classList.add('copied');
+    copyMdBtn.querySelector('span').textContent = 'Copied!';
+    setTimeout(() => {
+      copyMdBtn.classList.remove('copied');
+      copyMdBtn.querySelector('span').textContent = '.md';
+    }, 2000);
   });
 
   // --- Hash routing ---
