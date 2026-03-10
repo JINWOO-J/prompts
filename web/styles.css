@@ -1172,3 +1172,73 @@ mark {
   .version-panel { width: 100vw; }
   .new-prompt-btn { font-size: 11px; padding: 5px 8px; }
 }
+
+/* ===== Placeholder Form ===== */
+.placeholder-form {
+  border-bottom: 1px solid var(--border);
+  padding: 12px 24px;
+  background: var(--bg-secondary);
+}
+.ph-form-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+.ph-form-header svg { opacity: 0.6; }
+.ph-count {
+  font-weight: 400;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+.ph-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+.ph-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 200px;
+  flex: 1 1 220px;
+  max-width: 400px;
+}
+.ph-field label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--accent);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ph-field input,
+.ph-field textarea {
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 13px;
+  font-family: inherit;
+  transition: border-color 0.15s;
+  resize: vertical;
+}
+.ph-field input:focus,
+.ph-field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-dim);
+}
+.ph-field input::placeholder,
+.ph-field textarea::placeholder {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+@media (max-width: 768px) {
+  .placeholder-form { padding: 10px 16px; }
+  .ph-field { min-width: 100%; max-width: 100%; }
+}
