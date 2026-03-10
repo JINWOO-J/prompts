@@ -30,7 +30,8 @@
   const sidebar = $('#sidebar');
   const sidebarOverlay = $('#sidebar-overlay');
   const sidebarToggle = $('.sidebar-toggle');
-  const tagSelect = $('#tag-select');
+  const tagInput = $('#tag-input');
+  const tagDropdown = $('#tag-dropdown');
   const tagChips = $('#tag-chips');
   const matchCount = $('#match-count');
   const newPromptBtn = $('#new-prompt-btn');
@@ -240,9 +241,6 @@
   }
 
   function renderTagFilter() {
-    const allTags = getAllTags();
-    tagSelect.innerHTML = '<option value="">Filter by tag...</option>' +
-      allTags.map((t) => `<option value="${escapeHtml(t)}">${escapeHtml(t)}</option>`).join('');
     renderTagChips();
   }
 
@@ -252,15 +250,91 @@
       .join('');
   }
 
-  tagSelect.addEventListener('change', () => {
-    const tag = tagSelect.value;
+  // --- Tag Autocomplete ---
+  let tagHighlightIdx = -1;
+
+  function showTagDropdown(query) {
+    const allTags = getAllTags();
+    const q = query.toLowerCase();
+    const filtered = allTags.filter((t) => t.toLowerCase().includes(q) && !activeTags.includes(t));
+
+    if (!filtered.length) {
+      tagDropdown.innerHTML = q ? '<div class="tag-dropdown-empty">일치하는 태그 없음</div>' : '';
+      tagDropdown.classList.toggle('open', !!q);
+      tagHighlightIdx = -1;
+      return;
+    }
+
+    tagHighlightIdx = -1;
+    tagDropdown.innerHTML = filtered.slice(0, 20)
+      .map((t, i) => `<div class="tag-dropdown-item" data-tag="${escapeHtml(t)}" data-index="${i}">${escapeHtml(t)}</div>`)
+      .join('');
+    tagDropdown.classList.add('open');
+  }
+
+  function closeTagDropdown() {
+    tagDropdown.classList.remove('open');
+    tagDropdown.innerHTML = '';
+    tagHighlightIdx = -1;
+  }
+
+  function addTag(tag) {
     if (tag && !activeTags.includes(tag)) {
       activeTags.push(tag);
       renderTagChips();
       focusIndex = -1;
       applyFilter();
     }
-    tagSelect.value = '';
+    tagInput.value = '';
+    closeTagDropdown();
+  }
+
+  tagInput.addEventListener('input', () => {
+    const q = tagInput.value.trim();
+    if (q) {
+      showTagDropdown(q);
+    } else {
+      closeTagDropdown();
+    }
+  });
+
+  tagInput.addEventListener('focus', () => {
+    const q = tagInput.value.trim();
+    if (q) showTagDropdown(q);
+  });
+
+  tagInput.addEventListener('keydown', (e) => {
+    const items = tagDropdown.querySelectorAll('.tag-dropdown-item');
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      tagHighlightIdx = Math.min(tagHighlightIdx + 1, items.length - 1);
+      items.forEach((el, i) => el.classList.toggle('highlighted', i === tagHighlightIdx));
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      tagHighlightIdx = Math.max(tagHighlightIdx - 1, 0);
+      items.forEach((el, i) => el.classList.toggle('highlighted', i === tagHighlightIdx));
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (tagHighlightIdx >= 0 && items[tagHighlightIdx]) {
+        addTag(items[tagHighlightIdx].dataset.tag);
+      } else if (tagInput.value.trim()) {
+        // 정확히 매칭되는 태그가 있으면 추가
+        const exact = getAllTags().find((t) => t.toLowerCase() === tagInput.value.trim().toLowerCase());
+        if (exact) addTag(exact);
+      }
+    } else if (e.key === 'Escape') {
+      closeTagDropdown();
+    }
+  });
+
+  tagDropdown.addEventListener('click', (e) => {
+    const item = e.target.closest('.tag-dropdown-item');
+    if (item) addTag(item.dataset.tag);
+  });
+
+  // 외부 클릭 시 드롭다운 닫기
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.tag-autocomplete-wrapper')) closeTagDropdown();
   });
 
   tagChips.addEventListener('click', (e) => {

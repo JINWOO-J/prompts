@@ -154,7 +154,11 @@ html, body {
   border-bottom: 1px solid var(--border);
 }
 
-.tag-select {
+.tag-autocomplete-wrapper {
+  position: relative;
+}
+
+.tag-input {
   width: 100%;
   padding: 7px 10px;
   background: var(--bg-elevated);
@@ -163,12 +167,45 @@ html, body {
   color: var(--text-primary);
   font-size: 12px;
   font-family: inherit;
-  cursor: pointer;
   outline: none;
   transition: border-color var(--transition);
+  box-sizing: border-box;
 }
-.tag-select:focus {
+.tag-input:focus {
   border-color: var(--accent);
+}
+
+.tag-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 180px;
+  overflow-y: auto;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-light);
+  border-top: none;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  z-index: 100;
+}
+.tag-dropdown.open { display: block; }
+
+.tag-dropdown-item {
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+.tag-dropdown-item:hover,
+.tag-dropdown-item.highlighted {
+  background: var(--accent-dim);
+  color: var(--accent-text);
+}
+.tag-dropdown-empty {
+  padding: 6px 10px;
+  font-size: 11px;
+  color: var(--text-muted);
 }
 
 .tag-chips {
