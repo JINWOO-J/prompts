@@ -15,6 +15,7 @@
   let focusIndex = -1;
   let activeTags = [];
   let isEditMode = false;
+  let isApiMode = false;
 
   // --- DOM refs ---
   const $ = (sel) => document.querySelector(sel);
@@ -135,6 +136,7 @@
       // Try API first, fallback to data.json
       try {
         const data = await apiGet('/api/prompts?page_size=10000');
+        isApiMode = true;
         allPrompts = data.prompts.map((p) => ({
           ...p,
           content: '', // list endpoint doesn't include content
@@ -159,6 +161,11 @@
     } catch (e) {
       viewerContent.innerHTML = '<p style="color:#dc2626;">Failed to load prompts. Ensure the API server is running or run <code>python3 scripts/rebuild-index.py</code> for data.json.</p>';
       return;
+    }
+
+    // Static 모드: 편집/삭제/히스토리/새 프롬프트 숨김
+    if (!isApiMode) {
+      if (newPromptBtn) newPromptBtn.style.display = 'none';
     }
 
     renderCategories();
@@ -528,10 +535,10 @@
       }
     }
 
-    // Show action buttons
-    editBtn.style.display = '';
-    deleteBtn.style.display = '';
-    historyBtn.style.display = '';
+    // Show action buttons (API mode only)
+    editBtn.style.display = isApiMode ? '' : 'none';
+    deleteBtn.style.display = isApiMode ? '' : 'none';
+    historyBtn.style.display = isApiMode ? '' : 'none';
 
     // Render viewer
     viewerTitle.textContent = prompt.title;
