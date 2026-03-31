@@ -5,3 +5,8 @@ __pycache__/
 .hypothesis/
 prompts.db
 .omc/
+.env
+
+# test-generated md files (property-based tests + md sync)
+**/test-*.md
+**/test-ver-*.md
