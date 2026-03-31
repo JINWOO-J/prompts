@@ -1,14 +1,14 @@
 ---
 category: coding
+origin: custom
+role: Developer
+source: ''
 tags:
 - coding
 - vibe-coding
 - ai-agent
 - methodology
 - karpathy
-role: Developer
-origin: custom
-source: ''
 ---
 # Vibe Coding Playbook — 바이브 코딩 실전 가이드
 

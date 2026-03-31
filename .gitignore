@@ -10,3 +10,8 @@ prompts.db
 # test-generated md files (property-based tests + md sync)
 **/test-*.md
 **/test-ver-*.md
+.xm/
+.kiro/
+.pytest_cache/
+.vscode/
+.claude/

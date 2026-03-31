@@ -1,7 +1,7 @@
 # 기여 가이드 (CONTRIBUTING.md)
 
 > 이 문서는 프롬프트 라이브러리에 새 파일을 추가하거나 기존 파일을 수정할 때의 절차와 기준을 정의합니다.
-> 현재 **461개 프롬프트**, **8개 카테고리**로 구성되어 있다.
+> 현재 **480개 프롬프트**, **9개 카테고리**로 구성되어 있다.
 
 ---
 
@@ -16,7 +16,8 @@
 | `security/` | 보안 침해, IAM, WAF, RBAC | `agent-*.md`, `aws-05-*.md`, `k8s-07-*.md` |
 | `data-ai/` | Data/ML 엔지니어링, 데이터베이스 최적화 | `agent-*.md` |
 | `shared/` | 공통 페르소나 정의, 가드레일, 범용 에이전트 | `*.md`, `*.agent.md` |
-| `techniques/` | 프롬프트 기법 참고 문서 (30개, `gen_techniques_v2.py`로 생성) | `*.md` |
+| `coding/` | AI 에이전트 코딩 패턴, 개발 방법론 | `*.md` |
+| `techniques/` | 프롬프트 기법 참고 문서 (31개, `gen_techniques_v2.py`로 생성) | `*.md` |
 
 ---
 
@@ -54,7 +55,7 @@ tags:                                # 태그 목록 (필수, 3~6개 권장)
 
 | 필드 | 필수 | 설명 |
 |------|------|------|
-| `category` | 필수 | 8개 카테고리 중 하나 |
+| `category` | 필수 | 9개 카테고리 중 하나 |
 | `source` | 필수 | 출처 URL 또는 `"custom"` |
 | `origin` | 필수 | 원본 출처 식별자 |
 | `tags` | 필수 | 검색/필터용 태그 배열. 기법, 대상 시스템, 역할 등을 포함 |
@@ -103,7 +104,7 @@ python3 scripts/validate-index.py
 `prompts.meta.yaml`이 자동으로 업데이트된다. `validate-index.py`는 다음을 검증한다:
 
 - 필수 필드 존재 여부 (`id`, `file`, `title`, `category`, `origin`, `tags`)
-- `category` 허용값 (8개 카테고리)
+- `category` 허용값 (9개 카테고리)
 - `origin` 허용값
 - 파일 경로 실존 여부
 
