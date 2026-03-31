@@ -25,10 +25,11 @@
   function showToast(msg, type) { window._appHelpers.showToast(msg, type); }
   function escapeHtml(str) { return window._appHelpers.escapeHtml(str); }
 
-  /** Render markdown using marked.js + highlight code blocks */
+  /** Render markdown using marked.js + highlight code blocks (DOMPurify sanitized) */
   function renderMarkdown(md) {
     if (typeof marked === 'undefined') return md;
     var html = marked.parse(md);
+    if (typeof DOMPurify !== 'undefined') html = DOMPurify.sanitize(html);
     return html;
   }
 
@@ -80,13 +81,18 @@
       viewingHistorical = true;
       currentPromptId = promptId;
 
-      var diff = Diff.diffLines(version.content, current.content);
-      var diffHtml = '<div class="diff-container">';
-      diff.forEach(function (part) {
-        var cls = part.added ? 'diff-added' : part.removed ? 'diff-removed' : 'diff-unchanged';
-        diffHtml += '<div class="' + cls + '">' + escapeHtml(part.value) + '</div>';
-      });
-      diffHtml += '</div>';
+      var diffHtml;
+      if (window._diffHelpers) {
+        diffHtml = window._diffHelpers.renderDiff(version.content, current.content);
+      } else {
+        var diff = Diff.diffLines(version.content, current.content);
+        diffHtml = '<div class="diff-container">';
+        diff.forEach(function (part) {
+          var cls = part.added ? 'diff-added' : part.removed ? 'diff-removed' : 'diff-unchanged';
+          diffHtml += '<div class="' + cls + '">' + escapeHtml(part.value) + '</div>';
+        });
+        diffHtml += '</div>';
+      }
 
       var bannerHtml = '<div class="version-preview-banner">' +
         '<span>v' + version.version_number + ' → 현재 버전 Diff</span>' +

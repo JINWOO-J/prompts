@@ -66,5 +66,28 @@ class ExportSummary(BaseModel):
     output_directory: str
 
 
+class SuggestionCreate(BaseModel):
+    prompt_id: str
+    original_content: str
+    suggested_content: str
+    reason: str
+    requested_by: str | None = None
+
+
+class SuggestionResponse(BaseModel):
+    id: int
+    prompt_id: str
+    original_content: str
+    suggested_content: str
+    reason: str
+    status: str
+    created_at: str
+    resolved_at: str | None = None
+
+
+class AIStatusResponse(BaseModel):
+    available: bool
+
+
 class ErrorResponse(BaseModel):
     detail: str

@@ -13,8 +13,30 @@ from backend.services.prompt_service import list_prompts
 
 CATEGORIES = [
     "rca", "incident-response", "application", "infrastructure",
-    "security", "data-ai", "shared", "techniques",
+    "security", "data-ai", "shared", "techniques", "coding",
 ]
+
+# 프로젝트 루트 (md 파일 기준 경로)
+_PROJECT_ROOT = Path(__file__).parent.parent.parent
+
+
+def sync_prompt_to_md(prompt: PromptResponse) -> Path:
+    """단일 프롬프트를 md 파일로 즉시 동기화한다. 반환: 작성된 파일 경로."""
+    rel_path = _prompt_file_path(prompt)
+    full_path = _PROJECT_ROOT / rel_path
+    full_path.parent.mkdir(parents=True, exist_ok=True)
+    full_path.write_text(format_prompt_as_md(prompt), encoding="utf-8")
+    return full_path
+
+
+def delete_prompt_md(prompt: PromptResponse) -> Path | None:
+    """프롬프트에 해당하는 md 파일을 삭제한다. 없으면 None."""
+    rel_path = _prompt_file_path(prompt)
+    full_path = _PROJECT_ROOT / rel_path
+    if full_path.exists():
+        full_path.unlink()
+        return full_path
+    return None
 
 
 def format_prompt_as_md(prompt: PromptResponse) -> str:

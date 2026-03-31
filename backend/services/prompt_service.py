@@ -130,7 +130,11 @@ async def create_prompt(
     )
     await db.commit()
 
-    return await get_prompt(db, prompt_id)  # type: ignore[return-value]
+    result = await get_prompt(db, prompt_id)  # type: ignore[return-value]
+    # md 파일 동기화
+    from backend.services.export_service import sync_prompt_to_md
+    sync_prompt_to_md(result)
+    return result
 
 
 async def update_prompt(
@@ -168,11 +172,21 @@ async def update_prompt(
     )
     await db.commit()
 
-    return await get_prompt(db, prompt_id)
+    result = await get_prompt(db, prompt_id)
+    # md 파일 동기화
+    from backend.services.export_service import sync_prompt_to_md
+    sync_prompt_to_md(result)
+    return result
 
 
 async def delete_prompt(db: aiosqlite.Connection, prompt_id: str) -> bool:
     """프롬프트를 삭제한다. CASCADE로 버전도 삭제됨. 없으면 False."""
+    # 삭제 전 md 파일 제거를 위해 조회
+    existing = await get_prompt(db, prompt_id)
     cursor = await db.execute("DELETE FROM prompts WHERE id = ?", (prompt_id,))
     await db.commit()
+    if cursor.rowcount > 0 and existing:
+        from backend.services.export_service import delete_prompt_md
+        delete_prompt_md(existing)
+        return True
     return cursor.rowcount > 0

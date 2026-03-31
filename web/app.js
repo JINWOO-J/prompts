@@ -16,6 +16,7 @@
   let activeTags = [];
   let isEditMode = false;
   let isApiMode = false;
+  let isAiAvailable = false;
 
   // --- DOM refs ---
   const $ = (sel) => document.querySelector(sel);
@@ -39,6 +40,9 @@
   const editBtn = $('#edit-btn');
   const deleteBtn = $('#delete-btn');
   const historyBtn = $('#history-btn');
+  const suggestBtn = $('#suggest-btn');
+  const suggestionPanel = $('#suggestion-panel');
+  const suggestionCloseBtn = $('#suggestion-close-btn');
   const editPanel = $('#edit-panel');
   const editForm = $('#edit-form');
   const placeholderForm = $('#placeholder-form');
@@ -166,6 +170,16 @@
     // Static 모드: 편집/삭제/히스토리/새 프롬프트 숨김
     if (!isApiMode) {
       if (newPromptBtn) newPromptBtn.style.display = 'none';
+    }
+
+    // Check AI availability
+    if (isApiMode) {
+      try {
+        var aiStatus = await apiGet('/api/ai/status');
+        isAiAvailable = aiStatus && aiStatus.available;
+      } catch {
+        isAiAvailable = false;
+      }
     }
 
     renderCategories();
@@ -491,7 +505,8 @@
     const prompt = allPrompts.find((p) => p.id === activePromptId);
     if (!prompt || !prompt.content) return;
     const replaced = applyPlaceholders(prompt.content);
-    viewerContent.innerHTML = marked.parse(replaced);
+    var rerenderHtml = marked.parse(replaced);
+    viewerContent.innerHTML = typeof DOMPurify !== 'undefined' ? DOMPurify.sanitize(rerenderHtml) : rerenderHtml;
     // 코드 하이라이트 + 복사 버튼 재적용
     viewerContent.querySelectorAll('pre').forEach((pre) => {
       const code = pre.querySelector('code');
@@ -539,13 +554,15 @@
     editBtn.style.display = isApiMode ? '' : 'none';
     deleteBtn.style.display = isApiMode ? '' : 'none';
     historyBtn.style.display = isApiMode ? '' : 'none';
+    if (suggestBtn) suggestBtn.style.display = (isApiMode && isAiAvailable) ? '' : 'none';
 
     // Render viewer
     viewerTitle.textContent = prompt.title;
     viewerTags.innerHTML = prompt.tags
       .map((t) => `<span class="viewer-tag" data-tag="${escapeHtml(t)}">${escapeHtml(t)}</span>`)
       .join('');
-    viewerContent.innerHTML = marked.parse(prompt.content);
+    var parsedHtml = marked.parse(prompt.content);
+    viewerContent.innerHTML = typeof DOMPurify !== 'undefined' ? DOMPurify.sanitize(parsedHtml) : parsedHtml;
 
     // 플레이스홀더 감지 및 폼 생성
     const placeholders = extractPlaceholders(prompt.content);
@@ -679,6 +696,8 @@
     if (e.key === 'Escape') {
       if (editPanel && editPanel.classList.contains('open')) {
         closeEditPanel();
+      } else if (suggestionPanel && suggestionPanel.classList.contains('open')) {
+        if (window.PromptSuggestions) window.PromptSuggestions.close();
       } else if (versionPanel && versionPanel.classList.contains('open')) {
         if (window.PromptVersions) window.PromptVersions.close();
       } else if (document.activeElement === searchInput && searchInput.value) {
@@ -913,6 +932,7 @@
         editBtn.style.display = 'none';
         deleteBtn.style.display = 'none';
         historyBtn.style.display = 'none';
+        if (suggestBtn) suggestBtn.style.display = 'none';
         showToast('프롬프트가 삭제되었습니다.');
       } catch (err) {
         showToast(err.message || '삭제에 실패했습니다.', 'error');
@@ -931,6 +951,20 @@
   if (versionCloseBtn) {
     versionCloseBtn.addEventListener('click', () => {
       if (window.PromptVersions) window.PromptVersions.close();
+    });
+  }
+
+  // --- AI Suggestion Panel ---
+  if (suggestBtn) {
+    suggestBtn.addEventListener('click', () => {
+      if (!activePromptId || !window.PromptSuggestions) return;
+      window.PromptSuggestions.loadSuggestion(activePromptId);
+    });
+  }
+
+  if (suggestionCloseBtn) {
+    suggestionCloseBtn.addEventListener('click', () => {
+      if (window.PromptSuggestions) window.PromptSuggestions.close();
     });
   }
 

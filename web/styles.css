@@ -21,11 +21,49 @@
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
   --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.08);
-  --sidebar-width: 340px;
+  --sidebar-width: 360px;
   --header-height: 56px;
   --radius: 10px;
   --radius-sm: 6px;
   --transition: 0.2s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-base: #1a1b1e;
+    --bg-surface: #25262b;
+    --bg-elevated: #2c2e33;
+    --bg-hover: #373a40;
+    --bg-active: #424549;
+    --border: rgba(255, 255, 255, 0.06);
+    --border-light: rgba(255, 255, 255, 0.1);
+    --text-primary: #e1e3e6;
+    --text-secondary: #a6a7ab;
+    --text-muted: #6b6d72;
+    --accent: #5c7cfa;
+    --accent-dim: rgba(92, 124, 250, 0.15);
+    --accent-glow: rgba(92, 124, 250, 0.3);
+    --accent-text: #748ffc;
+    --glass-bg: rgba(37, 38, 43, 0.9);
+    --glass-border: rgba(255, 255, 255, 0.06);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .diff-added {
+    background: rgba(34, 197, 94, 0.15);
+    color: #86efac;
+    border-left-color: #22c55e;
+  }
+  .diff-removed {
+    background: rgba(239, 68, 68, 0.15);
+    color: #fca5a5;
+    border-left-color: #ef4444;
+  }
+  .viewer-content :not(pre) > code {
+    color: #a78bfa;
+  }
 }
 
 html, body {
@@ -1278,4 +1316,132 @@ mark {
 @media (max-width: 768px) {
   .placeholder-form { padding: 10px 16px; }
   .ph-field { min-width: 100%; max-width: 100%; }
+}
+
+/* ===== AI Suggestion Panel ===== */
+.suggestion-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(520px, 100vw);
+  background: var(--bg-surface);
+  border-left: 1px solid var(--border);
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.1);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+.suggestion-panel.open { transform: translateX(0); }
+
+.suggestion-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.suggestion-panel-header h3 {
+  font-size: 15px;
+  font-weight: 600;
+}
+.suggestion-panel-close {
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition);
+}
+.suggestion-panel-close:hover { background: var(--bg-hover); }
+
+.suggestion-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 20px;
+  gap: 16px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--border-light);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.suggestion-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 20px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--bg-active) transparent;
+}
+.suggestion-content::-webkit-scrollbar { width: 6px; }
+.suggestion-content::-webkit-scrollbar-track { background: transparent; }
+.suggestion-content::-webkit-scrollbar-thumb {
+  background: var(--bg-active);
+  border-radius: 3px;
+}
+
+.suggestion-reason {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+.suggestion-reason strong {
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.suggestion-reason p {
+  margin: 0;
+}
+
+.suggestion-diff-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.suggestion-error {
+  text-align: center;
+  color: #dc2626;
+  font-size: 13px;
+  padding: 24px 0;
+}
+
+.suggestion-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px 20px;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+  .suggestion-panel { width: 100vw; }
 }

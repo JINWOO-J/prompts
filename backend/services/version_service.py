@@ -1,6 +1,7 @@
 """버전 관리 비즈니스 로직."""
 
 import json
+import sqlite3
 from datetime import datetime, timezone
 
 import aiosqlite
@@ -37,25 +38,37 @@ async def create_version(
     current_prompt: PromptResponse,
     change_summary: str = "",
 ) -> VersionResponse:
-    """현재 프롬프트 상태를 버전으로 저장한다."""
+    """현재 프롬프트 상태를 버전으로 저장한다.
+
+    UNIQUE 제약 위반 시 version_number를 다시 조회하여 1회 재시도한다.
+    """
     now = datetime.now(timezone.utc).isoformat()
     version_number = await _next_version_number(db, prompt_id)
 
-    cursor = await db.execute(
-        """INSERT INTO versions
-           (prompt_id, title, content, tags, version_number, created_at, change_summary)
-           VALUES (?, ?, ?, ?, ?, ?, ?)""",
-        (
-            prompt_id,
-            current_prompt.title,
-            current_prompt.content,
-            json.dumps(current_prompt.tags, ensure_ascii=False),
-            version_number,
-            now,
-            change_summary,
-        ),
-    )
-    await db.commit()
+    for attempt in range(2):
+        try:
+            cursor = await db.execute(
+                """INSERT INTO versions
+                   (prompt_id, title, content, tags, version_number, created_at, change_summary)
+                   VALUES (?, ?, ?, ?, ?, ?, ?)""",
+                (
+                    prompt_id,
+                    current_prompt.title,
+                    current_prompt.content,
+                    json.dumps(current_prompt.tags, ensure_ascii=False),
+                    version_number,
+                    now,
+                    change_summary,
+                ),
+            )
+            await db.commit()
+            break
+        except sqlite3.IntegrityError:
+            if attempt == 0:
+                # UNIQUE 위반 — version_number 재조회 후 재시도
+                version_number = await _next_version_number(db, prompt_id)
+            else:
+                raise
 
     # 방금 삽입한 레코드 조회
     fetch = await db.execute("SELECT * FROM versions WHERE id = ?", (cursor.lastrowid,))

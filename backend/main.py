@@ -3,6 +3,11 @@
 from contextlib import asynccontextmanager
 from pathlib import Path
 
+_env_path = Path(__file__).parent.parent / ".env"
+if _env_path.exists():
+    from dotenv import load_dotenv
+    load_dotenv(_env_path)
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
@@ -13,6 +18,7 @@ from backend.migrate import migrate_all
 from backend.routers.prompts import router as prompts_router
 from backend.routers.versions import router as versions_router
 from backend.routers.export import router as export_router
+from backend.routers.suggestions import router as suggestions_router
 
 WEB_DIR = Path(__file__).parent.parent / "web"
 
@@ -42,6 +48,7 @@ app.add_middleware(
 app.include_router(prompts_router)
 app.include_router(versions_router)
 app.include_router(export_router)
+app.include_router(suggestions_router)
 
 # 정적 파일 서빙 — API 라우터 뒤에 마운트하여 API 경로 우선
 if WEB_DIR.exists():

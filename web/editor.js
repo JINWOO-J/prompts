@@ -16,10 +16,12 @@
 
   const DEBOUNCE_MS = 200;
 
-  /** marked.js + highlight.js 로 마크다운 → HTML 변환 */
+  /** marked.js + highlight.js 로 마크다운 → HTML 변환 (DOMPurify sanitized) */
   function renderMarkdown(md) {
     if (typeof marked === 'undefined') return md;
-    return marked.parse(md);
+    var html = marked.parse(md);
+    if (typeof DOMPurify !== 'undefined') return DOMPurify.sanitize(html);
+    return html;
   }
 
   /** 미리보기 패널 업데이트 (200ms 디바운스) */

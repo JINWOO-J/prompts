@@ -41,6 +41,21 @@ CREATE TABLE IF NOT EXISTS versions (
 CREATE INDEX IF NOT EXISTS idx_versions_prompt ON versions(prompt_id);
 CREATE UNIQUE INDEX IF NOT EXISTS idx_versions_unique
     ON versions(prompt_id, version_number);
+
+CREATE TABLE IF NOT EXISTS suggestions (
+    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    prompt_id       TEXT NOT NULL REFERENCES prompts(id) ON DELETE CASCADE,
+    original_content TEXT NOT NULL,
+    suggested_content TEXT NOT NULL,
+    reason          TEXT NOT NULL,
+    status          TEXT DEFAULT 'pending',
+    requested_by    TEXT,
+    created_at      TEXT NOT NULL,
+    resolved_at     TEXT
+);
+
+CREATE INDEX IF NOT EXISTS idx_suggestions_prompt ON suggestions(prompt_id);
+CREATE INDEX IF NOT EXISTS idx_suggestions_status ON suggestions(prompt_id, status);
 """
 
 

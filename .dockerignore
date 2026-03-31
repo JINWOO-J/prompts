@@ -1,0 +1,11 @@
+.git
+.gitignore
+.env
+.omc
+.tmp-sources
+*.pyc
+__pycache__
+.DS_Store
+.hypothesis
+prompts.db
+.claude
