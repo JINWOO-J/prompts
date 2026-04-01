@@ -17,6 +17,8 @@ CREATE TABLE IF NOT EXISTS prompts (
     content    TEXT NOT NULL,
     tags       TEXT NOT NULL DEFAULT '[]',
     role       TEXT DEFAULT '',
+    type       TEXT DEFAULT 'prompt',
+    content_en TEXT DEFAULT '',
     origin     TEXT DEFAULT '',
     source     TEXT DEFAULT '',
     file_path  TEXT DEFAULT '',

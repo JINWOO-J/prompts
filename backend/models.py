@@ -26,6 +26,8 @@ class PromptUpdate(BaseModel):
 
 class PromptResponse(PromptBase):
     id: str
+    type: str = "prompt"
+    content_en: str = ""
     origin: str
     source: str
     file_path: str
@@ -38,6 +40,7 @@ class PromptListItem(BaseModel):
     title: str
     category: str
     tags: list[str]
+    type: str = "prompt"
     role: str
     origin: str
     updated_at: str

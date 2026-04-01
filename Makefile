@@ -1,4 +1,4 @@
-.PHONY: help dev run test lint fmt clean docker-up docker-down docker-build \
+.PHONY: help dev dev-reset run test lint fmt clean docker-up docker-down docker-build \
        install db-reset db-migrate seed check
 
 PYTHON   ?= python3
@@ -17,6 +17,8 @@ install: ## Install Python dependencies
 
 dev: ## Start dev server with auto-reload
 	uvicorn backend.main:app --host $(HOST) --port $(PORT) --reload
+
+dev-reset: seed db-reset dev ## Rebuild index + reset DB + start dev server
 
 run: ## Start production server
 	uvicorn backend.main:app --host 0.0.0.0 --port $(PORT)

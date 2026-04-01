@@ -30,12 +30,15 @@ def _generate_id(category: str, title: str) -> str:
 
 
 def _row_to_response(row: aiosqlite.Row) -> PromptResponse:
+    keys = row.keys()
     return PromptResponse(
         id=row["id"],
         title=row["title"],
         category=row["category"],
         content=row["content"],
         tags=json.loads(row["tags"]),
+        type=row["type"] if "type" in keys else "prompt",
+        content_en=row["content_en"] if "content_en" in keys else "",
         role=row["role"],
         origin=row["origin"],
         source=row["source"],
@@ -51,6 +54,7 @@ def _row_to_list_item(row: aiosqlite.Row) -> PromptListItem:
         title=row["title"],
         category=row["category"],
         tags=json.loads(row["tags"]),
+        type=row["type"] if "type" in row.keys() else "prompt",
         role=row["role"],
         origin=row["origin"],
         updated_at=row["updated_at"],
