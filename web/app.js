@@ -139,26 +139,34 @@
     });
 
     try {
-      // Try API first, fallback to data.json
-      try {
-        const data = await apiGet('/api/prompts?page_size=10000');
-        isApiMode = true;
-        allPrompts = data.prompts.map((p) => ({
-          ...p,
-          content: '', // list endpoint doesn't include content
-        }));
-        // Construct meta from API response
-        const stats = {};
-        for (const cat of CATEGORIES) {
-          stats[cat] = allPrompts.filter((p) => p.category === cat).length;
+      // Detect static hosting: try data.json first if no API path hint
+      let loadedFromApi = false;
+      const hasApiHint = location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.port;
+
+      if (hasApiHint) {
+        try {
+          const data = await apiGet('/api/prompts?page_size=10000');
+          isApiMode = true;
+          loadedFromApi = true;
+          allPrompts = data.prompts.map((p) => ({
+            ...p,
+            content: '', // list endpoint doesn't include content
+          }));
+          const stats = {};
+          for (const cat of CATEGORIES) {
+            stats[cat] = allPrompts.filter((p) => p.category === cat).length;
+          }
+          meta = {
+            total: data.total,
+            categories: CATEGORIES,
+            stats,
+          };
+        } catch {
+          // API not available, fall through to data.json
         }
-        meta = {
-          total: data.total,
-          categories: CATEGORIES,
-          stats,
-        };
-      } catch {
-        // Fallback to data.json
+      }
+
+      if (!loadedFromApi) {
         const res = await fetch('data.json');
         const data = await res.json();
         meta = data._meta;
