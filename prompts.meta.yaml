@@ -1,6 +1,6 @@
 _meta:
   version: '4.0'
-  generated: '2026-03-26'
+  generated: '2026-04-01'
   total: 480
   stats:
     rca: 6
@@ -39,6 +39,7 @@ prompts:
   - kubernetes
   - postgres
   - rca
+  type: prompt
 - id: rca-02_hypothesis_stepback
   file: rca/02_hypothesis_stepback.md
   title: 가설 수립 + Step-back 분석
@@ -50,6 +51,7 @@ prompts:
   - rca
   - rds
   - redis
+  type: prompt
 - id: rca-03_timeline_chain
   file: rca/03_timeline_chain.md
   title: 타임라인 재구성 (프롬프트 체이닝 4단계)
@@ -59,6 +61,7 @@ prompts:
   - 03_timeline_chain
   - rca
   - redis
+  type: prompt
 - id: rca-04_advanced_tot
   file: rca/04_advanced_tot.md
   title: 고급 RCA — Tree-of-Thoughts (ToT)
@@ -68,6 +71,7 @@ prompts:
   - rca
   - tree-of-thoughts
   - advanced-analysis
+  type: prompt
 - id: rca-05_security_rca
   file: rca/05_security_rca.md
   title: 보안 침해 RCA (Diamond Model + MITRE ATT&CK)
@@ -79,6 +83,7 @@ prompts:
   - rca
   - security
   - vpc
+  type: prompt
 - id: rca-06_quality_review
   file: rca/06_quality_review.md
   title: RCA 보고서 품질 검증 (CoVe + Self-Refinement)
@@ -88,6 +93,7 @@ prompts:
   - 06_quality_review
   - rca
   - security
+  type: prompt
 - id: inc-agent-debugger
   file: incident-response/agent-debugger.md
   title: 'Agent: Debugger'
@@ -99,6 +105,7 @@ prompts:
   - debugger
   - incident-response
   - performance
+  type: prompt
   role: debugger
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/debugger.md)'
 - id: inc-agent-devops-incident-responder
@@ -118,6 +125,7 @@ prompts:
   - performance
   - responder
   - scaling
+  type: prompt
   role: devops-incident-responder
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/devops-incident-responder.md)'
 - id: inc-agent-error-detective
@@ -133,6 +141,7 @@ prompts:
   - monitoring
   - performance
   - security
+  type: prompt
   role: error-detective
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/error-detective.md)'
 - id: inc-agent-incident-responder
@@ -146,6 +155,7 @@ prompts:
   - incident-response
   - responder
   - security
+  type: prompt
   role: Incident Responder
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/incident-responder.md)'
 - id: inc-agent-organizer
@@ -163,6 +173,7 @@ prompts:
   - organizer
   - performance
   - pipeline
+  type: prompt
   role: agent-organizer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/09-meta-orchestration/agent-organizer.md)'
 - id: inc-agent-sre-engineer
@@ -175,6 +186,7 @@ prompts:
   - engineer
   - incident-response
   - observability
+  type: prompt
   role: SRE Engineer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/sre-engineer.md)'
 - id: inc-aws-01-Compute-Cold-Start-Delays-Perform
@@ -194,6 +206,7 @@ prompts:
   - start
   - sts
   - vpc
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Cold-Start-Delays-Performance-Lambda.md)'
 - id: inc-aws-01-Compute-Connection-Timeout-SSH-Is
@@ -215,6 +228,7 @@ prompts:
   - scaling
   - security
   - timeout
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Connection-Timeout-SSH-Issues-EC2.md)'
 - id: inc-aws-01-Compute-Connection-Timeout-from-L
@@ -238,6 +252,7 @@ prompts:
   - sts
   - timeout
   - vpc
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Connection-Timeout-from-Lambda-RDS.md)'
 - id: inc-aws-01-Compute-Exceeds-Memory-Limit-Lamb
@@ -257,6 +272,7 @@ prompts:
   - memory
   - performance
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Exceeds-Memory-Limit-Lambda.md)'
 - id: inc-aws-01-Compute-Failing-on-EC2-Instances-
@@ -276,6 +292,7 @@ prompts:
   - k8s-deployment
   - k8s-service
   - performance
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Failing-on-EC2-Instances-CodeDeploy.md)'
 - id: inc-aws-01-Compute-High-CPU-Utilization-EC2
@@ -294,6 +311,7 @@ prompts:
   - scaling
   - sts
   - utilization
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/High-CPU-Utilization-EC2.md)'
 - id: inc-aws-01-Compute-IAM-Role-Not-Attaching-to
@@ -318,6 +336,7 @@ prompts:
   - security
   - service
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/IAM-Role-Not-Attaching-to-Service-Account-EKS.md)'
 - id: inc-aws-01-Compute-Image-Pull-Failing-in-ECS
@@ -340,6 +359,7 @@ prompts:
   - performance
   - pull
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Image-Pull-Failing-in-ECS-Docker.md)'
 - id: inc-aws-01-Compute-Ingress-Controller-Not-Ro
@@ -364,6 +384,7 @@ prompts:
   - routing
   - sts
   - traffic
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Ingress-Controller-Not-Routing-Traffic-EKS.md)'
 - id: inc-aws-01-Compute-Instance-Cant-Reach-Inter
@@ -386,6 +407,7 @@ prompts:
   - security
   - sts
   - vpc
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Instance-Cant-Reach-Internet-via-NAT-Gateway-EC2.md)'
 - id: inc-aws-01-Compute-Instance-Not-Starting-EC2
@@ -408,6 +430,7 @@ prompts:
   - security
   - starting
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Instance-Not-Starting-EC2.md)'
 - id: inc-aws-01-Compute-Instance-Unable-to-Reach-
@@ -430,6 +453,7 @@ prompts:
   - security
   - unable
   - vpc
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Instance-Unable-to-Reach-the-Internet-EC2.md)'
 - id: inc-aws-01-Compute-Interrupted-Unexpectedly-
@@ -450,6 +474,7 @@ prompts:
   - spot
   - sts
   - unexpectedly
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Interrupted-Unexpectedly-Spot-Instance.md)'
 - id: inc-aws-01-Compute-Logs-Not-Appearing-in-Clo
@@ -470,6 +495,7 @@ prompts:
   - monitoring
   - observability
   - performance
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Logs-Not-Appearing-in-CloudWatch-ECS.md)'
 - id: inc-aws-01-Compute-Nodes-Not-Joining-Cluster
@@ -496,6 +522,7 @@ prompts:
   - scaling
   - security
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Nodes-Not-Joining-Cluster-EKS.md)'
 - id: inc-aws-01-Compute-Not-Launching-New-Instanc
@@ -518,6 +545,7 @@ prompts:
   - scaling
   - sg
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Not-Launching-New-Instances-Auto-Scaling.md)'
 - id: inc-aws-01-Compute-Not-Scaling-as-Expected-E
@@ -538,6 +566,7 @@ prompts:
   - k8s-service
   - performance
   - scaling
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Not-Scaling-as-Expected-ECS.md)'
 - id: inc-aws-01-Compute-Not-Triggering-from-S3-Ev
@@ -559,6 +588,7 @@ prompts:
   - rds
   - s3
   - triggering
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Not-Triggering-from-S3-Event-Lambda.md)'
 - id: inc-aws-01-Compute-Pod-Stuck-in-CrashLoopBac
@@ -579,6 +609,7 @@ prompts:
   - performance
   - sts
   - stuck
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Pod-Stuck-in-CrashLoopBackOff-EKS.md)'
 - id: inc-aws-01-Compute-Role-Not-Attaching-to-EC2
@@ -601,6 +632,7 @@ prompts:
   - s3
   - security
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Role-Not-Attaching-to-EC2-Instance-IAM.md)'
 - id: inc-aws-01-Compute-Running-Out-of-Memory-Far
@@ -618,6 +650,7 @@ prompts:
   - memory
   - performance
   - running
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Running-Out-of-Memory-Fargate.md)'
 - id: inc-aws-01-Compute-Spot-Instance-Pricing-Une
@@ -639,6 +672,7 @@ prompts:
   - spot
   - sts
   - unexpectedly
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Spot-Instance-Pricing-Unexpectedly-High-Cost.md)'
 - id: inc-aws-01-Compute-Streams-Not-Triggering-La
@@ -658,6 +692,7 @@ prompts:
   - streams
   - sts
   - triggering
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Streams-Not-Triggering-Lambda-DynamoDB.md)'
 - id: inc-aws-01-Compute-Stuck-in-Initializing-Sta
@@ -678,6 +713,7 @@ prompts:
   - state
   - sts
   - stuck
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Stuck-in-Initializing-State-EC2.md)'
 - id: inc-aws-01-Compute-Task-Stuck-in-Pending-Sta
@@ -700,6 +736,7 @@ prompts:
   - state
   - stuck
   - task
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Task-Stuck-in-Pending-State-ECS.md)'
 - id: inc-aws-01-Compute-Terminating-Instances-Une
@@ -723,6 +760,7 @@ prompts:
   - sts
   - terminating
   - unexpectedly
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Terminating-Instances-Unexpectedly-Auto-Scaling.md)'
 - id: inc-aws-01-Compute-Timeout-Error-Lambda
@@ -741,6 +779,7 @@ prompts:
   - sts
   - timeout
   - vpc
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/01-Compute/Timeout-Error-Lambda.md)'
 - id: inc-aws-02-Database-Automatic-Backup-Not-Wor
@@ -761,6 +800,7 @@ prompts:
   - storage
   - sts
   - working
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/02-Database/Automatic-Backup-Not-Working-RDS.md)'
 - id: inc-aws-02-Database-Backup-Failing-DynamoDB
@@ -778,6 +818,7 @@ prompts:
   - incident-response
   - k8s-service
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/02-Database/Backup-Failing-DynamoDB.md)'
 - id: inc-aws-02-Database-High-CPU-Utilization-RDS
@@ -796,6 +837,7 @@ prompts:
   - storage
   - sts
   - utilization
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/02-Database/High-CPU-Utilization-RDS.md)'
 - id: inc-aws-02-Database-Instance-Not-Connecting-
@@ -815,6 +857,7 @@ prompts:
   - security
   - storage
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/02-Database/Instance-Not-Connecting-RDS.md)'
 - id: inc-aws-02-Database-Query-Performance-Slower
@@ -835,6 +878,7 @@ prompts:
   - slower
   - sts
   - than
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/02-Database/Query-Performance-Slower-Than-Expected-DynamoDB.md)'
 - id: inc-aws-02-Database-Read-Replica-Lagging-Beh
@@ -855,6 +899,7 @@ prompts:
   - read
   - replica
   - scaling
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/02-Database/Read-Replica-Lagging-Behind-Primary-RDS.md)'
 - id: inc-aws-02-Database-Storage-Full-Error-RDS
@@ -875,6 +920,7 @@ prompts:
   - scaling
   - storage
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/02-Database/Storage-Full-Error-RDS.md)'
 - id: inc-aws-02-Database-Throttling-Errors-Dynamo
@@ -894,6 +940,7 @@ prompts:
   - performance
   - sts
   - throttling
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/02-Database/Throttling-Errors-DynamoDB.md)'
 - id: inc-aws-03-Storage-Bucket-Access-Denied-403-
@@ -915,6 +962,7 @@ prompts:
   - s3
   - storage
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/03-Storage/Bucket-Access-Denied-403-Error-S3.md)'
 - id: inc-aws-03-Storage-Cross-Region-Replication-
@@ -936,6 +984,7 @@ prompts:
   - storage
   - sts
   - working
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/03-Storage/Cross-Region-Replication-Not-Working-S3.md)'
 - id: inc-aws-03-Storage-Failing-Due-to-S3-Permiss
@@ -959,6 +1008,7 @@ prompts:
   - s3
   - storage
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/03-Storage/Failing-Due-to-S3-Permissions-CodePipeline.md)'
 - id: inc-aws-03-Storage-File-Upload-Extremely-Slo
@@ -978,6 +1028,7 @@ prompts:
   - storage
   - sts
   - upload
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/03-Storage/File-Upload-Extremely-Slow-S3.md)'
 - id: inc-aws-03-Storage-Intelligent-Tiering-Not-M
@@ -999,6 +1050,7 @@ prompts:
   - storage
   - sts
   - tiering
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/03-Storage/Intelligent-Tiering-Not-Moving-Data-as-Expected-S3.md)'
 - id: inc-aws-03-Storage-Lifecycle-Policy-Not-Dele
@@ -1018,6 +1070,7 @@ prompts:
   - s3
   - storage
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/03-Storage/Lifecycle-Policy-Not-Deleting-Objects-S3.md)'
 - id: inc-aws-03-Storage-Public-Access-Block-Preve
@@ -1039,6 +1092,7 @@ prompts:
   - s3
   - storage
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/03-Storage/Public-Access-Block-Preventing-Access-S3.md)'
 - id: inc-aws-04-Networking-Blocking-Expected-Traf
@@ -1059,6 +1113,7 @@ prompts:
   - sts
   - traffic
   - vpc
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Blocking-Expected-Traffic-NACL.md)'
 - id: inc-aws-04-Networking-CORS-Issues-API-Gatewa
@@ -1077,6 +1132,7 @@ prompts:
   - networking
   - performance
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/CORS-Issues-API-Gateway.md)'
 - id: inc-aws-04-Networking-Certificate-Not-Workin
@@ -1095,6 +1151,7 @@ prompts:
   - security
   - sts
   - working
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Certificate-Not-Working-on-ELB.md)'
 - id: inc-aws-04-Networking-Connection-Dropping-Fr
@@ -1113,6 +1170,7 @@ prompts:
   - performance
   - sts
   - vpc
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Connection-Dropping-Frequently-VPN.md)'
 - id: inc-aws-04-Networking-DNS-Resolution-Failing
@@ -1133,6 +1191,7 @@ prompts:
   - route
   - route53
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/DNS-Resolution-Failing-Route-53.md)'
 - id: inc-aws-04-Networking-Distribution-Deploymen
@@ -1153,6 +1212,7 @@ prompts:
   - progress
   - sts
   - stuck
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Distribution-Deployment-Stuck-in-Progress-CloudFront.md)'
 - id: inc-aws-04-Networking-Endpoint-Not-Working-P
@@ -1173,6 +1233,7 @@ prompts:
   - sts
   - vpc
   - working
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Endpoint-Not-Working-PrivateLink.md)'
 - id: inc-aws-04-Networking-Latency-Based-Routing-
@@ -1195,6 +1256,7 @@ prompts:
   - routing
   - sts
   - working
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Latency-Based-Routing-Not-Working-Route-53.md)'
 - id: inc-aws-04-Networking-Latency-Higher-Than-Ex
@@ -1216,6 +1278,7 @@ prompts:
   - performance
   - sts
   - than
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Latency-Higher-Than-Expected-Direct-Connect.md)'
 - id: inc-aws-04-Networking-Not-Distributing-Traff
@@ -1234,6 +1297,7 @@ prompts:
   - properly
   - sts
   - traffic
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Not-Distributing-Traffic-Properly-Global-Accelerator.md)'
 - id: inc-aws-04-Networking-Not-Routing-Traffic-EL
@@ -1254,6 +1318,7 @@ prompts:
   - security
   - sts
   - traffic
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Not-Routing-Traffic-ELB.md)'
 - id: inc-aws-04-Networking-Not-Serving-Updated-Co
@@ -1273,6 +1338,7 @@ prompts:
   - serving
   - sts
   - updated
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Not-Serving-Updated-Content-CloudFront.md)'
 - id: inc-aws-04-Networking-Peering-Not-Working-VP
@@ -1291,6 +1357,7 @@ prompts:
   - sts
   - vpc
   - working
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Peering-Not-Working-VPC.md)'
 - id: inc-aws-04-Networking-Returning-500-Internal
@@ -1312,6 +1379,7 @@ prompts:
   - server
   - sts
   - waf
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Returning-500-Internal-Server-Error-API-Gateway.md)'
 - id: inc-aws-04-Networking-Route-Not-Matching-Req
@@ -1330,6 +1398,7 @@ prompts:
   - requests
   - route
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Route-Not-Matching-Requests-API-Gateway.md)'
 - id: inc-aws-04-Networking-Target-Group-Showing-U
@@ -1354,6 +1423,7 @@ prompts:
   - sts
   - target
   - unhealthy
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Target-Group-Showing-Unhealthy-Instances-ELB.md)'
 - id: inc-aws-04-Networking-Throttling-Requests-AP
@@ -1373,6 +1443,7 @@ prompts:
   - requests
   - sts
   - throttling
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/04-Networking/Throttling-Requests-API-Gateway.md)'
 - id: inc-aws-06-Monitoring-Alarm-Not-Triggering-a
@@ -1391,6 +1462,7 @@ prompts:
   - performance
   - sts
   - triggering
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/06-Monitoring/Alarm-Not-Triggering-as-Expected-CloudWatch.md)'
 - id: inc-aws-06-Monitoring-Events-Not-Showing-in-
@@ -1413,6 +1485,7 @@ prompts:
   - security
   - showing
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/06-Monitoring/Events-Not-Showing-in-Logs-CloudTrail.md)'
 - id: inc-aws-06-Monitoring-Logs-Not-Appearing-Clo
@@ -1429,6 +1502,7 @@ prompts:
   - logs
   - monitoring
   - observability
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/06-Monitoring/Logs-Not-Appearing-CloudWatch.md)'
 - id: inc-aws-06-Monitoring-Logs-Not-Capturing-Eve
@@ -1453,6 +1527,7 @@ prompts:
   - s3
   - security
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/06-Monitoring/Logs-Not-Capturing-Events-CloudTrail.md)'
 - id: inc-aws-06-Monitoring-Metrics-Missing-Data-P
@@ -1473,6 +1548,7 @@ prompts:
   - performance
   - points
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/06-Monitoring/Metrics-Missing-Data-Points-CloudWatch.md)'
 - id: inc-aws-06-Monitoring-Not-Recording-Changes-
@@ -1491,6 +1567,7 @@ prompts:
   - monitoring
   - recording
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/06-Monitoring/Not-Recording-Changes-Config.md)'
 - id: inc-aws-06-Monitoring-Not-Recording-Resource
@@ -1510,6 +1587,7 @@ prompts:
   - resource
   - s3
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/06-Monitoring/Not-Recording-Resource-Changes-Config.md)'
 - id: inc-aws-06-Monitoring-Traces-Missing-in-Appl
@@ -1527,6 +1605,7 @@ prompts:
   - monitoring
   - observability
   - traces
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/06-Monitoring/Traces-Missing-in-Application-Logs-X-Ray.md)'
 - id: app-sentry-APICallFailed-Error-application
@@ -1539,6 +1618,7 @@ prompts:
   - application
   - k8s-service
   - sentry
+  type: prompt
   role: SRE / Application Error Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/APICallFailed-Error-application.md)'
 - id: app-sentry-AttributeError-MissingAttribute-E
@@ -1551,6 +1631,7 @@ prompts:
   - attributeerror
   - missingattribute
   - sentry
+  type: prompt
   role: SRE / Application Error Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/AttributeError-MissingAttribute-Error-application.md)'
 - id: app-sentry-ConnectionError-ConnectionRefused
@@ -1567,6 +1648,7 @@ prompts:
   - mysql
   - postgres
   - sentry
+  type: prompt
   role: SRE / Application Error Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ConnectionError-ConnectionRefused-Database-Error-application.md)'
 - id: app-sentry-ConnectionError-ConnectionRefused
@@ -1583,6 +1665,7 @@ prompts:
   - performance
   - redis
   - sentry
+  type: prompt
   role: SRE / Application Error Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ConnectionError-ConnectionRefused-Redis-Error-application.md)'
 - id: app-sentry-ConnectionError-ConnectionTimeout
@@ -1597,6 +1680,7 @@ prompts:
   - database
   - postgres
   - sentry
+  type: prompt
   role: SRE / Application Error Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/02-Performance/ConnectionError-ConnectionTimeout-Database-Error-application.md)'
 - id: app-sentry-ConnectionError-ConnectionTimeout
@@ -1612,6 +1696,7 @@ prompts:
   - performance
   - redis
   - sentry
+  type: prompt
   role: SRE / Application Error Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/02-Performance/ConnectionError-ConnectionTimeout-Redis-Error-application.md)'
 - id: app-sentry-ConsumerError-ConnectionError-Kaf
@@ -1628,6 +1713,7 @@ prompts:
   - pipeline
   - sentry
   - sts
+  type: prompt
   role: SRE / Application Error Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ConsumerError-ConnectionError-Kafka-Error-application.md)'
 - id: app-sentry-ConsumerError-PartitionError-Kafk
@@ -1644,6 +1730,7 @@ prompts:
   - pipeline
   - sentry
   - sts
+  type: prompt
   role: SRE / Application Error Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ConsumerError-PartitionError-Kafka-Error-application.md)'
 - id: app-sentry-ConsumerError-TopicNotFound-Kafka
@@ -1659,6 +1746,7 @@ prompts:
   - pipeline
   - sentry
   - topicnotfound
+  type: prompt
   role: SRE / Application Error Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ConsumerError-TopicNotFound-Kafka-Error-application.md)'
 - id: app-sentry-DatabaseConnectionError-Connectio
@@ -1674,6 +1762,7 @@ prompts:
   - k8s-service
   - postgres
   - sentry
+  type: prompt
   role: SRE / Application Error Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/DatabaseConnectionError-ConnectionRefused-Database-Error-application.md)'
 - id: app-sentry-DatabaseConnectionError-Connectio
@@ -1688,6 +1777,7 @@ prompts:
   - databaseconnectionerror
   - postgres
   - sentry
+  type: prompt
   role: SRE / Application Error Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/02-Performance/DatabaseConnectionError-ConnectionTimeout-Database-Error-application.md)'
 - id: app-sentry-ImportError-ModuleNotFound-Error-
@@ -1701,6 +1791,7 @@ prompts:
   - k8s-deployment
   - modulenotfound
   - sentry
+  type: prompt
   role: SRE / Application Error Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ImportError-ModuleNotFound-Error-application.md)'
 - id: app-sentry-IndexError-IndexOutOfRange-Error-
@@ -1714,6 +1805,7 @@ prompts:
   - indexoutofrange
   - sentry
   - sts
+  type: prompt
   role: SRE / Application Error Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/IndexError-IndexOutOfRange-Error-application.md)'
 - id: app-sentry-KeyError-MissingKey-Error-applica
@@ -1726,6 +1818,7 @@ prompts:
   - keyerror
   - missingkey
   - sentry
+  type: prompt
   role: SRE / Application Error Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/KeyError-MissingKey-Error-application.md)'
 - id: app-sentry-MemoryError-Error-application
@@ -1738,6 +1831,7 @@ prompts:
   - memoryerror
   - performance
   - sentry
+  type: prompt
   role: SRE / Application Error Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/MemoryError-Error-application.md)'
 - id: app-sentry-ProgrammingError-ColumnMissing-Da
@@ -1752,6 +1846,7 @@ prompts:
   - postgres
   - programmingerror
   - sentry
+  type: prompt
   role: SRE / Application Error Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ProgrammingError-ColumnMissing-Database-Error-application.md)'
 - id: app-sentry-ProgrammingError-ConstraintViolat
@@ -1767,6 +1862,7 @@ prompts:
   - programmingerror
   - sentry
   - sts
+  type: prompt
   role: SRE / Application Error Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ProgrammingError-ConstraintViolation-Database-Error-application.md)'
 - id: app-sentry-ProgrammingError-RelationMissing-
@@ -1782,6 +1878,7 @@ prompts:
   - programmingerror
   - relationmissing
   - sentry
+  type: prompt
   role: SRE / Application Error Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ProgrammingError-RelationMissing-Database-Error-application.md)'
 - id: app-sentry-ProgrammingError-SyntaxError-Data
@@ -1797,6 +1894,7 @@ prompts:
   - sentry
   - sts
   - syntaxerror
+  type: prompt
   role: SRE / Application Error Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ProgrammingError-SyntaxError-Database-Error-application.md)'
 - id: app-sentry-TimeoutError-ConnectionTimeout-AP
@@ -1810,6 +1908,7 @@ prompts:
   - k8s-service
   - sentry
   - timeouterror
+  type: prompt
   role: SRE / Application Error Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/02-Performance/TimeoutError-ConnectionTimeout-API-Error-application.md)'
 - id: app-sentry-TimeoutError-QueryTimeout-Databas
@@ -1825,6 +1924,7 @@ prompts:
   - querytimeout
   - sentry
   - timeouterror
+  type: prompt
   role: SRE / Application Error Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/02-Performance/TimeoutError-QueryTimeout-Database-Error-application.md)'
 - id: app-sentry-TimeoutError-RequestTimeout-API-E
@@ -1838,6 +1938,7 @@ prompts:
   - requesttimeout
   - sentry
   - timeouterror
+  type: prompt
   role: SRE / Application Error Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/02-Performance/TimeoutError-RequestTimeout-API-Error-application.md)'
 - id: app-sentry-UnhandledException-Error-applicat
@@ -1849,6 +1950,7 @@ prompts:
   - application
   - sentry
   - unhandledexception
+  type: prompt
   role: SRE / Application Error Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/UnhandledException-Error-application.md)'
 - id: app-sentry-ValidationError-DataValidation-Er
@@ -1862,6 +1964,7 @@ prompts:
   - monitoring
   - sentry
   - validationerror
+  type: prompt
   role: SRE / Application Error Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ValidationError-DataValidation-Error-application.md)'
 - id: app-sentry-ValueError-InvalidValue-Error-app
@@ -1875,6 +1978,7 @@ prompts:
   - monitoring
   - sentry
   - valueerror
+  type: prompt
   role: SRE / Application Error Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/Sentry%20Playbooks/01-Error-Tracking/ValueError-InvalidValue-Error-application.md)'
 - id: inf-agent-azure-infra-engineer
@@ -1900,6 +2004,7 @@ prompts:
   - sg
   - storage
   - sts
+  type: prompt
   role: azure-infra-engineer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/azure-infra-engineer.md)'
 - id: inf-agent-chaos-engineer
@@ -1917,6 +2022,7 @@ prompts:
   - k8s-service
   - monitoring
   - storage
+  type: prompt
   role: chaos-engineer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/chaos-engineer.md)'
 - id: inf-agent-cloud-architect
@@ -1938,6 +2044,7 @@ prompts:
   - scaling
   - security
   - storage
+  type: prompt
   role: cloud-architect
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/cloud-architect.md)'
 - id: inf-agent-database-administrator
@@ -1961,6 +2068,7 @@ prompts:
   - redis
   - security
   - storage
+  type: prompt
   role: database-administrator
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/database-administrator.md)'
 - id: inf-agent-deployment-engineer
@@ -1980,6 +2088,7 @@ prompts:
   - monitoring
   - pipeline
   - security
+  type: prompt
   role: deployment-engineer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/deployment-engineer.md)'
 - id: inf-agent-devops-engineer
@@ -2006,6 +2115,7 @@ prompts:
   - pipeline
   - security
   - terraform
+  type: prompt
   role: devops-engineer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/devops-engineer.md)'
 - id: inf-agent-docker-expert
@@ -2024,6 +2134,7 @@ prompts:
   - k8s-secret
   - performance
   - security
+  type: prompt
   role: docker-expert
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/docker-expert.md)'
 - id: inf-agent-kubernetes
@@ -2042,6 +2153,7 @@ prompts:
   - k8s-service
   - k8s-statefulset
   - kubernetes
+  type: prompt
   role: Kubernetes Specialist
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/kubernetes-specialist.md)'
 - id: inf-agent-network-engineer
@@ -2063,6 +2175,7 @@ prompts:
   - security
   - vpc
   - waf
+  type: prompt
   role: network-engineer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/network-engineer.md)'
 - id: inf-agent-performance-engineer
@@ -2080,6 +2193,7 @@ prompts:
   - redis
   - storage
   - sts
+  type: prompt
   role: performance-engineer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/performance-engineer.md)'
 - id: inf-agent-platform-engineer
@@ -2103,6 +2217,7 @@ prompts:
   - platform
   - scaling
   - security
+  type: prompt
   role: platform-engineer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/platform-engineer.md)'
 - id: inf-agent-terraform-engineer
@@ -2125,6 +2240,7 @@ prompts:
   - rds
   - security
   - terraform
+  type: prompt
   role: terraform-engineer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/terraform-engineer.md)'
 - id: inf-agent-terragrunt-expert
@@ -2139,6 +2255,7 @@ prompts:
   - k8s-deployment
   - terraform
   - terragrunt
+  type: prompt
   role: terragrunt-expert
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/terragrunt-expert.md)'
 - id: inf-aws-07-CI-CD-Deployment-Failing-App-Runn
@@ -2158,6 +2275,7 @@ prompts:
   - performance
   - runner
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Deployment-Failing-App-Runner.md)'
 - id: inf-aws-07-CI-CD-Drift-Detection-Not-Detecti
@@ -2178,6 +2296,7 @@ prompts:
   - infrastructure
   - k8s-service
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Drift-Detection-Not-Detecting-Changes-CloudFormation.md)'
 - id: inf-aws-07-CI-CD-Execution-Stuck-in-Running-
@@ -2199,6 +2318,7 @@ prompts:
   - step
   - sts
   - stuck
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Execution-Stuck-in-Running-State-Step-Functions.md)'
 - id: inf-aws-07-CI-CD-Failing-Due-to-Dependency-E
@@ -2219,6 +2339,7 @@ prompts:
   - performance
   - pipeline
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Failing-Due-to-Dependency-Errors-CodeBuild.md)'
 - id: inf-aws-07-CI-CD-Job-Failing-Randomly-Glue
@@ -2237,6 +2358,7 @@ prompts:
   - pipeline
   - randomly
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Job-Failing-Randomly-Glue.md)'
 - id: inf-aws-07-CI-CD-Jobs-Not-Starting-Batch
@@ -2259,6 +2381,7 @@ prompts:
   - pipeline
   - starting
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Jobs-Not-Starting-Batch.md)'
 - id: inf-aws-07-CI-CD-Repository-Not-Allowing-Pus
@@ -2278,6 +2401,7 @@ prompts:
   - push
   - repository
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Repository-Not-Allowing-Push-CodeCommit.md)'
 - id: inf-aws-07-CI-CD-Stack-Failing-to-Create-Clo
@@ -2298,6 +2422,7 @@ prompts:
   - performance
   - stack
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Stack-Failing-to-Create-CloudFormation.md)'
 - id: inf-aws-07-CI-CD-Stuck-in-Progress-CodePipel
@@ -2318,6 +2443,7 @@ prompts:
   - progress
   - sts
   - stuck
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/07-CI-CD/Stuck-in-Progress-CodePipeline.md)'
 - id: inf-build-engineer
@@ -2332,6 +2458,7 @@ prompts:
   - monitoring
   - performance
   - pipeline
+  type: prompt
   role: build-engineer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/06-developer-experience/build-engineer.md)'
 - id: inf-claude-code-commands-review-iac
@@ -2355,6 +2482,7 @@ prompts:
   - security
   - storage
   - terraform
+  type: prompt
   role: DevOps / Infrastructure Engineer
   source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/scenarios/devops-infrastructure/claude-code/commands/review-iac.md)'
 - id: inf-claude-code-commands-scaffold-pipeline
@@ -2375,6 +2503,7 @@ prompts:
   - scaffold
   - security
   - terraform
+  type: prompt
   role: DevOps / Infrastructure Engineer
   source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/scenarios/devops-infrastructure/claude-code/commands/scaffold-pipeline.md)'
 - id: inf-dependency-manager
@@ -2389,6 +2518,7 @@ prompts:
   - infrastructure
   - manager
   - security
+  type: prompt
   role: dependency-manager
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/06-developer-experience/dependency-manager.md)'
 - id: inf-dx-optimizer
@@ -2400,6 +2530,7 @@ prompts:
   - infrastructure
   - optimizer
   - performance
+  type: prompt
   role: dx-optimizer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/06-developer-experience/dx-optimizer.md)'
 - id: inf-git-workflow-manager
@@ -2413,6 +2544,7 @@ prompts:
   - manager
   - security
   - workflow
+  type: prompt
   role: git-workflow-manager
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/06-developer-experience/git-workflow-manager.md)'
 - id: inf-github-copilot-instructions-ci-cd.instru
@@ -2433,6 +2565,7 @@ prompts:
   - rds
   - security
   - sts
+  type: prompt
   role: DevOps / Infrastructure Engineer
   source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/scenarios/devops-infrastructure/github-copilot/instructions/ci-cd.instructions.md)'
 - id: inf-github-copilot-instructions-security.ins
@@ -2456,6 +2589,7 @@ prompts:
   - security
   - security.instructions
   - terraform
+  type: prompt
   role: DevOps / Infrastructure Engineer
   source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/scenarios/devops-infrastructure/github-copilot/instructions/security.instructions.md)'
 - id: inf-github-copilot-instructions-terraform.in
@@ -2476,6 +2610,7 @@ prompts:
   - s3
   - terraform
   - terraform.instructions
+  type: prompt
   role: DevOps / Infrastructure Engineer
   source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/scenarios/devops-infrastructure/github-copilot/instructions/terraform.instructions.md)'
 - id: inf-github-copilot-instructions
@@ -2493,6 +2628,7 @@ prompts:
   - pipeline
   - security
   - terraform
+  type: prompt
   role: DevOps / Infrastructure Engineer
   source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/scenarios/devops-infrastructure/github-copilot/instructions.md)'
 - id: inf-k8s-01-Control-Plane-APIServerHighLatenc
@@ -2512,6 +2648,7 @@ prompts:
   - plane
   - storage
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/01-Control-Plane/APIServerHighLatency-control-plane.md)'
 - id: inf-k8s-01-Control-Plane-CannotAccessAPI-con
@@ -2530,6 +2667,7 @@ prompts:
   - kubernetes
   - plane
   - security
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/01-Control-Plane/CannotAccessAPI-control-plane.md)'
 - id: inf-k8s-01-Control-Plane-CertManagerACMEOrde
@@ -2550,6 +2688,7 @@ prompts:
   - plane
   - security
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/01-Control-Plane/CertManagerACMEOrderFailed-cert.md)'
 - id: inf-k8s-01-Control-Plane-CertManagerControll
@@ -2570,6 +2709,7 @@ prompts:
   - plane
   - security
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/01-Control-Plane/CertManagerControllerHighError-cert.md)'
 - id: inf-k8s-01-Control-Plane-CertManagerDown-cer
@@ -2593,6 +2733,7 @@ prompts:
   - rds
   - security
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/01-Control-Plane/CertManagerDown-cert.md)'
 - id: inf-k8s-01-Control-Plane-CertificateExpired-
@@ -2612,6 +2753,7 @@ prompts:
   - kubernetes
   - plane
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/01-Control-Plane/CertificateExpired-control-plane.md)'
 - id: inf-k8s-01-Control-Plane-CertificateExpiring
@@ -2631,6 +2773,7 @@ prompts:
   - k8s-service
   - kubernetes
   - plane
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/01-Control-Plane/CertificateExpiringCritical-cert.md)'
 - id: inf-k8s-01-Control-Plane-CertificateExpiring
@@ -2653,6 +2796,7 @@ prompts:
   - kubernetes
   - plane
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/01-Control-Plane/CertificateExpiringSoon-cert.md)'
 - id: inf-k8s-01-Control-Plane-CertificateNotReady
@@ -2675,6 +2819,7 @@ prompts:
   - plane
   - security
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/01-Control-Plane/CertificateNotReady-cert.md)'
 - id: inf-k8s-01-Control-Plane-ConnectionRefused-c
@@ -2692,6 +2837,7 @@ prompts:
   - k8s-service
   - kubernetes
   - plane
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/01-Control-Plane/ConnectionRefused-control-plane.md)'
 - id: inf-k8s-01-Control-Plane-ContextDeadlineExce
@@ -2711,6 +2857,7 @@ prompts:
   - performance
   - plane
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/01-Control-Plane/ContextDeadlineExceeded-control-plane.md)'
 - id: inf-k8s-01-Control-Plane-ControlPlaneCompone
@@ -2729,6 +2876,7 @@ prompts:
   - kubernetes
   - plane
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/01-Control-Plane/ControlPlaneComponentsNotStarting-control-plane.md)'
 - id: inf-k8s-01-Control-Plane-KubeAPIDown-control
@@ -2748,6 +2896,7 @@ prompts:
   - monitoring
   - performance
   - plane
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/01-Control-Plane/KubeAPIDown-control-plane.md)'
 - id: inf-k8s-01-Control-Plane-KubeAPIErrorBudgetB
@@ -2766,6 +2915,7 @@ prompts:
   - monitoring
   - performance
   - plane
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/01-Control-Plane/KubeAPIErrorBudgetBurn-control-plane.md)'
 - id: inf-k8s-01-Control-Plane-KubeAPITerminatedRe
@@ -2786,6 +2936,7 @@ prompts:
   - plane
   - scaling
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/01-Control-Plane/KubeAPITerminatedRequests-control-plane.md)'
 - id: inf-k8s-01-Control-Plane-KubeAggregatedAPIDo
@@ -2805,6 +2956,7 @@ prompts:
   - performance
   - plane
   - scaling
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/01-Control-Plane/KubeAggregatedAPIDown-control-plane.md)'
 - id: inf-k8s-01-Control-Plane-KubeAggregatedAPIEr
@@ -2825,6 +2977,7 @@ prompts:
   - performance
   - plane
   - scaling
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/01-Control-Plane/KubeAggregatedAPIErrors-control-plane.md)'
 - id: inf-k8s-01-Control-Plane-KubeClientCertifica
@@ -2841,6 +2994,7 @@ prompts:
   - kubernetes
   - plane
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/01-Control-Plane/KubeClientCertificateExpiration-control-plane.md)'
 - id: inf-k8s-01-Control-Plane-KubeClientErrors-co
@@ -2860,6 +3014,7 @@ prompts:
   - performance
   - plane
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/01-Control-Plane/KubeClientErrors-control-plane.md)'
 - id: inf-k8s-01-Control-Plane-KubeControllerManag
@@ -2878,6 +3033,7 @@ prompts:
   - monitoring
   - performance
   - plane
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/01-Control-Plane/KubeControllerManagerDown-control-plane.md)'
 - id: inf-k8s-01-Control-Plane-KubeSchedulerDown-c
@@ -2896,6 +3052,7 @@ prompts:
   - monitoring
   - performance
   - plane
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/01-Control-Plane/KubeSchedulerDown-control-plane.md)'
 - id: inf-k8s-01-Control-Plane-KubeVersionMismatch
@@ -2913,6 +3070,7 @@ prompts:
   - kubeversionmismatch
   - plane
   - rds
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/01-Control-Plane/KubeVersionMismatch-control-plane.md)'
 - id: inf-k8s-01-Control-Plane-Timeout-control-pla
@@ -2933,6 +3091,7 @@ prompts:
   - plane
   - sts
   - timeout
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/01-Control-Plane/Timeout-control-plane.md)'
 - id: inf-k8s-01-Control-Plane-UpgradeFails-contro
@@ -2948,6 +3107,7 @@ prompts:
   - kubernetes
   - plane
   - upgradefails
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/01-Control-Plane/UpgradeFails-control-plane.md)'
 - id: inf-k8s-02-Nodes-KubeNodeNotReady-node
@@ -2967,6 +3127,7 @@ prompts:
   - nodes
   - performance
   - rds
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/02-Nodes/KubeNodeNotReady-node.md)'
 - id: inf-k8s-02-Nodes-KubeNodeReadinessFlapping-n
@@ -2986,6 +3147,7 @@ prompts:
   - nodes
   - performance
   - rds
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/02-Nodes/KubeNodeReadinessFlapping-node.md)'
 - id: inf-k8s-02-Nodes-KubeNodeUnreachable-node
@@ -3006,6 +3168,7 @@ prompts:
   - nodes
   - performance
   - rds
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/02-Nodes/KubeNodeUnreachable-node.md)'
 - id: inf-k8s-02-Nodes-KubeletCertificateRotationF
@@ -3023,6 +3186,7 @@ prompts:
   - node
   - nodes
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/02-Nodes/KubeletCertificateRotationFailing-node.md)'
 - id: inf-k8s-02-Nodes-KubeletDown-node
@@ -3039,6 +3203,7 @@ prompts:
   - node
   - nodes
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/02-Nodes/KubeletDown-node.md)'
 - id: inf-k8s-02-Nodes-KubeletPlegDurationHigh-nod
@@ -3054,6 +3219,7 @@ prompts:
   - node
   - nodes
   - performance
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/02-Nodes/KubeletPlegDurationHigh-node.md)'
 - id: inf-k8s-02-Nodes-KubeletPodStartUpLatencyHig
@@ -3070,6 +3236,7 @@ prompts:
   - nodes
   - performance
   - storage
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/02-Nodes/KubeletPodStartUpLatencyHigh-node.md)'
 - id: inf-k8s-02-Nodes-KubeletServiceNotRunning-no
@@ -3090,6 +3257,7 @@ prompts:
   - performance
   - rds
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/02-Nodes/KubeletServiceNotRunning-node.md)'
 - id: inf-k8s-02-Nodes-KubeletTooManyPods-node
@@ -3107,6 +3275,7 @@ prompts:
   - nodes
   - performance
   - rds
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/02-Nodes/KubeletTooManyPods-node.md)'
 - id: inf-k8s-02-Nodes-NodeCannotJoinCluster-node
@@ -3124,6 +3293,7 @@ prompts:
   - nodes
   - scaling
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/02-Nodes/NodeCannotJoinCluster-node.md)'
 - id: inf-k8s-02-Nodes-NodeClockSkewDetected-node
@@ -3141,6 +3311,7 @@ prompts:
   - node
   - nodeclockskewdetected
   - nodes
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/02-Nodes/NodeClockSkewDetected-node.md)'
 - id: inf-k8s-02-Nodes-NodeDiskIOSaturation-node
@@ -3159,6 +3330,7 @@ prompts:
   - nodediskiosaturation
   - nodes
   - performance
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/02-Nodes/NodeDiskIOSaturation-node.md)'
 - id: inf-k8s-02-Nodes-NodeDiskPressure-storage
@@ -3175,6 +3347,7 @@ prompts:
   - nodediskpressure
   - nodes
   - storage
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/02-Nodes/NodeDiskPressure-storage.md)'
 - id: inf-k8s-02-Nodes-NodeExporterDown-node
@@ -3198,6 +3371,7 @@ prompts:
   - nodes
   - observability
   - rds
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/02-Nodes/NodeExporterDown-node.md)'
 - id: inf-k8s-02-Nodes-NodeFileDescriptorLimit-nod
@@ -3216,6 +3390,7 @@ prompts:
   - nodefiledescriptorlimit
   - nodes
   - security
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/02-Nodes/NodeFileDescriptorLimit-node.md)'
 - id: inf-k8s-02-Nodes-NodeFilesystemAlmostOutOfSp
@@ -3235,6 +3410,7 @@ prompts:
   - nodefilesystemalmostoutofspace
   - nodes
   - storage
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/02-Nodes/NodeFilesystemAlmostOutOfSpace-node.md)'
 - id: inf-k8s-02-Nodes-NodeHighCPUUsage-node
@@ -3253,6 +3429,7 @@ prompts:
   - nodes
   - performance
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/02-Nodes/NodeHighCPUUsage-node.md)'
 - id: inf-k8s-02-Nodes-NodeHighLoadAverage-node
@@ -3268,6 +3445,7 @@ prompts:
   - node
   - nodehighloadaverage
   - nodes
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/02-Nodes/NodeHighLoadAverage-node.md)'
 - id: inf-k8s-02-Nodes-NodeHighMemoryUsage-node
@@ -3285,6 +3463,7 @@ prompts:
   - node
   - nodehighmemoryusage
   - nodes
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/02-Nodes/NodeHighMemoryUsage-node.md)'
 - id: inf-k8s-02-Nodes-NodeMemoryMajorPagesFaults-
@@ -3301,6 +3480,7 @@ prompts:
   - nodememorymajorpagesfaults
   - nodes
   - performance
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/02-Nodes/NodeMemoryMajorPagesFaults-node.md)'
 - id: inf-k8s-02-Nodes-NodeNetworkReceiveErrors-no
@@ -3321,6 +3501,7 @@ prompts:
   - node
   - nodenetworkreceiveerrors
   - nodes
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/02-Nodes/NodeNetworkReceiveErrors-node.md)'
 - id: inf-k8s-02-Nodes-NodeNotReady-node
@@ -3339,6 +3520,7 @@ prompts:
   - node
   - nodenotready
   - nodes
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/02-Nodes/NodeNotReady-node.md)'
 - id: inf-k8s-02-Nodes-NodeRAIDDegraded-node
@@ -3354,6 +3536,7 @@ prompts:
   - noderaiddegraded
   - nodes
   - performance
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/02-Nodes/NodeRAIDDegraded-node.md)'
 - id: inf-k8s-02-Nodes-NodeSystemdServiceFailed-no
@@ -3374,6 +3557,7 @@ prompts:
   - node
   - nodes
   - nodesystemdservicefailed
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/02-Nodes/NodeSystemdServiceFailed-node.md)'
 - id: inf-k8s-03-Pods-CPUThrottlingHigh-container
@@ -3394,6 +3578,7 @@ prompts:
   - performance
   - pods
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/CPUThrottlingHigh-container.md)'
 - id: inf-k8s-03-Pods-ContainerHighCPUThrottling-c
@@ -3413,6 +3598,7 @@ prompts:
   - performance
   - pods
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/ContainerHighCPUThrottling-container.md)'
 - id: inf-k8s-03-Pods-ContainerHighMemoryUsage-con
@@ -3433,6 +3619,7 @@ prompts:
   - kubernetes
   - pods
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/ContainerHighMemoryUsage-container.md)'
 - id: inf-k8s-03-Pods-ContainerMemoryNearLimit-con
@@ -3450,6 +3637,7 @@ prompts:
   - k8s-service
   - kubernetes
   - pods
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/ContainerMemoryNearLimit-container.md)'
 - id: inf-k8s-03-Pods-ContainerRestartsFrequent-co
@@ -3467,6 +3655,7 @@ prompts:
   - kubernetes
   - pods
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/ContainerRestartsFrequent-container.md)'
 - id: inf-k8s-03-Pods-CrashLoopBackOff-pod
@@ -3483,6 +3672,7 @@ prompts:
   - k8s-service
   - kubernetes
   - pods
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/CrashLoopBackOff-pod.md)'
 - id: inf-k8s-03-Pods-EvictedPods-pod
@@ -3502,6 +3692,7 @@ prompts:
   - kubernetes
   - pods
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/EvictedPods-pod.md)'
 - id: inf-k8s-03-Pods-FailedtoStartPodSandbox-pod
@@ -3519,6 +3710,7 @@ prompts:
   - k8s-service
   - kubernetes
   - pods
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/FailedtoStartPodSandbox-pod.md)'
 - id: inf-k8s-03-Pods-ImagePullBackOff-registry
@@ -3539,6 +3731,7 @@ prompts:
   - pods
   - registry
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/ImagePullBackOff-registry.md)'
 - id: inf-k8s-03-Pods-KubeContainerOOMKilled-pod
@@ -3555,6 +3748,7 @@ prompts:
   - kubernetes
   - pods
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/KubeContainerOOMKilled-pod.md)'
 - id: inf-k8s-03-Pods-KubeContainerWaiting-pod
@@ -3572,6 +3766,7 @@ prompts:
   - k8s-service
   - kubecontainerwaiting
   - pods
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/KubeContainerWaiting-pod.md)'
 - id: inf-k8s-03-Pods-KubePodContainerWaiting-pod
@@ -3594,6 +3789,7 @@ prompts:
   - pods
   - scaling
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/KubePodContainerWaiting-pod.md)'
 - id: inf-k8s-03-Pods-KubePodCrashLooping-pod
@@ -3614,6 +3810,7 @@ prompts:
   - monitoring
   - performance
   - pods
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/KubePodCrashLooping-pod.md)'
 - id: inf-k8s-03-Pods-KubePodFrequentlyRestarting-
@@ -3632,6 +3829,7 @@ prompts:
   - kubernetes
   - monitoring
   - pods
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/KubePodFrequentlyRestarting-pod.md)'
 - id: inf-k8s-03-Pods-KubePodImagePullBackOff-pod
@@ -3654,6 +3852,7 @@ prompts:
   - pods
   - scaling
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/KubePodImagePullBackOff-pod.md)'
 - id: inf-k8s-03-Pods-KubePodNotReady-pod
@@ -3673,6 +3872,7 @@ prompts:
   - monitoring
   - performance
   - pods
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/KubePodNotReady-pod.md)'
 - id: inf-k8s-03-Pods-KubePodPending-pod
@@ -3693,6 +3893,7 @@ prompts:
   - pods
   - scaling
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/KubePodPending-pod.md)'
 - id: inf-k8s-03-Pods-PendingPods-pod
@@ -3712,6 +3913,7 @@ prompts:
   - pendingpods
   - pods
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/PendingPods-pod.md)'
 - id: inf-k8s-03-Pods-PodCannotAccessClusterIntern
@@ -3729,6 +3931,7 @@ prompts:
   - podcannotaccessclusterinternaldns
   - pods
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/PodCannotAccessClusterInternalDNS-dns.md)'
 - id: inf-k8s-03-Pods-PodCannotConnecttoExternalSe
@@ -3748,6 +3951,7 @@ prompts:
   - podcannotconnecttoexternalservices
   - pods
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/PodCannotConnecttoExternalServices-network.md)'
 - id: inf-k8s-03-Pods-PodFailsLivenessProbe-pod
@@ -3765,6 +3969,7 @@ prompts:
   - performance
   - podfailslivenessprobe
   - pods
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/PodFailsLivenessProbe-pod.md)'
 - id: inf-k8s-03-Pods-PodFailsReadinessProbe-pod
@@ -3782,6 +3987,7 @@ prompts:
   - monitoring
   - podfailsreadinessprobe
   - pods
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/PodFailsReadinessProbe-pod.md)'
 - id: inf-k8s-03-Pods-PodIPConflict-network
@@ -3800,6 +4006,7 @@ prompts:
   - networking
   - podipconflict
   - pods
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/PodIPConflict-network.md)'
 - id: inf-k8s-03-Pods-PodIPNotReachable-network
@@ -3820,6 +4027,7 @@ prompts:
   - podipnotreachable
   - pods
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/PodIPNotReachable-network.md)'
 - id: inf-k8s-03-Pods-PodLogsNotAvailable-pod
@@ -3839,6 +4047,7 @@ prompts:
   - monitoring
   - podlogsnotavailable
   - pods
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/PodLogsNotAvailable-pod.md)'
 - id: inf-k8s-03-Pods-PodLogsTruncated-pod
@@ -3857,6 +4066,7 @@ prompts:
   - podlogstruncated
   - pods
   - storage
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/PodLogsTruncated-pod.md)'
 - id: inf-k8s-03-Pods-PodSchedulingIgnoredNodeSele
@@ -3873,6 +4083,7 @@ prompts:
   - kubernetes
   - pods
   - podschedulingignorednodeselector
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/PodSchedulingIgnoredNodeSelector-pod.md)'
 - id: inf-k8s-03-Pods-PodSecurityContext-pod
@@ -3892,6 +4103,7 @@ prompts:
   - rds
   - security
   - sg
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/PodSecurityContext-pod.md)'
 - id: inf-k8s-03-Pods-PodStuckInTerminatingState-p
@@ -3908,6 +4120,7 @@ prompts:
   - kubernetes
   - pods
   - podstuckinterminatingstate
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/PodStuckInTerminatingState-pod.md)'
 - id: inf-k8s-03-Pods-PodStuckinPendingDuetoNodeAf
@@ -3925,6 +4138,7 @@ prompts:
   - kubernetes
   - pods
   - podstuckinpendingduetonodeaffinity
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/PodStuckinPendingDuetoNodeAffinity-pod.md)'
 - id: inf-k8s-03-Pods-PodTerminatedWithExitCode137
@@ -3944,6 +4158,7 @@ prompts:
   - pods
   - podterminatedwithexitcode137
   - sg
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/PodTerminatedWithExitCode137-pod.md)'
 - id: inf-k8s-03-Pods-PodsExceedingResourceQuota-w
@@ -3963,6 +4178,7 @@ prompts:
   - podsexceedingresourcequota
   - sts
   - workload
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/PodsExceedingResourceQuota-workload.md)'
 - id: inf-k8s-03-Pods-PodsNotBeingScheduled-pod
@@ -3982,6 +4198,7 @@ prompts:
   - pods
   - podsnotbeingscheduled
   - sts
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/PodsNotBeingScheduled-pod.md)'
 - id: inf-k8s-03-Pods-PodsOverloadedDuetoMissingHP
@@ -4003,6 +4220,7 @@ prompts:
   - podsoverloadedduetomissinghpa
   - sts
   - workload
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/PodsOverloadedDuetoMissingHPA-workload.md)'
 - id: inf-k8s-03-Pods-PodsRestartingFrequently-pod
@@ -4020,6 +4238,7 @@ prompts:
   - monitoring
   - pods
   - podsrestartingfrequently
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/PodsRestartingFrequently-pod.md)'
 - id: inf-k8s-03-Pods-PodsStuckInUnknownState-pod
@@ -4036,6 +4255,7 @@ prompts:
   - kubernetes
   - pods
   - podsstuckinunknownstate
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/PodsStuckInUnknownState-pod.md)'
 - id: inf-k8s-03-Pods-PodsStuckinContainerCreating
@@ -4054,6 +4274,7 @@ prompts:
   - kubernetes
   - pods
   - podsstuckincontainercreatingstate
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/PodsStuckinContainerCreatingState-pod.md)'
 - id: inf-k8s-03-Pods-PodsStuckinEvictedState-pod
@@ -4070,6 +4291,7 @@ prompts:
   - kubernetes
   - pods
   - podsstuckinevictedstate
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/PodsStuckinEvictedState-pod.md)'
 - id: inf-k8s-03-Pods-PodsStuckinImagePullBackOff-
@@ -4088,6 +4310,7 @@ prompts:
   - pods
   - podsstuckinimagepullbackoff
   - registry
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/PodsStuckinImagePullBackOff-registry.md)'
 - id: inf-k8s-03-Pods-PodsStuckinInitState-pod
@@ -4104,6 +4327,7 @@ prompts:
   - kubernetes
   - pods
   - podsstuckininitstate
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/PodsStuckinInitState-pod.md)'
 - id: inf-k8s-03-Pods-PodsStuckinTerminatingState-
@@ -4119,6 +4343,7 @@ prompts:
   - kubernetes
   - pods
   - podsstuckinterminatingstate
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/03-Pods/PodsStuckinTerminatingState-pod.md)'
 - id: inf-k8s-04-Workloads-CannotScaleDeploymentBe
@@ -4140,6 +4365,7 @@ prompts:
   - sts
   - workload
   - workloads
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/04-Workloads/CannotScaleDeploymentBeyondNodeCapacity-workload.md)'
 - id: inf-k8s-04-Workloads-DaemonSetNotDeployingPo
@@ -4162,6 +4388,7 @@ prompts:
   - monitoring
   - networking
   - workloads
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/04-Workloads/DaemonSetNotDeployingPodsonAllNodes-daemonset.md)'
 - id: inf-k8s-04-Workloads-DaemonSetPodsNotDeployi
@@ -4184,6 +4411,7 @@ prompts:
   - monitoring
   - networking
   - workloads
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/04-Workloads/DaemonSetPodsNotDeploying-daemonset.md)'
 - id: inf-k8s-04-Workloads-DaemonSetPodsNotRunning
@@ -4206,6 +4434,7 @@ prompts:
   - monitoring
   - networking
   - workloads
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/04-Workloads/DaemonSetPodsNotRunningonSpecificNode-daemonset.md)'
 - id: inf-k8s-04-Workloads-DeploymentNotScalingPro
@@ -4227,6 +4456,7 @@ prompts:
   - kubernetes
   - scaling
   - workloads
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/04-Workloads/DeploymentNotScalingProperly-deployment.md)'
 - id: inf-k8s-04-Workloads-DeploymentNotUpdating-d
@@ -4245,6 +4475,7 @@ prompts:
   - kubernetes
   - performance
   - workloads
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/04-Workloads/DeploymentNotUpdating-deployment.md)'
 - id: inf-k8s-04-Workloads-HPAHorizontalPodAutosca
@@ -4265,6 +4496,7 @@ prompts:
   - sts
   - workload
   - workloads
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/04-Workloads/HPAHorizontalPodAutoscalerNotScaling-workload.md)'
 - id: inf-k8s-04-Workloads-HPANotRespondingtoCusto
@@ -4284,6 +4516,7 @@ prompts:
   - scaling
   - workload
   - workloads
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/04-Workloads/HPANotRespondingtoCustomMetrics-workload.md)'
 - id: inf-k8s-04-Workloads-HPANotRespondingtoMetri
@@ -4305,6 +4538,7 @@ prompts:
   - sts
   - workload
   - workloads
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/04-Workloads/HPANotRespondingtoMetrics-workload.md)'
 - id: inf-k8s-04-Workloads-InvalidMemoryCPURequest
@@ -4325,6 +4559,7 @@ prompts:
   - sts
   - workload
   - workloads
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/04-Workloads/InvalidMemoryCPURequests-workload.md)'
 - id: inf-k8s-04-Workloads-JobFailingToComplete-jo
@@ -4340,6 +4575,7 @@ prompts:
   - kubernetes
   - pipeline
   - workloads
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/04-Workloads/JobFailingToComplete-job.md)'
 - id: inf-k8s-04-Workloads-KubeDaemonSetMisSchedul
@@ -4357,6 +4593,7 @@ prompts:
   - k8s-service
   - kubedaemonsetmisscheduled
   - workloads
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/04-Workloads/KubeDaemonSetMisScheduled-daemonset.md)'
 - id: inf-k8s-04-Workloads-KubeDaemonSetNotReady-d
@@ -4380,6 +4617,7 @@ prompts:
   - security
   - sts
   - workloads
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/04-Workloads/KubeDaemonSetNotReady-daemonset.md)'
 - id: inf-k8s-04-Workloads-KubeDaemonSetNotSchedul
@@ -4397,6 +4635,7 @@ prompts:
   - k8s-service
   - kubedaemonsetnotscheduled
   - workloads
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/04-Workloads/KubeDaemonSetNotScheduled-daemonset.md)'
 - id: inf-k8s-04-Workloads-KubeDaemonSetRolloutStu
@@ -4414,6 +4653,7 @@ prompts:
   - k8s-service
   - kubedaemonsetrolloutstuck
   - workloads
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/04-Workloads/KubeDaemonSetRolloutStuck-daemonset.md)'
 - id: inf-k8s-04-Workloads-KubeDeploymentGeneratio
@@ -4431,6 +4671,7 @@ prompts:
   - kubedeploymentgenerationmismatch
   - performance
   - workloads
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/04-Workloads/KubeDeploymentGenerationMismatch-deployment.md)'
 - id: inf-k8s-04-Workloads-KubeDeploymentReplicasM
@@ -4449,6 +4690,7 @@ prompts:
   - kubedeploymentreplicasmismatch
   - performance
   - workloads
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/04-Workloads/KubeDeploymentReplicasMismatch-deployment.md)'
 - id: inf-k8s-04-Workloads-KubeDeploymentRolloutSt
@@ -4468,6 +4710,7 @@ prompts:
   - pipeline
   - sts
   - workloads
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/04-Workloads/KubeDeploymentRolloutStuck-deployment.md)'
 - id: inf-k8s-04-Workloads-KubeHpaMaxedOut-workloa
@@ -4487,6 +4730,7 @@ prompts:
   - sts
   - workload
   - workloads
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/04-Workloads/KubeHpaMaxedOut-workload.md)'
 - id: inf-k8s-04-Workloads-KubeHpaReplicasMismatch
@@ -4505,6 +4749,7 @@ prompts:
   - scaling
   - workload
   - workloads
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/04-Workloads/KubeHpaReplicasMismatch-workload.md)'
 - id: inf-k8s-04-Workloads-KubeJobCompletion-workl
@@ -4522,6 +4767,7 @@ prompts:
   - pipeline
   - workload
   - workloads
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/04-Workloads/KubeJobCompletion-workload.md)'
 - id: inf-k8s-04-Workloads-KubeJobFailed-workload
@@ -4539,6 +4785,7 @@ prompts:
   - performance
   - workload
   - workloads
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/04-Workloads/KubeJobFailed-workload.md)'
 - id: inf-k8s-04-Workloads-KubeStatefulSetGenerati
@@ -4558,6 +4805,7 @@ prompts:
   - statefulset
   - sts
   - workloads
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/04-Workloads/KubeStatefulSetGenerationMismatch-statefulset.md)'
 - id: inf-k8s-04-Workloads-KubeStatefulSetReplicas
@@ -4578,6 +4826,7 @@ prompts:
   - statefulset
   - sts
   - workloads
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/04-Workloads/KubeStatefulSetReplicasMismatch-statefulset.md)'
 - id: inf-k8s-04-Workloads-KubeStatefulSetUpdateNo
@@ -4596,6 +4845,7 @@ prompts:
   - performance
   - statefulset
   - workloads
+  type: prompt
   role: SRE / K8s Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/04-Workloads/KubeStatefulSetUpdateNotRolledOut-statefulset.md)'
 - id: inf-k8s-05-Networking-CoreDNSDown-dns
@@ -4616,6 +4866,7 @@ prompts:
   - k8s-service
   - kubernetes
   - networking
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/CoreDNSDown-dns.md)'
 - id: inf-k8s-05-Networking-CoreDNSLatencyHigh-dns
@@ -4636,6 +4887,7 @@ prompts:
   - networking
   - performance
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/CoreDNSLatencyHigh-dns.md)'
 - id: inf-k8s-05-Networking-CoreDNSPodsCrashLoopin
@@ -4656,6 +4908,7 @@ prompts:
   - kubernetes
   - networking
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/CoreDNSPodsCrashLooping-dns.md)'
 - id: inf-k8s-05-Networking-DNSResolutionIntermitt
@@ -4674,6 +4927,7 @@ prompts:
   - networking
   - performance
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/DNSResolutionIntermittent-dns.md)'
 - id: inf-k8s-05-Networking-ErrorConnectionRefused
@@ -4692,6 +4946,7 @@ prompts:
   - networking
   - performance
   - service
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/ErrorConnectionRefusedWhenAccessingService-service.md)'
 - id: inf-k8s-05-Networking-IngressCertificateExpi
@@ -4709,6 +4964,7 @@ prompts:
   - kubernetes
   - networking
   - security
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/IngressCertificateExpiring-ingress.md)'
 - id: inf-k8s-05-Networking-IngressControllerPodsC
@@ -4726,6 +4982,7 @@ prompts:
   - kubernetes
   - networking
   - performance
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/IngressControllerPodsCrashLooping-ingress.md)'
 - id: inf-k8s-05-Networking-IngressNotWorking-ingr
@@ -4747,6 +5004,7 @@ prompts:
   - nginx
   - performance
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/IngressNotWorking-ingress.md)'
 - id: inf-k8s-05-Networking-IngressRedirectLoop-in
@@ -4766,6 +5024,7 @@ prompts:
   - nginx
   - performance
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/IngressRedirectLoop-ingress.md)'
 - id: inf-k8s-05-Networking-IngressReturning502Bad
@@ -4784,6 +5043,7 @@ prompts:
   - kubernetes
   - networking
   - performance
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/IngressReturning502BadGateway-ingress.md)'
 - id: inf-k8s-05-Networking-IngressSSLTLSConfigura
@@ -4802,6 +5062,7 @@ prompts:
   - kubernetes
   - networking
   - performance
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/IngressSSLTLSConfigurationFails-ingress.md)'
 - id: inf-k8s-05-Networking-IngressShows404-ingres
@@ -4820,6 +5081,7 @@ prompts:
   - networking
   - performance
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/IngressShows404-ingress.md)'
 - id: inf-k8s-05-Networking-Kube-proxyFailing-netw
@@ -4840,6 +5102,7 @@ prompts:
   - networking
   - performance
   - proxyfailing
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/Kube-proxyFailing-network.md)'
 - id: inf-k8s-05-Networking-KubeProxyDown-network
@@ -4860,6 +5123,7 @@ prompts:
   - network
   - networking
   - performance
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/KubeProxyDown-network.md)'
 - id: inf-k8s-05-Networking-NetworkPolicyBlockingT
@@ -4878,6 +5142,7 @@ prompts:
   - networking
   - networkpolicyblockingtraffic
   - performance
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/NetworkPolicyBlockingTraffic-network.md)'
 - id: inf-k8s-05-Networking-NginxIngress4xxErrorsH
@@ -4897,6 +5162,7 @@ prompts:
   - nginxingress4xxerrorshigh
   - security
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/NginxIngress4xxErrorsHigh-ingress.md)'
 - id: inf-k8s-05-Networking-NginxIngress5xxErrorsH
@@ -4915,6 +5181,7 @@ prompts:
   - nginx
   - nginxingress5xxerrorshigh
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/NginxIngress5xxErrorsHigh-ingress.md)'
 - id: inf-k8s-05-Networking-NginxIngressConfigRelo
@@ -4934,6 +5201,7 @@ prompts:
   - nginx
   - nginxingressconfigreloadfailed
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/NginxIngressConfigReloadFailed-ingress.md)'
 - id: inf-k8s-05-Networking-NginxIngressDown-ingre
@@ -4956,6 +5224,7 @@ prompts:
   - networking
   - nginx
   - nginxingressdown
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/NginxIngressDown-ingress.md)'
 - id: inf-k8s-05-Networking-NginxIngressHighLatenc
@@ -4977,6 +5246,7 @@ prompts:
   - performance
   - scaling
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/NginxIngressHighLatency-ingress.md)'
 - id: inf-k8s-05-Networking-NodesUnreachable-netwo
@@ -4997,6 +5267,7 @@ prompts:
   - networking
   - nodesunreachable
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/NodesUnreachable-network.md)'
 - id: inf-k8s-05-Networking-ServiceExternal-IPPend
@@ -5016,6 +5287,7 @@ prompts:
   - networking
   - service
   - serviceexternal
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/ServiceExternal-IPPending-service.md)'
 - id: inf-k8s-05-Networking-ServiceNodePortNotAcce
@@ -5034,6 +5306,7 @@ prompts:
   - security
   - service
   - servicenodeportnotaccessible
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/ServiceNodePortNotAccessible-service.md)'
 - id: inf-k8s-05-Networking-ServiceNotAccessible-s
@@ -5052,6 +5325,7 @@ prompts:
   - performance
   - service
   - servicenotaccessible
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/ServiceNotAccessible-service.md)'
 - id: inf-k8s-05-Networking-ServiceNotForwardingTr
@@ -5070,6 +5344,7 @@ prompts:
   - performance
   - service
   - servicenotforwardingtraffic
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/ServiceNotForwardingTraffic-service.md)'
 - id: inf-k8s-05-Networking-ServiceNotResolvingDNS
@@ -5087,6 +5362,7 @@ prompts:
   - networking
   - servicenotresolvingdns
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/ServiceNotResolvingDNS-dns.md)'
 - id: inf-k8s-05-Networking-ServicesIntermittently
@@ -5104,6 +5380,7 @@ prompts:
   - networking
   - service
   - servicesintermittentlyunreachable
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/05-Networking/ServicesIntermittentlyUnreachable-service.md)'
 - id: inf-k8s-06-Storage-FailedAttachVolume-storag
@@ -5122,6 +5399,7 @@ prompts:
   - k8s-service
   - kubernetes
   - storage
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/06-Storage/FailedAttachVolume-storage.md)'
 - id: inf-k8s-06-Storage-KubePersistentVolumeError
@@ -5139,6 +5417,7 @@ prompts:
   - kubepersistentvolumeerrors
   - performance
   - storage
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/06-Storage/KubePersistentVolumeErrors-storage.md)'
 - id: inf-k8s-06-Storage-KubePersistentVolumeFilli
@@ -5155,6 +5434,7 @@ prompts:
   - kubepersistentvolumefillingup
   - rds
   - storage
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/06-Storage/KubePersistentVolumeFillingUp-storage.md)'
 - id: inf-k8s-06-Storage-PVCPendingDueToStorageCla
@@ -5172,6 +5452,7 @@ prompts:
   - kubernetes
   - pvcpendingduetostorageclassissues
   - storage
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/06-Storage/PVCPendingDueToStorageClassIssues-storage.md)'
 - id: inf-k8s-06-Storage-PVCinLostState-storage
@@ -5190,6 +5471,7 @@ prompts:
   - pvcinloststate
   - storage
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/06-Storage/PVCinLostState-storage.md)'
 - id: inf-k8s-06-Storage-PersistentVolumeNotResizi
@@ -5208,6 +5490,7 @@ prompts:
   - persistentvolumenotresizing
   - storage
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/06-Storage/PersistentVolumeNotResizing-storage.md)'
 - id: inf-k8s-06-Storage-PersistentVolumeStuckinRe
@@ -5222,6 +5505,7 @@ prompts:
   - kubernetes
   - persistentvolumestuckinreleasedstate
   - storage
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/06-Storage/PersistentVolumeStuckinReleasedState-storage.md)'
 - id: inf-k8s-06-Storage-PodCannotAccessPersistent
@@ -5238,6 +5522,7 @@ prompts:
   - kubernetes
   - podcannotaccesspersistentvolume
   - storage
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/06-Storage/PodCannotAccessPersistentVolume-storage.md)'
 - id: inf-k8s-06-Storage-VolumeMountPermissionsDen
@@ -5256,6 +5541,7 @@ prompts:
   - sg
   - storage
   - volumemountpermissionsdenied
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/06-Storage/VolumeMountPermissionsDenied-storage.md)'
 - id: inf-k8s-08-Configuration-ConfigMapNotFound-c
@@ -5275,6 +5561,7 @@ prompts:
   - k8s-service
   - kubernetes
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/08-Configuration/ConfigMapNotFound-configmap.md)'
 - id: inf-k8s-08-Configuration-ConfigMapTooLarge-c
@@ -5293,6 +5580,7 @@ prompts:
   - k8s-pod
   - k8s-service
   - kubernetes
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/08-Configuration/ConfigMapTooLarge-configmap.md)'
 - id: inf-k8s-08-Configuration-PodCannotAccessConf
@@ -5312,6 +5600,7 @@ prompts:
   - kubernetes
   - podcannotaccessconfigmap
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/08-Configuration/PodCannotAccessConfigMap-configmap.md)'
 - id: inf-k8s-08-Configuration-PodCannotAccessSecr
@@ -5331,6 +5620,7 @@ prompts:
   - podcannotaccesssecret
   - secret
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/08-Configuration/PodCannotAccessSecret-secret.md)'
 - id: inf-k8s-08-Configuration-PodsCannotPullSecre
@@ -5350,6 +5640,7 @@ prompts:
   - podscannotpullsecrets
   - secret
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/08-Configuration/PodsCannotPullSecrets-secret.md)'
 - id: inf-k8s-08-Configuration-SecretsNotAccessibl
@@ -5369,6 +5660,7 @@ prompts:
   - secret
   - secretsnotaccessible
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/08-Configuration/SecretsNotAccessible-secret.md)'
 - id: inf-k8s-09-Resource-Management-HighCPUUsage-
@@ -5387,6 +5679,7 @@ prompts:
   - management
   - performance
   - resource
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/09-Resource-Management/HighCPUUsage-compute.md)'
 - id: inf-k8s-09-Resource-Management-KubeCPUOverco
@@ -5409,6 +5702,7 @@ prompts:
   - resource
   - scaling
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/09-Resource-Management/KubeCPUOvercommit-compute.md)'
 - id: inf-k8s-09-Resource-Management-KubeCPUQuotaO
@@ -5432,6 +5726,7 @@ prompts:
   - resource
   - scaling
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/09-Resource-Management/KubeCPUQuotaOvercommit-namespace.md)'
 - id: inf-k8s-09-Resource-Management-KubeMemoryOve
@@ -5454,6 +5749,7 @@ prompts:
   - resource
   - scaling
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/09-Resource-Management/KubeMemoryOvercommit-compute.md)'
 - id: inf-k8s-09-Resource-Management-KubeMemoryQuo
@@ -5477,6 +5773,7 @@ prompts:
   - resource
   - scaling
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/09-Resource-Management/KubeMemoryQuotaOvercommit-namespace.md)'
 - id: inf-k8s-09-Resource-Management-KubeQuotaAlmo
@@ -5497,6 +5794,7 @@ prompts:
   - resource
   - scaling
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/09-Resource-Management/KubeQuotaAlmostFull-namespace.md)'
 - id: inf-k8s-09-Resource-Management-KubeQuotaExce
@@ -5518,6 +5816,7 @@ prompts:
   - resource
   - scaling
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/09-Resource-Management/KubeQuotaExceeded-namespace.md)'
 - id: inf-k8s-09-Resource-Management-KubeQuotaFull
@@ -5539,6 +5838,7 @@ prompts:
   - resource
   - scaling
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/09-Resource-Management/KubeQuotaFullyUsed-namespace.md)'
 - id: inf-k8s-10-Monitoring-Autoscaling-Autoscaler
@@ -5564,6 +5864,7 @@ prompts:
   - monitoring
   - scaling
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/10-Monitoring-Autoscaling/AutoscalerNotAddingNodes-autoscaler.md)'
 - id: inf-k8s-10-Monitoring-Autoscaling-Autoscaler
@@ -5587,6 +5888,7 @@ prompts:
   - kubernetes
   - monitoring
   - scaling
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/10-Monitoring-Autoscaling/AutoscalerScalingTooSlowly-autoscaler.md)'
 - id: inf-k8s-10-Monitoring-Autoscaling-MetricsSer
@@ -5607,6 +5909,7 @@ prompts:
   - monitoring
   - performance
   - scaling
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/10-Monitoring-Autoscaling/MetricsServerShowsNoData-monitoring.md)'
 - id: inf-k8s-11-Installation-Setup-HelmReleaseStu
@@ -5627,6 +5930,7 @@ prompts:
   - k8s-service
   - kubernetes
   - setup
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/11-Installation-Setup/HelmReleaseStuckInPending-install.md)'
 - id: inf-k8s-12-Namespaces-CannotDeleteNamespace-
@@ -5641,6 +5945,7 @@ prompts:
   - kubernetes
   - namespace
   - namespaces
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/12-Namespaces/CannotDeleteNamespace-namespace.md)'
 - id: inf-k8s-12-Namespaces-NamespaceDeletionStuck
@@ -5655,6 +5960,7 @@ prompts:
   - namespace
   - namespacedeletionstuck
   - namespaces
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/12-Namespaces/NamespaceDeletionStuck-namespace.md)'
 - id: inf-k8s-13-Proactive-Backup-DR-Backup-Integr
@@ -5672,6 +5978,7 @@ prompts:
   - monitoring
   - sts
   - verification
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/03-Backup-DR/Backup-Integrity-Verification-K8s.md)'
 - id: inf-k8s-13-Proactive-Backup-DR-Backup-Verifi
@@ -5686,6 +5993,7 @@ prompts:
   - k8s-service
   - storage
   - verification
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/03-Backup-DR/Backup-Verification-K8s.md)'
 - id: inf-k8s-13-Proactive-Backup-DR-Cross-cluster
@@ -5703,6 +6011,7 @@ prompts:
   - k8s-service
   - storage
   - sync
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/03-Backup-DR/Cross-cluster-Backup-Sync-K8s.md)'
 - id: inf-k8s-13-Proactive-Backup-DR-Disaster-Reco
@@ -5720,6 +6029,7 @@ prompts:
   - k8s-service
   - recovery
   - runbook
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/03-Backup-DR/Disaster-Recovery-Runbook-Execution-K8s.md)'
 - id: inf-k8s-13-Proactive-Backup-DR-Multi-cluster
@@ -5740,6 +6050,7 @@ prompts:
   - multi
   - networking
   - rds
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/03-Backup-DR/Multi-cluster-Failover-K8s.md)'
 - id: inf-k8s-13-Proactive-Backup-DR-RTO-RPO-Valid
@@ -5753,6 +6064,7 @@ prompts:
   - infrastructure
   - k8s-namespace
   - validation
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/03-Backup-DR/RTO-RPO-Validation-K8s.md)'
 - id: inf-k8s-13-Proactive-Backup-DR-Restore-Testi
@@ -5768,6 +6080,7 @@ prompts:
   - restore
   - storage
   - testing
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/03-Backup-DR/Restore-Testing-K8s.md)'
 - id: inf-k8s-13-Proactive-Capacity-Performance-Ba
@@ -5785,6 +6098,7 @@ prompts:
   - k8s-pod
   - monitoring
   - performance
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/01-Capacity-Performance/Baseline-Comparison-K8s.md)'
 - id: inf-k8s-13-Proactive-Capacity-Performance-Ca
@@ -5803,6 +6117,7 @@ prompts:
   - performance
   - scaling
   - trend
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/01-Capacity-Performance/Capacity-Trend-Analysis-K8s.md)'
 - id: inf-k8s-13-Proactive-Capacity-Performance-Pe
@@ -5820,6 +6135,7 @@ prompts:
   - monitoring
   - performance
   - regression
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/01-Capacity-Performance/Performance-Regression-Detection-K8s.md)'
 - id: inf-k8s-13-Proactive-Capacity-Performance-Pe
@@ -5837,6 +6153,7 @@ prompts:
   - monitoring
   - performance
   - trend
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/01-Capacity-Performance/Performance-Trend-Analysis-K8s.md)'
 - id: inf-k8s-13-Proactive-Capacity-Performance-Re
@@ -5854,6 +6171,7 @@ prompts:
   - performance
   - prediction
   - resource
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/01-Capacity-Performance/Resource-Exhaustion-Prediction-K8s.md)'
 - id: inf-k8s-13-Proactive-Capacity-Performance-Re
@@ -5872,6 +6190,7 @@ prompts:
   - resource
   - scaling
   - usage
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/01-Capacity-Performance/Resource-Usage-Forecasting-K8s.md)'
 - id: inf-k8s-13-Proactive-Capacity-Performance-Sc
@@ -5888,6 +6207,7 @@ prompts:
   - performance
   - projections
   - scaling
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/01-Capacity-Performance/Scaling-Projections-K8s.md)'
 - id: inf-k8s-13-Proactive-Cost-Optimization-Cost-
@@ -5907,6 +6227,7 @@ prompts:
   - optimization
   - scaling
   - sts
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/04-Cost-Optimization/Cost-Anomaly-Detection-K8s.md)'
 - id: inf-k8s-13-Proactive-Cost-Optimization-Idle-
@@ -5929,6 +6250,7 @@ prompts:
   - optimization
   - resource
   - sts
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/04-Cost-Optimization/Idle-Resource-Detection-K8s.md)'
 - id: inf-k8s-13-Proactive-Cost-Optimization-Quota
@@ -5949,6 +6271,7 @@ prompts:
   - storage
   - tracking
   - utilization
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/04-Cost-Optimization/Quota-Utilization-Tracking-K8s.md)'
 - id: inf-k8s-13-Proactive-Cost-Optimization-Reser
@@ -5966,6 +6289,7 @@ prompts:
   - optimization
   - reserved
   - sts
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/04-Cost-Optimization/Reserved-Instance-Optimization-K8s.md)'
 - id: inf-k8s-13-Proactive-Cost-Optimization-Right
@@ -5988,6 +6312,7 @@ prompts:
   - sizing
   - storage
   - sts
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/04-Cost-Optimization/Right-sizing-Analysis-K8s.md)'
 - id: inf-k8s-13-Proactive-Cost-Optimization-Spot-
@@ -6008,6 +6333,7 @@ prompts:
   - optimization
   - spot
   - sts
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/04-Cost-Optimization/Spot-Instance-Management-K8s.md)'
 - id: inf-k8s-13-Proactive-Cost-Optimization-Stora
@@ -6025,6 +6351,7 @@ prompts:
   - storage
   - sts
   - tier
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/04-Cost-Optimization/Storage-Tier-Optimization-K8s.md)'
 - id: inf-k8s-13-Proactive-Cost-Optimization-Unuse
@@ -6047,6 +6374,7 @@ prompts:
   - resource
   - sts
   - unused
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/04-Cost-Optimization/Unused-Resource-Cleanup-K8s.md)'
 - id: inf-k8s-13-Proactive-Data-Integrity-Data-Con
@@ -6066,6 +6394,7 @@ prompts:
   - k8s-statefulset
   - monitoring
   - storage
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/06-Data-Integrity/Data-Consistency-Checks-K8s.md)'
 - id: inf-k8s-13-Proactive-Data-Integrity-Data-Cor
@@ -6085,6 +6414,7 @@ prompts:
   - monitoring
   - storage
   - sts
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/06-Data-Integrity/Data-Corruption-Detection-K8s.md)'
 - id: inf-k8s-13-Proactive-Data-Integrity-Data-Rep
@@ -6103,6 +6433,7 @@ prompts:
   - replication
   - status
   - storage
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/06-Data-Integrity/Data-Replication-Status-K8s.md)'
 - id: inf-k8s-13-Proactive-Data-Integrity-Replicat
@@ -6120,6 +6451,7 @@ prompts:
   - monitoring
   - replication
   - storage
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/06-Data-Integrity/Replication-Lag-Monitoring-K8s.md)'
 - id: inf-k8s-13-Proactive-Data-Integrity-Transact
@@ -6138,6 +6470,7 @@ prompts:
   - k8s-service
   - monitoring
   - transaction
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/06-Data-Integrity/Transaction-Log-Analysis-K8s.md)'
 - id: inf-k8s-13-Proactive-Observability-Alert-Cov
@@ -6157,6 +6490,7 @@ prompts:
   - k8s-service
   - monitoring
   - observability
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/05-Observability/Alert-Coverage-Analysis-K8s.md)'
 - id: inf-k8s-13-Proactive-Observability-Error-Bud
@@ -6175,6 +6509,7 @@ prompts:
   - observability
   - performance
   - tracking
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/05-Observability/Error-Budget-Tracking-K8s.md)'
 - id: inf-k8s-13-Proactive-Observability-Log-Cover
@@ -6193,6 +6528,7 @@ prompts:
   - logging
   - monitoring
   - observability
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/05-Observability/Log-Coverage-Analysis-K8s.md)'
 - id: inf-k8s-13-Proactive-Observability-Metric-Co
@@ -6211,6 +6547,7 @@ prompts:
   - monitoring
   - observability
   - performance
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/05-Observability/Metric-Coverage-Gaps-K8s.md)'
 - id: inf-k8s-13-Proactive-Observability-Missing-I
@@ -6228,6 +6565,7 @@ prompts:
   - missing
   - monitoring
   - observability
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/05-Observability/Missing-Instrumentation-K8s.md)'
 - id: inf-k8s-13-Proactive-Observability-SLO-SLI-M
@@ -6245,6 +6583,7 @@ prompts:
   - monitoring
   - observability
   - performance
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/05-Observability/SLO-SLI-Monitoring-K8s.md)'
 - id: inf-k8s-13-Proactive-Observability-Trace-Cov
@@ -6261,6 +6600,7 @@ prompts:
   - monitoring
   - observability
   - trace
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/05-Observability/Trace-Coverage-Issues-K8s.md)'
 - id: inf-k8s-13-Proactive-Operational-Readiness-A
@@ -6279,6 +6619,7 @@ prompts:
   - performance
   - readiness
   - status
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/07-Operational-Readiness/API-Dependency-Status-K8s.md)'
 - id: inf-k8s-13-Proactive-Operational-Readiness-A
@@ -6299,6 +6640,7 @@ prompts:
   - operational
   - readiness
   - review
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/07-Operational-Readiness/Audit-Log-Review-K8s.md)'
 - id: inf-k8s-13-Proactive-Operational-Readiness-A
@@ -6317,6 +6659,7 @@ prompts:
   - monitoring
   - operational
   - readiness
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/07-Operational-Readiness/Automation-Coverage-K8s.md)'
 - id: inf-k8s-13-Proactive-Operational-Readiness-C
@@ -6335,6 +6678,7 @@ prompts:
   - monitoring
   - operational
   - readiness
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/07-Operational-Readiness/Cascading-Failure-Analysis-K8s.md)'
 - id: inf-k8s-13-Proactive-Operational-Readiness-C
@@ -6354,6 +6698,7 @@ prompts:
   - operational
   - readiness
   - security
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/07-Operational-Readiness/Certificate-Expiration-Monitoring-K8s.md)'
 - id: inf-k8s-13-Proactive-Operational-Readiness-D
@@ -6372,6 +6717,7 @@ prompts:
   - monitoring
   - operational
   - readiness
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/07-Operational-Readiness/Dependency-Health-Check-K8s.md)'
 - id: inf-k8s-13-Proactive-Operational-Readiness-D
@@ -6391,6 +6737,7 @@ prompts:
   - monitoring
   - operational
   - readiness
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/07-Operational-Readiness/Documentation-Gaps-K8s.md)'
 - id: inf-k8s-13-Proactive-Operational-Readiness-I
@@ -6412,6 +6759,7 @@ prompts:
   - readiness
   - response
   - sg
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/07-Operational-Readiness/Incident-Response-Preparedness-K8s.md)'
 - id: inf-k8s-13-Proactive-Operational-Readiness-O
@@ -6429,6 +6777,7 @@ prompts:
   - monitoring
   - operational
   - readiness
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/07-Operational-Readiness/On-call-Readiness-K8s.md)'
 - id: inf-k8s-13-Proactive-Operational-Readiness-R
@@ -6448,6 +6797,7 @@ prompts:
   - operational
   - readiness
   - runbook
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/07-Operational-Readiness/Runbook-Completeness-K8s.md)'
 - id: inf-k8s-13-Proactive-Operational-Readiness-S
@@ -6465,6 +6815,7 @@ prompts:
   - operational
   - readiness
   - service
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/07-Operational-Readiness/Service-Dependency-Mapping-K8s.md)'
 - id: inf-k8s-13-Proactive-Operational-Readiness-S
@@ -6484,6 +6835,7 @@ prompts:
   - operational
   - readiness
   - service
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/07-Operational-Readiness/Service-Mesh-Health-K8s.md)'
 - id: inf-k8s-13-Proactive-Security-Compliance-Acc
@@ -6502,6 +6854,7 @@ prompts:
   - monitoring
   - review
   - security
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/02-Security-Compliance/Access-Review-K8s.md)'
 - id: inf-k8s-13-Proactive-Security-Compliance-Com
@@ -6519,6 +6872,7 @@ prompts:
   - monitoring
   - rds
   - security
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/02-Security-Compliance/Compliance-Check-K8s.md)'
 - id: inf-k8s-13-Proactive-Security-Compliance-Com
@@ -6535,6 +6889,7 @@ prompts:
   - monitoring
   - security
   - status
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/02-Security-Compliance/Compliance-Status-Check-K8s.md)'
 - id: inf-k8s-13-Proactive-Security-Compliance-IAM
@@ -6553,6 +6908,7 @@ prompts:
   - policy
   - review
   - security
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/02-Security-Compliance/IAM-Policy-Review-K8s.md)'
 - id: inf-k8s-13-Proactive-Security-Compliance-Net
@@ -6570,6 +6926,7 @@ prompts:
   - monitoring
   - network
   - security
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/02-Security-Compliance/Network-Security-Audit-K8s.md)'
 - id: inf-k8s-13-Proactive-Security-Compliance-Pol
@@ -6586,6 +6943,7 @@ prompts:
   - policy
   - security
   - verification
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/02-Security-Compliance/Policy-Compliance-Verification-K8s.md)'
 - id: inf-k8s-13-Proactive-Security-Compliance-Reg
@@ -6605,6 +6963,7 @@ prompts:
   - regulatory
   - requirement
   - security
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/02-Security-Compliance/Regulatory-Requirement-Check-K8s.md)'
 - id: inf-k8s-13-Proactive-Security-Compliance-Sec
@@ -6623,6 +6982,7 @@ prompts:
   - secrets
   - security
   - status
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/02-Security-Compliance/Secrets-Rotation-Status-K8s.md)'
 - id: inf-k8s-13-Proactive-Security-Compliance-Sec
@@ -6639,6 +6999,7 @@ prompts:
   - k8s-namespace
   - k8s-pod
   - security
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/02-Security-Compliance/Security-Group-Audit-K8s.md)'
 - id: inf-k8s-13-Proactive-Security-Compliance-Vul
@@ -6656,6 +7017,7 @@ prompts:
   - scanning
   - security
   - vulnerability
+  type: prompt
   role: SRE / K8s Proactive Operations
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/13-Proactive/02-Security-Compliance/Vulnerability-Scanning-K8s.md)'
 - id: inf-legacy-modernizer
@@ -6674,6 +7036,7 @@ prompts:
   - monitoring
   - performance
   - security
+  type: prompt
   role: legacy-modernizer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/06-developer-experience/legacy-modernizer.md)'
 - id: inf-m365-admin
@@ -6690,6 +7053,7 @@ prompts:
   - m365
   - security
   - sts
+  type: prompt
   role: m365-admin
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/07-specialized-domains/m365-admin.md)'
 - id: inf-microservices-architect
@@ -6711,6 +7075,7 @@ prompts:
   - observability
   - pipeline
   - sts
+  type: prompt
   role: microservices-architect
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/01-core-development/microservices-architect.md)'
 - id: inf-performance-monitor
@@ -6728,6 +7093,7 @@ prompts:
   - pipeline
   - rds
   - storage
+  type: prompt
   role: performance-monitor
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/09-meta-orchestration/performance-monitor.md)'
 - id: inf-refactoring-specialist
@@ -6741,6 +7107,7 @@ prompts:
   - refactoring
   - specialist
   - sts
+  type: prompt
   role: refactoring-specialist
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/06-developer-experience/refactoring-specialist.md)'
 - id: inf-tooling-engineer
@@ -6755,6 +7122,7 @@ prompts:
   - performance
   - pipeline
   - tooling
+  type: prompt
   role: tooling-engineer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/06-developer-experience/tooling-engineer.md)'
 - id: sec-agent-ad-security-reviewer
@@ -6769,6 +7137,7 @@ prompts:
   - reviewer
   - security
   - sts
+  type: prompt
   role: ad-security-reviewer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/ad-security-reviewer.md)'
 - id: sec-agent-compliance-auditor
@@ -6783,6 +7152,7 @@ prompts:
   - monitoring
   - rds
   - security
+  type: prompt
   role: compliance-auditor
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/compliance-auditor.md)'
 - id: sec-agent-penetration-tester
@@ -6801,6 +7171,7 @@ prompts:
   - security
   - sts
   - tester
+  type: prompt
   role: penetration-tester
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/penetration-tester.md)'
 - id: sec-agent-powershell-security-hardening
@@ -6820,6 +7191,7 @@ prompts:
   - security
   - storage
   - sts
+  type: prompt
   role: powershell-security-hardening
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/powershell-security-hardening.md)'
 - id: sec-agent-security-auditor
@@ -6836,6 +7208,7 @@ prompts:
   - monitoring
   - rds
   - security
+  type: prompt
   role: security-auditor
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/04-quality-security/security-auditor.md)'
 - id: sec-agent-security-engineer
@@ -6848,6 +7221,7 @@ prompts:
   - engineer
   - iam
   - security
+  type: prompt
   role: Security Engineer (SIRT)
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/03-infrastructure/security-engineer.md)'
 - id: sec-aws-05-Security-Access-Key-Leaked-Warnin
@@ -6870,6 +7244,7 @@ prompts:
   - security
   - sts
   - warning
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Access-Key-Leaked-Warning-IAM.md)'
 - id: sec-aws-05-Security-Authentication-Failing-f
@@ -6887,6 +7262,7 @@ prompts:
   - security
   - sts
   - user
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Authentication-Failing-for-IAM-User-MFA.md)'
 - id: sec-aws-05-Security-Blocking-Legitimate-Traf
@@ -6905,6 +7281,7 @@ prompts:
   - sts
   - traffic
   - waf
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Blocking-Legitimate-Traffic-WAF.md)'
 - id: sec-aws-05-Security-Certificate-Not-Issuing-
@@ -6924,6 +7301,7 @@ prompts:
   - rds
   - security
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Certificate-Not-Issuing-ACM.md)'
 - id: sec-aws-05-Security-Key-Policy-Preventing-De
@@ -6944,6 +7322,7 @@ prompts:
   - s3
   - security
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Key-Policy-Preventing-Decryption-KMS.md)'
 - id: sec-aws-05-Security-Not-Aggregating-Findings
@@ -6962,6 +7341,7 @@ prompts:
   - rds
   - security
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Not-Aggregating-Findings-Security-Hub.md)'
 - id: sec-aws-05-Security-Not-Detecting-Security-T
@@ -6979,6 +7359,7 @@ prompts:
   - security
   - sts
   - threats
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Not-Detecting-Security-Threats-GuardDuty.md)'
 - id: sec-aws-05-Security-Not-Detecting-Threats-Gu
@@ -7000,6 +7381,7 @@ prompts:
   - sts
   - threats
   - vpc
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Not-Detecting-Threats-GuardDuty.md)'
 - id: sec-aws-05-Security-Not-Mitigating-DDoS-Atta
@@ -7017,6 +7399,7 @@ prompts:
   - security
   - shield
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Not-Mitigating-DDoS-Attacks-Shield.md)'
 - id: sec-aws-05-Security-Not-Rotating-Credentials
@@ -7037,6 +7420,7 @@ prompts:
   - secrets
   - security
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Not-Rotating-Credentials-Secrets-Manager.md)'
 - id: sec-aws-05-Security-Policy-Not-Granting-Expe
@@ -7054,6 +7438,7 @@ prompts:
   - performance
   - policy
   - security
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Policy-Not-Granting-Expected-Access-IAM.md)'
 - id: sec-aws-05-Security-Rules-Causing-False-Posi
@@ -7073,6 +7458,7 @@ prompts:
   - security
   - sts
   - waf
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Rules-Causing-False-Positives-WAF.md)'
 - id: sec-aws-05-Security-Rules-Not-Applying-Corre
@@ -7093,6 +7479,7 @@ prompts:
   - sts
   - vpc
   - waf
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Rules-Not-Applying-Correctly-Security-Group.md)'
 - id: sec-aws-05-Security-SCP-Preventing-Service-A
@@ -7110,6 +7497,7 @@ prompts:
   - security
   - service
   - sts
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/SCP-Preventing-Service-Access-Organizations.md)'
 - id: sec-aws-05-Security-Token-Expired-Error-STS
@@ -7126,6 +7514,7 @@ prompts:
   - security
   - sts
   - token
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/Token-Expired-Error-STS.md)'
 - id: sec-aws-05-Security-User-Pool-Login-Issues-C
@@ -7144,6 +7533,7 @@ prompts:
   - security
   - sts
   - user
+  type: prompt
   role: SRE / AWS Incident Response
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/AWS%20Playbooks/05-Security/User-Pool-Login-Issues-Cognito.md)'
 - id: sec-k8s-07-RBAC-ClusterRoleBindingMissingPer
@@ -7161,6 +7551,7 @@ prompts:
   - rbac
   - security
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/07-RBAC/ClusterRoleBindingMissingPermissions-rbac.md)'
 - id: sec-k8s-07-RBAC-ErrorForbiddenwhenRunningkub
@@ -7178,6 +7569,7 @@ prompts:
   - rbac
   - security
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/07-RBAC/ErrorForbiddenwhenRunningkubectlCommands-rbac.md)'
 - id: sec-k8s-07-RBAC-ErrorUnauthorizedwhenAccessi
@@ -7194,6 +7586,7 @@ prompts:
   - rbac
   - security
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/07-RBAC/ErrorUnauthorizedwhenAccessingAPIServer-rbac.md)'
 - id: sec-k8s-07-RBAC-RBACPermissionDeniedError-rb
@@ -7213,6 +7606,7 @@ prompts:
   - rbacpermissiondeniederror
   - security
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/07-RBAC/RBACPermissionDeniedError-rbac.md)'
 - id: sec-k8s-07-RBAC-ServiceAccountNotFound-rbac
@@ -7232,6 +7626,7 @@ prompts:
   - security
   - serviceaccountnotfound
   - sts
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/07-RBAC/ServiceAccountNotFound-rbac.md)'
 - id: sec-k8s-07-RBAC-UnauthorizedErrorWhenAccessi
@@ -7248,6 +7643,7 @@ prompts:
   - security
   - sts
   - unauthorizederrorwhenaccessingkubernetesapi
+  type: prompt
   role: Kubernetes SRE
   source: '[Scoutflo/Scoutflo-SRE-Playbooks](https://github.com/Scoutflo/Scoutflo-SRE-Playbooks/blob/master/K8s%20Playbooks/07-RBAC/UnauthorizedErrorWhenAccessingKubernetesAPI-rbac.md)'
 - id: sec-risk-manager
@@ -7262,6 +7658,7 @@ prompts:
   - risk
   - security
   - sts
+  type: prompt
   role: risk-manager
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/07-specialized-domains/risk-manager.md)'
 - id: dat-ai-engineer
@@ -7277,6 +7674,7 @@ prompts:
   - performance
   - pipeline
   - scaling
+  type: prompt
   role: ai-engineer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/ai-engineer.md)'
 - id: dat-data-analyst
@@ -7291,6 +7689,7 @@ prompts:
   - k8s-service
   - monitoring
   - performance
+  type: prompt
   role: data-analyst
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/data-analyst.md)'
 - id: dat-data-engineer
@@ -7309,6 +7708,7 @@ prompts:
   - performance
   - pipeline
   - storage
+  type: prompt
   role: data-engineer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/data-engineer.md)'
 - id: dat-data-scientist
@@ -7322,6 +7722,7 @@ prompts:
   - performance
   - scaling
   - scientist
+  type: prompt
   role: data-scientist
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/data-scientist.md)'
 - id: dat-database-optimizer
@@ -7340,6 +7741,7 @@ prompts:
   - postgres
   - redis
   - storage
+  type: prompt
   role: database-optimizer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/database-optimizer.md)'
 - id: dat-llm-architect
@@ -7355,6 +7757,7 @@ prompts:
   - monitoring
   - performance
   - scaling
+  type: prompt
   role: llm-architect
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/llm-architect.md)'
 - id: dat-ml-pipeline-engineer
@@ -7369,6 +7772,7 @@ prompts:
   - monitoring
   - performance
   - pipeline
+  type: prompt
   role: ml-pipeline-engineer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/ml-engineer.md)'
 - id: dat-ml-serving-engineer
@@ -7387,6 +7791,7 @@ prompts:
   - scaling
   - security
   - serving
+  type: prompt
   role: ml-serving-engineer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/machine-learning-engineer.md)'
 - id: dat-mlops-engineer
@@ -7413,6 +7818,7 @@ prompts:
   - security
   - storage
   - sts
+  type: prompt
   role: mlops-engineer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/mlops-engineer.md)'
 - id: dat-nlp-engineer
@@ -7426,6 +7832,7 @@ prompts:
   - monitoring
   - performance
   - pipeline
+  type: prompt
   role: nlp-engineer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/nlp-engineer.md)'
 - id: dat-postgres-pro
@@ -7442,6 +7849,7 @@ prompts:
   - performance
   - postgres
   - storage
+  type: prompt
   role: postgres-pro
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/postgres-pro.md)'
 - id: dat-prompt-engineer
@@ -7455,6 +7863,7 @@ prompts:
   - engineer
   - performance
   - sts
+  type: prompt
   role: prompt-engineer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/05-data-ai/prompt-engineer.md)'
 - id: sha-api-architect.agent
@@ -7467,6 +7876,7 @@ prompts:
   - k8s-service
   - shared
   - sts
+  type: prompt
   role: AI Agent / Shared
   source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/shared/agents/api-architect.agent.md)'
 - id: sha-api-designer
@@ -7480,6 +7890,7 @@ prompts:
   - rds
   - security
   - shared
+  type: prompt
   role: api-designer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/01-core-development/api-designer.md)'
 - id: sha-api-documenter
@@ -7493,6 +7904,7 @@ prompts:
   - k8s-service
   - security
   - shared
+  type: prompt
   role: api-documenter
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/07-specialized-domains/api-documenter.md)'
 - id: sha-architect.agent
@@ -7504,6 +7916,7 @@ prompts:
   - shared
   - architecture
   - technical-planning
+  type: prompt
   role: AI Agent / Shared
   source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/shared/agents/architect.agent.md)'
 - id: sha-backend-developer
@@ -7525,6 +7938,7 @@ prompts:
   - redis
   - security
   - shared
+  type: prompt
   role: backend-developer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/01-core-development/backend-developer.md)'
 - id: sha-check.agent
@@ -7537,6 +7951,7 @@ prompts:
   - rds
   - shared
   - sts
+  type: prompt
   role: AI Agent / Shared
   source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/shared/agents/check.agent.md)'
 - id: sha-context-manager
@@ -7552,6 +7967,7 @@ prompts:
   - performance
   - shared
   - storage
+  type: prompt
   role: context-manager
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/09-meta-orchestration/context-manager.md)'
 - id: sha-documentation-engineer
@@ -7564,6 +7980,7 @@ prompts:
   - documentation
   - engineer
   - shared
+  type: prompt
   role: documentation-engineer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/06-developer-experience/documentation-engineer.md)'
 - id: sha-error-coordinator
@@ -7578,6 +7995,7 @@ prompts:
   - k8s-service
   - monitoring
   - pipeline
+  type: prompt
   role: error-coordinator
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/09-meta-orchestration/error-coordinator.md)'
 - id: sha-fullstack-developer
@@ -7596,6 +8014,7 @@ prompts:
   - security
   - shared
   - sts
+  type: prompt
   role: fullstack-developer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/01-core-development/fullstack-developer.md)'
 - id: sha-graphql-architect
@@ -7611,6 +8030,7 @@ prompts:
   - performance
   - scaling
   - shared
+  type: prompt
   role: graphql-architect
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/01-core-development/graphql-architect.md)'
 - id: sha-guardrails
@@ -7624,6 +8044,7 @@ prompts:
   - grounding
   - security
   - hitl
+  type: prompt
   role: All Roles
   source: custom
 - id: sha-it-ops-orchestrator
@@ -7640,6 +8061,7 @@ prompts:
   - orchestrator
   - security
   - sts
+  type: prompt
   role: it-ops-orchestrator
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/09-meta-orchestration/it-ops-orchestrator.md)'
 - id: sha-knowledge-synthesizer
@@ -7654,6 +8076,7 @@ prompts:
   - pipeline
   - shared
   - synthesizer
+  type: prompt
   role: knowledge-synthesizer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/09-meta-orchestration/knowledge-synthesizer.md)'
 - id: sha-multi-agent-coordinator
@@ -7669,6 +8092,7 @@ prompts:
   - multi
   - performance
   - pipeline
+  type: prompt
   role: multi-agent-coordinator
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/09-meta-orchestration/multi-agent-coordinator.md)'
 - id: sha-plan.agent
@@ -7680,6 +8104,7 @@ prompts:
   - shared
   - strategic-planning
   - code-analysis
+  type: prompt
   role: AI Agent / Shared
   source: '[shawnewallace/prompt-library](https://github.com/shawnewallace/prompt-library/blob/main/shared/agents/plan.agent.md)'
 - id: sha-role-definitions
@@ -7696,6 +8121,7 @@ prompts:
   - kubernetes
   - terraform
   - devops
+  type: prompt
   role: All Roles
   source: custom
 - id: sha-task-distributor
@@ -7712,6 +8138,7 @@ prompts:
   - monitoring
   - performance
   - task
+  type: prompt
   role: task-distributor
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/09-meta-orchestration/task-distributor.md)'
 - id: sha-websocket-engineer
@@ -7728,6 +8155,7 @@ prompts:
   - sg
   - shared
   - websocket
+  type: prompt
   role: websocket-engineer
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/01-core-development/websocket-engineer.md)'
 - id: sha-workflow-orchestrator
@@ -7743,6 +8171,7 @@ prompts:
   - orchestrator
   - performance
   - workflow
+  type: prompt
   role: workflow-orchestrator
   source: '[VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/main/categories/09-meta-orchestration/workflow-orchestrator.md)'
 - id: tec-analogical-reasoning
@@ -7756,6 +8185,7 @@ prompts:
   - metaphor
   - transfer
   - cross-domain
+  type: prompt
 - id: tec-chain-of-thought
   file: techniques/chain-of-thought.md
   title: Chain-of-Thought (CoT) — 단계별 추론
@@ -7766,6 +8196,7 @@ prompts:
   - cot
   - reasoning
   - step-by-step
+  type: prompt
 - id: tec-chain-of-verification
   file: techniques/chain-of-verification.md
   title: Chain-of-Verification (CoVe) — 자기 검증 체인
@@ -7777,6 +8208,7 @@ prompts:
   - verification
   - hallucination
   - fact-check
+  type: prompt
 - id: tec-contrastive-prompting
   file: techniques/contrastive-prompting.md
   title: Contrastive Prompting — 대조 분석 기법
@@ -7788,6 +8220,7 @@ prompts:
   - comparison
   - contrast
   - differentiation
+  type: prompt
 - id: tec-decomposition
   file: techniques/decomposition.md
   title: Decomposition — 문제 분해 기법
@@ -7799,6 +8232,7 @@ prompts:
   - divide-conquer
   - breakdown
   - modular
+  type: prompt
 - id: tec-devils-advocate
   file: techniques/devils-advocate.md
   title: Devil's Advocate — 반론 제기 기법
@@ -7809,6 +8243,7 @@ prompts:
   - devils-advocate
   - counter-argument
   - critical-thinking
+  type: prompt
 - id: tec-few-shot-prompting
   file: techniques/few-shot-prompting.md
   title: Few-Shot Prompting — 예시 기반 학습
@@ -7819,6 +8254,7 @@ prompts:
   - few-shot
   - examples
   - in-context-learning
+  type: prompt
 - id: tec-feynman-technique
   file: techniques/feynman-technique.md
   title: Feynman Technique — 파인만 학습법
@@ -7830,6 +8266,7 @@ prompts:
   - simplification
   - teaching
   - understanding
+  type: prompt
 - id: tec-first-principles
   file: techniques/first-principles.md
   title: First Principles Thinking — 제1원리 사고 (머스크 사고)
@@ -7841,6 +8278,7 @@ prompts:
   - elon-musk
   - decomposition
   - fundamental
+  type: prompt
 - id: tec-fishbone-analysis
   file: techniques/fishbone-analysis.md
   title: Fishbone (Ishikawa) — 원인-결과 다이어그램
@@ -7852,6 +8290,7 @@ prompts:
   - ishikawa
   - cause-effect
   - rca
+  type: prompt
 - id: tec-five-whys
   file: techniques/five-whys.md
   title: 5 Whys — 다섯 번의 왜
@@ -7863,6 +8302,7 @@ prompts:
   - root-cause
   - rca
   - toyota
+  type: prompt
 - id: tec-hypothesis-driven
   file: techniques/hypothesis-driven.md
   title: Hypothesis-Driven Analysis — 가설 기반 분석
@@ -7874,6 +8314,7 @@ prompts:
   - scientific-method
   - testing
   - validation
+  type: prompt
 - id: tec-inversion-thinking
   file: techniques/inversion-thinking.md
   title: Inversion Thinking — 역발상 사고
@@ -7886,6 +8327,7 @@ prompts:
   - charlie-munger
   - premortem
   - failure-avoidance
+  type: prompt
 - id: tec-lateral-thinking
   file: techniques/lateral-thinking.md
   title: Lateral Thinking — 수평적 사고
@@ -7897,6 +8339,7 @@ prompts:
   - de-bono
   - creative
   - unconventional
+  type: prompt
 - id: tec-mece-framework
   file: techniques/mece-framework.md
   title: MECE Framework — 상호배제·전체포괄 분류
@@ -7908,6 +8351,7 @@ prompts:
   - framework
   - classification
   - mckinsey
+  type: prompt
 - id: tec-meta-prompting
   file: techniques/meta-prompting.md
   title: Meta-Prompting — 프롬프트를 만드는 프롬프트
@@ -7918,6 +8362,7 @@ prompts:
   - meta
   - prompt-generation
   - self-improving
+  type: prompt
 - id: tec-ooda-loop
   file: techniques/ooda-loop.md
   title: OODA Loop — 관찰·판단·결정·행동 루프
@@ -7930,6 +8375,7 @@ prompts:
   - military
   - agile
   - incident-response
+  type: prompt
 - id: tec-premortem
   file: techniques/premortem.md
   title: Pre-mortem Analysis — 사전 부검 분석
@@ -7941,6 +8387,7 @@ prompts:
   - risk
   - failure-analysis
   - gary-klein
+  type: prompt
 - id: tec-prompt-chaining
   file: techniques/prompt-chaining.md
   title: Prompt Chaining — 프롬프트 연쇄
@@ -7952,6 +8399,7 @@ prompts:
   - pipeline
   - sequential
   - workflow
+  type: prompt
 - id: tec-rca_techniques
   file: techniques/rca_techniques.md
   title: RCA 특화 프롬프트 기법 정리
@@ -7961,6 +8409,7 @@ prompts:
   - iam
   - rca_techniques
   - techniques
+  type: prompt
 - id: tec-react-pattern
   file: techniques/react-pattern.md
   title: ReAct — Reasoning + Acting 패턴
@@ -7973,6 +8422,7 @@ prompts:
   - acting
   - agent
   - tool-use
+  type: prompt
 - id: tec-red-team-blue-team
   file: techniques/red-team-blue-team.md
   title: Red Team / Blue Team — 공격·방어 관점 분석
@@ -7984,6 +8434,7 @@ prompts:
   - blue-team
   - security
   - adversarial
+  type: prompt
 - id: tec-role-prompting
   file: techniques/role-prompting.md
   title: Role Prompting — 역할 부여 기법
@@ -7995,6 +8446,7 @@ prompts:
   - persona
   - expert
   - character
+  type: prompt
 - id: tec-rubber-duck-debugging
   file: techniques/rubber-duck-debugging.md
   title: Rubber Duck Debugging — 러버덕 디버깅
@@ -8006,6 +8458,7 @@ prompts:
   - debugging
   - explanation
   - verbalization
+  type: prompt
 - id: tec-self-consistency
   file: techniques/self-consistency.md
   title: Self-Consistency — 다중 경로 다수결
@@ -8016,6 +8469,7 @@ prompts:
   - self-consistency
   - voting
   - ensemble
+  type: prompt
 - id: tec-self-refinement
   file: techniques/self-refinement.md
   title: Self-Refinement — 반복 자기 개선
@@ -8027,6 +8481,7 @@ prompts:
   - iteration
   - improvement
   - feedback
+  type: prompt
 - id: tec-six-thinking-hats
   file: techniques/six-thinking-hats.md
   title: Six Thinking Hats — 6색 모자 사고법
@@ -8038,6 +8493,7 @@ prompts:
   - de-bono
   - perspectives
   - parallel-thinking
+  type: prompt
 - id: tec-socratic-method
   file: techniques/socratic-method.md
   title: Socratic Method — 소크라틱 질문법
@@ -8049,6 +8505,7 @@ prompts:
   - questioning
   - critical-thinking
   - dialogue
+  type: prompt
 - id: tec-step-back-prompting
   file: techniques/step-back-prompting.md
   title: Step-Back Prompting — 추상화 후 구체화
@@ -8059,6 +8516,7 @@ prompts:
   - step-back
   - abstraction
   - reasoning
+  type: prompt
 - id: tec-swot-analysis
   file: techniques/swot-analysis.md
   title: SWOT Analysis — 강점·약점·기회·위협 분석
@@ -8070,6 +8528,7 @@ prompts:
   - strategy
   - analysis
   - planning
+  type: prompt
 - id: tec-tree-of-thoughts
   file: techniques/tree-of-thoughts.md
   title: Tree-of-Thoughts (ToT) — 분기 탐색 추론
@@ -8081,19 +8540,21 @@ prompts:
   - reasoning
   - branching
   - exploration
+  type: prompt
 - id: cod-agent-behavior-patterns
   file: coding/agent-behavior-patterns.md
   title: Agent Behavior Patterns — 실제로 에이전트 행동을 바꾸는 패턴
   category: coding
   origin: custom
   tags:
-  - agent
   - coding
-  - ai-agent
-  - behavior
+  - agent
+  - behavior-pattern
   - agents-md
-  - patterns
+  - context-engineering
+  type: prompt
   role: Developer
+  source: https://blakecrosley.com/blog/agents-md-patterns
 - id: cod-agentic-manifests
   file: coding/agentic-manifests.md
   title: Agentic Coding Manifests — 에이전트 매니페스트 표준
@@ -8101,11 +8562,13 @@ prompts:
   origin: custom
   tags:
   - coding
+  - agent
   - manifest
   - agents-md
   - claude-md
-  - convention
+  type: guide
   role: Developer
+  source: https://arxiv.org/html/2509.14744v1
 - id: cod-claude-md-guide
   file: coding/claude-md-guide.md
   title: CLAUDE.md / AGENTS.md 작성 가이드
@@ -8116,8 +8579,9 @@ prompts:
   - claude-md
   - agents-md
   - context-engineering
-  - ai-agent
+  type: concept
   role: Developer
+  source: https://www.humanlayer.dev/blog/writing-a-good-claude-md
 - id: cod-code-review-agent
   file: coding/code-review-agent.md
   title: Code Review Agent — AI 코드 리뷰 에이전트 설계
@@ -8125,11 +8589,13 @@ prompts:
   origin: custom
   tags:
   - coding
+  - agent
   - code-review
-  - ai-agent
-  - quality
   - security
+  - quality
+  type: prompt
   role: Senior Developer
+  source: https://github.com/hesreallyhim/awesome-claude-code-agents
 - id: cod-cognitive-readability
   file: coding/cognitive-readability.md
   title: Cognitive Readability First — 인지 가독성 우선 코딩
@@ -8140,7 +8606,7 @@ prompts:
   - readability
   - cognitive-load
   - clean-code
-  - ai-agent
+  type: concept
   role: Developer
 - id: cod-context-engineering
   file: coding/context-engineering.md
@@ -8150,10 +8616,11 @@ prompts:
   tags:
   - coding
   - context-engineering
-  - ai-agent
   - prompt-engineering
   - llm
+  type: concept
   role: Developer
+  source: https://www.pixelmojo.io/blogs/context-engineering-ai-coding-agents-beyond-claude-md
 - id: cod-four-file-memory
   file: coding/four-file-memory.md
   title: 4-File Working Memory — AI 에이전트 워킹 메모리 시스템
@@ -8162,10 +8629,11 @@ prompts:
   tags:
   - coding
   - working-memory
-  - ai-agent
   - session-management
   - claude-code
+  type: concept
   role: Developer
+  source: https://www.implicator.ai/this-simple-four-file-system-gives-claude-code-a-working-memory/
 - id: cod-hooks-automation
   file: coding/hooks-automation.md
   title: Hooks & Automation — AI 에이전트 훅과 자동화 패턴
@@ -8175,8 +8643,8 @@ prompts:
   - coding
   - hooks
   - automation
-  - ai-agent
   - ci-cd
+  type: guide
   role: Developer
 - id: cod-inevitable-code
   file: coding/inevitable-code.md
@@ -8186,10 +8654,11 @@ prompts:
   tags:
   - coding
   - typescript
-  - design
   - simplicity
-  - ai-agent
+  - design
+  type: concept
   role: Developer
+  source: https://github.com/giselles-ai/giselle/blob/main/.claude/agents/ts-coder.md
 - id: cod-karpathy-rules
   file: coding/karpathy-rules.md
   title: Karpathy Rules — AI 코딩 에이전트 4원칙
@@ -8197,11 +8666,12 @@ prompts:
   origin: custom
   tags:
   - coding
-  - ai-agent
-  - rules
+  - karpathy-rules
   - claude-md
-  - best-practices
+  - best-practice
+  type: prompt
   role: Developer
+  source: https://github.com/forrestchang/andrej-karpathy-skills/blob/main/CLAUDE.md
 - id: cod-mcp-integration
   file: coding/mcp-integration.md
   title: MCP Integration — Model Context Protocol 통합 패턴
@@ -8210,10 +8680,11 @@ prompts:
   tags:
   - coding
   - mcp
-  - model-context-protocol
-  - ai-agent
-  - tools
+  - tool-integration
+  - claude-code
+  type: concept
   role: Developer
+  source: https://blog.saurav.io/ai-coding-stack-explained/
 - id: cod-monorepo-agent-rules
   file: coding/monorepo-agent-rules.md
   title: Monorepo Agent Rules — 모노레포 AI 에이전트 규칙
@@ -8221,11 +8692,13 @@ prompts:
   origin: custom
   tags:
   - coding
+  - agent
   - monorepo
-  - ai-agent
   - architecture
   - turborepo
+  type: prompt
   role: Developer
+  source: https://github.com/josix/awesome-claude-md/blob/main/scenarios/developer-tooling/cloudflare_workers-sdk/README.md
 - id: cod-progressive-disclosure
   file: coding/progressive-disclosure.md
   title: Progressive Disclosure — CLAUDE.md 점진적 공개 패턴
@@ -8236,8 +8709,9 @@ prompts:
   - progressive-disclosure
   - claude-md
   - architecture
-  - ai-agent
+  type: prompt
   role: Developer
+  source: https://greeto.me/blog/claude-md-progressive-disclosure-for-fast-teams
 - id: cod-ralph-loop
   file: coding/ralph-loop.md
   title: Ralph Loop — AI 에이전트 자율 반복 실행 패턴
@@ -8247,9 +8721,10 @@ prompts:
   - coding
   - ralph-loop
   - autonomous
-  - ai-agent
-  - testing
+  - tdd
+  type: concept
   role: Developer
+  source: https://learndevrel.com/blog/ralph-loop-ai-coding
 - id: cod-riper-5-methodology
   file: coding/riper-5-methodology.md
   title: RIPER-5 — AI 에이전트 개발 방법론
@@ -8259,9 +8734,10 @@ prompts:
   - coding
   - riper-5
   - methodology
-  - ai-agent
   - workflow
+  type: prompt
   role: Developer
+  source: https://github.com/josix/awesome-claude-md/blob/main/scenarios/developer-tooling/li0on3_GoMall/README.md
 - id: cod-security-first-agent
   file: coding/security-first-agent.md
   title: Security-First Agent Rules — 보안 우선 AI 에이전트 규칙
@@ -8269,11 +8745,13 @@ prompts:
   origin: custom
   tags:
   - coding
+  - agent
   - security
-  - ai-agent
   - defi
-  - rules
+  - rule
+  type: prompt
   role: Security Engineer
+  source: https://github.com/josix/awesome-claude-md/blob/main/scenarios/complex-projects/Citadel-Protocol_contracts/analysis.md
 - id: cod-self-learning-agents
   file: coding/self-learning-agents.md
   title: Self-Learning Agents — 자기 학습 AI 에이전트 패턴
@@ -8281,11 +8759,13 @@ prompts:
   origin: custom
   tags:
   - coding
+  - agent
   - self-learning
-  - ai-agent
   - memory
-  - patterns
+  - pattern
+  type: guide
   role: Developer
+  source: https://github.com/Equilateral-AI/equilateral-agents-open-core
 - id: cod-spec-driven-development
   file: coding/spec-driven-development.md
   title: Spec-Driven Development — AI 에이전트 스펙 기반 개발
@@ -8295,9 +8775,10 @@ prompts:
   - coding
   - spec-driven
   - tdd
-  - ai-agent
   - methodology
+  type: guide
   role: Developer
+  source: http://smartscope.blog/en/ai-development/enforcing-spec-driven-development-claude-copilot-2025/
 - id: cod-sub-agent-architecture
   file: coding/sub-agent-architecture.md
   title: Sub-Agent Architecture — AI 코딩 서브에이전트 설계
@@ -8305,11 +8786,13 @@ prompts:
   origin: custom
   tags:
   - coding
+  - agent
   - sub-agent
-  - ai-agent
-  - architecture
+  - orchestration
   - claude-code
+  type: guide
   role: Developer
+  source: https://github.com/hesreallyhim/awesome-claude-code-agents
 - id: cod-vibe-coding-playbook
   file: coding/vibe-coding-playbook.md
   title: Vibe Coding Playbook — 바이브 코딩 실전 가이드
@@ -8318,7 +8801,8 @@ prompts:
   tags:
   - coding
   - vibe-coding
-  - ai-agent
   - methodology
-  - karpathy
+  - karpathy-rules
+  type: guide
   role: Developer
+  source: https://royfactory.net/posts/ai/202512/vibe-coding-playbook/

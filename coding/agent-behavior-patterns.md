@@ -1,55 +1,37 @@
 ---
 category: coding
+type: prompt
 tags:
 - agent
-- coding
-- ai-agent
-- behavior
+- behavior-pattern
 - agents-md
-- patterns
+- context-engineering
 role: Developer
 origin: custom
-source: ''
+source: 'https://blakecrosley.com/blog/agents-md-patterns'
 ---
 # Agent Behavior Patterns — 실제로 에이전트 행동을 바꾸는 패턴
 
-## 개요
+> AGENTS.md/CLAUDE.md에서 실제로 AI 에이전트의 행동을 변화시키는 패턴과 효과가 없는 패턴을 구분하는 실증적 가이드. blakecrosley.com 및 DAIR.AI 연구 기반.
 
-AGENTS.md/CLAUDE.md에서 실제로 AI 에이전트의 행동을 변화시키는 패턴과
-효과가 없는 패턴을 구분하는 실증적 가이드.
+---
 
-> 참고: [blakecrosley.com — What Actually Changes Agent Behavior](https://blakecrosley.com/blog/agents-md-patterns),
-> [dair.ai — Does AGENTS.md Actually Help?](https://academy.dair.ai/blog/agents-md-evaluation)
+## Prompt
 
-## 효과적인 패턴
-
-### 1. 구체적 명령어
 ```markdown
-# ✅ 효과적
-테스트: `pnpm vitest --run`
-린트: `pnpm eslint . --fix`
+## Agent Behavior Rules
 
-# ❌ 비효과적
-테스트와 린트를 실행하세요.
-```
+### Explicit Commands (use exact tool invocations)
+Test: `pnpm vitest --run`
+Lint: `pnpm eslint . --fix`
 
-### 2. 명시적 금지
-```markdown
-# ✅ 효과적
-- sed 사용 금지. sd를 사용하라.
-- python -c 사용 금지. 임시 파일에 작성 후 실행.
-- 기존 테스트 삭제 금지.
+### Explicit Prohibitions
+- Do NOT use `sed`. Use `sd` instead.
+- Do NOT use `python -c`. Write to a temp file and execute it.
+- Do NOT delete existing tests.
 
-# ❌ 비효과적
-- 좋은 코드를 작성하세요.
-- 베스트 프랙티스를 따르세요.
-```
-
-### 3. 예시 코드
-```markdown
-# ✅ 효과적
-에러 처리 패턴:
-\`\`\`typescript
+### Error Handling Pattern
+\```typescript
 try {
   const result = await operation();
   return { ok: true, data: result };
@@ -57,32 +39,32 @@ try {
   logger.error('operation failed', { error: e });
   return { ok: false, error: e.message };
 }
-\`\`\`
+\```
 
-# ❌ 비효과적
-에러를 적절히 처리하세요.
-```
-
-### 4. 디렉토리 구조 명시
-```markdown
-# ✅ 효과적
+### Directory Structure
 src/
-  routes/     — API 라우트 핸들러
-  services/   — 비즈니스 로직
-  models/     — 데이터 모델
-  utils/      — 유틸리티 함수
+  routes/     — API route handlers
+  services/   — business logic
+  models/     — data models
+  utils/      — utility functions
+
+### What Does NOT Work
+- Generic advice ("write clean code", "follow best practices")
+- Style rules — delegate to linter
+- Instructions longer than 500 lines
+- Vague directives ("handle it appropriately")
 ```
 
-## 효과 없는 패턴
+---
 
-- 일반적인 코딩 조언 ("클린 코드를 작성하세요")
-- 코드 스타일 규칙 (linter에 위임)
-- 너무 긴 설명 (500줄 이상)
-- 모호한 지시 ("적절히 처리하세요")
+## 사용법
 
-## DAIR.AI 연구 결과
+CLAUDE.md 또는 AGENTS.md를 작성할 때 위 패턴을 참고하여 구체적 명령어, 명시적 금지사항, 예시 코드, 디렉토리 구조 형태로 규칙을 작성한다.
 
-- AGENTS.md가 있을 때 에이전트 성능이 향상되는 경우가 있지만
-- 효과는 **구체성**에 비례
-- 일반적 조언은 거의 효과 없음
-- 명령어, 금지사항, 예시 코드가 가장 효과적
+## 적용 확인
+
+이 패턴이 작동하고 있다면:
+- 에이전트가 금지된 도구(`sed`, `python -c` 등) 대신 지정된 대안을 사용한다
+- 에러 처리 코드가 지정된 패턴 구조를 따른다
+- 일반적인 조언("좋은 코드 작성") 대신 구체적이고 검증 가능한 행동이 나온다
+- 명령어 실행 시 정확한 CLI 인수가 사용된다

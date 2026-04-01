@@ -148,6 +148,7 @@ def parse_md_to_prompt(file_path: Path, category: str) -> dict:
         "category": fm.get("category", category),
         "content": body,
         "tags": json.dumps(guess_tags(file_path.name, category, fm), ensure_ascii=False),
+        "type": fm.get("type", "prompt"),
         "role": fm.get("role", ""),
         "origin": guess_origin(file_path.name, fm),
         "source": fm.get("source", ""),
@@ -182,11 +183,11 @@ async def migrate_all(
 
             await db.execute(
                 """INSERT INTO prompts
-                   (id, title, category, content, tags, role, origin, source, file_path, created_at, updated_at)
-                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                   (id, title, category, content, tags, type, role, origin, source, file_path, created_at, updated_at)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
                 (
                     prompt["id"], prompt["title"], prompt["category"],
-                    prompt["content"], prompt["tags"], prompt["role"],
+                    prompt["content"], prompt["tags"], prompt["type"], prompt["role"],
                     prompt["origin"], prompt["source"], prompt["file_path"],
                     prompt["created_at"], prompt["updated_at"],
                 ),

@@ -1,68 +1,72 @@
 ---
 category: coding
+type: prompt
 tags:
-- coding
 - riper-5
 - methodology
-- ai-agent
 - workflow
 role: Developer
 origin: custom
-source: ''
+source: 'https://github.com/josix/awesome-claude-md/blob/main/scenarios/developer-tooling/li0on3_GoMall/README.md'
 ---
 # RIPER-5 — AI 에이전트 개발 방법론
 
-## 개요
+> GoMall 프로젝트에서 사용된 AI 에이전트 개발 방법론. Research → Implement → Plan → Execute → Review 5단계 사이클로 에이전트의 작업을 구조화한다.
 
-GoMall 프로젝트에서 사용된 AI 에이전트 개발 방법론.
-Research → Implement → Plan → Execute → Review 5단계 사이클로
-AI 에이전트의 작업을 구조화한다.
+---
 
-> 출처: [josix/awesome-claude-md — GoMall](https://github.com/josix/awesome-claude-md/blob/main/scenarios/developer-tooling/li0on3_GoMall/README.md)
+## Prompt
 
-## 5단계 사이클
+```markdown
+## RIPER-5 Development Methodology
 
-### R — Research (조사)
-- 기존 코드베이스 분석
-- 관련 파일과 의존성 파악
-- 기존 패턴과 규칙 이해
-- **출력**: 현재 상태 요약
+Follow the RIPER-5 cycle for all non-trivial tasks. Do not skip stages or jump to coding without completing the prior stage.
 
-### I — Implement (구현 계획)
-- 변경 사항의 영향 범위 분석
-- 가능한 접근 방식 비교
-- 트레이드오프 명시
-- **출력**: 구현 방향 제안
+### R — Research
+- Analyze the existing codebase
+- Identify related files and dependencies
+- Understand existing patterns and rules
+- Output: summary of current state
 
-### P — Plan (계획)
-- 구체적인 단계별 실행 계획
-- 각 단계의 검증 방법 정의
-- 의존성 순서 결정
-- **출력**: 번호가 매겨진 실행 계획
+### I — Implement (planning)
+- Analyze the impact scope of the proposed change
+- Compare possible approaches
+- State trade-offs explicitly
+- Output: recommended implementation direction
 
-### E — Execute (실행)
-- 계획에 따라 코드 변경
-- 각 단계 후 검증
-- 문제 발생 시 계획 수정
-- **출력**: 변경된 코드
+### P — Plan
+- Write a concrete, numbered step-by-step execution plan
+- Define a verification method for each step
+- Determine dependency ordering
+- Output: numbered execution plan
 
-### R — Review (검토)
-- 변경 사항 전체 검토
-- 테스트 실행 및 확인
-- 의도하지 않은 부수효과 확인
-- **출력**: 검토 결과 및 개선 제안
+### E — Execute
+- Make code changes according to the plan
+- Verify after each step
+- Update the plan if a problem arises
+- Output: changed code
 
-## 적용 방법
+### R — Review
+- Review all changes as a whole
+- Run tests and confirm results
+- Check for unintended side effects
+- Output: review result and improvement suggestions
 
-에이전트에게 현재 단계를 명시적으로 지시:
-```
-현재 RIPER 단계: Research
-[프로젝트]의 인증 모듈을 분석하고 현재 상태를 요약해줘.
+### Usage
+Specify the current stage explicitly when directing the agent:
+  "Current RIPER stage: Research — analyze the auth module and summarize current state."
 ```
 
-## 장점
+---
 
-- 에이전트가 "바로 코딩"하는 것을 방지
-- 각 단계에서 사용자 확인 가능
-- 변경의 영향 범위를 사전에 파악
-- 체계적인 검증 프로세스
+## 사용법
+
+CLAUDE.md에 위 Prompt 블록 내용을 복사하고, 에이전트에게 작업 지시 시 현재 RIPER 단계를 명시적으로 지정하여 사용한다.
+
+## 적용 확인
+
+이 방법론이 작동하고 있다면:
+- 에이전트가 요청을 받자마자 바로 코드를 작성하지 않고 Research 결과를 먼저 보고한다
+- 각 단계가 완료된 후 사용자 확인을 요청한다
+- Plan 단계에서 번호가 매겨진 실행 계획이 명시적으로 제시된다
+- 변경의 영향 범위가 Execute 전에 파악된다

@@ -469,6 +469,42 @@ html, body {
 .category-badge.data-ai { background: rgba(139,92,246,0.08); color: #7c3aed; }
 .category-badge.shared { background: rgba(107,114,128,0.08); color: #4b5563; }
 .category-badge.techniques { background: rgba(236,72,153,0.08); color: #db2777; }
+.category-badge.coding { background: rgba(99,102,241,0.08); color: #6366f1; }
+
+/* Type filter */
+.type-filter {
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.type-buttons {
+  display: flex;
+  gap: 4px;
+}
+.type-toggle {
+  padding: 3px 8px;
+  font-size: 11px;
+  font-family: inherit;
+  font-weight: 500;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.type-toggle:hover { background: var(--bg-hover); }
+.type-toggle.active { background: var(--accent-dim); border-color: var(--accent); color: var(--accent-text); }
+
+/* Type badges in prompt list */
+.type-badge {
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 500;
+}
+.type-badge.prompt { background: rgba(59,130,246,0.08); color: #2563eb; }
+.type-badge.concept { background: rgba(139,92,246,0.08); color: #7c3aed; }
+.type-badge.guide { background: rgba(16,185,129,0.08); color: #059669; }
 
 /* Empty state */
 .empty-state {

@@ -274,6 +274,7 @@ def build_index():
                 "content": body,
             }
             # frontmatter 보완
+            entry["type"] = fm.get("type", "prompt")
             for k in ["role", "difficulty", "source"]:
                 if fm.get(k):
                     entry[k] = fm[k]

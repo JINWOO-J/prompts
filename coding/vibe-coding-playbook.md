@@ -1,30 +1,24 @@
 ---
 category: coding
+type: guide
 origin: custom
 role: Developer
-source: ''
+source: 'https://royfactory.net/posts/ai/202512/vibe-coding-playbook/'
 tags:
-- coding
 - vibe-coding
-- ai-agent
 - methodology
-- karpathy
+- karpathy-rules
 ---
 # Vibe Coding Playbook — 바이브 코딩 실전 가이드
 
-## 개요
+> AI에게 구현을 위임하면서도 프롬프트·테스트·가드레일로 품질을 확보하는 실전 방법론.
 
-2025년 2월 Andrej Karpathy가 제안한 "vibe coding" 개념의 실전 가이드.
-AI에게 결과물을 맡기되, 프롬프트·테스트·가드레일로 품질을 확보하는 방법론이다.
+---
 
-> 참고: [royfactory.net — Vibe Coding Playbook](https://royfactory.net/posts/ai/202512/vibe-coding-playbook/)
+## Prompt
 
-## 바이브 코딩이란?
-
-"바이브에 몸을 맡기고, 지수적 성장을 받아들이고, 코드가 작동하는지조차 잊어버리는" 접근.
-하지만 실제 프로덕션에서는 가드레일이 필수다.
-
-## 실전 원칙
+```markdown
+## 바이브 코딩 실전 원칙
 
 ### 1. 프롬프트가 곧 설계
 - 명확하고 구체적인 프롬프트 = 좋은 설계 문서
@@ -50,14 +44,12 @@ AI에게 결과물을 맡기되, 프롬프트·테스트·가드레일로 품질
 
 ## 워크플로우
 
-```
 1. 의도 명확화 (프롬프트 작성)
 2. 테스트 작성 (성공 기준 정의)
 3. AI에게 구현 위임
 4. 테스트 실행 (자동 검증)
 5. 코드 리뷰 (수동 검증)
 6. 반복
-```
 
 ## 주의사항
 
@@ -65,3 +57,14 @@ AI에게 결과물을 맡기되, 프롬프트·테스트·가드레일로 품질
 - 보안 관련 코드는 반드시 수동 리뷰
 - 복잡한 비즈니스 로직은 단계별로 검증
 - 성능 크리티컬 코드는 벤치마크 필수
+```
+
+---
+
+## 배경
+
+2025년 2월 Andrej Karpathy가 제안한 "vibe coding" 개념에서 출발한다. "바이브에 몸을 맡기고, 지수적 성장을 받아들이고, 코드가 작동하는지조차 잊어버리는" 접근이지만, 실제 프로덕션에서는 가드레일이 필수다. AI에게 결과물을 맡기되 인간이 검증 레이어를 유지하는 균형이 핵심이다.
+
+## 사용법
+
+새 AI 코딩 세션을 시작할 때 또는 프로젝트의 CLAUDE.md/AGENTS.md를 작성할 때 이 원칙을 참조하라.

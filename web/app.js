@@ -5,6 +5,7 @@
 
   // --- Constants ---
   const CATEGORIES = ['rca', 'incident-response', 'application', 'infrastructure', 'security', 'data-ai', 'shared', 'techniques', 'coding'];
+  const TYPE_LABELS = { prompt: 'Prompt', concept: 'Concept', guide: 'Guide' };
 
   // --- State ---
   let allPrompts = [];
@@ -14,6 +15,7 @@
   let filteredPrompts = [];
   let focusIndex = -1;
   let activeTags = [];
+  let activeType = 'all';
   let isEditMode = false;
   let isApiMode = false;
   let isAiAvailable = false;
@@ -254,6 +256,20 @@
     });
   }
 
+  // --- Type Filter ---
+  const typeFilter = document.getElementById('type-filter');
+  if (typeFilter) {
+    typeFilter.addEventListener('click', (e) => {
+      const btn = e.target.closest('.type-toggle');
+      if (!btn) return;
+      activeType = btn.dataset.type;
+      typeFilter.querySelectorAll('.type-toggle').forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      focusIndex = -1;
+      applyFilter();
+    });
+  }
+
   // --- Tag Filter ---
   function getAllTags() {
     const tagSet = new Set();
@@ -387,6 +403,7 @@
 
     filteredPrompts = allPrompts.filter((p) => {
       if (activeCategory !== 'all' && p.category !== activeCategory) return false;
+      if (activeType !== 'all' && (p.type || 'prompt') !== activeType) return false;
       if (activeTags.length > 0 && !activeTags.every((at) => p.tags.some((pt) => pt.toLowerCase() === at.toLowerCase()))) return false;
       if (!query) return true;
       return (
@@ -418,10 +435,12 @@
         const title = query ? highlightText(p.title, query) : escapeHtml(p.title);
         const isActive = p.id === activePromptId;
         const isFocused = i === focusIndex;
+        const pType = p.type || 'prompt';
         return `<li class="prompt-item${isActive ? ' active' : ''}${isFocused ? ' focused' : ''}" data-id="${p.id}" data-index="${i}">
           <div class="prompt-item-title">${title}</div>
           <div class="prompt-item-meta">
             <span class="category-badge ${p.category}">${CATEGORY_LABELS[p.category] || p.category}</span>
+            <span class="type-badge ${pType}">${TYPE_LABELS[pType] || pType}</span>
           </div>
         </li>`;
       })
