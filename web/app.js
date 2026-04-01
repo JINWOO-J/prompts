@@ -523,9 +523,24 @@
   function rerenderContent() {
     const prompt = allPrompts.find((p) => p.id === activePromptId);
     if (!prompt || !prompt.content) return;
+
+    const sanitize = (html) => typeof DOMPurify !== 'undefined' ? DOMPurify.sanitize(html) : html;
+
+    // Split view: update both panes
+    const splitView = viewerContent.querySelector('.lang-split');
+    if (splitView && prompt.content_en) {
+      const panes = splitView.querySelectorAll('.lang-pane-content');
+      if (panes.length === 2) {
+        panes[0].innerHTML = sanitize(marked.parse(applyPlaceholders(prompt.content)));
+        panes[1].innerHTML = sanitize(marked.parse(applyPlaceholders(prompt.content_en)));
+        return;
+      }
+    }
+
+    // Single view fallback
     const replaced = applyPlaceholders(prompt.content);
     var rerenderHtml = marked.parse(replaced);
-    viewerContent.innerHTML = typeof DOMPurify !== 'undefined' ? DOMPurify.sanitize(rerenderHtml) : rerenderHtml;
+    viewerContent.innerHTML = sanitize(rerenderHtml);
     // 코드 하이라이트 + 복사 버튼 재적용
     viewerContent.querySelectorAll('pre').forEach((pre) => {
       const code = pre.querySelector('code');
@@ -564,6 +579,7 @@
       try {
         const full = await apiGet(`/api/prompts/${encodeURIComponent(id)}`);
         prompt.content = full.content;
+        if (full.content_en) prompt.content_en = full.content_en;
       } catch {
         // If API fails, show what we have
       }
@@ -580,8 +596,56 @@
     viewerTags.innerHTML = prompt.tags
       .map((t) => `<span class="viewer-tag" data-tag="${escapeHtml(t)}">${escapeHtml(t)}</span>`)
       .join('');
-    var parsedHtml = marked.parse(prompt.content);
-    viewerContent.innerHTML = typeof DOMPurify !== 'undefined' ? DOMPurify.sanitize(parsedHtml) : parsedHtml;
+
+    // Language split rendering
+    const hasEn = !!prompt.content_en;
+
+    const renderContent = (content) => {
+      const parsed = marked.parse(content);
+      return typeof DOMPurify !== 'undefined' ? DOMPurify.sanitize(parsed) : parsed;
+    };
+
+    if (hasEn) {
+      viewerContent.innerHTML = `<div class="lang-split">
+        <div class="lang-pane">
+          <div class="lang-pane-header">
+            <span class="lang-label">KO</span>
+            <button class="lang-copy-btn" data-lang="ko" title="Copy KO">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              Copy
+            </button>
+          </div>
+          <div class="lang-pane-content">${renderContent(prompt.content)}</div>
+        </div>
+        <div class="lang-pane">
+          <div class="lang-pane-header">
+            <span class="lang-label">EN</span>
+            <button class="lang-copy-btn" data-lang="en" title="Copy EN">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              Copy
+            </button>
+          </div>
+          <div class="lang-pane-content">${renderContent(prompt.content_en)}</div>
+        </div>
+      </div>`;
+
+      viewerContent.querySelectorAll('.lang-copy-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const raw = btn.dataset.lang === 'en' ? prompt.content_en : prompt.content;
+          navigator.clipboard.writeText(raw).then(() => {
+            btn.classList.add('copied');
+            btn.querySelector('svg + text, svg ~ *') || (btn.textContent = '');
+            btn.innerHTML = btn.innerHTML.replace('Copy', 'Copied!');
+            setTimeout(() => {
+              btn.classList.remove('copied');
+              btn.innerHTML = btn.innerHTML.replace('Copied!', 'Copy');
+            }, 1500);
+          });
+        });
+      });
+    } else {
+      viewerContent.innerHTML = renderContent(prompt.content);
+    }
 
     // 플레이스홀더 감지 및 폼 생성
     const placeholders = extractPlaceholders(prompt.content);

@@ -242,6 +242,20 @@ def _title_from_filename(stem: str) -> str:
     return stem.replace("-", " ").replace("_", " ").title()
 
 
+def _base_stem(filename: str) -> tuple[str, str]:
+    """파일명에서 base stem과 언어 코드를 추출.
+    karpathy-rules.ko.md → ('karpathy-rules', 'ko')
+    karpathy-rules.en.md → ('karpathy-rules', 'en')
+    aws-01-Compute.md    → ('aws-01-Compute', '')
+    """
+    stem = Path(filename).stem  # .md 제거
+    if stem.endswith(".ko"):
+        return stem[:-3], "ko"
+    if stem.endswith(".en"):
+        return stem[:-3], "en"
+    return stem, ""
+
+
 def build_index():
     entries = []
     stats = {}
@@ -251,28 +265,47 @@ def build_index():
         if not cat_dir.exists():
             continue
         files = sorted(cat_dir.glob("*.md"))
-        stats[cat] = len(files)
-
+        # 언어별 파일을 쌍으로 묶기
+        paired: dict[str, dict] = {}  # base_stem → {"ko": Path, "en": Path, "": Path}
         for f in files:
-            content = f.read_text(encoding="utf-8")
-            fm = extract_frontmatter(content)
+            base, lang = _base_stem(f.name)
+            if base not in paired:
+                paired[base] = {}
+            paired[base][lang] = f
 
+        stats[cat] = len(paired)
+
+        for base, lang_files in sorted(paired.items()):
+            # 주 파일 결정: ko > 언어 없음 > en
+            primary = lang_files.get("ko") or lang_files.get("") or lang_files.get("en")
+            if not primary:
+                continue
+
+            content = primary.read_text(encoding="utf-8")
+            fm = extract_frontmatter(content)
             body = strip_frontmatter(content)
 
             # 제목 추출: 본문(frontmatter 제거 후)에서 첫 H1만 탐색
             # H1이 없으면 파일명에서 의미 있는 제목 생성
             title_m = re.search(r'^#\s+(.+)$', body, re.MULTILINE)
-            title = title_m.group(1).strip() if title_m else _title_from_filename(f.stem)
+            title = title_m.group(1).strip() if title_m else _title_from_filename(base)
 
             entry = {
-                "id": f"{cat[:3]}-{f.stem[:40]}",
-                "file": f"{cat}/{f.name}",
+                "id": f"{cat[:3]}-{base[:40]}",
+                "file": f"{cat}/{primary.name}",
                 "title": title[:80],
                 "category": cat,
-                "origin": guess_origin(f.name, fm),
-                "tags": guess_tags(f.name, cat, fm),
+                "origin": guess_origin(primary.name, fm),
+                "tags": guess_tags(primary.name, cat, fm),
                 "content": body,
             }
+
+            # 영문 버전이 있으면 content_en 추가
+            en_file = lang_files.get("en")
+            if en_file and en_file != primary:
+                en_content = en_file.read_text(encoding="utf-8")
+                entry["content_en"] = strip_frontmatter(en_content)
+
             # frontmatter 보완
             entry["type"] = fm.get("type", "prompt")
             for k in ["role", "difficulty", "source"]:

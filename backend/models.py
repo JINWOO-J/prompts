@@ -27,6 +27,7 @@ class PromptUpdate(BaseModel):
 class PromptResponse(PromptBase):
     id: str
     type: str = "prompt"
+    content_en: str = ""
     origin: str
     source: str
     file_path: str
